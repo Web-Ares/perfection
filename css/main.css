@@ -100,12 +100,30 @@
 /* --------------- pack-includes --------------- */
 .pack-includes{
     background: #242a2f;
+    padding-top: 116px;
+    color: #fff;
+}
+.pack-includes .site__title{
+    margin-bottom: 116px;
+    color: #fff;
+    text-align: center;
+}
+.pack-includes__wrap{
+    max-width: 1181px;
+    margin: 0 auto;
+    text-align: justify;
+}
+.pack-includes__wrap:after{
+    display: inline-block;
+    width: 100%;
+    content: "";
 }
 .pack-includes__item{
     display: inline-block;
     vertical-align: top;
     width: 250px;
-    font-size: 20px;
+    margin-bottom: 70px;
+    font: 20px "Proxima Nova Light";
     text-align: center;
 }
 .pack-includes__pic{
@@ -117,7 +135,7 @@
 }
 .pack-includes__title{
     display: block;
-    font-size: 22px;
+    font: 22px "Proxima Nova Regular";
     margin-bottom: 10px;
 }
 

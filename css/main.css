@@ -90,8 +90,9 @@
 .screen {
     position: relative;
     height: 100vh;
+    width: 100%;
     overflow: hidden;
-    background: #FFF;
+    background: #fff;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
@@ -127,13 +128,55 @@
 .customizable {
     text-align: center;
     position: relative;
-    padding-bottom: 27.92vh;
-    padding-top: 27.2vh;
+    padding: 16vh 10vw;
+}
+
+.customizable .site__title{
+    font-size: 4.9vh;
+    line-height: 4.9vh;
+    padding-bottom: 2vh;
+}
+
+.customizable p{
+    font: 400 3vh/4.4vh 'Proxima Nova Light';
+    margin-bottom: 5vh;
+}
+
+.customizable > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    position: relative;
+}
+
+.customizable__wrap__image img{
+    width: 80vw;
+    -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+    box-shadow:         0 0 30px 0 rgba(0, 0, 0, 0.05);
 }
 /* --------------- /customizable --------------- */
 
 @media (min-width: 768px) {
+    /* --------------- customizable --------------- */
+    .customizable {
+        padding: 16vh 10vw;
+    }
 
+    .customizable .site__title{
+        font-size: 4.9vh;
+        line-height: 4.9vh;
+        padding-bottom: 2vh;
+    }
+
+    .customizable p{
+        font: 400 3vh/4.4vh 'Proxima Nova Light';
+        margin-bottom: 5vh;
+    }
+
+    .customizable__wrap__image img{
+        width: 80vw;
+    }
+    /* --------------- /customizable --------------- */
 }
 @media (min-width: 992px) {
 

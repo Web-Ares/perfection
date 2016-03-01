@@ -30,7 +30,8 @@ var Screen = function (obj) {
                 console.log(i, $(_item[i]).offset().top);
                 var itemTopPosition = $(_item[i]).offset().top;
 
-                if (_oldTopPosition > itemTopPosition) {
+                if (curentTopPosition > itemTopPosition) {
+                    console.log('itempos', itemTopPosition);
                     _obj.getNiceScroll(0).doScrollTop(itemTopPosition, 300);
                     setTimeout(function () {
                         _onEvents();

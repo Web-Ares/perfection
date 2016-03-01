@@ -97,6 +97,32 @@
 }
 /* --------------- /screen --------------- */
 
+/* --------------- pack-includes --------------- */
+.pack-includes{
+    background: #242a2f;
+}
+.pack-includes__item{
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    font-size: 20px;
+    text-align: center;
+}
+.pack-includes__pic{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.pack-includes__title{
+    display: block;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* --------------- /pack-includes --------------- *//* --------------- /screen --------------- */
+
 
 @media (min-width: 768px) {
 

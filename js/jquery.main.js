@@ -1,13 +1,6 @@
 $(function(){
 
-    $( '.site' ).niceScroll({
-        cursorcolor: '#c00',
-        mousescrollstep: $(window).height()
-    });
-
-    /*$( '.site' ).getNiceScroll(0).doScrollTop(y, 1);*/
-
-    $( '.screen' ).each( function() {
+    $( '.site' ).each( function() {
         new Screen( $( this ) );
     } );
 
@@ -17,23 +10,92 @@ var Screen = function (obj) {
 
     //private properties
     var _self = this,
-        _obj = obj;
+        _obj = obj,
+        _oldTopPosition = 0,
+        _item = _obj.find( '.screen' );
 
     _obj[ 0 ].obj = _self;
 
     //private methods
     var _onEvents = function () {
+            _item.on({
+                'mousewheel': function(event){
+                    var curentTopPosition = $('.site').scrollTop();
 
-            _obj.on({
-                'mousewheel': function(){
+                    console.error(_oldTopPosition,curentTopPosition)
+                    var nice = $(".site").getNiceScroll();
+                    console.log(event);
 
+                    if ( curentTopPosition == 0) {
+                        console.log('stop')
+                    }
+                    else if ( curentTopPosition > _oldTopPosition ) {
+                        console.log('down');
+                        _item.each( function(){
 
+                                    var itemTopPosition = $(this).offset().top;
+
+                                    if ( curentTopPosition < itemTopPosition ){
+                                        $(_obj).getNiceScroll(0).doScrollTop(itemTopPosition, 1000);
+                                        return false;
+
+                                    }
+
+                                })
+
+                    }
+                    else if ( curentTopPosition < _oldTopPosition ) {
+                        console.log('up');
+                        _item.each( function(){
+
+                                    var itemTopPosition = $(this).offset().top;
+
+                                    if ( curentTopPosition > itemTopPosition ){
+                                        $(_obj).getNiceScroll(0).doScrollTop(itemTopPosition, 1000);
+                                        return false;
+
+                                    }
+
+                                })
+
+                    }
+
+                    //if ( curentTopPosition == 0) {
+                    //    console.log(1);
+                    //
+                    //    _oldTopPosition = 0;
+                    //}else if ( curentTopPosition > _oldTopPosition ) {
+                    //    console.log(2);
+                    //
+                    //
+                    //
+                    //}
+                    //else if ( curentTopPosition < _oldTopPosition ) {
+                    //    console.log(3);
+                    //
+                    //
+                    //
+                    //}
+                    _oldTopPosition = curentTopPosition;
                 }
+
             });
 
         },
+        _initContentScroll = function(){
+            _obj.niceScroll({
+                cursorcolor: '#000',
+                zindex: 10,
+                autohidemode: false,
+                horizrailenabled: false,
+                cursorborderradius: 0,
+                cursorwidth: '5px'
+
+            });
+        },
         _init = function () {
             _onEvents();
+            _initContentScroll();
         };
 
     //public properties

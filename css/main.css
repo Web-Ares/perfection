@@ -50,6 +50,7 @@
 }
 /* --------------- /logo --------------- */
 
+/* --------------- screen --------------- */
 .screen {
     position: relative;
     height: 100vh;
@@ -58,3 +59,4 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
+/* --------------- /screen --------------- */

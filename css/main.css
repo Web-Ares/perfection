@@ -30,8 +30,20 @@
 
 /* --------------- fonts --------------- */
 @font-face {
-    font-family: "Font Name";
-    src: url("../fonts/font.woff") format("woff");
+    font-family: "Proxima Nova Bold";
+    src: url("../fonts/proximanova-bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Proxima Nova Light";
+    src: url("../fonts/proximanova-light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Proxima Nova Regular";
+    src: url("../fonts/proximanova-regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }

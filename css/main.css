@@ -28,6 +28,27 @@
 }
 /* --------------- /placeholder --------------- */
 
+/* --------------- fonts --------------- */
+@font-face {
+    font-family: "proximanova-bold";
+    src: url("../fonts/proximanova-bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "proximanova-light";
+    src: url("../fonts/proximanova-light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "proximanova-regular";
+    src: url("../fonts/proximanova-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+/* --------------- /fonts --------------- */
+
 /* --------------- site --------------- */
 .site {
     height: 100vh;
@@ -39,6 +60,21 @@
 .site__content {
     position: relative;
     z-index: 2;
+}
+.site__centered{
+    position: relative;
+    z-index: 1;
+    max-width: 1211px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.site__title{
+    margin: 0 0 10px;
+    font-size: 66px;
+    line-height: 64px;
+    font-family: "proximanova-bold", sans-serif;
+    font-weight: 400;
+    color: #151414;
 }
 /* --------------- /site --------------- */
 
@@ -60,3 +96,14 @@
     transform: translateZ(0);
 }
 /* --------------- /screen --------------- */
+
+
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}

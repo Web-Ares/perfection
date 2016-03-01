@@ -141,6 +141,14 @@
 
 /* --------------- /pack-includes --------------- *//* --------------- /screen --------------- */
 
+/* --------------- customizable --------------- */
+.customizable {
+    text-align: center;
+    position: relative;
+    padding-bottom: 27.92vh;
+    padding-top: 27.2vh;
+}
+/* --------------- /customizable --------------- */
 
 @media (min-width: 768px) {
 
@@ -149,5 +157,11 @@
 
 }
 @media (min-width: 1200px) {
-
+    /* --------------- customizable --------------- */
+    .customizable {
+        position: relative;
+        padding-bottom: 27.92vh;
+        padding-top: 27.2vh;
+    }
+    /* --------------- /customizable --------------- */
 }

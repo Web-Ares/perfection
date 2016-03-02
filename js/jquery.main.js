@@ -43,10 +43,8 @@ var Screen = function (obj) {
                 } else {// вниз
                     _cur_direct = -1;
                 }
-                console.log(_cur_screen, _cur_direct)
             });
             $('.site').getNiceScroll(0).scrollend(function (info) {
-                console.log(info);
                 _slideFunc(info);
             });
 

@@ -62,10 +62,25 @@
     color: #666666;
 }
 .site__header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    max-width: 1920px;
+    padding: 0 3.6%;
+    height: 79px;
+    z-index: 3;
+    margin: 0 auto;
+    font: 18px "Proxima Nova Semibold", sans-serif;
+    -webkit-transition: -webkit-transform .3s linear, background .3s, top .3s, opacity .3s;
+    transition: transform .3s linear, background .3s, top .3s, opacity .3s;
+    -webkit-transition: transform .3s linear, background .3s, top .3s, opacity .3s;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    text-align: right;
+}
+.site__header-layout{
+    position: relative;
+    max-width: 1484px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 .site__content {
     position: relative;
@@ -94,6 +109,9 @@
     top: 0;
     left: 0;
 }
+.logo img{
+    max-width: 67px;
+}
 /* --------------- /logo --------------- */
 
 /* --------------- btn --------------- */
@@ -112,6 +130,11 @@
     -webkit-transition: -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
     transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
 }
+.btn_1 {
+    display: block;
+    width: 180px;
+    margin: 0 auto;
+}
 /* --------------- /btn --------------- */
 
 /* --------------- screen --------------- */
@@ -124,11 +147,35 @@
 }
 /* --------------- /screen --------------- */
 
+/* --------------- dropmenu --------------- */
+.drop-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1564be;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275), top .3s;
+    transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), top .3s;
+}
+.drop-menu__inner {
+    position: relative;
+    height: 100vh;
+    max-width: 1035px;
+    margin: 0 auto;
+    padding: 138px 3.6% 0;
+}
+/* --------------- /dropmenu --------------- */
+
 /* --------------- promo --------------- */
 .promo{
-    padding-top: 22vh;
     text-align: center;
     background-color: #242a2f;
+}
+.promo__wrap{
+
 }
 .promo__logo{
     max-width: 728px;
@@ -140,6 +187,10 @@
 .promo__content{
     color: #999;
     font: 28px/38px "Proxima Nova Light", sans-serif;
+}
+.promo:after{
+    width: 1px;
+    background-color: #fff;
 }
 /* --------------- /promo --------------- */
 

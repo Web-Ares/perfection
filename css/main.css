@@ -14,6 +14,9 @@
     site
 
     logo
+
+    categories
+
 */
 
 /* --------------- placeholder --------------- */
@@ -390,6 +393,16 @@
     transform: translateX(-50%) translateY(-50%) scale(0.5);
 }
 /* --------------- /sharpest-icons --------------- */
+
+/* ------------ categories ------------ */
+.categories {
+    text-align: center;
+}
+.categories .site__title {}
+.categories p {
+    font-size: 4.7vmin;
+}
+/* ------------ /categories ------------ */
 
 
 @media (min-width: 768px) {

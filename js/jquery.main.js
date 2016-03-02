@@ -15,54 +15,54 @@ var Screen = function (obj) {
         _obj = obj,
         _cur_screen = 0,
         _cur_direct = 0,
-        isScroll = false,
-        _item = _obj.find('.screen');
+        _isWheel = false;
+    _isAnimation = false;
+    _item = _obj.find('.screen');
 
     _obj[0].obj = _self;
 
     //private methods
 
 
-    var _slideFunc = function (info) {
-            //var curentBlockTopPosition = parseInt(info.end.y);
-            var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
-            if (_cur_direct !== 0) {
-                if (_cur_direct < 0 && _cur_screen != 0) {
-                    sliderDown(curentTopPosition);
-                } else {
-                    sliderUp(curentTopPosition);
+    var _slideFunc = function (e) {
+            var curentTopPosition = $('.site').scrollTop();
+            if (!_isWheel) {
+                _isWheel = true;
+                console.log(curentTopPosition);
+                if (_cur_direct !== 0) {
+                    if (_cur_direct < 0 && _cur_screen != 0) {
+                        sliderDown(curentTopPosition);
+                    } else {
+                        sliderUp(curentTopPosition);
+                    }
                 }
             }
 
         },
 
-        sliderUp = function (curentTopPosition) {
+        sliderUp = function () {
             console.log('up');
             if (_cur_screen.prev('.screen').length > 0) {
                 var itemTopPosition = _cur_screen.prev('.screen').offset().top;
             } else {
                 var itemTopPosition = 0;
             }
-            isScroll = true;
-            _obj.getNiceScroll(0).doScrollTop(_obj.getNiceScroll(0).getScrollTop() - Math.abs(itemTopPosition), 300);
-            setTimeout(function () {
-                isScroll = false;
-            }, 305);
+            $('.site').scrollTop(itemTopPosition);
+
         },
 
-        sliderDown = function (curentTopPosition) {
+        sliderDown = function () {
             console.log('down');
             if (_cur_screen.next('.screen').length > 0) {
                 var itemTopPosition = _cur_screen.next('.screen').offset().top;
             } else {
                 var itemTopPosition = 0;
             }
-
-            isScroll = true;
-            _obj.getNiceScroll(0).doScrollTop(_obj.getNiceScroll(0).getScrollTop() + itemTopPosition, 300);
-            setTimeout(function () {
-                isScroll = false;
-            }, 305);
+            console.log(itemTopPosition);
+            $('.site').scrollTop(itemTopPosition);
+            //setTimeout(function () {
+            //    _item.mousewheel(_slideFunc);
+            //}, 1000);
         },
 
         _onEvents = function () {
@@ -82,18 +82,15 @@ var Screen = function (obj) {
                 } else {// вниз
                     _cur_direct = 1;
                 }
+                _slideFunc(e);
             });
 
 
-            $('.site').getNiceScroll(0).scrollend(function (info) {
-                if (isScroll == false) {
-                    _slideFunc(info);
-                }
-            });
+            //
+            //$('.site').getNiceScroll(0).scrollend(function (e) {
+            //    console.log('scrollend');
+            //});
 
-
-        },
-        _onMobileEvents = function () {
 
         },
         _checkResize = function () {

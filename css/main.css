@@ -57,6 +57,12 @@
     position: relative;
     z-index: 1;
 }
+.site__header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 .site__content {
     position: relative;
     z-index: 2;
@@ -91,11 +97,29 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: #FFF;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
 /* --------------- /screen --------------- */
+
+/* --------------- promo --------------- */
+.promo{
+    padding-top: 22vh;
+    text-align: center;
+    background-color: #242a2f;
+}
+.promo__logo{
+    max-width: 728px;
+}
+.promo__topic{
+    color: #fff;
+    font: normal 66px/64px "Proxima Nova Bold", sans-serif;
+}
+.promo__content{
+    color: #999;
+    font: 28px/38px "Proxima Nova Light", sans-serif;
+}
+/* --------------- /promo --------------- */
 
 /* --------------- pack-includes --------------- */
 .pack-includes{

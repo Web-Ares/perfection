@@ -68,12 +68,15 @@
     color: #666666;
 }
 .site__header{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     max-width: 1920px;
-    padding: 0 3.6%;
     height: 79px;
-    z-index: 3;
     margin: 0 auto;
+    padding: 45px 0;
+    z-index: 3;
     font: 18px "Proxima Nova Semibold", sans-serif;
     -webkit-transition: -webkit-transform .3s linear, background .3s, top .3s, opacity .3s;
     transition: transform .3s linear, background .3s, top .3s, opacity .3s;
@@ -86,7 +89,6 @@
     position: relative;
     max-width: 1484px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 .site__content {
     position: relative;
@@ -143,6 +145,55 @@
 }
 /* --------------- /btn --------------- */
 
+/* --------------- header-menu --------------- */
+.header-menu__item{
+    display: inline-block;
+    padding-top: 7px;
+    margin-right: 34px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.header-menu__item:hover{
+    opacity: .8;
+}
+/* --------------- /header-menu --------------- */
+
+/* --------------- drop-menu --------------- */
+.drop-menu-btn{
+    position: relative;
+    vertical-align: top;
+    top: 3px;
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    margin-right: 1px;
+    overflow: hidden;
+    text-indent: 999px;
+}
+.drop-menu-btn span,
+.drop-menu-btn span:after,
+.drop-menu-btn span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #fff;
+}
+.drop-menu-btn span{
+    top: 11px;
+}
+.drop-menu-btn span:after{
+    top: 10px;
+}
+.drop-menu-btn span:before{
+    top: -10px;
+}
+/* --------------- /drop-menu --------------- */
+
 /* --------------- screen --------------- */
 .screen {
     position: relative;
@@ -177,26 +228,44 @@
 
 /* --------------- promo --------------- */
 .promo{
+    padding-top: 16px;
     text-align: center;
     background-color: #242a2f;
 }
-.promo__wrap{
-
-}
 .promo__logo{
     max-width: 728px;
+    margin-bottom: 96px;
 }
 .promo__topic{
+    margin-bottom: 20px;
     color: #fff;
     font: normal 66px/64px "Proxima Nova Bold", sans-serif;
 }
 .promo__content{
+    margin-bottom: 101px;
     color: #999;
     font: 28px/38px "Proxima Nova Light", sans-serif;
 }
+.promo:after,
+.promo:before{
+    position: absolute;
+    left: 50%;
+    bottom: 55px;
+    content: '';
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
 .promo:after{
-    width: 1px;
-    background-color: #fff;
+    height: 30px;
+    border-left: 1px solid #fff;
+}
+.promo:before{
+    width: 7px;
+    height: 7px;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: translateX(-50%) rotate(-45deg);
+    -webkit-transform: translateX(-50%) rotate(-45deg);
 }
 /* --------------- /promo --------------- */
 
@@ -375,6 +444,16 @@
         transform: translateX(-50%) translateY(-50%);
     }
     /* --------------- /sharpest-icons --------------- */
+
+    /* --------------- promo --------------- */
+    .promo{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+    }
+    /* --------------- /promo --------------- */
 
 }
 @media (min-width: 992px) {

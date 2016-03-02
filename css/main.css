@@ -52,10 +52,14 @@
 /* --------------- site --------------- */
 .site {
     height: 100vh;
-    min-width: 1000px;
+    min-width: 320px;
     overflow: hidden;
     position: relative;
     z-index: 1;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Proxima Nova Light", sans-serif;
+    color: #666666;
 }
 .site__content {
     position: relative;
@@ -69,9 +73,9 @@
     margin: 0 auto;
 }
 .site__title{
-    margin: 0 0 10px;
-    font-size: 66px;
-    line-height: 64px;
+    margin: 0 0 20px;
+    font-size: 26px;
+    line-height: 24px;
     font-family: "Proxima Nova Bold", sans-serif;
     font-weight: 400;
     color: #151414;
@@ -85,6 +89,24 @@
     left: 0;
 }
 /* --------------- /logo --------------- */
+
+/* --------------- btn --------------- */
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    height: 30px;
+    background: #1565c0;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 30px;
+    line-height: 14px;
+    text-align: center;
+    font-family: "Proxima Nova Regular", sans-serif;
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275);
+    transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+/* --------------- /btn --------------- */
 
 /* --------------- screen --------------- */
 .screen {
@@ -139,7 +161,7 @@
     margin-bottom: 10px;
 }
 
-/* --------------- /pack-includes --------------- *//* --------------- /screen --------------- */
+/* --------------- /pack-includes --------------- */
 
 /* --------------- customizable --------------- */
 .customizable {
@@ -149,14 +171,159 @@
     padding-top: 27.2vh;
 }
 /* --------------- /customizable --------------- */
+/* --------------- sharpest-icons --------------- */
+.sharpest-icons{
+    padding: 20px 0;
+}
+.sharpest-icons__text{
+    margin: 0 0 20px;
+}
+.sharpest-icons__approved{
+    display: flex;
+    margin: 0 0 20px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-size: 12px;
+    line-height: 18px;
+}
+.sharpest-icons__approved-img{
+    margin-right: 10px;
+    direction: rtl;
+    white-space: nowrap;
+}
+.sharpest-icons__approved-img img {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 0 0 0 -21px;
+    border: 4px solid #fff;
+    border-radius: 56px;
+}
+.sharpest-icons__approved-img img:last-child{
+    margin-left: 0;
+}
+.sharpest-icons__approved-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sharpest-icons__list>div{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 18%;
+    height: 50px;
+}
+.sharpest-icons__list>div img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.5);
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
+}
+/* --------------- /sharpest-icons --------------- */
+
 
 @media (min-width: 768px) {
+
+    /* --------------- site --------------- */
+    .site {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .site__title{
+        margin: 0 0 29px;
+        font-size: 36px;
+        line-height: 34px;
+    }
+    .site_justify{
+        text-align: justify;
+    }
+    .site_justify:after{
+        display: inline-block;
+        width: 100%;
+        height: 0;
+        content: '';
+    }
+    /* --------------- /site --------------- */
+
+    /* --------------- btn --------------- */
+    .btn {
+        height: 44px;
+        font-size: 18px;
+        border-radius: 44px;
+        line-height: 18px;
+    }
+    /* --------------- /btn --------------- */
+
+    /* --------------- sharpest-icons --------------- */
+    .sharpest-icons{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+    }
+    .sharpest-icons__layout{
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+        text-align: left;
+    }
+    .sharpest-icons__text{
+        margin: 0 0 39px;
+    }
+    .sharpest-icons__approved{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .sharpest-icons__list{
+        display: inline-block;
+        vertical-align: top;
+        width: 43.5%;
+        margin: -15px -23px 0 0;
+        text-align: left;
+    }
+    .sharpest-icons__list>div{
+        height: 100px;
+    }
+    .sharpest-icons__list>div img{
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+    /* --------------- /sharpest-icons --------------- */
 
 }
 @media (min-width: 992px) {
 
 }
 @media (min-width: 1200px) {
+
+    /* --------------- site --------------- */
+    .site {
+        font-size: 26px;
+        line-height: 38px;
+    }
+    .site__title{
+        margin: 0 0 29px;
+        font-size: 66px;
+        line-height: 64px;
+    }
+    /* --------------- /site --------------- */
+
+    /* --------------- sharpest-icons --------------- */
+    .sharpest-icons__text{
+        margin: 0 0 39px;
+    }
+    .sharpest-icons__approved{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    /* --------------- /sharpest-icons --------------- */
+
+
     /* --------------- customizable --------------- */
     .customizable {
         position: relative;

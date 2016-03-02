@@ -13,9 +13,9 @@ var Screen = function (obj) {
     //private properties
     var _self = this,
         _obj = obj,
-        _oldTopPosition = 0,
         _cur_screen = 0,
         _cur_direct = 0,
+        isScroll = false,
         _item = _obj.find('.screen');
 
     _obj[0].obj = _self;
@@ -24,13 +24,52 @@ var Screen = function (obj) {
 
 
     var _slideFunc = function (info) {
-            var curentTopPosition = parseInt(info.end.y);
+            //var curentBlockTopPosition = parseInt(info.end.y);
+            var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
+            if (_cur_direct !== 0) {
+                if (_cur_direct < 0 && _cur_screen != 0) {
+                    sliderDown(curentTopPosition);
+                } else {
+                    sliderUp(curentTopPosition);
+                }
+            }
+
+        },
+
+        sliderUp = function (curentTopPosition) {
+            console.log('up');
+            if (_cur_screen.prev('.screen').length > 0) {
+                var itemTopPosition = _cur_screen.prev('.screen').offset().top;
+            } else {
+                var itemTopPosition = 0;
+            }
+            isScroll = true;
+            _obj.getNiceScroll(0).doScrollTop(_obj.getNiceScroll(0).getScrollTop() - Math.abs(itemTopPosition), 300);
+            setTimeout(function () {
+                isScroll = false;
+            }, 305);
+        },
+
+        sliderDown = function (curentTopPosition) {
+            console.log('down');
+            if (_cur_screen.next('.screen').length > 0) {
+                var itemTopPosition = _cur_screen.next('.screen').offset().top;
+            } else {
+                var itemTopPosition = 0;
+            }
+
+            isScroll = true;
+            _obj.getNiceScroll(0).doScrollTop(_obj.getNiceScroll(0).getScrollTop() + itemTopPosition, 300);
+            setTimeout(function () {
+                isScroll = false;
+            }, 305);
         },
 
         _onEvents = function () {
             $(window).resize(function () {
                 _checkResize();
             });
+
             _item.mousewheel(function (e) {
                 if ($(event.target).hasClass('screen')) {
                     _cur_screen = $(event.target);
@@ -39,14 +78,22 @@ var Screen = function (obj) {
                 }
 
                 if (event.deltaY > 0) {//вверх
-                    _cur_direct = 1;
-                } else {// вниз
                     _cur_direct = -1;
+                } else {// вниз
+                    _cur_direct = 1;
                 }
             });
+
+
             $('.site').getNiceScroll(0).scrollend(function (info) {
-                _slideFunc(info);
+                if (isScroll == false) {
+                    _slideFunc(info);
+                }
             });
+
+
+        },
+        _onMobileEvents = function () {
 
         },
         _checkResize = function () {
@@ -64,7 +111,8 @@ var Screen = function (obj) {
                 cursorborderradius: 0,
                 cursorwidth: '5px',
                 touchbehavior: false,
-                bouncescroll: false
+                bouncescroll: false,
+                mousescrollstep: 100
             });
         },
         _init = function () {

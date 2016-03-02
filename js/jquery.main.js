@@ -11,60 +11,50 @@ var Screen = function (obj) {
     //private properties
     var _self = this,
         _obj = obj,
-        _oldTopPosition = 0,
         _item = _obj.find('.screen');
 
     _obj[0].obj = _self;
 
     //private methods
-    isUp = function (curentTopPosition) {
-        var isFind = false;
-        for (var i = $(_item).length - 1; i >= 0; i--) {
-            var itemTopPosition = $(_item[i]).offset().top;
-
-            if (curentTopPosition > itemTopPosition && !isFind) {
-                _obj.getNiceScroll(0).doScrollTop(itemTopPosition, 300);
-                isFind = true;
-                return false;
-            }
+    sliderUp = function (curentTopPosition, cur_screen) {
+        if (cur_screen.prev('.screen').length > 0) {
+            var itemTopPosition = cur_screen.prev('.screen').offset().top;
+        } else {
+            var itemTopPosition = 0;
         }
-        return isFind;
+        _obj.getNiceScroll(0).doScrollTo(_obj.getNiceScroll(0).getScrollTop()-Math.abs(itemTopPosition), 300);
     };
-    isDown = function (curentTopPosition) {
-        var isFind = false;
-        _item.each(function () {
-            var itemTopPosition = $(this).offset().top;
-            if (curentTopPosition < itemTopPosition && !isFind) {
-                _obj.getNiceScroll(0).doScrollTop(itemTopPosition, 300);
-                isFind = true;
-                return false;
-            }
-
-        });
-        return isFind;
+    sliderDown = function (curentTopPosition, cur_screen) {
+        if (cur_screen.next('.screen').length > 0) {
+            var itemTopPosition = cur_screen.next('.screen').offset().top;
+        } else {
+            var itemTopPosition = 0;
+        }
+        console.log('downTo',_obj.getNiceScroll(0).getScrollTop());
+        _obj.getNiceScroll(0).doScrollTo(_obj.getNiceScroll(0).getScrollTop()+itemTopPosition, 300);
     };
     _func = function (event) {
-        console.log($(event.target).parent());
+        console.log($('.site').getNiceScroll(0));
+        if ($(event.target).hasClass('screen')) {
+            var cur_screen = $(event.target);
+        } else {
+            var cur_screen = $(event.target).parents('.screen');
+        }
+
         var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
         _item.unmousewheel(_func);
 
-        console.log($('.site').getNiceScroll(0).getScrollTop());
-        //$('.site').getNiceScroll(0).unbindAll();
+        $('.site').getNiceScroll(0).unbindAll();
 
         if (event.deltaY > 0) {//вверх
-            isUp(curentTopPosition)
-                setTimeout(function () {
-                    _item.mousewheel(_func);
-                }, 500);
-
+            sliderUp(curentTopPosition, cur_screen)
         } else {// вниз
-            isDown(curentTopPosition);
-                setTimeout(function () {
-                    _item.mousewheel(_func);
-                }, 500);
-
+            sliderDown(curentTopPosition, cur_screen);
         }
 
+        setTimeout(function () {
+            _item.mousewheel(_func);
+        }, 1000);
     };
     var _onEvents = function () {
             _item.mousewheel(_func);

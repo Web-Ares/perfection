@@ -56,7 +56,7 @@ var Screen = function (obj) {
         _item.unmousewheel();
 
         console.log($('.site').getNiceScroll(0).getScrollTop());
-        $('.site').getNiceScroll(0).unbindAll();
+        //$('.site').getNiceScroll(0).unbindAll();
 
         if (event.deltaY > 0) {//вверх
             if (!isUp(curentTopPosition)) {

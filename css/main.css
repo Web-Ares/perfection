@@ -47,6 +47,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "Proxima Nova Semibold";
+    src: url("../fonts/proximanova-semibold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 /* --------------- /fonts --------------- */
 
 /* --------------- site --------------- */

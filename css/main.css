@@ -61,7 +61,7 @@
 /* --------------- site --------------- */
 .site {
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     min-width: 320px;
     position: relative;
     z-index: 1;

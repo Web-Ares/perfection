@@ -24,7 +24,6 @@ var Screen = function (obj) {
 
     var _initContentScroll = function () {
             $('#fullpage').fullpage({
-                //anchors: ['firstPage', 'secondPage', '3rdPage'],
                 scrollOverflow: true
             });
         },

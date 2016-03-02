@@ -41,7 +41,7 @@
     var COMPLETELY_SEL =        '.' + COMPLETELY;
 
     // section
-    var SECTION_DEFAULT_SEL =   '.section';
+    var SECTION_DEFAULT_SEL =   '.screen';
     var SECTION =               'fp-section';
     var SECTION_SEL =           '.' + SECTION;
     var SECTION_ACTIVE_SEL =    SECTION_SEL + ACTIVE_SEL;
@@ -2746,8 +2746,8 @@
             element.find(SCROLLABLE_SEL).slimScroll({
                 allowPageScroll: true,
                 height: scrollHeight + 'px',
-                size: '10px',
-                alwaysVisible: true
+                size: '5px',
+                alwaysVisible: false
             });
         },
 

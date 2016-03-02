@@ -24,7 +24,7 @@ var Screen = function (obj) {
 
     var _initContentScroll = function () {
             $('#fullpage').fullpage({
-                scrollOverflow: true
+                //scrollOverflow: true
             });
             _obj.niceScroll({
                 cursorcolor: '#000',
@@ -37,6 +37,7 @@ var Screen = function (obj) {
                 bouncescroll: false,
                 mousescrollstep: 100
             });
+            $('.site').getNiceScroll(0).unbindAll();
         },
         _init = function () {
             _initContentScroll();

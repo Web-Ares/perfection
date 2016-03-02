@@ -129,25 +129,86 @@ var Screen = function (obj) {
     _obj[0].obj = _self;
 
     //private methods
+    sliderUp = function (curentTopPosition, cur_screen) {
+        if (cur_screen.prev('.screen').length > 0) {
+            var itemTopPosition = cur_screen.prev('.screen').offset().top;
+        } else {
+            var itemTopPosition = 0;
+        }
+        _obj.getNiceScroll(0).doScrollTo(_obj.getNiceScroll(0).getScrollTop() - Math.abs(itemTopPosition), 300);
+    };
 
+    sliderDown = function (curentTopPosition, cur_screen) {
+        if (cur_screen.next('.screen').length > 0) {
+            var itemTopPosition = cur_screen.next('.screen').offset().top;
+        } else {
+            var itemTopPosition = 0;
+        }
+        console.log('downTo', _obj.getNiceScroll(0).getScrollTop());
+        _obj.getNiceScroll(0).doScrollTo(_obj.getNiceScroll(0).getScrollTop() + itemTopPosition, 300);
+    };
 
-    _slideFunc = function (info) {
-        var curentTopPosition = parseInt(info.end.y);
+    _mobileEvents = function (event) {
+        if ($(event.target).hasClass('screen')) {
+            var cur_screen = $(event.target);
+        } else {
+            var cur_screen = $(event.target).parents('.screen');
+        }
+
+        var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
+        if (event.deltaY > 0) {//вверх
+            console.log('up');
+            sliderUp(curentTopPosition, cur_screen)
+        } else {// вниз
+            console.log('down');
+            sliderDown(curentTopPosition, cur_screen);
+        }
+    };
+
+    _func = function (event) {
+        console.log($('.site').getNiceScroll(0));
+        if ($(event.target).hasClass('screen')) {
+            var cur_screen = $(event.target);
+        } else {
+            var cur_screen = $(event.target).parents('.screen');
+        }
+
+        var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
+        _item.unmousewheel(_func);
+
+        //$('.site').getNiceScroll(0).unbindAll();
+
+        if (event.deltaY > 0) {//вверх
+            sliderUp(curentTopPosition, cur_screen)
+        } else {// вниз
+            sliderDown(curentTopPosition, cur_screen);
+        }
+
+        setTimeout(function () {
+            _item.mousewheel(_func);
+        }, 1000);
     };
 
     var _onEvents = function () {
             $(window).resize(function () {
                 _checkEvents();
-            });
-            $('.site').getNiceScroll(0).scrollend(function(info){
-                console.log(info);
-                _slideFunc(info);
-            });
+            })
         },
-        _checkResize = function(){
-            console.log($('.site').getNiceScroll(0));
-            if ($(window).width() <= 768) {
-
+        _checkEvents = function(){
+            if ($(window).width() >= 768) {
+                //_item.mousewheel(_func);
+            } else {
+                console.log($('.site').niceScroll());
+                $('.site').getNiceScroll(0).scrollend(function(info){
+                    console.log(info,'info');
+                });
+                //$('.site').getNiceScroll(0).scrollstart(function(info){
+                //    console.log(info,'info');
+                //});
+                //$('.site').getNiceScroll(0).onscroll(function(info){
+                //    console.log(info,'info');
+                //});
+                _item.unmousewheel(_func);
             }
         },
         _initContentScroll = function () {
@@ -158,14 +219,15 @@ var Screen = function (obj) {
                 horizrailenabled: false,
                 cursorborderradius: 0,
                 cursorwidth: '5px',
-                touchbehavior:false,
+                touchbehavior:true,
                 bouncescroll: false
+
             });
         },
         _init = function () {
+            //_checkEvents();
+            //_onEvents();
             _initContentScroll();
-            _checkResize();
-            _onEvents();
         };
 
     //public properties

@@ -207,8 +207,8 @@
 /* --------------- screen --------------- */
 .screen {
     position: relative;
-    height: 100vh;
     overflow: hidden;
+    min-height: 100vh;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
@@ -415,6 +415,12 @@
     }
     /* --------------- /site --------------- */
 
+    /* --------------- screen --------------- */
+    .screen {
+        height: 100vh;
+    }
+    /* --------------- screen --------------- */
+
     /* --------------- btn --------------- */
     .btn {
         height: 44px;
@@ -506,4 +512,8 @@
         padding-top: 27.2vh;
     }
     /* --------------- /customizable --------------- */
+}
+
+@media (min-height: 600px) {
+
 }

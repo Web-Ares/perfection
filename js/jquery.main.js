@@ -13,6 +13,9 @@ var Screen = function (obj) {
     //private properties
     var _self = this,
         _obj = obj,
+        _oldTopPosition = 0,
+        _cur_screen = 0,
+        _cur_direct = 0,
         _item = _obj.find('.screen');
 
     _obj[0].obj = _self;
@@ -20,20 +23,35 @@ var Screen = function (obj) {
     //private methods
 
 
-    _slideFunc = function (info) {
-        var curentTopPosition = parseInt(info.end.y);
-    };
+    var _slideFunc = function (info) {
+            var curentTopPosition = parseInt(info.end.y);
+        },
 
-    var _onEvents = function () {
+        _onEvents = function () {
             $(window).resize(function () {
                 _checkResize();
             });
-            $('.site').getNiceScroll(0).scrollend(function(info){
+            _item.mousewheel(function (e) {
+                if ($(event.target).hasClass('screen')) {
+                    _cur_screen = $(event.target);
+                } else {
+                    _cur_screen = $(event.target).parents('.screen');
+                }
+
+                if (event.deltaY > 0) {//вверх
+                    _cur_direct = 1;
+                } else {// вниз
+                    _cur_direct = -1;
+                }
+                console.log(_cur_screen, _cur_direct)
+            });
+            $('.site').getNiceScroll(0).scrollend(function (info) {
                 console.log(info);
                 _slideFunc(info);
             });
+
         },
-        _checkResize = function(){
+        _checkResize = function () {
             console.log($('.site').getNiceScroll(0));
             if ($(window).width() <= 768) {
 
@@ -47,7 +65,7 @@ var Screen = function (obj) {
                 horizrailenabled: false,
                 cursorborderradius: 0,
                 cursorwidth: '5px',
-                touchbehavior:false,
+                touchbehavior: false,
                 bouncescroll: false
             });
         },
@@ -114,12 +132,12 @@ var Menu = function () {
         $(window).on({
             'scroll': function () {
                 var curItemScroll = $(window).scrollTop();
-                if(_header.hasClass('site__header_blog-article')){
-                    is_article=true;
+                if (_header.hasClass('site__header_blog-article')) {
+                    is_article = true;
                 }
                 if (!_header.hasClass('active')) {
                     if (curItemScroll >= 400) {
-                        if(is_article)
+                        if (is_article)
                             _header.removeClass('site__header_blog-article');
 
                         _header.addClass('fixed_header');
@@ -129,7 +147,7 @@ var Menu = function () {
                             _header.css({top: 0})
                         }, 500)
                     } else {
-                        if(is_article)
+                        if (is_article)
                             _header.addClass('site__header_blog-article');
 
                         _header.removeClass('fixed_header');

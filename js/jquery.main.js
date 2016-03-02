@@ -26,7 +26,7 @@ var Screen = function (obj) {
 
     var _onEvents = function () {
             $(window).resize(function () {
-                _checkEvents();
+                _checkResize();
             });
             $('.site').getNiceScroll(0).scrollend(function(info){
                 console.log(info);

@@ -26,6 +26,17 @@ var Screen = function (obj) {
             $('#fullpage').fullpage({
                 scrollOverflow: true
             });
+            _obj.niceScroll({
+                cursorcolor: '#000',
+                zindex: 10,
+                autohidemode: false,
+                horizrailenabled: false,
+                cursorborderradius: 0,
+                cursorwidth: '5px',
+                touchbehavior: false,
+                bouncescroll: false,
+                mousescrollstep: 100
+            });
         },
         _init = function () {
             _initContentScroll();

@@ -52,29 +52,29 @@ var Screen = function (obj) {
         return false;
     };
     _func = function (event) {
-        var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
-        _item.unmousewheel();
-
-        console.log($('.site').getNiceScroll(0).getScrollTop());
-        //$('.site').getNiceScroll(0).unbindAll();
-
-        if (event.deltaY > 0) {//вверх
-            if (!isUp(curentTopPosition)) {
-                setTimeout(function () {
-                    _item.mousewheel(function(e){
-                        _func(e);
-                    });
-                }, 1000);
-            }
-        } else {// вниз
-            if (!isDown(curentTopPosition)) {
-                setTimeout(function () {
-                    _item.mousewheel(function(e){
-                        _func(e);
-                    });
-                }, 1000);
-            }
-        }
+        //var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
+        //_item.unmousewheel();
+        //
+        //console.log($('.site').getNiceScroll(0).getScrollTop());
+        ////$('.site').getNiceScroll(0).unbindAll();
+        //
+        //if (event.deltaY > 0) {//вверх
+        //    if (!isUp(curentTopPosition)) {
+        //        setTimeout(function () {
+        //            _item.mousewheel(function(e){
+        //                _func(e);
+        //            });
+        //        }, 1000);
+        //    }
+        //} else {// вниз
+        //    if (!isDown(curentTopPosition)) {
+        //        setTimeout(function () {
+        //            _item.mousewheel(function(e){
+        //                _func(e);
+        //            });
+        //        }, 1000);
+        //    }
+        //}
 
 
     };

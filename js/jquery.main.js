@@ -1,6 +1,7 @@
 $(function () {
-
+if($('.drop-menu').length){
     menu = new Menu();
+}
 
     $('.site').each(function () {
         new Screen($(this));
@@ -12,110 +13,24 @@ var Screen = function (obj) {
 
     //private properties
     var _self = this,
-        _obj = obj,
-        _cur_screen = 0,
-        _cur_direct = 0,
-        _isWheel = false;
-    _isAnimation = false;
-    _item = _obj.find('.screen');
+        _obj = obj;
+    var _isAnimation = false;
+    var _item = _obj.find('.screen');
 
     _obj[0].obj = _self;
 
     //private methods
 
 
-    var _slideFunc = function (e) {
-            var curentTopPosition = $('.site').scrollTop();
-            if (!_isWheel) {
-                _isWheel = true;
-                console.log(curentTopPosition);
-                if (_cur_direct !== 0) {
-                    if (_cur_direct < 0 && _cur_screen != 0) {
-                        sliderDown(curentTopPosition);
-                    } else {
-                        sliderUp(curentTopPosition);
-                    }
-                }
-            }
-
-        },
-
-        sliderUp = function () {
-            console.log('up');
-            if (_cur_screen.prev('.screen').length > 0) {
-                var itemTopPosition = _cur_screen.prev('.screen').offset().top;
-            } else {
-                var itemTopPosition = 0;
-            }
-            $('.site').scrollTop(itemTopPosition);
-
-        },
-
-        sliderDown = function () {
-            console.log('down');
-            if (_cur_screen.next('.screen').length > 0) {
-                var itemTopPosition = _cur_screen.next('.screen').offset().top;
-            } else {
-                var itemTopPosition = 0;
-            }
-            console.log(itemTopPosition);
-            $('.site').scrollTop(itemTopPosition);
-            //setTimeout(function () {
-            //    _item.mousewheel(_slideFunc);
-            //}, 1000);
-        },
-
-        _onEvents = function () {
-            $(window).resize(function () {
-                _checkResize();
-            });
-
-            _item.mousewheel(function (e) {
-                if ($(event.target).hasClass('screen')) {
-                    _cur_screen = $(event.target);
-                } else {
-                    _cur_screen = $(event.target).parents('.screen');
-                }
-
-                if (event.deltaY > 0) {//вверх
-                    _cur_direct = -1;
-                } else {// вниз
-                    _cur_direct = 1;
-                }
-                _slideFunc(e);
-            });
-
-
-            //
-            //$('.site').getNiceScroll(0).scrollend(function (e) {
-            //    console.log('scrollend');
-            //});
-
-
-        },
-        _checkResize = function () {
-            console.log($('.site').getNiceScroll(0));
-            if ($(window).width() <= 768) {
-
-            }
-        },
-        _initContentScroll = function () {
-            _obj.niceScroll({
-                cursorcolor: '#000',
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursorwidth: '5px',
-                touchbehavior: false,
-                bouncescroll: false,
-                mousescrollstep: 100
+    var _initContentScroll = function () {
+            $('#fullpage').fullpage({
+                //anchors: ['firstPage', 'secondPage', '3rdPage'],
+                scrollOverflow: true
             });
         },
         _init = function () {
             _initContentScroll();
-            _checkResize();
-            _onEvents();
+
         };
 
     //public properties

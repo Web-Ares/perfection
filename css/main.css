@@ -61,6 +61,7 @@
 /* --------------- site --------------- */
 .site {
     height: 100%;
+    overflow: auto;
     min-width: 320px;
     position: relative;
     z-index: 1;
@@ -211,7 +212,7 @@
 .screen {
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }

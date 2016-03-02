@@ -395,15 +395,15 @@
 }
 /* --------------- /sharpest-icons --------------- */
 
-/* ------------ categories ------------ */
-.categories {
+/* ------------ icons-promo ------------ */
+.icons-promo {
     text-align: center;
 }
-.categories .site__title {}
-.categories p {
+.icons-promo .site__title {}
+.icons-promo p {
     font-size: 4.7vmin;
 }
-/* ------------ /categories ------------ */
+/* ------------ /icons-promo ------------ */
 
 
 @media (min-width: 768px) {

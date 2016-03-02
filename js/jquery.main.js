@@ -23,7 +23,7 @@ var Screen = function (obj) {
             var itemTopPosition = $(_item[i]).offset().top;
 
             if (curentTopPosition > itemTopPosition && !isFind) {
-                _obj.getNiceScroll(0).doScrollTo(itemTopPosition, 300);
+                _obj.getNiceScroll(0).doScrollTop(itemTopPosition, 300);
                 isFind = true;
                 return false;
             }
@@ -35,7 +35,7 @@ var Screen = function (obj) {
         _item.each(function () {
             var itemTopPosition = $(this).offset().top;
             if (curentTopPosition < itemTopPosition && !isFind) {
-                _obj.getNiceScroll(0).doScrollTo(itemTopPosition, 300);
+                _obj.getNiceScroll(0).doScrollTop(itemTopPosition, 300);
                 isFind = true;
                 return false;
             }
@@ -44,11 +44,12 @@ var Screen = function (obj) {
         return isFind;
     };
     _func = function (event) {
+        console.log($(event.target).parent());
         var curentTopPosition = $('.site').getNiceScroll(0).getScrollTop();
         _item.unmousewheel(_func);
 
         console.log($('.site').getNiceScroll(0).getScrollTop());
-        $('.site').getNiceScroll(0).unbindAll();
+        //$('.site').getNiceScroll(0).unbindAll();
 
         if (event.deltaY > 0) {//вверх
             isUp(curentTopPosition)

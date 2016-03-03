@@ -1,23 +1,23 @@
 $(function () {
-    $( '.drop-menu' ).each( function() {
-        new Menu( $( this ) );
-    } );
+    $('.drop-menu').each(function () {
+        new Menu($(this));
+    });
 
     $('.site').each(function () {
         new Screen($(this));
     });
 
-    $.each( $('.pixel-grid__slider' ), function() {
+    $.each($('.pixel-grid__slider'), function () {
 
-        new SliderSingle ( $( this ) );
+        new SliderSingle($(this));
 
-    } );
+    });
 
-    $.each( $( '.formats__slider' ), function() {
+    $.each($('.formats__slider'), function () {
 
-        new SliderFormats ( $( this ) );
+        new SliderFormats($(this));
 
-    } );
+    });
 
 });
 
@@ -28,11 +28,12 @@ var Screen = function (obj) {
         _obj = obj;
     var _isMobile;
     var _nicescroll = null;
+    var _lastScrollPosition = null;
     var _item = _obj.find('.screen');
     var options = {
         loopHorizontal: false,
         normalScrollElementTouchThreshold: 50,
-        onLeave: function(cur, next){
+        onLeave: function (cur, next) {
             _onLeave(cur, next)
         }
     };
@@ -62,15 +63,17 @@ var Screen = function (obj) {
                 usetransition: true
             });
 
-        //console.log(_obj.getNiceScroll(0));
-            _obj.getNiceScroll(0).scrollend(function(){
+            //console.log(_obj.getNiceScroll(0));
+            _obj.getNiceScroll(0).scrollend(function () {
 
-                if(_obj.getNiceScroll(0).rail.drag==false){
+                if (_obj.getNiceScroll(0).rail.drag == false) {
                     _obj.getNiceScroll(0).cancelEvent();
-                    //console.log('end');
-                }else{
+                    //console.log(_lastScrollPosition);
+                } else {
+                    _lastScrollPosition = _obj.getNiceScroll(0).rail.drag;
                     //console.log('drag');
-                };
+                }
+                ;
                 return false;
             })
 
@@ -93,24 +96,24 @@ var Screen = function (obj) {
         _sizeChange = function () {
 
             if ($(window).width() <= 768) {
-                if(_isMobile==false){
+                //if (_isMobile == false) {
                     if ($('.site').getNiceScroll(0)) {
                         $('.site').getNiceScroll(0).remove();
                     }
                     options.scrollOverflow = true;
                     _rebuildFullpage(options);
-                }
+                //}
             } else {
-                if(_isMobile==true) {
+                //if (_isMobile == true) {
                     options.scrollOverflow = false;
                     _rebuildFullpage(options);
                     _initContentScroll();
-                }
+                //}
             }
         },
         _onLeave = function (cur, next) {
             //console.log(cur, next);
-            if($(_item[next]).length>0){
+            if ($(_item[next]).length > 0) {
                 var pos_top = $(_item[next]).position().top;
                 var off_top = $(_item[next]).offset().top;
                 //console.log(_obj.getNiceScroll(0).scrollTop(678));
@@ -142,42 +145,42 @@ var Screen = function (obj) {
     _init();
 };
 
-var SliderFormats = function( obj ) {
+var SliderFormats = function (obj) {
 
     //private properties
     var _self = this,
         _obj = obj,
-        _objInner = _obj.find( '>div'),
-        _items = _objInner.find( '.formats__slider-item'),
-        _itemsArrow = _items.find( '.formats__slider-arrow'),
-        _text = _objInner.find( '.formats__slider-text'),
-        _textItems = _text.find( '>div'),
+        _objInner = _obj.find('>div'),
+        _items = _objInner.find('.formats__slider-item'),
+        _itemsArrow = _items.find('.formats__slider-arrow'),
+        _text = _objInner.find('.formats__slider-text'),
+        _textItems = _text.find('>div'),
         _timer,
-        _distance = 0 ,
-        _window = $( window );
+        _distance = 0,
+        _window = $(window);
 
     //private methods
-    var _addEvents = function() {
+    var _addEvents = function () {
 
-            _items.on( {
-                'mouseenter': function() {
+            _items.on({
+                'mouseenter': function () {
 
-                    if( _window.width() >= 992 ) {
+                    if (_window.width() >= 992) {
 
-                        _changeText( $( this ) );
+                        _changeText($(this));
 
                     }
                 }
-            } );
+            });
 
-            _items.on( {
-                'click': function() {
+            _items.on({
+                'click': function () {
 
-                    if( _window.width() < 992 ) {
+                    if (_window.width() < 992) {
 
-                        _changeText( $( this ) );
+                        _changeText($(this));
 
-                        clearInterval( _timer );
+                        clearInterval(_timer);
 
                         _changeNext();
 
@@ -186,56 +189,56 @@ var SliderFormats = function( obj ) {
                     return false
 
                 }
-            } );
+            });
 
-            _obj.on( {
+            _obj.on({
 
-                'mouseenter': function(){
+                'mouseenter': function () {
 
-                    clearInterval( _timer );
+                    clearInterval(_timer);
 
                 },
 
-                'mouseleave': function(){
+                'mouseleave': function () {
 
                     _changeNext();
 
                 }
 
-            } );
+            });
 
-            _window.on( {
-                'resize': function() {
+            _window.on({
+                'resize': function () {
 
                     _positionItems();
 
                 }
-            } );
+            });
 
         },
-        _changeText = function( item ) {
+        _changeText = function (item) {
 
             var itemIndex = item.index(),
-                textBlock = _textItems.eq( itemIndex );
+                textBlock = _textItems.eq(itemIndex);
 
-            _items.removeClass( 'active' );
+            _items.removeClass('active');
 
-            item.addClass( 'active' );
+            item.addClass('active');
 
-            _textItems.removeClass( 'visible' );
+            _textItems.removeClass('visible');
 
-            textBlock.addClass( 'visible' );
+            textBlock.addClass('visible');
 
-            clearInterval( _timer );
+            clearInterval(_timer);
 
         },
-        _positionItems = function() {
+        _positionItems = function () {
 
-            if( _window.width() < 768 ) {
+            if (_window.width() < 768) {
 
                 _distance = 20;
 
-            } else if( _window.width() >= 768 && _window.width() < 1200 ) {
+            } else if (_window.width() >= 768 && _window.width() < 1200) {
 
                 _distance = 70;
 
@@ -250,80 +253,80 @@ var SliderFormats = function( obj ) {
                 numberOfElements = _items.length,
                 slice = 360 / numberOfElements;
 
-            _items.each( function( i ) {
+            _items.each(function (i) {
 
-                var curItem = $( this ),
+                var curItem = $(this),
                     rotate = slice * i + start,
                     rotateReverse = rotate * -1;
 
-                curItem.css( {
+                curItem.css({
                     '-webkit-transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)',
                     'transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)'
-                } );
+                });
 
-            } );
+            });
 
-            _itemsArrow.each( function( i ) {
+            _itemsArrow.each(function (i) {
 
-                var curItem = $( this ),
+                var curItem = $(this),
                     rotate = slice * i + start,
                     rotateReverse = rotate * -1,
                     rotate2 = slice * i;
 
-                curItem.css( {
+                curItem.css({
                     '-webkit-transform': 'rotate(' + rotate + 'deg) rotate(' + (rotateReverse + rotate2) + 'deg)',
                     'transform': 'rotate(' + rotate + 'deg) rotate(' + (rotateReverse + rotate2) + 'deg)'
-                } );
+                });
 
-            } );
+            });
         },
-        _changeNext = function() {
+        _changeNext = function () {
 
-            _timer = setInterval( function() {
+            _timer = setInterval(function () {
 
-                var activeItem = _items.filter( '.active'),
+                var activeItem = _items.filter('.active'),
                     nextItem = activeItem.next(),
                     nextItemIndex = nextItem.index(),
-                    currentTextBlock = _textItems.eq( nextItemIndex );
+                    currentTextBlock = _textItems.eq(nextItemIndex);
 
-                if( nextItem.index() == - 1 ) {
+                if (nextItem.index() == -1) {
 
-                    nextItem = _items.eq( 0 );
-                    currentTextBlock = _textItems.eq( 0 );
+                    nextItem = _items.eq(0);
+                    currentTextBlock = _textItems.eq(0);
 
                 }
 
-                _items.removeClass( 'active' );
+                _items.removeClass('active');
 
-                _textItems.removeClass( 'visible' );
+                _textItems.removeClass('visible');
 
-                nextItem.addClass( 'active' );
+                nextItem.addClass('active');
 
-                currentTextBlock.addClass( 'visible' );
+                currentTextBlock.addClass('visible');
 
-            }, 5000 );
+            }, 5000);
 
         },
-        _startView = function() {
+        _startView = function () {
 
-            setTimeout( function () {
+            setTimeout(function () {
 
-                var activeItem = _items.filter( '.active'),
+                var activeItem = _items.filter('.active'),
                     activeItemIndex = activeItem.index(),
-                    currentTextBlock = _textItems.eq( activeItemIndex );
+                    currentTextBlock = _textItems.eq(activeItemIndex);
 
-                currentTextBlock.addClass( 'visible' );
+                currentTextBlock.addClass('visible');
 
-                _text.addClass( 'visible-text' );
+                _text.addClass('visible-text');
 
                 _changeNext();
 
-            },2000 );
+            }, 2000);
 
         },
-        _init = function() {
+        _init = function () {
 
-            _obj[ 0 ].obj = _self;
+            _obj[0].obj = _self;
             _positionItems();
             _startView();
             _addEvents();
@@ -335,14 +338,14 @@ var SliderFormats = function( obj ) {
 var Menu = function (obj) {
     var _obj = obj,
         _btn = $('.drop-menu-btn'),
-        _parentWrap = $( '.site__header' );
+        _parentWrap = $('.site__header');
 
     var is_article = false;
     var onEvents = function () {
             _btn.on({
                 click: function () {
                     if (_parentWrap.hasClass('site__header_drop-menu')) {
-                        _parentWrap.removeClass( 'site__header_drop-menu' );
+                        _parentWrap.removeClass('site__header_drop-menu');
                         $('#fullpage').fullpage({
                             loopHorizontal: false,
                             touchSensitivity: 20,
@@ -351,7 +354,7 @@ var Menu = function (obj) {
                         });
 
                     } else {
-                        _parentWrap.addClass( 'site__header_drop-menu' );
+                        _parentWrap.addClass('site__header_drop-menu');
                         $.fn.fullpage.destroy('all');
                     }
 
@@ -366,20 +369,20 @@ var Menu = function (obj) {
     init()
 };
 
-var SliderSingle = function( obj ) {
+var SliderSingle = function (obj) {
 
     //private properties
     var _self = this,
         _obj = obj,
         _sliderSwiper,
-        _slider = _obj.find( '.swiper-container' );
+        _slider = _obj.find('.swiper-container');
 
     //private methods
-    var _initSlider = function() {
+    var _initSlider = function () {
 
-            _sliderSwiper = new Swiper( _slider, {
+            _sliderSwiper = new Swiper(_slider, {
 
-                pagination: $( '.swiper-pagination' ),
+                pagination: $('.swiper-pagination'),
                 paginationClickable: true,
                 loop: true,
                 spaceBetween: 30
@@ -387,10 +390,10 @@ var SliderSingle = function( obj ) {
             });
 
         },
-        _init = function() {
+        _init = function () {
 
             _initSlider();
-            _obj[ 0 ].obj = _self;
+            _obj[0].obj = _self;
 
         };
 

@@ -51,7 +51,7 @@ var Screen = function (obj) {
                 //onSlideLeave:function(link,index) {
                 //    console.log('slideleave');
                 //}
-                //scrollOverflow: true
+                scrollOverflow: true
             });
 
         },

@@ -103,7 +103,7 @@ var SliderFormats = function( obj ) {
         _obj = obj,
         _objInner = _obj.find( '>div'),
         _items = _objInner.find( '.formats__slider-item'),
-        _itemsArrow = _items.find( '>span'),
+        _itemsArrow = _items.find( '.formats__slider-arrow'),
         _textItems = _objInner.find( '.formats__slider-text>div'),
         _timer,
         _distance = 0 ,
@@ -129,6 +129,8 @@ var SliderFormats = function( obj ) {
                     if( _window.width() < 992 ) {
 
                         _changeText( $( this ) );
+                        clearInterval( _timer );
+                        _changeNext();
 
                     }
 
@@ -159,7 +161,7 @@ var SliderFormats = function( obj ) {
                     _positionItems();
 
                 }
-            } )
+            } );
 
         },
         _changeText = function( item ) {
@@ -182,7 +184,7 @@ var SliderFormats = function( obj ) {
 
             if( _window.width() < 768 ) {
 
-                _distance = 0;
+                _distance = 20;
 
             } else if( _window.width() >= 768 && _window.width() < 1200 ) {
 
@@ -210,9 +212,18 @@ var SliderFormats = function( obj ) {
                     'transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)'
                 } );
 
-                _itemsArrow.css( {
-                    '-webkit-transform': 'rotate(' + rotate + 'deg) rotate(' + rotateReverse + 'deg)',
-                    'transform': 'rotate(' + rotate + 'deg) rotate(' + rotateReverse + 'deg)'
+            } );
+
+            _itemsArrow.each( function( i ) {
+
+                var curItem = $( this ),
+                    rotate = slice * i + start,
+                    rotateReverse = rotate * -1,
+                    rotate2 = slice * i;
+
+                curItem.css( {
+                    '-webkit-transform': 'rotate(' + rotate + 'deg) rotate(' + (rotateReverse + rotate2) + 'deg)',
+                    'transform': 'rotate(' + rotate + 'deg) rotate(' + (rotateReverse + rotate2) + 'deg)'
                 } );
 
             } );
@@ -249,8 +260,6 @@ var SliderFormats = function( obj ) {
 
             setTimeout( function () {
 
-                clearInterval( _timer );
-
                 _items.eq(0).addClass( 'active' );
 
                 var activeItem = _items.filter( '.active'),
@@ -262,16 +271,14 @@ var SliderFormats = function( obj ) {
             },3000 );
 
 
-            _changeNext();
-
         },
         _init = function() {
 
             _obj[ 0 ].obj = _self;
-            _startView();
             _positionItems();
+            _startView();
             _addEvents();
-
+            _changeNext();
         };
 
     _init();
@@ -280,112 +287,20 @@ var SliderFormats = function( obj ) {
 var Menu = function () {
     var _self = this,
         _btn = $('.drop-menu-btn'),
-        _dropdown = $('.drop-menu'),
-        _dropdownDiv = $('#wrapper'),
-        _dropdownContent = $('.drop-menu__content'),
-        _dropdownInner = $('.drop-menu__inner>div>div'),
-        _header = $('header.site__header'),
-        _getDemo = $('.site__header__items .get-demo'),
-        _getDemo2 = $('.drop-menu__content .get-demo'),
-        _watchVideo = $('.drop-menu__watch');
+        _dropdown = $('.drop-menu');
 
     var is_article = false;
-    var addEvents = function () {
+    var onEvents = function () {
         _btn.on({
             click: function () {
-                var cutItem = $(this);
-                if (_header.hasClass('active')) {
-                    $('.site').css({paddingTop: 0});
-                    _header.removeClass('active');
-                    _dropdown.fadeOut(400)
-                } else {
-                    _header.addClass('active');
-                    $('.site').css({paddingTop: _self.headerHeight});
-                    _dropdown.fadeIn(400);
-                    setTimeout(function () {
-                        addScroll()
-                    }, 500)
-                }
-                return false
-            }
-        });
-        _getDemo2.on({
-            'click': function () {
-                $('.site').css({paddingTop: 0});
-                _header.removeClass('active');
-                _dropdown.fadeOut(400);
-                return false
-            }
-        });
-        _watchVideo.on({
-            'click': function () {
-                $('.site').css({paddingTop: 0});
-                _header.removeClass('active');
-                _dropdown.fadeOut(400);
-                return false
-            }
-        });
-        $(window).on({
-            'scroll': function () {
-                var curItemScroll = $(window).scrollTop();
-                if (_header.hasClass('site__header_blog-article')) {
-                    is_article = true;
-                }
-                if (!_header.hasClass('active')) {
-                    if (curItemScroll >= 400) {
-                        if (is_article)
-                            _header.removeClass('site__header_blog-article');
 
-                        _header.addClass('fixed_header');
-                        $('.site').css({paddingTop: _self.headerHeight});
-                        _getDemo.addClass('btn_blue');
-                        setTimeout(function () {
-                            _header.css({top: 0})
-                        }, 500)
-                    } else {
-                        if (is_article)
-                            _header.addClass('site__header_blog-article');
+            }
+        });
 
-                        _header.removeClass('fixed_header');
-                        $('.site').css({paddingTop: 0});
-                        _getDemo.removeClass('btn_blue');
-                        if (curItemScroll > _self.headerHeight) {
-                            _header.css({top: '-25%'})
-                        } else {
-                            _header.css({top: 0})
-                        }
-                    }
-                }
-            }
-        });
-        $(window).on({
-            'resize': function () {
-                posHeader()
-            }
-        });
-        $(window).on({
-            'load': function () {
-                posHeader()
-            }
-        })
-    }, addScroll = function () {
-        self.myScroll = new IScroll('#wrapper', {
-            mouseWheel: true,
-            scrollbars: true,
-            interactiveScrollbars: true,
-            shrinkScrollbars: 'scale'
-        })
-    }, posHeader = function () {
-        _self.headerHeight = _header.innerHeight();
-        _self.headerOffset = _header.offset().top;
-        _self.dropMenuPad = _dropdown[0].style.paddingTop;
-        _self.winHeight = $(window).height();
-        _dropdown.innerHeight(_self.winHeight + 30);
-        _dropdownDiv.innerHeight(_dropdown.height() - 30);
-        _dropdownInner.innerHeight(_dropdownContent.height() - 30)
-    }, init = function () {
-        posHeader();
-        addEvents()
+    },
+    init = function () {
+        onEvents();
     };
+
     init()
 };

@@ -285,13 +285,17 @@
 
 /* --------------- pack-includes --------------- */
 .pack-includes{
-    background: #242a2f;
-    padding-top: 8%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform:translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
     color: #fff;
     text-align: center;
 }
 .pack-includes .site__title{
-    margin-bottom: 8%;
+    margin-bottom: 5.5vmin;
     color: #fff;
     text-align: center;
 }
@@ -304,8 +308,8 @@
     display: inline-block;
     vertical-align: top;
     width: 49%;
-    margin-bottom: 4%;
-    font: 3.6vmin "Proxima Nova Light";
+    margin-bottom: 4vmin;
+    font: 10px "Proxima Nova Light";
     text-align: center;
 }
 .pack-includes__pic{
@@ -322,7 +326,7 @@
 }
 .pack-includes__title{
     display: block;
-    font: 4vmin "Proxima Nova Regular";
+    font: 12px "Proxima Nova Regular";
     line-height: 6vmin;
 }
 /* --------------- /pack-includes --------------- */
@@ -493,11 +497,7 @@
 
     /* --------------- /promo --------------- */
     .pack-includes{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: 100%;
+
     }
     .pack-includes__pic img {
         position: absolute;
@@ -507,11 +507,11 @@
         transform: translateX(-50%) translateY(-50%);
     }
     .pack-includes__item {
-        font-size: 20px;
+        font-size: 2.6vmin;
     }
     .pack-includes__title {
         display: block;
-        font-size: 22px;
+        font-size: 3vmin;
     }
     .pack-includes__item {
         width: 23%;
@@ -553,6 +553,15 @@
         padding-top: 27.2vh;
     }
     /* --------------- /customizable --------------- */
+
+    /* --------------- pack-includes --------------- */
+    .pack-includes .site__title {
+        margin-bottom: 11.5vmin;
+    }
+    .pack-includes__item {
+        margin-bottom: 10vmin;
+    }
+
 }
 
 @media (min-height: 600px) {

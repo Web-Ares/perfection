@@ -332,12 +332,11 @@
 
 /* --------------- pack-includes --------------- */
 .pack-includes{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    -webkit-transform:translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     color: #fff;
     text-align: center;
 }
@@ -375,6 +374,9 @@
     display: block;
     font: 12px "Proxima Nova Regular";
     line-height: 6vmin;
+}
+.site__centered .pack-includes__wrap:last-child .pack-includes__item {
+    margin-top: -26px;
 }
 /* --------------- /pack-includes --------------- */
 
@@ -970,6 +972,9 @@
     .pack-includes{
 
     }
+    .site__centered .pack-includes__wrap:last-child .pack-includes__item{
+        margin-bottom: 0;
+    }
     .pack-includes__pic img {
         position: absolute;
         top: 50%;
@@ -979,14 +984,39 @@
     }
     .pack-includes__item {
         font-size: 2.6vmin;
+        width: 23%;
+        opacity: 0;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+        -webkit-transition: transform .5s ease-in-out .5s, opacity .5s ease-in-out .5s;
+        transition: transform .5s ease-in-out .5s, opacity .5s ease-in-out .5s;
+    }
+    .active .pack-includes__item {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .site__centered .pack-includes__wrap:last-child .pack-includes__item{
+        opacity: 0;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        -webkit-transition: transform .5s ease-in-out .5s, opacity .5s ease-in-out .5s;
+        transition: transform .5s ease-in-out .5s, opacity .5s ease-in-out .5s;
+    }
+    .active .site__centered .pack-includes__wrap:last-child .pack-includes__item {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
     }
     .pack-includes__title {
         display: block;
         font-size: 3vmin;
     }
-    .pack-includes__item {
-        width: 23%;
-    }
+
     /* --------------- /promo --------------- */
 
 }
@@ -1063,7 +1093,6 @@
     /*----------/line-solid__list----------*/
 
 }
-
 @media (min-height: 600px) {
 
 }

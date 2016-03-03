@@ -321,6 +321,9 @@
     margin: 0 auto;
     padding: 158px 15px 0;
 }
+.drop-menu__inner-wrap{
+    padding-bottom: 50px;
+}
 .drop-menu__menu{
     margin-bottom: 50px;
     font: 44px/60px "Proxima Nova Semibold", sans-serif;
@@ -379,25 +382,56 @@
     text-transform: uppercase;
 }
 .social__item{
+    position: relative;
     display: inline-block;
     width: 26px;
     height: 26px;
     margin-left: 20px;
+}
+.social__item:after,
+.social__item:before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: url('../img/iocns-social.png');
-    background-size: auto 26px;
+    background-size: auto 50px;
     background-repeat: no-repeat;
+    content: '';
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
 }
-.social__item_mail{
-    background-position: 0 50%;
+.social__item:after,
+.social__item:hover:before{
+    opacity: 0;
 }
-.social__item_btn{
-    background-position: -33px 50%;
+.social__item:hover:after{
+    opacity: 1;
 }
-.social__item_tw{
-    background-position: -67px 50%;
+.social__item_mail:before{
+    background-position: 0 -26px;
 }
-.social__item_fb{
-    background-position: -96px 50%;
+.social__item_mail:after{
+    background-position: 0 0;
+}
+.social__item_btn:before{
+    background-position: -29px -26px;
+}
+.social__item_btn:after{
+    background-position: -29px 0;
+}
+.social__item_tw:before{
+    background-position: -61px -26px;
+}
+.social__item_tw:after{
+    background-position: -61px 0;
+}
+.social__item_fb:before{
+    background-position: -94px -26px;
+}
+.social__item_fb:after{
+    background-position: -94px 0;
 }
 /* --------------- /copyright --------------- */
 

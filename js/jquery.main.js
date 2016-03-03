@@ -45,6 +45,7 @@ var Screen = function (obj) {
                 autohidemode: false,
                 horizrailenabled: false,
                 cursorborderradius: 0,
+                cursoropacitymin: 1,
                 cursorwidth: '5px',
                 bouncescroll: true,
                 mousescrollstep: 24,
@@ -56,8 +57,12 @@ var Screen = function (obj) {
 
         console.log(_obj.getNiceScroll(0));
             _obj.getNiceScroll(0).scrollend(function(){
-                console.log('end');
 
+                if(_obj.getNiceScroll(0).rail.drag==false){
+                    console.log('end');
+                }else{
+                    console.log('drag');
+                };
             })
 
         },
@@ -96,7 +101,7 @@ var Screen = function (obj) {
                 var off_top = $(_item[next]).offset().top;
                 //console.log(_obj.getNiceScroll(0).scrollTop(678));
                 //_obj.getNiceScroll(0).setScrollTop(678);
-                console.log(_obj.getNiceScroll(0).setScrollTop());
+                console.log(_obj.getNiceScroll(0).rail.drag);
                 //console.log(cur, next);
             }
         },

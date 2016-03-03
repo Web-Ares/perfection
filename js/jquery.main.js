@@ -7,6 +7,12 @@ $(function () {
         new Screen($(this));
     });
 
+    $.each( $('.pixel-grid__slider' ), function() {
+
+        new SliderSingle ( $( this ) );
+
+    } );
+
     $.each( $( '.formats__slider' ), function() {
 
         new SliderFormats ( $( this ) );
@@ -144,7 +150,8 @@ var SliderFormats = function( obj ) {
         _objInner = _obj.find( '>div'),
         _items = _objInner.find( '.formats__slider-item'),
         _itemsArrow = _items.find( '.formats__slider-arrow'),
-        _textItems = _objInner.find( '.formats__slider-text>div'),
+        _text = _objInner.find( '.formats__slider-text'),
+        _textItems = _text.find( '>div'),
         _timer,
         _distance = 0 ,
         _window = $( window );
@@ -169,7 +176,9 @@ var SliderFormats = function( obj ) {
                     if( _window.width() < 992 ) {
 
                         _changeText( $( this ) );
+
                         clearInterval( _timer );
+
                         _changeNext();
 
                     }
@@ -297,10 +306,7 @@ var SliderFormats = function( obj ) {
         },
         _startView = function() {
 
-
             setTimeout( function () {
-
-                _items.eq(0).addClass( 'active' );
 
                 var activeItem = _items.filter( '.active'),
                     activeItemIndex = activeItem.index(),
@@ -308,8 +314,11 @@ var SliderFormats = function( obj ) {
 
                 currentTextBlock.addClass( 'visible' );
 
-            },3000 );
+                _text.addClass( 'visible-text' );
 
+                _changeNext();
+
+            },2000 );
 
         },
         _init = function() {
@@ -318,7 +327,6 @@ var SliderFormats = function( obj ) {
             _positionItems();
             _startView();
             _addEvents();
-            _changeNext();
         };
 
     _init();
@@ -355,4 +363,35 @@ var Menu = function (obj) {
         };
 
     init()
+};
+
+var SliderSingle = function( obj ) {
+
+    //private properties
+    var _self = this,
+        _obj = obj,
+        _sliderSwiper,
+        _slider = _obj.find( '.swiper-container' );
+
+    //private methods
+    var _initSlider = function() {
+
+            _sliderSwiper = new Swiper( _slider, {
+
+                pagination: $( '.swiper-pagination' ),
+                paginationClickable: true,
+                loop: true,
+                spaceBetween: 30
+
+            });
+
+        },
+        _init = function() {
+
+            _initSlider();
+            _obj[ 0 ].obj = _self;
+
+        };
+
+    _init();
 };

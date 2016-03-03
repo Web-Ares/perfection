@@ -51,13 +51,18 @@ var Screen = function (obj) {
                 afterResize:function(link,index) {
 
                 },
-                //onLeave:function(link,index) {
-                //    console.log('leave');
-                //},
-                //onSlideLeave:function(link,index) {
-                //    console.log('slideleave');
-                //}
-                scrollOverflow: true
+                afterLoad:function(){
+                    setTimeout(function(){
+                        console.log('load');
+                    },250)
+                },
+                onLeave:function(link,index) {//события когда слайдят
+                    console.log(index);
+                },
+                onSlideLeave:function(link,index) {
+                    console.log('slideleave');
+                }
+                //scrollOverflow: true
             });
 
         },

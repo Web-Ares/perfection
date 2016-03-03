@@ -1,7 +1,7 @@
 $(function () {
-    $( '.drop-menu' ).each( function() {
-        new Menu( $( this ) );
-    } );
+    $('.drop-menu').each(function () {
+        new Menu($(this));
+    });
 
     $('.site').each(function () {
         new Screen($(this));
@@ -21,8 +21,16 @@ var Screen = function (obj) {
     var _self = this,
         _obj = obj;
     var _fullPage;
-    var _nicescroll=null;
+    var _nicescroll = null;
     var _item = _obj.find('.screen');
+    var options = {
+        loopHorizontal: false,
+        normalScrollElementTouchThreshold: 50,
+        onLeave: function(cur, next){
+            _onLeave(cur, next)
+        }
+    };
+
 
     _obj[0].obj = _self;
 
@@ -51,6 +59,11 @@ var Screen = function (obj) {
             $('#fullpage').fullpage(options);
             $.fn.fullpage.reBuild();
         },
+        _rebuildFullpage = function (options) {
+            $.fn.fullpage.destroy('all');
+            $('#fullpage').fullpage(options);
+            $.fn.fullpage.reBuild();
+        },
         _onEvents = function () {
             $(window).resize(function () {
                 _sizeChange();
@@ -62,47 +75,26 @@ var Screen = function (obj) {
                 if ($('.site').getNiceScroll(0)) {
                     $('.site').getNiceScroll(0).remove();
                 }
+                options.scrollOverflow = true;
+                _rebuildFullpage(options);
             } else {
-                $.fn.fullpage.destroy('all');
-                _initFullpage();
-                $.fn.fullpage.reBuild();
+                options.scrollOverflow = false;
+                _rebuildFullpage(options);
                 _initContentScroll();
             }
         },
+        _onLeave = function (cur, next) {
+            var pos_top = $(_item[next]).position().top;
+            var off_top = $(_item[next]).offset().top;
+            console.log(cur, next);
+        },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
-                _initFullpage({
-                    loopHorizontal: false,
-                    normalScrollElementTouchThreshold: 50,
-                    afterResize: function (link, index) {
-
-                    },
-                    afterLoad: function () {
-                        setTimeout(function () {
-                            console.log('load');
-                        }, 250)
-                    },
-                    onLeave: function (link, index) {//события когда слайдят
-                        console.log(index);
-                    },
-                    onSlideLeave: function (link, index) {
-                        console.log('slideleave');
-                    },
-                    scrollOverflow: true
-                });
+                options.scrollOverflow = true;
+                _initFullpage(options);
             } else {
-                _initFullpage({
-                    loopHorizontal: false,
-                    normalScrollElementTouchThreshold: 50,
-                    onLeave: function (link, index) {//события когда слайдят
-                       var pos_top = $(_item[index]).position().top;
-                       var off_top = $(_item[index]).offset().top;
-                        //_obj.getNiceScroll(0).doScrollTop(pos_top, 300);
-                    },
-                    onSlideLeave: function (link, index) {//события когда слайдят
-                    }
-
-                });
+                options.scrollOverflow = false;
+                _initFullpage(options);
                 _initContentScroll();
             }
         },
@@ -305,30 +297,30 @@ var SliderFormats = function (obj) {
     _init();
 };
 
-var Menu = function ( obj ) {
+var Menu = function (obj) {
     var _obj = obj,
-        _btn = $( '.drop-menu-btn' );
+        _btn = $('.drop-menu-btn');
 
     var is_article = false;
     var onEvents = function () {
-        _btn.on({
-            click: function () {
-                if ( _obj.hasClass( 'active' ) ) {
-                    _obj.removeClass( 'active' );
-                    $('#fullpage').fullpage({
-                        loopHorizontal: false,
-                        touchSensitivity: 20,
-                        normalScrollElementTouchThreshold: 50,
-                        scrollOverflow: false
-                    });
+            _btn.on({
+                click: function () {
+                    if (_obj.hasClass('active')) {
+                        _obj.removeClass('active');
+                        $('#fullpage').fullpage({
+                            loopHorizontal: false,
+                            touchSensitivity: 20,
+                            normalScrollElementTouchThreshold: 50,
+                            scrollOverflow: false
+                        });
 
-                } else {
-                    _obj.addClass( 'active' );
-                    $.fn.fullpage.destroy( 'all' )
+                    } else {
+                        _obj.addClass('active');
+                        $.fn.fullpage.destroy('all')
+                    }
+
                 }
-
-            }
-        })
+            })
 
         },
         init = function () {

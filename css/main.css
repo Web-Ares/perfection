@@ -173,6 +173,11 @@
     width: 180px;
     margin: 0 auto;
 }
+.btn_2 {
+    border: 2px solid #1565c0;
+    background: #fff;
+    color: #1565c0;
+}
 /* --------------- /btn --------------- */
 
 /* --------------- header-menu --------------- */
@@ -696,12 +701,30 @@
 
 /* ------------ icons-promo ------------ */
 .icons-promo {
-    padding: 20px 15px;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px 0;
     text-align: center;
 }
 .icons-promo p {
     font-size: 4.7vmin;
     line-height: 1.462;
+    margin-bottom: 20px;
+}
+.icons-promo__controls a {
+    margin: 0 20px 15px;
+}
+.icons-promo__wrap {
     margin-bottom: 20px;
 }
 /* ------------ /icons-promo ------------ */
@@ -729,7 +752,7 @@
 .icons-preview__footer span {
     display: inline-block;
     vertical-align: top;
-    width: 49%;
+    width: 48%;
     text-align: left;
 }
 .icons-preview__footer span:nth-child(2) {
@@ -740,7 +763,7 @@
     vertical-align: top;
     position: relative;
     width: 24%;
-    height: 9.5vmin;
+    height: 10.5vmin;
 }
 .icons-preview img {
     position: absolute;
@@ -761,6 +784,18 @@
         transform: translateX(-50%) translateY(-50%);
     }
     /* --------------- /sharpest-icons --------------- */
+
+    /* ------------ icons-preview ------------ */
+    .icons-preview {}
+    .icons-preview div.icons-preview__footer {}
+    .icons-preview div {
+        height: 11.5vmin;
+    }
+    .icons-preview img {
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(0.75);
+        transform: translateX(-50%) translateY(-50%) scale(0.75);
+    }
+    /* ------------ /icons-preview ------------ */
 
 }
 @media (min-width: 768px) {
@@ -988,6 +1023,42 @@
         width: 23%;
     }
     /* --------------- /promo --------------- */
+
+    /* ------------ icons-promo ------------ */
+    .icons-promo__wrap {
+        text-align: justify;
+        margin-bottom: 2vmin;
+    }
+    .icons-promo__wrap:after {
+        display: inline-block;
+        width: 100%;
+        content: '';
+    }
+    .icons-preview {
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin: 0;
+    }
+    .icons-promo p {
+        font-size: 2.8vmin;
+        max-width: 900px;
+        letter-spacing: -0.4px;
+        margin-bottom: 7vmin;
+    }
+    .icons-promo .site__title {
+        margin-bottom: 22px;
+    }
+    /* ------------ /icons-promo ------------ */
+
+    /* ------------ icons-preview ------------ */
+    .icons-preview {}
+    .icons-preview div.icons-preview__footer {}
+    .icons-preview div {
+        margin: 0 -1px;
+    }
+    .icons-preview img {}
+    /* ------------ /icons-preview ------------ */
 
 }
 @media (min-width: 992px) {

@@ -255,16 +255,16 @@
 .drop-menu-btn span:before{
     top: -10px;
 }
-.drop-menu-btn_close span{
+.site__header_drop-menu .drop-menu-btn span{
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
-.drop-menu-btn_close span:after{
+.site__header_drop-menu .drop-menu-btn span:after{
     top: 0;
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
 }
-.drop-menu-btn_close span:before{
+.site__header_drop-menu .drop-menu-btn span:before{
     opacity: 0;
 }
 /* --------------- /drop-menu --------------- */
@@ -295,22 +295,94 @@
     -webkit-transition: opacity .3s ease, visibility .3s ease;
     transition: opacity .3s ease, visibility .3s ease;
 }
-.drop-menu.active{
+.site__header_drop-menu .drop-menu{
     opacity: 1;
     visibility: visible;
 }
 .drop-menu__inner {
     position: relative;
     height: 100vh;
-    max-width: 1035px;
+    max-width: 1484px;
     margin: 0 auto;
-    padding: 138px 3.6% 0;
+    padding: 158px 15px 0;
+}
+.drop-menu__menu{
+    margin-bottom: 50px;
+    font: 44px/60px "Proxima Nova Semibold", sans-serif;
+}
+.drop-menu__menu-item{
+    color: #fff;
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+}
+.drop-menu__menu-item:hover{
+    color: #90bff4;
+}
+.drop-menu__navigation{
+    margin-bottom: 50px;
+    font: 30px/44px "Proxima Nova Light", sans-serif;
+}
+.drop-menu__navigation-item{
+    color: #fff;
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+}
+.drop-menu__navigation-item:hover{
+    color: #90bff4;
+}
+.drop-menu__legally{
+    font: 20px/34px "Proxima Nova Light", sans-serif;
+}
+.drop-menu__legally-item{
+    color: #fff;
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+}
+.drop-menu__legally-item:hover{
+    color: #90bff4;
 }
 /* --------------- /dropmenu --------------- */
 
 /* --------------- copyright --------------- */
 .copyright{
+    position: absolute;
+    bottom: 35px;
+    left: 15px;
+    color: #90bff4;
+    font: 16px 'Proxima Nova Light', sans-serif;
+    text-transform: uppercase;
+}
+/* --------------- /copyright --------------- */
 
+/* --------------- social --------------- */
+.social{
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
+    color: #90bff4;
+    font: 16px 'Proxima Nova Light', sans-serif;
+    text-transform: uppercase;
+}
+.social__item{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-left: 20px;
+    background: url('../img/iocns-social.png');
+    background-size: auto 26px;
+    background-repeat: no-repeat;
+}
+.social__item_mail{
+    background-position: 0 50%;
+}
+.social__item_btn{
+    background-position: -33px 50%;
+}
+.social__item_tw{
+    background-position: -67px 50%;
+}
+.social__item_fb{
+    background-position: -96px 50%;
 }
 /* --------------- /copyright --------------- */
 

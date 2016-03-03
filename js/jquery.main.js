@@ -287,14 +287,15 @@ var SliderFormats = function( obj ) {
 
 var Menu = function (obj) {
     var _obj = obj,
-        _btn = $('.drop-menu-btn');
+        _btn = $('.drop-menu-btn'),
+        _parentWrap = $( '.site__header' );
 
     var is_article = false;
     var onEvents = function () {
             _btn.on({
                 click: function () {
-                    if (_obj.hasClass('active')) {
-                        _obj.removeClass('active');
+                    if (_parentWrap.hasClass('site__header_drop-menu')) {
+                        _parentWrap.removeClass( 'site__header_drop-menu' );
                         $('#fullpage').fullpage({
                             loopHorizontal: false,
                             touchSensitivity: 20,
@@ -303,8 +304,8 @@ var Menu = function (obj) {
                         });
 
                     } else {
-                        _obj.addClass('active');
-                        $.fn.fullpage.destroy('all')
+                        _parentWrap.addClass( 'site__header_drop-menu' );
+                        $.fn.fullpage.destroy('all');
                     }
 
                 }

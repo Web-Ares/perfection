@@ -1,7 +1,7 @@
 $(function () {
-    if ($('.drop-menu').length) {
-        menu = new Menu();
-    }
+    $( '.drop-menu' ).each( function() {
+        new Menu( $( this ) );
+    } );
 
     $('.site').each(function () {
         new Screen($(this));
@@ -285,18 +285,30 @@ var SliderFormats = function( obj ) {
     _init();
 };
 
-var Menu = function () {
-    var _self = this,
-        _btn = $('.drop-menu-btn'),
-        _dropdown = $('.drop-menu');
+var Menu = function ( obj ) {
+    var _obj = obj,
+        _btn = $( '.drop-menu-btn' );
 
     var is_article = false;
     var onEvents = function () {
         _btn.on({
             click: function () {
+                if ( _obj.hasClass( 'active' ) ) {
+                    _obj.removeClass( 'active' );
+                    $('#fullpage').fullpage({
+                        loopHorizontal: false,
+                        touchSensitivity: 20,
+                        normalScrollElementTouchThreshold: 50,
+                        scrollOverflow: false
+                    });
+
+                } else {
+                    _obj.addClass( 'active' );
+                    $.fn.fullpage.destroy( 'all' )
+                }
 
             }
-        });
+        })
 
     },
     init = function () {

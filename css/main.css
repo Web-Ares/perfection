@@ -73,7 +73,7 @@
     color: #666666;
 }
 .site__header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -92,9 +92,13 @@
 }
 .site__header-layout{
     position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
     max-width: 1514px;
     margin: 0 auto;
     padding: 0 15px;
+    z-index: 3;
 }
 .site__content {
     position: relative;
@@ -246,16 +250,22 @@
 
 /* --------------- dropmenu --------------- */
 .drop-menu {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    height: 100vh;
     background-color: #1564be;
     color: #fff;
     text-align: center;
-    -webkit-transition: -webkit-transform .3s cubic-bezier(.175, .885, .32, 1.275), top .3s;
-    transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), top .3s;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .3s ease, visibility .3s ease;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+.drop-menu.active{
+    opacity: 1;
+    visibility: visible;
 }
 .drop-menu__inner {
     position: relative;

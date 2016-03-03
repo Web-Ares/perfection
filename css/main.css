@@ -397,29 +397,25 @@
 /* --------------- /sharpest-icons --------------- */
 
 /* --------------- line-solid --------------- */
-.line-solid {
-    padding: 20px 0;
-}
 .line-solid__layout {
-    vertical-align: top;
-    display: inline-block;
-    width: 49%;
+    padding: 0 15px 30px;
+    margin: 0 0 25px;
     background: #f8f8f8;
 }
 .line-solid__text {
     margin: 0 0 20px;
 }
 .line-solid__list {
-    vertical-align: top;
-    display: inline-block;
-    width: 49%;
+    padding: 0 15px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 .line-solid__list>div {
     display: inline-block;
     vertical-align: top;
     position: relative;
-    width: 24%;
-    height: 50px;
+    width: 23.7%;
+    height: 9.5vmin;
 }
 .line-solid__list>div img {
     position: absolute;
@@ -429,6 +425,7 @@
     transform: translateX(-50%) translateY(-50%) scale(0.5);
 }
 /* --------------- /line-solid --------------- */
+
 /* ------------ icons-promo ------------ */
 .icons-promo {
     text-align: center;
@@ -524,30 +521,31 @@
         align-items: center;
         height: 100%;
     }
-    .line-solid__wrap {
-
-    }
     .line-solid__layout{
         text-align: left;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         height: 100%;
+        width: 50%;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
     .line-solid__text{
-        display: block;
         margin: 0 0 39px;
     }
     .line-solid__list{
         display: inline-block;
         vertical-align: top;
-        width: 43.5%;
-        margin: -15px -23px 0 0;
+        width: 50%;
         text-align: left;
+        padding: 0;
+        max-width: 434px;
     }
     .line-solid__list>div{
-        height: 100px;
+        height: 10.5vmin;
+        margin-bottom: 10px;
+        width: 23.7%;
     }
     .line-solid__list>div img{
         -webkit-transform: translateX(-50%) translateY(-50%);
@@ -628,14 +626,27 @@
     /* --------------- /customizable --------------- */
 
     /* --------------- line-solid --------------- */
+    .line-solid__layout {
+        padding-left: 13.2%;
+        padding-right: 9%;
+    }
     .line-solid__text{
         margin: 0 0 39px;
     }
-    .line-solid__approved{
-        font-size: 18px;
-        line-height: 24px;
+    .line-solid__list {
+        margin-top: 72px;
     }
     /* --------------- /line-solid --------------- */
+
+}
+
+@media (min-width: 1500px) {
+
+    /*----------line-solid__list----------*/
+    .line-solid__list {
+        margin-left: 181px;
+    }
+    /*----------/line-solid__list----------*/
 
 }
 

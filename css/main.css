@@ -19,6 +19,8 @@
 
     line-solid
 
+    we-impressed
+
 */
 
 /* --------------- placeholder --------------- */
@@ -483,8 +485,8 @@
     margin: 0 auto;
 }
 .line-solid__list>div {
-    display: inline-block;
     vertical-align: top;
+    display: inline-block;
     position: relative;
     width: 23.7%;
     height: 15.5vmin;
@@ -796,6 +798,59 @@
 }
 /* --------------- /pixel-grid --------------- */
 
+/* --------------- we-impressed --------------- */
+.we-impressed__layout {
+    z-index: 2;
+    position: relative;
+    padding: 17px 15px 30px;
+    margin: 0 0 40px;
+    background: #242a2f;
+}
+.we-impressed__text {
+    margin: 0 0 35px;
+    color: #c4c4c4;
+}
+.we-impressed__text:before {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 22px;
+    margin: 0 auto 10px;
+    background: url(../img/quote.png) no-repeat;
+    background-size: contain;
+    content: '';
+}
+.we-impressed__pic {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+}
+.we-impressed__info {
+
+}
+.we-impressed__info a {
+    display: inline-block;
+    width: 115px;
+}
+.we-impressed__info img {
+    width: 100%;
+}
+.we-impressed__info-user {
+    margin-top: 3px;
+    margin-left: 9px;
+
+    font-size: 2.4vh;}
+.we-impressed__info-user span {
+    font-family: 'Proxima Nova Semibold', sans-serif;
+    color: #fff;
+    /* font-size: 1vh; */
+}
+/* --------------- /we-impressed --------------- */
+
 
 @media (min-width: 550px) {
 
@@ -988,7 +1043,6 @@
         height: 100%;
     }
     .line-solid__layout{
-        text-align: left;
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -999,18 +1053,19 @@
         width: 50%;
         margin-bottom: 0;
         padding-bottom: 0;
+        text-align: left;
     }
     .line-solid__text {
         margin: 0 0 39px;
     }
     .line-solid__list {
-        display: inline-block;
-        vertical-align: top;
-        width: 50%;
-        text-align: left;
-        padding: 0;
-        max-width: 434px;
         opacity: 0;
+        vertical-align: top;
+        display: inline-block;
+        width: 50%;
+        max-width: 434px;
+        padding: 0;
+        text-align: left;
         -webkit-transform: translateY(50%);
         -ms-transform: translateY(50%);
         transform: translateY(50%);
@@ -1019,8 +1074,8 @@
     }
     .line-solid__list>div{
         height: 10.5vmin;
-        margin-bottom: 10px;
         width: 23.7%;
+        margin-bottom: 10px;
     }
     .line-solid__list>div img{
         -webkit-transform: translateX(-50%) translateY(-50%);
@@ -1188,6 +1243,69 @@
     }
     /* --------------- /pixel-grid --------------- */
 
+    /* ----------we-impressed --------------- */
+    .we-impressed {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+    }
+    .we-impressed__layout {
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: column;
+        justify-content: center;
+        -webkit-justify-content: center;
+        height: 100%;
+        width: 55.5%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        text-align: left;
+    }
+    .we-impressed__text {
+        margin: 0 0 39px;
+    }
+    .we-impressed__text:before {
+        width: 66px;
+        height: 53px;
+        margin: 0 auto 50px;
+    }
+    .we-impressed__pic {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 50%;
+        height: 100%;
+        -webkit-transition: opacity .5s ease-in-out 1s;
+        transition: opacity .5s ease-in-out 1s;
+    }
+    .we-impressed__info a {
+        width: auto;
+        opacity: 1;
+        -webkit-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+    }
+    .we-impressed__info a:hover {
+        opacity: .85;
+    }
+    .we-impressed__info img  {
+        width: auto;
+    }
+    .we-impressed__info-user {
+        font-size: 19px;
+    }
+    .active .we-impressed__pic {
+        opacity: 1;
+    }
+    /* -----------we-impressed --------------- */
+
 }
 @media (min-width: 992px) {
 
@@ -1279,6 +1397,22 @@
         padding-top: 12px;
     }
     /* ------------ /icons-promo ------------ */
+
+    /* --------------- we-impressed --------------- */
+    .we-impressed__layout {
+        padding-left: 13.2%;
+        padding-right: 9%;
+    }
+    .we-impressed__text{
+        margin: 0 0 70px;
+    }
+    .we-impressed__pic {
+        width: 44.5%;
+    }
+    .we-impressed__info-user span {
+        padding: 0 5px 0 0;
+    }
+    /* --------------- /we-impressed --------------- */
 
 }
 

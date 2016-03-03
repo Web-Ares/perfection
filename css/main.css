@@ -506,6 +506,7 @@
 /* --------------- customizable --------------- */
 .customizable {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 .customizable__layout {
     margin: 0 0 25px;

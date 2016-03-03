@@ -26,7 +26,6 @@ var Screen = function (obj) {
     //private properties
     var _self = this,
         _obj = obj;
-    var _isMobile;
     var _nicescroll = null;
     var _lastScrollPosition = null;
     var _item = _obj.find('.screen');
@@ -60,18 +59,19 @@ var Screen = function (obj) {
                 enablemousewheel: false,
                 touchbehavior: false,
                 cursorfixedheight: 100,
-                usetransition: true
+                usetransition: true,
+                smoothscroll:false
             });
 
             //console.log(_obj.getNiceScroll(0));
             _obj.getNiceScroll(0).scrollend(function () {
-
+console.log(_obj.getNiceScroll(0));
                 if (_obj.getNiceScroll(0).rail.drag == false) {
                     _obj.getNiceScroll(0).cancelEvent();
-                    //console.log(_lastScrollPosition);
+                    console.log(_lastScrollPosition);
                 } else {
                     _lastScrollPosition = _obj.getNiceScroll(0).rail.drag;
-                    //console.log('drag');
+                    console.log('drag');
                 }
                 ;
                 return false;
@@ -96,39 +96,31 @@ var Screen = function (obj) {
         _sizeChange = function () {
 
             if ($(window).width() <= 768) {
-                //if (_isMobile == false) {
                     if ($('.site').getNiceScroll(0)) {
                         $('.site').getNiceScroll(0).remove();
                     }
                     options.scrollOverflow = true;
                     _rebuildFullpage(options);
-                //}
             } else {
-                //if (_isMobile == true) {
                     options.scrollOverflow = false;
                     _rebuildFullpage(options);
                     _initContentScroll();
-                //}
             }
         },
         _onLeave = function (cur, next) {
-            //console.log(cur, next);
+            var cursorHtml = $('.site').getNiceScroll(0).cursor[0];
+            console.log($('.nicescroll-cursors').css('top','67px'));
             if ($(_item[next]).length > 0) {
+
                 var pos_top = $(_item[next]).position().top;
                 var off_top = $(_item[next]).offset().top;
-                //console.log(_obj.getNiceScroll(0).scrollTop(678));
-                //_obj.getNiceScroll(0).setScrollTop(678);
-                //console.log(_obj.getNiceScroll(0).rail.drag);
-                //console.log(cur, next);
             }
         },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
-                _isMobile = true;
                 options.scrollOverflow = true;
                 _initFullpage(options);
             } else {
-                _isMobile = false;
                 options.scrollOverflow = false;
                 _initFullpage(options);
                 _initContentScroll();

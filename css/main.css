@@ -1959,6 +1959,14 @@
     border-radius: 0!important;
     opacity: 1!important;
 }
+.nicescroll-rails.nicescroll-rails-vr{
+    width: 15px;
+    z-index: 10;
+    cursor: default;
+    position: absolute;
+    opacity: 1;
+    display: block!important;
+}
 .nicescroll-cursors{
     cursor:grab!important;
     cursor: -webkit-grab!important;

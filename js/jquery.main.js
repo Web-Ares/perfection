@@ -1,7 +1,7 @@
 $(function () {
-if($('.drop-menu').length){
-    menu = new Menu();
-}
+    if ($('.drop-menu').length) {
+        menu = new Menu();
+    }
 
     $('.site').each(function () {
         new Screen($(this));
@@ -14,7 +14,7 @@ var Screen = function (obj) {
     //private properties
     var _self = this,
         _obj = obj;
-    var _isAnimation = false;
+    var _fullPage;
     var _item = _obj.find('.screen');
 
     _obj[0].obj = _self;
@@ -23,25 +23,59 @@ var Screen = function (obj) {
 
 
     var _initContentScroll = function () {
+
+            //_obj.niceScroll({
+            //    cursorcolor: '#000',
+            //    zindex: 10,
+            //    autohidemode: false,
+            //    horizrailenabled: false,
+            //    cursorborderradius: 0,
+            //    cursorwidth: '5px',
+            //    bouncescroll: true,
+            //    mousescrollstep: 24,
+            //    //usetransition: true,
+            //    enablemousewheel: false,
+            //    touchbehavior:false,
+            //    cursorfixedheight: 50
+            //});
+
             $('#fullpage').fullpage({
+                loopHorizontal: false,
+                normalScrollElementTouchThreshold: 50,
+                afterResize:function(link,index) {
+
+                },
+                //onLeave:function(link,index) {
+                //    console.log('leave');
+                //},
+                //onSlideLeave:function(link,index) {
+                //    console.log('slideleave');
+                //}
                 //scrollOverflow: true
             });
-            _obj.niceScroll({
-                cursorcolor: '#000',
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursorwidth: '5px',
-                touchbehavior: false,
-                bouncescroll: false,
-                mousescrollstep: 100
+
+        },
+        _onEvents = function () {
+            $(window).resize(function () {
+                //$.fn.fullpage.destroy('all');
+                //$('#fullpage').fullpage({
+                //    loopHorizontal: false,
+                //    normalScrollElementTouchThreshold: 50,
+                //    scrollOverflow: true
+                //});
+                _sizeEvents();
             });
-            $('.site').getNiceScroll(0).unbindAll();
+        },
+        _sizeEvents = function(){
+            //if ($(window).width() <= 768) {
+            //    $('.screen').css('min-height',$(window).height());
+            //    $('.screen').removeAttr('height');
+            //}
         },
         _init = function () {
             _initContentScroll();
-
+            _sizeEvents();
+            _onEvents();
         };
 
     //public properties

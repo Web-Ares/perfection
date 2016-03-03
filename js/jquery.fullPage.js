@@ -387,6 +387,7 @@
         /**
          * When resizing is finished, we adjust the slides sizes and positions
          */
+
         FP.reBuild = function(resizing){
             if(container.hasClass(DESTROYED)){ return; }  //nothing to do if the plugin was destroyed
 

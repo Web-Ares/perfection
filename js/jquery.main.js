@@ -68,20 +68,21 @@ var Screen = function (obj) {
         },
         _onEvents = function () {
             $(window).resize(function () {
-                //$.fn.fullpage.destroy('all');
-                //$('#fullpage').fullpage({
-                //    loopHorizontal: false,
-                //    normalScrollElementTouchThreshold: 50,
-                //    scrollOverflow: true
-                //});
+
                 _sizeEvents();
             });
         },
         _sizeEvents = function(){
-            //if ($(window).width() <= 768) {
-            //    $('.screen').css('min-height',$(window).height());
-            //    $('.screen').removeAttr('height');
-            //}
+            if ($(window).width() <= 768) {
+                //$('.screen').css('min-height',$(window).height());
+                //$('.screen').removeAttr('height');
+                $.fn.fullpage.destroy('all');
+                $('#fullpage').fullpage({
+                    loopHorizontal: false,
+                    normalScrollElementTouchThreshold: 50,
+                    scrollOverflow: true
+                });
+            }
         },
         _init = function () {
             _initContentScroll();

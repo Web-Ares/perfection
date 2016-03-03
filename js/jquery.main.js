@@ -47,7 +47,7 @@ var Screen = function (obj) {
                 cursorborderradius: 0,
                 cursoropacitymin: 1,
                 cursorwidth: '5px',
-                bouncescroll: true,
+                bouncescroll: false,
                 mousescrollstep: 24,
                 enablemousewheel: false,
                 touchbehavior: false,
@@ -59,10 +59,12 @@ var Screen = function (obj) {
             _obj.getNiceScroll(0).scrollend(function(){
 
                 if(_obj.getNiceScroll(0).rail.drag==false){
+                    _obj.getNiceScroll(0).cancelEvent();
                     console.log('end');
                 }else{
                     console.log('drag');
                 };
+                return false;
             })
 
         },
@@ -101,7 +103,7 @@ var Screen = function (obj) {
                 var off_top = $(_item[next]).offset().top;
                 //console.log(_obj.getNiceScroll(0).scrollTop(678));
                 //_obj.getNiceScroll(0).setScrollTop(678);
-                console.log(_obj.getNiceScroll(0).rail.drag);
+                //console.log(_obj.getNiceScroll(0).rail.drag);
                 //console.log(cur, next);
             }
         },

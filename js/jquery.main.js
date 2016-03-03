@@ -45,37 +45,7 @@ var Screen = function (obj) {
 
     var _initContentScroll = function () {
 
-            _nicescroll = _obj.niceScroll({
-                cursorcolor: '#1565c0',
-                cursorborder: "0 solid transparent",
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursoropacitymin: 1,
-                cursorwidth: '15px',
-                bouncescroll: false,
-                mousescrollstep: 24,
-                enablemousewheel: false,
-                touchbehavior: false,
-                cursorfixedheight: 100,
-                usetransition: true,
-                smoothscroll:false
-            });
 
-            //console.log(_obj.getNiceScroll(0));
-            _obj.getNiceScroll(0).scrollend(function () {
-console.log(_obj.getNiceScroll(0));
-                if (_obj.getNiceScroll(0).rail.drag == false) {
-                    _obj.getNiceScroll(0).cancelEvent();
-                    console.log(_lastScrollPosition);
-                } else {
-                    _lastScrollPosition = _obj.getNiceScroll(0).rail.drag;
-                    console.log('drag');
-                }
-                ;
-                return false;
-            })
 
         },
         _initFullpage = function (options) {
@@ -108,8 +78,6 @@ console.log(_obj.getNiceScroll(0));
             }
         },
         _onLeave = function (cur, next) {
-            var cursorHtml = $('.site').getNiceScroll(0).cursor[0];
-            console.log($('.nicescroll-cursors').css('top','67px'));
             if ($(_item[next]).length > 0) {
 
                 var pos_top = $(_item[next]).position().top;

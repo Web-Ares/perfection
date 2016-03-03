@@ -480,6 +480,7 @@
     transform: translateX(-50%) translateY(-50%) scale(0.5);
 }
 /* --------------- /line-solid --------------- */
+
 /* --------------- formats --------------- */
 .formats{
     padding: 20px 0;
@@ -531,7 +532,7 @@
     transform: translateX(-50%) translateY(-50%);
 }
 .formats__slider-item{
-    overflow: hidden;
+    /*overflow: hidden;*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -550,6 +551,24 @@
     -webkit-transition: transform 3s linear, background 0.5s linear, color 0.5s linear;
     transition: transform 3s linear, background 0.5s linear, color 0.5s linear;
     cursor: pointer;
+}
+.formats__slider-item>span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.formats__slider-item>span:after{
+    position: absolute;
+    left: 50%;
+    bottom: -48px;
+    width: 25px;
+    height: 48px;
+    margin: 0 0 0 -12.5px;
+    background: url("../img/arrow.png") no-repeat;
+    background-size: cover;
+    content: '';
 }
 .formats__slider-item>div{
     display: table;

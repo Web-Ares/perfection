@@ -97,6 +97,7 @@ var SliderFormats = function( obj ) {
         _obj = obj,
         _objInner = _obj.find( '>div'),
         _items = _objInner.find( '.formats__slider-item'),
+        _itemsArrow = _items.find( '>span'),
         _textItems = _objInner.find( '.formats__slider-text>div'),
         _timer,
         _distance = 0 ,
@@ -201,6 +202,11 @@ var SliderFormats = function( obj ) {
                 curItem.css( {
                     '-webkit-transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)',
                     'transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)'
+                } );
+
+                _itemsArrow.css( {
+                    '-webkit-transform': 'rotate(' + rotate + 'deg) rotate(' + rotateReverse + 'deg)',
+                    'transform': 'rotate(' + rotate + 'deg) rotate(' + rotateReverse + 'deg)'
                 } );
 
             } );

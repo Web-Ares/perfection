@@ -1,7 +1,7 @@
 $(function () {
-    $('.drop-menu').each(function () {
-        new Menu($(this));
-    });
+    $( '.drop-menu' ).each( function() {
+        new Menu( $( this ) );
+    } );
 
     $('.site').each(function () {
         new Screen($(this));
@@ -337,15 +337,16 @@ var SliderFormats = function (obj) {
 
 var Menu = function (obj) {
     var _obj = obj,
-        _btn = $('.drop-menu-btn'),
-        _parentWrap = $('.site__header');
+        _btn = $( '.drop-menu-btn' ),
+        _parentWrap = $( '.site__header' ),
+        _menuContent = _obj.find( '.drop-menu__inner-wrap' );
 
     var is_article = false;
-    var onEvents = function () {
+    var _onEvents = function () {
             _btn.on({
                 click: function () {
                     if (_parentWrap.hasClass('site__header_drop-menu')) {
-                        _parentWrap.removeClass('site__header_drop-menu');
+                        _parentWrap.removeClass( 'site__header_drop-menu' );
                         $('#fullpage').fullpage({
                             loopHorizontal: false,
                             touchSensitivity: 20,
@@ -354,16 +355,26 @@ var Menu = function (obj) {
                         });
 
                     } else {
-                        _parentWrap.addClass('site__header_drop-menu');
+                        _parentWrap.addClass( 'site__header_drop-menu' );
                         $.fn.fullpage.destroy('all');
                     }
-
                 }
             })
-
+        },
+        _initContentScroll = function(){
+            _menuContent.niceScroll({
+                cursorcolor: '#fff',
+                zindex: 10,
+                autohidemode: false,
+                horizrailenabled: false,
+                cursorborderradius: 0,
+                cursorwidth: '2px'
+            });
+            console.log(_menuContent)
         },
         init = function () {
-            onEvents();
+            _initContentScroll();
+            _onEvents();
         };
 
     init()

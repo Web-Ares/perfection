@@ -1461,13 +1461,14 @@
 @media (min-height: 600px) {
 
 }
-.nicescroll-rails.nicescroll-rails-vr{
-    width: 5px!important;
+.slimScrollBar{
+    background: #1565c0!important;
+    border-radius: 0!important;
+    opacity: 1!important;
 }
-#ascrail2000 .nicescroll-cursors{
+.nicescroll-cursors{
     cursor:grab!important;
     cursor: -webkit-grab!important;
     cursor: -ms-grab!important;
     cursor: -o-grab!important;
-    width: 10px!important;
 }

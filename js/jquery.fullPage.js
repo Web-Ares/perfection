@@ -2748,7 +2748,7 @@
                 allowPageScroll: true,
                 height: scrollHeight + 'px',
                 size: '5px',
-                alwaysVisible: false
+                alwaysVisible: true
             });
         },
 

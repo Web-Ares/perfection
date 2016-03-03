@@ -20,7 +20,7 @@ var Screen = function (obj) {
     //private properties
     var _self = this,
         _obj = obj;
-    var _fullPage;
+    var _isMobile;
     var _nicescroll = null;
     var _item = _obj.find('.screen');
     var options = {
@@ -40,29 +40,30 @@ var Screen = function (obj) {
     var _initContentScroll = function () {
 
             _nicescroll = _obj.niceScroll({
-                cursorcolor: '#000',
+                cursorcolor: '#1565c0',
+                cursorborder: "0 solid transparent",
                 zindex: 10,
                 autohidemode: false,
                 horizrailenabled: false,
                 cursorborderradius: 0,
                 cursoropacitymin: 1,
-                cursorwidth: '5px',
+                cursorwidth: '15px',
                 bouncescroll: false,
                 mousescrollstep: 24,
                 enablemousewheel: false,
                 touchbehavior: false,
-                cursorfixedheight: 50,
+                cursorfixedheight: 100,
                 usetransition: true
             });
 
-        console.log(_obj.getNiceScroll(0));
+        //console.log(_obj.getNiceScroll(0));
             _obj.getNiceScroll(0).scrollend(function(){
 
                 if(_obj.getNiceScroll(0).rail.drag==false){
                     _obj.getNiceScroll(0).cancelEvent();
-                    console.log('end');
+                    //console.log('end');
                 }else{
-                    console.log('drag');
+                    //console.log('drag');
                 };
                 return false;
             })
@@ -84,20 +85,25 @@ var Screen = function (obj) {
         },
 
         _sizeChange = function () {
+            
             if ($(window).width() <= 768) {
-                if ($('.site').getNiceScroll(0)) {
-                    $('.site').getNiceScroll(0).remove();
+                if(_isMobile==false){
+                    if ($('.site').getNiceScroll(0)) {
+                        $('.site').getNiceScroll(0).remove();
+                    }
+                    options.scrollOverflow = true;
+                    _rebuildFullpage(options);
                 }
-                options.scrollOverflow = true;
-                _rebuildFullpage(options);
             } else {
-                options.scrollOverflow = false;
-                _rebuildFullpage(options);
-                _initContentScroll();
+                if(_isMobile==true) {
+                    options.scrollOverflow = false;
+                    _rebuildFullpage(options);
+                    _initContentScroll();
+                }
             }
         },
         _onLeave = function (cur, next) {
-            console.log(cur, next);
+            //console.log(cur, next);
             if($(_item[next]).length>0){
                 var pos_top = $(_item[next]).position().top;
                 var off_top = $(_item[next]).offset().top;
@@ -109,9 +115,11 @@ var Screen = function (obj) {
         },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
+                _isMobile = true;
                 options.scrollOverflow = true;
                 _initFullpage(options);
             } else {
+                _isMobile = false;
                 options.scrollOverflow = false;
                 _initFullpage(options);
                 _initContentScroll();

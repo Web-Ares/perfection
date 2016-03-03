@@ -45,6 +45,8 @@
 
     pixel-grid
 
+    pack-includes
+
     easy-way
 
 */
@@ -458,7 +460,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    padding: 50px 0;
     background: #242a2f;
     color: #fff;
     text-align: center;
@@ -468,44 +470,38 @@
     color: #fff;
     text-align: center;
 }
-.pack-includes__wrap:after{
-    display: inline-block;
-    width: 100%;
-    content: "";
-}
 .pack-includes__item{
     display: inline-block;
     vertical-align: top;
-    width: 49%;
+    width: 90%;
     margin-bottom: 4vmin;
-    font: 10px "Proxima Nova Light";
+    font: 3.5vmin "Proxima Nova Light";
     text-align: center;
 }
 .pack-includes__pic{
     position: relative;
     width: 100%;
-    height: 9.5vmin;
+    height: 16.5vmin;
 }
 .pack-includes__pic img{
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.5);
-    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 .pack-includes__title{
     display: block;
-    font: 12px "Proxima Nova Regular";
+    font: 4vmin "Proxima Nova Regular";
     line-height: 5vmin;
-}
-.site__centered .pack-includes__wrap:last-child .pack-includes__item {
-    margin-top: -26px;
 }
 /* --------------- /pack-includes --------------- */
 
 /* --------------- customizable --------------- */
 .customizable {
-    padding-top: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .customizable__layout {
     margin: 0 0 25px;
@@ -519,7 +515,6 @@
     width: 100%;
     height: auto;
 }
-
 /* --------------- /customizable --------------- */
 
 /* --------------- sharpest-icons --------------- */
@@ -1129,6 +1124,15 @@
     }
     /* ------------ /icons-preview ------------ */
 
+    /* ------------ pack-includes ------------ */
+    .pack-includes__item {
+        width: 45%;
+        margin: 0 2vmin 4vmin;
+    }
+    /* ------------ /pack-includes ------------ */
+
+
+
 }
 @media (min-width: 768px) {
 
@@ -1389,11 +1393,16 @@
     /* --------------- /promo --------------- */
 
     /* --------------- pack-includes --------------- */
-    .pack-includes{
-
+    .pack-includes__wrap:after{
+        display: inline-block;
+        width: 100%;
+        content: '';
     }
     .site__centered .pack-includes__wrap:last-child .pack-includes__item{
         margin-bottom: 0;
+    }
+    .pack-includes__pic {
+        height: 11vmin;
     }
     .pack-includes__pic img {
         position: absolute;
@@ -1403,14 +1412,15 @@
         transform: translateX(-50%) translateY(-50%);
     }
     .pack-includes__item {
-        font-size: 2.6vmin;
-        width: 23%;
         opacity: 0;
+        width: 23%;
+        margin: 0 0 4vmin;
         -webkit-transform: translateX(50%);
         -ms-transform: translateX(50%);
         transform: translateX(50%);
         -webkit-transition: transform .5s ease-in-out .5s, opacity .5s ease-in-out .5s;
         transition: transform .5s ease-in-out .5s, opacity .5s ease-in-out .5s;
+        font-size: 2.6vmin;
     }
     .active .pack-includes__item {
         opacity: 1;
@@ -1746,6 +1756,9 @@
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        position: relative;
+        top: auto;
+        transform: translateY(0%);
     }
     .customizable__layout{
         display: inline-block;
@@ -1850,17 +1863,19 @@
         margin-bottom: 5vmin;
     }
     .pack-includes__title {
-        font-size: 22px;
+        font-size: 3.3vmin;
     }
+    .pack-includes__item {
+        font-size: 2.9vmin;
+    }
+    /* --------------- /pack-includes --------------- */
+
     /* --------------- pixel-grid --------------- */
     .pixel-grid__layout{
         padding: 6% 11% 0 0;
     }
     .pixel-grid__perfect{
         top: 18%;
-    }
-    .pack-includes__item {
-        font-size: 20px;
     }
     /* --------------- /pixel-grid --------------- */
 
@@ -1916,6 +1931,15 @@
         margin-left: 181px;
     }
     /*----------/line-solid__list----------*/
+
+    /* --------------- pack-includes --------------- */
+    .pack-includes__title {
+        font-size: 22px;
+    }
+    .pack-includes__item {
+        font-size: 20px;
+    }
+    /* --------------- /pack-includes --------------- */
 
 }
 @media (min-height: 600px) {

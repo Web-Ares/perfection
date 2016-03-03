@@ -1780,7 +1780,15 @@
 
     /* ------------ icons-preview ------------ */
     .icons-preview {
-        width: 26%;
+        width: 31%;
+        padding: 20px 32px 14px;
+    }
+    .icons-preview div {
+        margin: 0 -2px 10px;
+        height: 8.5vmin;
+    }
+    .icons-preview div.icons-preview__footer {
+        padding-top: 5px;
     }
     .icons-preview img {
         -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
@@ -1863,7 +1871,7 @@
         margin-bottom: 12vmin;
     }
     .icons-promo__wrap {
-        margin-bottom: 5vmin;
+        margin-bottom: 8vmin;
     }
     /* ------------ /icons-promo ------------ */
 
@@ -1871,9 +1879,6 @@
     .icons-preview__footer span {
         font-size: 2.2vmin;
         line-height: 2.2vmin;
-    }
-    .icons-preview div.icons-preview__footer {
-        padding-top: 12px;
     }
     /* ------------ /icons-preview ------------ */
 

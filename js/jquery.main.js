@@ -79,6 +79,7 @@ var Screen = function (obj) {
                 $.fn.fullpage.destroy('all');
                 $('#fullpage').fullpage({
                     loopHorizontal: false,
+                    touchSensitivity: 20,
                     normalScrollElementTouchThreshold: 50,
                     scrollOverflow: true
                 });

@@ -796,6 +796,78 @@
 }
 /* --------------- /pixel-grid --------------- */
 
+/* ------------ easy-way ------------ */
+.easy-way {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 20px 0;
+}
+.easy-way__content {
+    text-align: left;
+    margin-bottom: 30px;
+}
+.easy-way .site__title span {
+    display: block;
+}
+.easy-way__txt {
+    margin: 0 0 20px;
+}
+.easy-way__txt b {
+    font-family: "Proxima Nova Semibold", sans-serif;
+}
+.easy-way__warning {
+    position: relative;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1;
+}
+.easy-way__warning:before {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: url("../img/easy-way__warning.png") no-repeat;
+    background-size: contain;
+    content: '';
+}
+.easy-way__pic {
+    text-align: center;
+}
+.easy-way__pic-wrapper {
+    display: inline-block;
+    position: relative;
+}
+.easy-way__pic-wrapper:before {
+    position: absolute;
+    z-index: 1;
+    bottom: 4px;
+    left: 5%;
+    width: 90%;
+    height: 7px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3 );
+    content: '';
+}
+.easy-way__pic-wrapper img {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 566px;
+    height: auto;
+}
+/* ------------ /easy-way ------------ */
+
 
 @media (min-width: 550px) {
 
@@ -832,6 +904,7 @@
     }
     .site_justify{
         text-align: justify;
+        vertical-align: middle;
     }
     .site_justify:after{
         display: inline-block;
@@ -1188,6 +1261,41 @@
     }
     /* --------------- /pixel-grid --------------- */
 
+    /* ------------ easy-way ------------ */
+    .easy-way__content {
+        display: inline-block;
+        vertical-align: middle;
+        width: 41%;
+    }
+    .easy-way__warning {
+        padding-left: 37px;
+        font-size: 18px;
+    }
+    .easy-way__txt {
+        margin-bottom: 44px;
+        font-size: 3vmin;
+        line-height: 1.5;
+    }
+    .easy-way .site__title {
+        font-size: 7.9vmin;
+        line-height: 0.95;
+        margin-bottom: 21px;
+    }
+    .easy-way__warning:before {
+        top: -4px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+    }
+    .easy-way__pic {
+        display: inline-block;
+        vertical-align: middle;
+        width: 49%;
+        padding: 20px 0;
+        height: 100%;
+    }
+    /* ------------ /easy-way ------------ */
+
 }
 @media (min-width: 992px) {
 
@@ -1279,6 +1387,14 @@
         padding-top: 12px;
     }
     /* ------------ /icons-promo ------------ */
+
+    /* ------------ easy-way ------------ */
+    .easy-way .site__title {
+        font-size: 7.9vmin;
+        line-height: 0.95;
+        margin-bottom: 25px;
+    }
+    /* ------------ /easy-way ------------ */
 
 }
 

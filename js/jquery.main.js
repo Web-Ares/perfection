@@ -295,6 +295,7 @@ var Menu = function ( obj ) {
             click: function () {
                 if ( _obj.hasClass( 'active' ) ) {
                     _obj.removeClass( 'active' );
+                    _btn.removeClass( 'drop-menu-btn_close' );
                     $('#fullpage').fullpage({
                         loopHorizontal: false,
                         touchSensitivity: 20,
@@ -304,7 +305,12 @@ var Menu = function ( obj ) {
 
                 } else {
                     _obj.addClass( 'active' );
-                    $.fn.fullpage.destroy( 'all' )
+                    _btn.addClass( 'drop-menu-btn_close' );
+
+                    //css animation
+                    setTimeout(function(){
+                        $.fn.fullpage.destroy( 'all' )
+                    }, 300)
                 }
 
             }

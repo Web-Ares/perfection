@@ -54,6 +54,12 @@ var Screen = function (obj) {
                 usetransition: true
             });
 
+        console.log(_obj.getNiceScroll(0));
+            _obj.getNiceScroll(0).scrollend(function(){
+                console.log('end');
+
+            })
+
         },
         _initFullpage = function (options) {
             $('#fullpage').fullpage(options);
@@ -84,9 +90,15 @@ var Screen = function (obj) {
             }
         },
         _onLeave = function (cur, next) {
-            var pos_top = $(_item[next]).position().top;
-            var off_top = $(_item[next]).offset().top;
             console.log(cur, next);
+            if($(_item[next]).length>0){
+                var pos_top = $(_item[next]).position().top;
+                var off_top = $(_item[next]).offset().top;
+                //console.log(_obj.getNiceScroll(0).scrollTop(678));
+                //_obj.getNiceScroll(0).setScrollTop(678);
+                console.log(_obj.getNiceScroll(0).setScrollTop());
+                //console.log(cur, next);
+            }
         },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {

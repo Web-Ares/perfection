@@ -1294,6 +1294,13 @@
 @media (min-height: 600px) {
 
 }
+.nicescroll-rails.nicescroll-rails-vr{
+    width: 5px!important;
+}
 #ascrail2000 .nicescroll-cursors{
-    cursor:pointer!important;
+    cursor:grab!important;
+    cursor: -webkit-grab!important;
+    cursor: -ms-grab!important;
+    cursor: -o-grab!important;
+    width: 10px!important;
 }

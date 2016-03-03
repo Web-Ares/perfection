@@ -396,13 +396,61 @@
 
 /* ------------ icons-promo ------------ */
 .icons-promo {
+    padding: 20px 15px;
     text-align: center;
 }
-.icons-promo .site__title {}
 .icons-promo p {
     font-size: 4.7vmin;
+    line-height: 1.462;
+    margin-bottom: 20px;
 }
 /* ------------ /icons-promo ------------ */
+
+/* ------------ icons-preview ------------ */
+.icons-preview {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background: #fcfcfc;
+}
+.icons-preview:last-child {
+    margin-bottom: 0;
+}
+.icons-preview div.icons-preview__footer {
+    width: 100%;
+    padding: 3px 8% 0;
+    margin-bottom: -6px;
+    text-align: justify;
+}
+.icons-preview div.icons-preview__footer:after {
+    display: inline-block;
+    width: 100%;
+    content: '';
+}
+.icons-preview__footer span {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    text-align: left;
+}
+.icons-preview__footer span:nth-child(2) {
+    text-align: right;
+}
+.icons-preview div {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 24%;
+    height: 9.5vmin;
+}
+.icons-preview img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.5);
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
+}
+
+/* ------------ /icons-preview ------------ */
 
 
 @media (min-width: 768px) {

@@ -102,7 +102,7 @@ var SliderFormats = function( obj ) {
         _obj = obj,
         _objInner = _obj.find( '>div'),
         _items = _objInner.find( '.formats__slider-item'),
-        _itemsArrow = _items.find( '>span'),
+        _itemsArrow = _items.find( '.formats__slider-arrow'),
         _textItems = _objInner.find( '.formats__slider-text>div'),
         _timer,
         _distance = 0 ,
@@ -128,6 +128,8 @@ var SliderFormats = function( obj ) {
                     if( _window.width() < 992 ) {
 
                         _changeText( $( this ) );
+                        clearInterval( _timer );
+                        _changeNext();
 
                     }
 
@@ -158,7 +160,7 @@ var SliderFormats = function( obj ) {
                     _positionItems();
 
                 }
-            } )
+            } );
 
         },
         _changeText = function( item ) {
@@ -181,7 +183,7 @@ var SliderFormats = function( obj ) {
 
             if( _window.width() < 768 ) {
 
-                _distance = 0;
+                _distance = 20;
 
             } else if( _window.width() >= 768 && _window.width() < 1200 ) {
 
@@ -209,9 +211,18 @@ var SliderFormats = function( obj ) {
                     'transform': 'rotate(' + rotate + 'deg) translate(' + radius + ') rotate(' + rotateReverse + 'deg)'
                 } );
 
-                _itemsArrow.css( {
-                    '-webkit-transform': 'rotate(' + rotate + 'deg) rotate(' + rotateReverse + 'deg)',
-                    'transform': 'rotate(' + rotate + 'deg) rotate(' + rotateReverse + 'deg)'
+            } );
+
+            _itemsArrow.each( function( i ) {
+
+                var curItem = $( this ),
+                    rotate = slice * i + start,
+                    rotateReverse = rotate * -1,
+                    rotate2 = slice * i;
+
+                curItem.css( {
+                    '-webkit-transform': 'rotate(' + rotate + 'deg) rotate(' + (rotateReverse + rotate2) + 'deg)',
+                    'transform': 'rotate(' + rotate + 'deg) rotate(' + (rotateReverse + rotate2) + 'deg)'
                 } );
 
             } );
@@ -248,8 +259,6 @@ var SliderFormats = function( obj ) {
 
             setTimeout( function () {
 
-                clearInterval( _timer );
-
                 _items.eq(0).addClass( 'active' );
 
                 var activeItem = _items.filter( '.active'),
@@ -261,16 +270,14 @@ var SliderFormats = function( obj ) {
             },3000 );
 
 
-            _changeNext();
-
         },
         _init = function() {
 
             _obj[ 0 ].obj = _self;
-            _startView();
             _positionItems();
+            _startView();
             _addEvents();
-
+            _changeNext();
         };
 
     _init();

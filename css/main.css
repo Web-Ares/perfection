@@ -389,7 +389,7 @@
 
 /* --------------- sharpest-icons --------------- */
 .sharpest-icons{
-    padding: 20px 0;
+    padding: 50px 0;
 }
 .sharpest-icons__text{
     margin: 0 0 20px;
@@ -483,7 +483,7 @@
 
 /* --------------- formats --------------- */
 .formats{
-    padding: 20px 0;
+    padding: 50px 0;
     font-family: "Proxima Nova Regular", sans-serif;
 }
 .formats__text{
@@ -532,7 +532,6 @@
     transform: translateX(-50%) translateY(-50%);
 }
 .formats__slider-item{
-    /*overflow: hidden;*/
     position: absolute;
     top: 50%;
     left: 50%;
@@ -552,26 +551,9 @@
     transition: transform 3s linear, background 0.5s linear, color 0.5s linear;
     cursor: pointer;
 }
-.formats__slider-item>span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.formats__slider-item>span:after{
-    position: absolute;
-    left: 50%;
-    bottom: -48px;
-    width: 25px;
-    height: 48px;
-    margin: 0 0 0 -12.5px;
-    background: url("../img/arrow.png") no-repeat;
-    background-size: cover;
-    content: '';
-}
 .formats__slider-item>div{
     display: table;
+    overflow: hidden;
     width: 100%;
     height: 100%;
 }
@@ -584,7 +566,7 @@
     background: #1565c0;
     color: #fff;
 }
-.formats__slider-item.active>div{
+.formats__slider-item.active>div>span{
     -webkit-animation: changeSlides 1s linear 1 normal;
     animation: changeSlides 1s linear 1 normal;
     -webkit-animation-fill-mode: forwards;
@@ -888,7 +870,33 @@
     .formats__slider-text dl{
         margin: 0 0 24px;
     }
-    /*/ --------------- /formats --------------- /*/
+    .formats__slider-arrow{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: opacity 0.5s linear;
+        transition: opacity 0.5s linear;
+    }
+    .formats__slider-arrow:after{
+        position: absolute;
+        left: 50%;
+        bottom: -48px;
+        width: 25px;
+        height: 48px;
+        margin: 0 0 0 -12.5px;
+        background: url("../img/arrow.png") no-repeat;
+        background-size: cover;
+        content: '';
+    }
+    .formats__slider-item.active .formats__slider-arrow{
+        opacity: 1;
+        -webkit-transition-delay: 1s;
+        transition-delay: 1s;
+    }
+    /* --------------- /formats --------------- */
 
     /* ----------line-solid --------------- */
     .line-solid{

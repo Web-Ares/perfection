@@ -513,6 +513,7 @@
 .customizable__image {
     position: relative;
     width: 80%;
+    margin: 0 auto;
 }
 .customizable__image img{
     width: 100%;

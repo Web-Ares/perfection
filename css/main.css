@@ -494,7 +494,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    padding: 50px 0;
     background: #242a2f;
     color: #fff;
     text-align: center;

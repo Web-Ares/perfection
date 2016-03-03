@@ -23,6 +23,14 @@ var Screen = function (obj) {
     var _isMobile;
     var _nicescroll = null;
     var _item = _obj.find('.screen');
+    var options = {
+        loopHorizontal: false,
+        normalScrollElementTouchThreshold: 50,
+        onLeave: function(cur, next){
+            _onLeave(cur, next)
+        }
+    };
+
 
     _obj[0].obj = _self;
 
@@ -60,24 +68,21 @@ var Screen = function (obj) {
                 return false;
             })
 
-                },
-                afterLoad:function(){
-                    setTimeout(function(){
-                        console.log('load');
-                    },250)
-                },
-                onLeave:function(link,index) {//события когда слайдят
-                    console.log(index);
-                },
-                onSlideLeave:function(link,index) {
-                    console.log('slideleave');
-                }
-                //scrollOverflow: true
-            });
-
+        },
+        _initFullpage = function (options) {
+            $('#fullpage').fullpage(options);
+            $.fn.fullpage.reBuild();
+        },
+        _rebuildFullpage = function (options) {
+            $.fn.fullpage.destroy('all');
+            $('#fullpage').fullpage(options);
+            $.fn.fullpage.reBuild();
         },
         _onEvents = function () {
             $(window).resize(function () {
+                _sizeChange();
+            });
+        },
 
         _sizeChange = function () {
 
@@ -108,7 +113,7 @@ var Screen = function (obj) {
                 //console.log(cur, next);
             }
         },
-        _sizeEvents = function(){
+        _sizeEvents = function () {
             if ($(window).width() <= 768) {
                 _isMobile = true;
                 options.scrollOverflow = true;
@@ -121,7 +126,6 @@ var Screen = function (obj) {
             }
         },
         _init = function () {
-            _initContentScroll();
             _sizeEvents();
             _onEvents();
         };

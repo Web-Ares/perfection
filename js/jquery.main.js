@@ -97,12 +97,11 @@ var Screen = function (obj) {
                     onLeave: function (link, index) {//события когда слайдят
                        var pos_top = $(_item[index]).position().top;
                        var off_top = $(_item[index]).offset().top;
-                        console.log(_obj.getNiceScroll(0));
-                        //_obj.getNiceScroll(0).doScrollPos(pos_top, 300);
+                        //_obj.getNiceScroll(0).doScrollTop(pos_top, 300);
                     },
                     onSlideLeave: function (link, index) {//события когда слайдят
-                        console.log(link, index,erwer,sfdfs);
                     }
+
                 });
                 _initContentScroll();
             }

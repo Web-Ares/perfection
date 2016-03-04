@@ -51,10 +51,10 @@ var Screen = function (obj) {
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-                    _swiper.detachEvents();
-                    setTimeout(function(){
-                        _swiper.attachEvents();
-                    },1000)
+                    //_swiper.detachEvents();
+                    //setTimeout(function(){
+                    //    _swiper.attachEvents();
+                    //},1000)
                     //_swiper.params.simulateTouch = true;
                     //_swiper.attachEvents();
                     //_swiper.detachEvents();

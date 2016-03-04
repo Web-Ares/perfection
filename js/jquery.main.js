@@ -318,16 +318,11 @@ var Menu = function (obj) {
                 click: function () {
                     if (_parentWrap.hasClass('site__header_drop-menu')) {
                         _parentWrap.removeClass( 'site__header_drop-menu' );
-                        $('#fullpage').fullpage({
-                            loopHorizontal: false,
-                            touchSensitivity: 20,
-                            normalScrollElementTouchThreshold: 50,
-                            scrollOverflow: false
-                        });
+                        _swiper.attachEvents();
 
                     } else {
                         _parentWrap.addClass( 'site__header_drop-menu' );
-                        $.fn.fullpage.destroy('all');
+                        _swiper.detachEvents();
                     }
                 }
             })

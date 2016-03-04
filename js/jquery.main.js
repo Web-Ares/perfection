@@ -45,25 +45,28 @@ var Screen = function (obj) {
                 spaceBetween: 0,
                 slideActiveClass: 'active',
                 simulateTouch: true,
-                mousewheelControl: true,
+                mousewheelControl: false,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-                    _swiper.disableMousewheelControl();
                     _swiper.detachEvents();
+                    setTimeout(function(){
+                        _swiper.attachEvents();
+                    },4000)
+                    //_swiper.params.simulateTouch = true;
+                    //_swiper.attachEvents();
+                    //_swiper.detachEvents();
                 }
             });
-        console.log(_swiper);
-
         },
         _initNicescroll = function(){
             _item.niceScroll({
                 cursorcolor: 'transparent',
                 cursorborder: "0 solid transparent",
                 zindex: 10,
-                autohidemode: false,
+                autohidemode: true,
                 horizrailenabled: false,
                 cursorborderradius: 0,
                 cursoropacitymin: 1,
@@ -71,11 +74,11 @@ var Screen = function (obj) {
                 bouncescroll: false,
                 mousescrollstep: 24,
                 enablemousewheel: true,
-                touchbehavior: false,
+                touchbehavior: true,
                 usetransition: true,
                 smoothscroll:false
             });
-            console.log(_item.getNiceScroll(0));
+
         },
         _onEvents = function () {
             $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {

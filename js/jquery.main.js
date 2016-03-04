@@ -54,7 +54,7 @@ var Screen = function (obj) {
                     _swiper.detachEvents();
                     setTimeout(function(){
                         _swiper.attachEvents();
-                    },4000)
+                    },1000)
                     //_swiper.params.simulateTouch = true;
                     //_swiper.attachEvents();
                     //_swiper.detachEvents();

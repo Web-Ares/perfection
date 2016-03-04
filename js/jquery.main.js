@@ -121,7 +121,9 @@ var Screen = function ( obj ) {
                 usetransition: true,
                 smoothscroll:false
             });
-            _item.getNiceScroll()
+            _item.on('scroll',function(e){
+                console.log(e);
+            })
         },
         _onEvents = function () {
             $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseenter(function () {

@@ -1316,38 +1316,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     .formats__slider-text dl{
         margin: 0 0 15px;
     }
-    .formats__slider-arrow{
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: opacity 0.5s linear;
-        transition: opacity 0.5s linear;
-    }
-    .formats__slider-arrow:after{
-        opacity: 0;
-        position: absolute;
-        left: 50%;
-        bottom: -45px;
-        width: 25px;
-        height: 48px;
-        margin: 0 0 0 -12.5px;
-        background: url("../img/arrow.png") no-repeat;
-        background-size: cover;
-        content: '';
-        -webkit-transition: opacity 0.5s linear 0.5s;
-        transition: opacity 0.5s linear 0.5s;
-    }
-    .formats__slider-item.active .formats__slider-arrow:after{
-        opacity: 1;
-    }
-    .formats__slider-item.active .formats__slider-arrow{
-        opacity: 1;
-        -webkit-transition-delay: 1s;
-        transition-delay: 1s;
-    }
     /* --------------- /formats --------------- */
 
     /* ----------line-solid --------------- */
@@ -1846,6 +1814,38 @@ html{overflow-y:hidden;overflow-x:hidden;}
     }
     .formats__slider-text dl{
         margin: 0 0 24px;
+    }
+    .formats__slider-arrow{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: opacity 0.5s linear;
+        transition: opacity 0.5s linear;
+    }
+    .formats__slider-arrow:after{
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        bottom: -45px;
+        width: 25px;
+        height: 48px;
+        margin: 0 0 0 -12.5px;
+        background: url("../img/arrow.png") no-repeat;
+        background-size: cover;
+        content: '';
+        -webkit-transition: opacity 0.5s linear 0.5s;
+        transition: opacity 0.5s linear 0.5s;
+    }
+    .formats__slider-item.active .formats__slider-arrow:after{
+        opacity: 1;
+    }
+    .formats__slider-item.active .formats__slider-arrow{
+        opacity: 1;
+        -webkit-transition-delay: 1s;
+        transition-delay: 1s;
     }
     /* ------------ /formats ------------ */
 

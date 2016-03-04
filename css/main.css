@@ -20,11 +20,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     header-menu
 
-    drop-menu
-
     screen
 
     drop-menu
+
+    social
 
     promo
 
@@ -36,8 +36,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     line-solid
 
-    we-impressed
-
     formats
 
     icons-promo
@@ -46,9 +44,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     pixel-grid
 
-    pack-includes
-
     easy-way
+
+    we-impressed
 
 */
 
@@ -139,7 +137,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     z-index: 1;
     width: 100%;
     max-width: 1211px;
-    width: 100%;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -297,7 +294,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 /* --------------- /screen --------------- */
 
-/* --------------- dropmenu --------------- */
+/* --------------- drop-menu --------------- */
 .drop-menu {
     position: absolute;
     top: 0;
@@ -362,7 +359,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .drop-menu__legally-item:hover{
     color: #90bff4;
 }
-/* --------------- /dropmenu --------------- */
+/* --------------- /drop-menu --------------- */
 
 /* --------------- social --------------- */
 .social{
@@ -425,7 +422,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .social__item_fb:after{
     background-position: -94px 0;
 }
-/* --------------- /copyright --------------- */
+/* --------------- /social --------------- */
 
 /* --------------- promo --------------- */
 .promo{
@@ -463,26 +460,17 @@ html{overflow-y:hidden;overflow-x:hidden;}
     color: #999;
     font: 12px/1 "Proxima Nova Light", sans-serif;
 }
-.promo:after,
 .promo:before{
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 2vh;
     content: '';
+    width: 11px;
+    height: 7vh;
+    background: url('../img/arrow-white.png') no-repeat 50% 0;
+    background-size: contain;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-}
-.promo:after{
-    height: 15px;
-    border-left: 1px solid #fff;
-}
-.promo:before{
-    width: 7px;
-    height: 7px;
-    border-bottom: 1px solid #fff;
-    border-left: 1px solid #fff;
-    transform: translateX(-50%) rotate(-45deg);
-    -webkit-transform: translateX(-50%) rotate(-45deg);
 }
 /* --------------- /promo --------------- */
 
@@ -493,6 +481,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     display: -webkit-flex;
     flex-wrap: wrap;
     flex-direction: column;
+    -webkit-flex-direction: column;
     justify-content: center;
     -webkit-justify-content: center;
     -ms-flex-align: center;
@@ -502,7 +491,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     background: #242a2f;
     color: #fff;
     text-align: center;
-    display: flex;
 }
 .pack-includes .site__title{
     margin-bottom: 5.5vmin;
@@ -542,6 +530,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     display: -ms-flexbox;
     display: -webkit-flex;
     flex-direction: row;
+    -webkit-flex-direction: row;
     flex-wrap: wrap;
     -webkit-justify-content: center;
     justify-content: center;
@@ -943,7 +932,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 .pixel-grid__img{
     max-width: 100%;
-    margin: 0 auto 30px;
+    margin: 0 auto;
 }
 .pixel-grid__img img{
     width: 100%;
@@ -1066,6 +1055,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     height: auto;
 }
 /* ------------ /easy-way ------------ */
+
 /* --------------- we-impressed --------------- */
 .we-impressed__layout {
     z-index: 2;
@@ -1089,16 +1079,17 @@ html{overflow-y:hidden;overflow-x:hidden;}
     content: '';
 }
 .we-impressed__pic {
-    width: 320px;
-    height: 284px;
+    width: 100%;
+    /*height: 400px;*/
     margin: 0 auto;
+    padding-bottom: 122%;
     /* position: absolute; */
     /* top: 50%; */
     /* right: 0; */
     /* bottom: 0; */
     /* left: 0; */
     background-size: cover;
-    background-position: center;
+    background-position: top center;
 }
 .we-impressed__info {
 
@@ -1122,8 +1113,14 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 /* --------------- /we-impressed --------------- */
 
-
 @media (min-width: 550px) {
+
+    /* --------------- promo --------------- */
+    .promo__logo {
+        width: auto;
+        max-height: 31vh;
+    }
+    /* --------------- /promo --------------- */
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons__list>div img{
@@ -1159,8 +1156,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
         margin: 0 2vmin 4vmin;
     }
     /* ------------ /pack-includes ------------ */
-
-
 
 }
 @media (min-width: 768px) {
@@ -1311,11 +1306,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
         line-height: 22px;
     }
     .formats__slider-text>div{
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 20px;
     }
     .formats__slider-text dl{
-        margin: 0 0 24px;
+        margin: 0 0 15px;
     }
     .formats__slider-arrow{
         opacity: 0;
@@ -1328,6 +1323,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
         transition: opacity 0.5s linear;
     }
     .formats__slider-arrow:after{
+        opacity: 0;
         position: absolute;
         left: 50%;
         bottom: -45px;
@@ -1337,14 +1333,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
         background: url("../img/arrow.png") no-repeat;
         background-size: cover;
         content: '';
-        -webkit-transition: transform 0.5s linear 1s;
-        transition: transform 0.5s linear 1s;
-        -webkit-transform: scale(0);
-        transform: scale(0);
+        -webkit-transition: opacity 0.5s linear 0.5s;
+        transition: opacity 0.5s linear 0.5s;
     }
     .formats__slider-item.active .formats__slider-arrow:after{
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        opacity: 1;
     }
     .formats__slider-item.active .formats__slider-arrow{
         opacity: 1;
@@ -1640,12 +1633,12 @@ html{overflow-y:hidden;overflow-x:hidden;}
         -webkit-flex-direction: column;
         flex-direction: column;
         flex-wrap: wrap;
-        -webkit-justify-content: flex-start;
-        justify-content: flex-start;
-        -webkit-flex-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-flex-align: flex-start;
+        -ms-flex-align: flex-start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
         position: absolute;
         top: 0;
         right: -31px;
@@ -1677,6 +1670,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
         display: -ms-flexbox;
         display: -webkit-flex;
         flex-direction: row;
+        -webkit-flex-direction: row;
         justify-content: flex-start;
         -webkit-justify-content: flex-start;
         align-items: center;
@@ -1687,6 +1681,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
         display: -ms-flexbox;
         display: -webkit-flex;
         flex-direction: column;
+        -webkit-flex-direction: column;
         justify-content: center;
         -webkit-justify-content: center;
         height: 100%;
@@ -1711,6 +1706,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
         left: auto;
         width: 50%;
         height: 100%;
+        padding-bottom: 0;
         -webkit-transition: opacity .5s ease-in-out .5s;
         transition: opacity .5s ease-in-out .5s;
     }
@@ -1787,21 +1783,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     /* --------------- customizable --------------- */
     .customizable {
-        display: flex;
-        display: -ms-flexbox;
-        display: -webkit-flex;
         height: 100vmin;
-        flex-direction: row;
-        flex-wrap: wrap;
         -webkit-justify-content: space-between;
         justify-content: space-between;
-        -webkit-flex-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        position: relative;
-        top: auto;
-        transform: translateY(0%);
     }
     .customizable__layout{
         display: inline-block;
@@ -1852,6 +1836,16 @@ html{overflow-y:hidden;overflow-x:hidden;}
         transform: translateX(-50%) translateY(-50%) scale(1);
     }
     /* ------------ /icons-preview ------------ */
+
+    /* ------------ formats ------------ */
+    .formats__slider-text>div{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .formats__slider-text dl{
+        margin: 0 0 24px;
+    }
+    /* ------------ /formats ------------ */
 
 }
 @media (min-width: 1200px) {
@@ -1966,7 +1960,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     /* ------------ /easy-way ------------ */
 
 }
-
 @media (min-width: 1500px) {
 
     /*----------line-solid__list----------*/
@@ -1984,6 +1977,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     }
     /* --------------- /pack-includes --------------- */
 }
+
 @media (min-height: 600px) {
 
     /* --------------- site --------------- */
@@ -2004,23 +1998,23 @@ html{overflow-y:hidden;overflow-x:hidden;}
         margin-bottom: 20px;
     }
     .promo__logo{
+        margin-bottom: 43px;
+    }
+    .promo__content {
+        margin-bottom: 60px;
+    }
+    /* --------------- /promo --------------- */
+
+}
+@media (min-height: 715px) {
+    /* --------------- promo --------------- */
+    .promo__logo{
         margin-bottom: 96px;
     }
     .promo__content {
         margin-bottom: 101px;
     }
-    .promo:after,
-    .promo:before {
-        bottom: 55px;
-    }
-    .promo:after {
-        height: 30px;
-    }
-    /* --------------- /promo --------------- */
-
-}
-
-@media (min-height: 600px) {
+    /* --------------- promo --------------- */
 
 }
 

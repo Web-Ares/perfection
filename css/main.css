@@ -1426,6 +1426,10 @@
     /* --------------- /promo --------------- */
 
     /* --------------- pack-includes --------------- */
+    .pack-includes {
+        height: 100%;
+        padding-top: 100px;
+    }
     .pack-includes__wrap:after{
         display: inline-block;
         width: 100%;
@@ -1810,7 +1814,6 @@
         transform: translateX(0);
     }
     /* --------------- /customizable --------------- */
-
 }
 @media (min-width: 992px) {
 

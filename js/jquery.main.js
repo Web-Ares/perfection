@@ -31,14 +31,15 @@ var _swiper;
 var Preloader = function ( obj ) {
 
     var _obj = obj,
-        _window = $( window );
+        _deelay = _obj.data('deelay'),
+        _window = $( window);
 
     var _onEvents = function () {
 
             _window.on({
                 load: function(){
 
-                    //setTimeout(function () {
+                    setTimeout(function () {
 
                         _obj.addClass( 'hide' );
 
@@ -48,7 +49,7 @@ var Preloader = function ( obj ) {
 
                         },400);
 
-                    //},2000);
+                    }, _deelay);
 
                 }
             });

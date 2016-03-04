@@ -49,29 +49,32 @@ var Screen = function (obj) {
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 hashnav: true,
-                grabCursor: false
+                grabCursor: false,
+                onSlideChangeEnd: function() {
+                    _swiper.disableMousewheelControl();
+                    _swiper.detachEvents();
+                }
             });
-
-
+        console.log(_swiper);
 
         },
         _initNicescroll = function(){
-            //_item.niceScroll({
-            //    cursorcolor: '#1565c0',
-            //    cursorborder: "0 solid transparent",
-            //    zindex: 10,
-            //    autohidemode: false,
-            //    horizrailenabled: false,
-            //    cursorborderradius: 0,
-            //    cursoropacitymin: 1,
-            //    cursorwidth: '5px',
-            //    bouncescroll: false,
-            //    mousescrollstep: 24,
-            //    enablemousewheel: false,
-            //    touchbehavior: false,
-            //    usetransition: true,
-            //    smoothscroll:false
-            //});
+            _item.niceScroll({
+                cursorcolor: 'transparent',
+                cursorborder: "0 solid transparent",
+                zindex: 10,
+                autohidemode: false,
+                horizrailenabled: false,
+                cursorborderradius: 0,
+                cursoropacitymin: 1,
+                cursorwidth: '5px',
+                bouncescroll: false,
+                mousescrollstep: 24,
+                enablemousewheel: false,
+                touchbehavior: false,
+                usetransition: true,
+                smoothscroll:false
+            });
         },
         _onEvents = function () {
             $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {
@@ -92,7 +95,7 @@ var Screen = function (obj) {
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
                 _initContentScroll();
-                //_initNicescroll();
+                _initNicescroll();
                 //_swiper.height='auto';
             } else {
                 _initContentScroll();

@@ -326,6 +326,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     padding: 70px 15px;
 }
 .drop-menu__inner-wrap{
+    display: none;
     height: 100%;
 }
 .drop-menu__menu{

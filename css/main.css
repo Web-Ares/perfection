@@ -26,6 +26,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     social
 
+    copyright
+
     promo
 
     pack-includes
@@ -47,6 +49,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     easy-way
 
     we-impressed
+
+    preloader
 
 */
 
@@ -319,10 +323,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
     height: 100vh;
     max-width: 1484px;
     margin: 0 auto;
-    padding: 158px 15px 0;
+    padding: 70px 15px;
 }
 .drop-menu__inner-wrap{
-    padding-bottom: 50px;
+    display: none;
+    height: 100%;
 }
 .drop-menu__menu{
     margin-bottom: 50px;
@@ -364,8 +369,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
 /* --------------- social --------------- */
 .social{
     position: absolute;
-    bottom: 35px;
-    right: 15px;
+    right: 0;
+    bottom: 25px;
+    left: 0;
     color: #90bff4;
     font: 16px 'Proxima Nova Light', sans-serif;
     text-transform: uppercase;
@@ -424,6 +430,17 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 /* --------------- /social --------------- */
 
+/* --------------- copyright --------------- */
+.copyright{
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    font: 14px 'Proxima Nova Light', sans-serif;
+    color: #90bff4;
+}
+/* --------------- /copyright --------------- */
+
 /* --------------- promo --------------- */
 .promo{
     padding-top: 16px;
@@ -471,6 +488,28 @@ html{overflow-y:hidden;overflow-x:hidden;}
     background-size: contain;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
+    -webkit-transform-origin: 0%;
+    transform-origin: 0%;
+    -webkit-animation-name: arrowDown;
+    animation-name: arrowDown;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes arrowDown{
+    0% {transform: translateY(0)}
+    50% {transform: translateY(5px)}
+    100%	{transform: translateY(0);}
+}
+@keyframes arrowDown{
+    0% {transform: translateY(0)}
+    50% {transform: translateY(5px)}
+    100%	{transform: translateY(0);}
 }
 /* --------------- /promo --------------- */
 
@@ -1108,14 +1147,128 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .we-impressed__info-user {
     margin-top: 3px;
     margin-left: 9px;
-
-    font-size: 2.4vh;}
+    font-size: 2.4vh;
+}
 .we-impressed__info-user span {
     font-family: 'Proxima Nova Semibold', sans-serif;
     color: #fff;
-    /* font-size: 1vh; */
 }
 /* --------------- /we-impressed --------------- */
+
+/*------------preloader---------*/
+.preloader {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, .95);
+    -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+.preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+.preloader__wrap {
+    position:absolute;
+    width:400px;
+    height:36px;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow:visible;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+}
+.preloader__wrap div {
+    position:absolute;
+    width:20px;
+    height:36px;
+    opacity:0;
+    font-family: "Proxima Nova Regular", sans-serif;
+    animation:move 2s linear infinite;
+    -webkit-animation:move 2s linear infinite;
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    color:#fff;
+}
+
+.preloader__wrap div:nth-child(2) {
+    animation-delay:0.2s;
+    -webkit-animation-delay:0.2s;
+}
+.preloader__wrap div:nth-child(3) {
+    animation-delay:0.4s;
+    -webkit-animation-delay:0.4s;
+}
+.preloader__wrap div:nth-child(4) {
+    animation-delay:0.6s;
+    -webkit-animation-delay:0.6s;
+}
+.preloader__wrap div:nth-child(5) {
+    animation-delay:0.8s;
+    -webkit-animation-delay:0.8s;
+}
+.preloader__wrap div:nth-child(6) {
+    animation-delay:1s;
+    -webkit-animation-delay:1s;
+}
+.preloader__wrap div:nth-child(7) {
+    animation-delay:1.2s;
+    -webkit-animation-delay:1.2s;
+}
+
+@keyframes move {
+    0% {
+        left:0;
+        opacity:0;
+    }
+    35% {
+        left: 41%;
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    100% {
+        left:100%;
+        transform:rotate(-180deg);
+        opacity:0;
+    }
+}
+@-webkit-keyframes move {
+    0% {
+        left:0;
+        opacity:0;
+    }
+    35% {
+        left:41%;
+        -webkit-transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;
+        -webkit-transform:rotate(0deg);
+        opacity:1;
+    }
+    100% {
+        left:100%;
+        -webkit-transform:rotate(-180deg);
+        opacity:0;
+    }
+}
+/*------------/preloader---------*/
 
 @media (min-width: 550px) {
 
@@ -1213,6 +1366,13 @@ html{overflow-y:hidden;overflow-x:hidden;}
         margin-right: 34px;
     }
     /* --------------- /header-menu --------------- */
+
+    /* --------------- social --------------- */
+    .social{
+        right: 15px;
+        bottom: 35px;
+    }
+    /* --------------- /social --------------- */
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons{
@@ -1818,6 +1978,12 @@ html{overflow-y:hidden;overflow-x:hidden;}
     }
     /* --------------- /customizable --------------- */
 
+    /*-------------preloader-----------*/
+    .preloader__wrap {
+        width:600px;
+    }
+    /*-------------/preloader-----------*/
+
 }
 @media (min-width: 992px) {
 
@@ -1980,6 +2146,15 @@ html{overflow-y:hidden;overflow-x:hidden;}
     /* --------------- /pack-includes --------------- */
 }
 
+@media (max-height: 400px) {
+
+    /* --------------- promo --------------- */
+    .promo__logo{
+        margin-bottom: 10px;
+    }
+    /* --------------- /promo --------------- */
+
+}
 @media (min-height: 600px) {
 
     /* --------------- site --------------- */

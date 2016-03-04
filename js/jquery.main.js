@@ -45,7 +45,7 @@ var Screen = function (obj) {
                 spaceBetween: 0,
                 slideActiveClass: 'active',
                 simulateTouch: true,
-                mousewheelControl: false,
+                mousewheelControl: true,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 hashnav: true,

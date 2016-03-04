@@ -518,8 +518,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     display: -ms-flexbox;
     display: -webkit-flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    -webkit-flex-direction: column;
+    flex-direction: row;
+    -webkit-flex-direction: row;
     justify-content: center;
     -webkit-justify-content: center;
     -ms-flex-align: center;

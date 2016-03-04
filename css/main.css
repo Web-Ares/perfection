@@ -1116,7 +1116,7 @@
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
-        height: 31vh;
+        max-height: 31vh;
     }
     /* --------------- /promo --------------- */
 

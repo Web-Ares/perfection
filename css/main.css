@@ -447,7 +447,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     height: 100%;
 }
 .promo__logo{
-    width: 100%;
+    width: 90%;
     max-width: 728px;
     margin-bottom: 25px;
 }
@@ -458,7 +458,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .promo__content{
     margin-bottom: 20px;
     color: #999;
-    font: 12px/1 "Proxima Nova Light", sans-serif;
+    font: 14px/22px "Proxima Nova Light", sans-serif;
 }
 .promo:before{
     position: absolute;

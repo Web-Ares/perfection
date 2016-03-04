@@ -1591,6 +1591,10 @@ html{overflow-y:hidden;overflow-x:hidden;}
     /* --------------- /promo --------------- */
 
     /* --------------- pack-includes --------------- */
+    .pack-includes {
+        height: 100%;
+        padding-top: 100px;
+    }
     .pack-includes__wrap:after{
         display: inline-block;
         width: 100%;
@@ -1976,13 +1980,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
         transform: translateX(0);
     }
     /* --------------- /customizable --------------- */
-
-    /*-------------preloader-----------*/
-    .preloader__wrap {
-        width:600px;
-    }
-    /*-------------/preloader-----------*/
-
 }
 @media (min-width: 992px) {
 

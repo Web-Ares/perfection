@@ -91,7 +91,8 @@ var Screen = function ( obj ) {
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-                    _item.getniceScroll(0)
+                    _swiper.detachEvents();
+
                 }
             });
 
@@ -103,21 +104,7 @@ var Screen = function ( obj ) {
             });
         },
         _initNicescroll = function(){
-            _item.niceScroll({
-                cursorcolor: 'red',
-                cursorborder: "0 solid transparent",
-                zindex: 10,
-                autohidemode: true,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursoropacitymin: 1,
-                cursorwidth: '5px',
-                mousescrollstep: 24,
-                enablemousewheel: true,
-                touchbehavior: true,
-                usetransition: true,
-                smoothscroll:false
-            });
+
 
         },
         _onEvents = function () {
@@ -141,6 +128,7 @@ var Screen = function ( obj ) {
             if ( $(window).width() <= 768 ) {
                 _initContentScroll();
                 _initNicescroll();
+                _item.css('overflow-y','auto');
             } else {
                 _initContentScroll();
             }

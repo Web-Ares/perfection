@@ -1200,7 +1200,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     -webkit-transform:rotate(180deg);
     color:#fff;
 }
-
 .preloader__wrap div:nth-child(2) {
     animation-delay:0.2s;
     -webkit-animation-delay:0.2s;

@@ -91,9 +91,6 @@ var Screen = function ( obj ) {
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-                    //_swiper.detachEvents();
-                    _swiper.detachEvents();
-
                     _item.addClass('swiper-slide2');
                     _item.removeClass('swiper-slide');
 
@@ -108,21 +105,6 @@ var Screen = function ( obj ) {
             });
         },
         _initNicescroll = function(){
-            _item.niceScroll({
-                cursorcolor: 'transparent',
-                cursorborder: "0 solid transparent",
-                zindex: 10,
-                autohidemode: true,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursoropacitymin: 1,
-                cursorwidth: '5px',
-                mousescrollstep: 24,
-                enablemousewheel: true,
-                touchbehavior: true,
-                usetransition: true,
-                smoothscroll:false
-            });
             _item.on('scroll',function(e){
                 console.log(e);
             })

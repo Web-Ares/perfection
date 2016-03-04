@@ -22,7 +22,7 @@ $(function () {
     });
 
 });
-var _swiper;
+
 
 var Preloader = function ( obj ) {
 
@@ -59,23 +59,24 @@ var Preloader = function ( obj ) {
 
     _init();
 };
+var  _swiper;
 
-var Screen = function (obj) {
+var Screen = function ( obj ) {
 
     //private properties
     var _self = this,
         _obj = obj,
 
-        _item = _obj.find('.screen');
+        _item = _obj.find( '.screen' );
 
 
-    _obj[0].obj = _self;
+    _obj[ 0 ].obj = _self;
 
     //private methods
 
 
     var _initContentScroll = function () {
-            _swiper = new Swiper('.site', {
+            _swiper = new Swiper( '.site', {
                 direction: 'vertical',
                 slidesPerView: 1,
                 scrollbarDraggable: true,
@@ -83,21 +84,22 @@ var Screen = function (obj) {
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
-                simulateTouch: false,
+                simulateTouch: true,
                 mousewheelControl: true,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-                    _swiper.detachEvents();
-                    //setTimeout(function(){
-                    //    _swiper.attachEvents();
-                    //},1000)
-                    //_swiper.params.simulateTouch = true;
-                    //_swiper.attachEvents();
-                    //_swiper.detachEvents();
+
                 }
+            });
+
+            _obj.mouseenter(function () {
+                _swiper.detachEvents();
+                _swiper.params.simulateTouch = false;
+                _swiper.params.onlyExternal = false;
+                _swiper.attachEvents();
             });
         },
         _initNicescroll = function(){
@@ -119,14 +121,15 @@ var Screen = function (obj) {
 
         },
         _onEvents = function () {
-            $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {
+            $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseenter(function () {
                 _swiper.detachEvents();
                 _swiper.params.simulateTouch = true;
                 _swiper.params.onlyExternal = true;
                 _swiper.attachEvents();
 
             });
-            $('.site.swiper-container-vertical > .swiper-scrollbar').mouseleave(function () {
+
+            $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseleave(function () {
                 _swiper.detachEvents();
                 _swiper.params.simulateTouch = false;
                 _swiper.params.onlyExternal = false;
@@ -135,7 +138,7 @@ var Screen = function (obj) {
         },
 
         _sizeEvents = function () {
-            if ($(window).width() <= 768) {
+            if ( $(window).width() <= 768 ) {
                 _initContentScroll();
                 _initNicescroll();
             } else {

@@ -1003,6 +1003,10 @@
     text-align: left;
     margin-bottom: 30px;
 }
+.easy-way .site__title {
+    font-size: 6.5vmin;
+    line-height: 1;
+}
 .easy-way .site__title span {
     display: block;
 }
@@ -1741,8 +1745,6 @@
         line-height: 1.5;
     }
     .easy-way .site__title {
-        font-size: 7.9vmin;
-        line-height: 0.95;
         margin-bottom: 21px;
     }
     .easy-way__warning:before {

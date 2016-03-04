@@ -20,13 +20,13 @@ $(function () {
     });
 
 });
-
+var _swiper;
 var Screen = function (obj) {
 
     //private properties
     var _self = this,
         _obj = obj,
-        _swiper,
+
         _item = _obj.find('.screen');
 
 

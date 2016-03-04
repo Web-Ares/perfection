@@ -25,17 +25,9 @@ var Screen = function (obj) {
 
     //private properties
     var _self = this,
-        _obj = obj;
-    var _nicescroll = null;
-    var _lastScrollPosition = null;
-    var _item = _obj.find('.screen');
-    var options = {
-        loopHorizontal: false,
-        normalScrollElementTouchThreshold: 50,
-        onLeave: function (cur, next) {
-            _onLeave(cur, next)
-        }
-    };
+        _obj = obj,
+        _swiper,
+        _item = _obj.find('.screen');
 
 
     _obj[0].obj = _self;
@@ -44,53 +36,65 @@ var Screen = function (obj) {
 
 
     var _initContentScroll = function () {
+            _swiper = new Swiper('.site', {
+                direction: 'vertical',
+                slidesPerView: 1,
+                scrollbarDraggable: true,
+                scrollbarSnapOnRelease: true,
+                paginationClickable: false,
+                spaceBetween: 0,
+                slideActiveClass: 'active',
+                simulateTouch: true,
+                mousewheelControl: true,
+                scrollbar: '.swiper-scrollbar',
+                scrollbarHide: false,
+                hashnav: true,
+                grabCursor: false
+            });
 
 
 
         },
-        _initFullpage = function (options) {
-            $('#fullpage').fullpage(options);
-            $.fn.fullpage.reBuild();
-        },
-        _rebuildFullpage = function (options) {
-            $.fn.fullpage.destroy('all');
-            $('#fullpage').fullpage(options);
-            $.fn.fullpage.reBuild();
+        _initNicescroll = function(){
+            //_item.niceScroll({
+            //    cursorcolor: '#1565c0',
+            //    cursorborder: "0 solid transparent",
+            //    zindex: 10,
+            //    autohidemode: false,
+            //    horizrailenabled: false,
+            //    cursorborderradius: 0,
+            //    cursoropacitymin: 1,
+            //    cursorwidth: '5px',
+            //    bouncescroll: false,
+            //    mousescrollstep: 24,
+            //    enablemousewheel: false,
+            //    touchbehavior: false,
+            //    usetransition: true,
+            //    smoothscroll:false
+            //});
         },
         _onEvents = function () {
-            $(window).resize(function () {
-                _sizeChange();
+            $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {
+                _swiper.detachEvents();
+                _swiper.params.simulateTouch = true;
+                _swiper.params.onlyExternal = true;
+                _swiper.attachEvents();
+
+            });
+            $('.site.swiper-container-vertical > .swiper-scrollbar').mouseleave(function () {
+                _swiper.detachEvents();
+                _swiper.params.simulateTouch = false;
+                _swiper.params.onlyExternal = false;
+                _swiper.attachEvents();
             });
         },
 
-        _sizeChange = function () {
-
-            if ($(window).width() <= 768) {
-                    if ($('.site').getNiceScroll(0)) {
-                        $('.site').getNiceScroll(0).remove();
-                    }
-                    options.scrollOverflow = true;
-                    _rebuildFullpage(options);
-            } else {
-                    options.scrollOverflow = false;
-                    _rebuildFullpage(options);
-                    _initContentScroll();
-            }
-        },
-        _onLeave = function (cur, next) {
-            if ($(_item[next]).length > 0) {
-
-                var pos_top = $(_item[next]).position().top;
-                var off_top = $(_item[next]).offset().top;
-            }
-        },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
-                options.scrollOverflow = true;
-                _initFullpage(options);
+                _initContentScroll();
+                //_initNicescroll();
+                //_swiper.height='auto';
             } else {
-                options.scrollOverflow = false;
-                _initFullpage(options);
                 _initContentScroll();
             }
         },

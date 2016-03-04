@@ -91,7 +91,9 @@ var Screen = function ( obj ) {
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
+                    //_swiper.detachEvents();
                     _swiper.detachEvents();
+
                     _item.addClass('swiper-slide2');
                     _item.removeClass('swiper-slide');
 
@@ -131,7 +133,6 @@ var Screen = function ( obj ) {
                 _swiper.params.simulateTouch = true;
                 _swiper.params.onlyExternal = true;
                 _swiper.attachEvents();
-
             });
 
             $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseleave(function () {

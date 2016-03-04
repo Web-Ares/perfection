@@ -70,11 +70,12 @@ var Screen = function (obj) {
                 cursorwidth: '5px',
                 bouncescroll: false,
                 mousescrollstep: 24,
-                enablemousewheel: false,
+                enablemousewheel: true,
                 touchbehavior: false,
                 usetransition: true,
                 smoothscroll:false
             });
+            console.log(_item.getNiceScroll(0));
         },
         _onEvents = function () {
             $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {

@@ -444,9 +444,17 @@
     background-color: #242a2f;
 }
 .promo__wrap{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -2003,6 +2011,11 @@
     /* --------------- /promo --------------- */
 
 }
+
+@media (min-height: 600px) {
+
+}
+
 .slimScrollBar{
     background: #1565c0!important;
     border-radius: 0!important;

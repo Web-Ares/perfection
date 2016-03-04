@@ -3,10 +3,6 @@ $(function () {
         new Menu( $( this ) );
     } );
 
-    $('.site').each(function () {
-        new Screen($(this));
-    });
-
     $.each($('.pixel-grid__slider'), function () {
 
         new SliderSingle($(this));
@@ -40,11 +36,12 @@ var Preloader = function ( obj ) {
                 load: function(){
 
                     setTimeout(function () {
-
                         _obj.addClass( 'hide' );
 
                         setTimeout(function () {
-
+                            $('.site').each(function () {
+                                new Screen($(this));
+                            });
                             _obj.remove()
 
                         },400);
@@ -86,14 +83,14 @@ var Screen = function (obj) {
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
-                simulateTouch: true,
+                simulateTouch: false,
                 mousewheelControl: true,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-                    //_swiper.detachEvents();
+                    _swiper.detachEvents();
                     //setTimeout(function(){
                     //    _swiper.attachEvents();
                     //},1000)
@@ -105,7 +102,7 @@ var Screen = function (obj) {
         },
         _initNicescroll = function(){
             _item.niceScroll({
-                cursorcolor: 'transparent',
+                cursorcolor: 'red',
                 cursorborder: "0 solid transparent",
                 zindex: 10,
                 autohidemode: true,
@@ -113,7 +110,6 @@ var Screen = function (obj) {
                 cursorborderradius: 0,
                 cursoropacitymin: 1,
                 cursorwidth: '5px',
-                bouncescroll: false,
                 mousescrollstep: 24,
                 enablemousewheel: true,
                 touchbehavior: true,
@@ -142,7 +138,6 @@ var Screen = function (obj) {
             if ($(window).width() <= 768) {
                 _initContentScroll();
                 _initNicescroll();
-                //_swiper.height='auto';
             } else {
                 _initContentScroll();
             }

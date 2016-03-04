@@ -3,10 +3,6 @@ $(function () {
         new Menu( $( this ) );
     } );
 
-    $('.site').each(function () {
-        new Screen($(this));
-    });
-
     $.each($('.pixel-grid__slider'), function () {
 
         new SliderSingle($(this));
@@ -40,11 +36,12 @@ var Preloader = function ( obj ) {
                 load: function(){
 
                     setTimeout(function () {
-
                         _obj.addClass( 'hide' );
 
                         setTimeout(function () {
-
+                            $('.site').each(function () {
+                                new Screen($(this));
+                            });
                             _obj.remove()
 
                         },400);

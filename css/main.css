@@ -1194,8 +1194,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     height:36px;
     opacity:0;
     font-family: "Proxima Nova Regular", sans-serif;
-    animation:move 2.5s linear infinite;
-    -webkit-animation:move 2.5s linear infinite;
+    animation:move 2s linear infinite;
+    -webkit-animation:move 2s linear infinite;
     transform:rotate(180deg);
     -webkit-transform:rotate(180deg);
     color:#fff;
@@ -1223,18 +1223,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .preloader__wrap div:nth-child(7) {
     animation-delay:1.2s;
     -webkit-animation-delay:1.2s;
-}
-.preloader__wrap div:nth-child(8) {
-    animation-delay:1.4s;
-    -webkit-animation-delay:1.4s;
-}
-.preloader__wrap div:nth-child(9) {
-    animation-delay:1.6s;
-    -webkit-animation-delay:1.6s;
-}
-.preloader__wrap div:nth-child(10) {
-    animation-delay:1.8s;
-    -webkit-animation-delay:1.8s;
 }
 
 @keyframes move {

@@ -486,12 +486,12 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 @-webkit-keyframes arrowDown{
     0% {transform: translateY(0)}
-    50% {transform: translateY(8px)}
+    50% {transform: translateY(5px)}
     100%	{transform: translateY(0);}
 }
 @keyframes arrowDown{
     0% {transform: translateY(0)}
-    50% {transform: translateY(8px)}
+    50% {transform: translateY(5px)}
     100%	{transform: translateY(0);}
 }
 /* --------------- /promo --------------- */
@@ -2002,6 +2002,15 @@ html{overflow-y:hidden;overflow-x:hidden;}
     /* --------------- /pack-includes --------------- */
 }
 
+@media (max-height: 400px) {
+
+    /* --------------- promo --------------- */
+    .promo__logo{
+        margin-bottom: 10px;
+    }
+    /* --------------- /promo --------------- */
+
+}
 @media (min-height: 600px) {
 
     /* --------------- site --------------- */

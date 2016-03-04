@@ -19,11 +19,11 @@
 
     header-menu
 
-    drop-menu
-
     screen
 
     drop-menu
+
+    social
 
     promo
 
@@ -35,8 +35,6 @@
 
     line-solid
 
-    we-impressed
-
     formats
 
     icons-promo
@@ -45,9 +43,9 @@
 
     pixel-grid
 
-    pack-includes
-
     easy-way
+
+    we-impressed
 
 */
 
@@ -296,7 +294,7 @@
 }
 /* --------------- /screen --------------- */
 
-/* --------------- dropmenu --------------- */
+/* --------------- drop-menu --------------- */
 .drop-menu {
     position: absolute;
     top: 0;
@@ -361,7 +359,7 @@
 .drop-menu__legally-item:hover{
     color: #90bff4;
 }
-/* --------------- /dropmenu --------------- */
+/* --------------- /drop-menu --------------- */
 
 /* --------------- social --------------- */
 .social{
@@ -424,7 +422,7 @@
 .social__item_fb:after{
     background-position: -94px 0;
 }
-/* --------------- /copyright --------------- */
+/* --------------- /social --------------- */
 
 /* --------------- promo --------------- */
 .promo{
@@ -462,26 +460,17 @@
     color: #999;
     font: 12px/1 "Proxima Nova Light", sans-serif;
 }
-.promo:after,
 .promo:before{
     position: absolute;
     left: 50%;
     bottom: 10px;
     content: '';
+    width: 11px;
+    height: 31px;
+    background: url('../img/arrow-white.png') no-repeat 50% 0;
+    background-size: cover;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-}
-.promo:after{
-    height: 15px;
-    border-left: 1px solid #fff;
-}
-.promo:before{
-    width: 7px;
-    height: 7px;
-    border-bottom: 1px solid #fff;
-    border-left: 1px solid #fff;
-    transform: translateX(-50%) rotate(-45deg);
-    -webkit-transform: translateX(-50%) rotate(-45deg);
 }
 /* --------------- /promo --------------- */
 
@@ -1065,6 +1054,7 @@
     height: auto;
 }
 /* ------------ /easy-way ------------ */
+
 /* --------------- we-impressed --------------- */
 .we-impressed__layout {
     z-index: 2;
@@ -1121,8 +1111,13 @@
 }
 /* --------------- /we-impressed --------------- */
 
-
 @media (min-width: 550px) {
+
+    /* --------------- promo --------------- */
+    .promo__logo {
+        width: auto;
+    }
+    /* --------------- /promo --------------- */
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons__list>div img{
@@ -1158,8 +1153,6 @@
         margin: 0 2vmin 4vmin;
     }
     /* ------------ /pack-includes ------------ */
-
-
 
 }
 @media (min-width: 768px) {
@@ -1965,7 +1958,6 @@
     /* ------------ /easy-way ------------ */
 
 }
-
 @media (min-width: 1500px) {
 
     /*----------line-solid__list----------*/
@@ -2003,23 +1995,30 @@
         margin-bottom: 20px;
     }
     .promo__logo{
+        margin-bottom: 43px;
+    }
+    .promo__content {
+        margin-bottom: 60px;
+    }
+    .promo:after,
+    .promo:before {
+        bottom: 25px;
+    }
+    /* --------------- /promo --------------- */
+
+}
+@media (min-height: 715px) {
+    /* --------------- promo --------------- */
+    .promo__logo{
         margin-bottom: 96px;
     }
     .promo__content {
         margin-bottom: 101px;
     }
-    .promo:after,
     .promo:before {
         bottom: 55px;
     }
-    .promo:after {
-        height: 30px;
-    }
-    /* --------------- /promo --------------- */
-
-}
-
-@media (min-height: 600px) {
+    /* --------------- promo --------------- */
 
 }
 

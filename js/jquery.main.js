@@ -91,6 +91,7 @@ var Screen = function ( obj ) {
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
+                    _swiper.detachEvents();
                     _item.addClass('swiper-slide2');
                     _item.removeClass('swiper-slide');
 

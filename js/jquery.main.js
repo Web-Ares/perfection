@@ -19,8 +19,49 @@ $(function () {
 
     });
 
+    $.each($( '.preloader' ), function () {
+
+        new Preloader($(this));
+
+    });
+
 });
 var _swiper;
+
+var Preloader = function ( obj ) {
+
+    var _obj = obj,
+        _window = $( window );
+
+    var _onEvents = function () {
+
+            _window.on({
+                load: function(){
+
+                    //setTimeout(function () {
+
+                        _obj.addClass( 'hide' );
+
+                        setTimeout(function () {
+
+                            _obj.remove()
+
+                        },400);
+
+                    //},2000);
+
+                }
+            });
+
+        },
+
+        _init = function () {
+            _onEvents();
+        };
+
+    _init();
+};
+
 var Screen = function (obj) {
 
     //private properties

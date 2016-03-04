@@ -499,13 +499,20 @@
 /* --------------- pack-includes --------------- */
 .pack-includes{
     display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    -webkit-justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
     padding: 50px 0;
     background: #242a2f;
     color: #fff;
     text-align: center;
+    display: flex;
 }
 .pack-includes .site__title{
     margin-bottom: 5.5vmin;
@@ -541,9 +548,17 @@
 
 /* --------------- customizable --------------- */
 .customizable {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
 }
 .customizable__layout {
     margin: 0 0 25px;

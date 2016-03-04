@@ -1704,8 +1704,8 @@
         left: auto;
         width: 50%;
         height: 100%;
-        -webkit-transition: opacity .5s ease-in-out 1s;
-        transition: opacity .5s ease-in-out 1s;
+        -webkit-transition: opacity .5s ease-in-out .5s;
+        transition: opacity .5s ease-in-out .5s;
     }
     .we-impressed__info a {
         width: auto;

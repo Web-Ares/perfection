@@ -463,12 +463,12 @@
 .promo:before{
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 2vh;
     content: '';
     width: 11px;
-    height: 31px;
+    height: 7vh;
     background: url('../img/arrow-white.png') no-repeat 50% 0;
-    background-size: cover;
+    background-size: contain;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
 }
@@ -1116,6 +1116,7 @@
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
+        height: 31vh;
     }
     /* --------------- /promo --------------- */
 
@@ -2000,10 +2001,6 @@
     .promo__content {
         margin-bottom: 60px;
     }
-    .promo:after,
-    .promo:before {
-        bottom: 25px;
-    }
     /* --------------- /promo --------------- */
 
 }
@@ -2014,9 +2011,6 @@
     }
     .promo__content {
         margin-bottom: 101px;
-    }
-    .promo:before {
-        bottom: 55px;
     }
     /* --------------- promo --------------- */
 

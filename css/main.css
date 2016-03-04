@@ -26,6 +26,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     social
 
+    copyright
+
     promo
 
     pack-includes
@@ -319,10 +321,10 @@ html{overflow-y:hidden;overflow-x:hidden;}
     height: 100vh;
     max-width: 1484px;
     margin: 0 auto;
-    padding: 158px 15px 0;
+    padding: 70px 15px;
 }
 .drop-menu__inner-wrap{
-    padding-bottom: 50px;
+    height: 100%;
 }
 .drop-menu__menu{
     margin-bottom: 50px;
@@ -364,8 +366,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
 /* --------------- social --------------- */
 .social{
     position: absolute;
-    bottom: 35px;
-    right: 15px;
+    right: 0;
+    bottom: 25px;
+    left: 0;
     color: #90bff4;
     font: 16px 'Proxima Nova Light', sans-serif;
     text-transform: uppercase;
@@ -423,6 +426,17 @@ html{overflow-y:hidden;overflow-x:hidden;}
     background-position: -94px 0;
 }
 /* --------------- /social --------------- */
+
+/* --------------- copyright --------------- */
+.copyright{
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    left: 0;
+    font: 14px 'Proxima Nova Light', sans-serif;
+    color: #90bff4;
+}
+/* --------------- /copyright --------------- */
 
 /* --------------- promo --------------- */
 .promo{
@@ -1235,6 +1249,13 @@ html{overflow-y:hidden;overflow-x:hidden;}
         margin-right: 34px;
     }
     /* --------------- /header-menu --------------- */
+
+    /* --------------- social --------------- */
+    .social{
+        right: 15px;
+        bottom: 35px;
+    }
+    /* --------------- /social --------------- */
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons{

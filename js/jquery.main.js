@@ -91,7 +91,7 @@ var Screen = function ( obj ) {
                 hashnav: true,
                 grabCursor: false,
                 onSlideChangeEnd: function() {
-
+                    _item.getniceScroll(0)
                 }
             });
 

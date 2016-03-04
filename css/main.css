@@ -1365,6 +1365,7 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         flex-direction: column;
+        -webkit-flex-direction: column;
         justify-content: center;
         -webkit-justify-content: center;
         height: 100%;

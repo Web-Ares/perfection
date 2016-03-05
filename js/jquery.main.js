@@ -69,6 +69,11 @@ var Screen = function (obj) {
         _obj = obj,
         _swiper,
         _itemHeight = [],
+        _maxTransitionHeight = 0,
+        _screenHeight = 0,
+        _currentSlide = 0,
+        _prevSlide = 0,
+        _nextSlide = 0,
         _item = _obj.find('.screen');
 
 
@@ -91,18 +96,29 @@ var Screen = function (obj) {
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 grabCursor: false,
-                freeMode: false,
+                longSwipesMs: 0,
+                freeMode: true,
                 onSlideChangeEnd: function (swiper) {
-                    var direct = _direct();
-                    if(direct<0){
-                        console.log('up');
-                    }else if(direct>0){
-                        console.log('down');
-                    }else{
-                        console.log('current');
-                    }
+                    //var direct = _direct();
+                    //if(direct<0){
+                    //    console.log('up');
+                    //}else if(direct>0){
+                    //    console.log('down');
+                    //}else{
+                    //    console.log('current');
+                    //}
                 },
                 onTransitionEnd: function (swiper) {
+                    _slideIndicate();
+                    //if(swiper.activeIndex!=swiper.previousIndex){
+                    translateY = _setTransformY(swiper.activeIndex, swiper.translate);
+                    console.log('translateY -> ', translateY);
+
+                    $('.site__wrapper').css('transition-duration', '300ms');
+                    $('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
+
+                    //}
+
                     //console.log('trans',swiper.activeIndex, swiper.progress, swiper.translate);
                     //_top = $(swiper.slides[swiper.previousIndex]).outerHeight();
                     //translateY = swiper.translate+_top;
@@ -118,7 +134,8 @@ var Screen = function (obj) {
 
                 },
                 onTouchMove: function (swiper) {
-
+                    _slideIndicate();
+                    console.log('MY active slide -> ',_currentSlide);
                     console.log('active slide -> ', swiper.activeIndex);
 
 
@@ -131,10 +148,10 @@ var Screen = function (obj) {
                     //console.log(swiper.activeIndex, swiper.progress, swiper.translate);
                 },
                 onTouchEnd: function (swiper) {
-                    //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
-                    //console.log('translateY -> ',translateY);
-                    //$('.site__wrapper').css('transition-duration', '400ms');
-                    //$('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
+                    translateY = _setTransformY(swiper.activeIndex, swiper.translate);
+                    console.log('translateY -> ', translateY);
+                    $('.site__wrapper').css('transition-duration', '990ms');
+                    $('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
 
                     //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
                     //console.log(translateY);
@@ -182,6 +199,47 @@ var Screen = function (obj) {
         _initNicescroll = function () {
 
         },
+        _slideIndicate = function () {
+            _halfPastScreen = _screenHeight / 2;
+            var translate = _swiper.translate;
+            var ecvator = translate - _halfPastScreen;
+            console.log(ecvator);
+            console.log(_itemHeight[0],_itemHeight[1]);
+            return _whatIsSlide(ecvator);
+        },
+        _whatIsSlide = function (topPosition) {
+            var curBlock = 0;
+            for (var i = 0; i <= _itemHeight.length; i++) {
+                if (_itemHeight[i] < topPosition) {
+                    if (_itemHeight[i + 1] !== undefined) {
+                        _setIndexes(i);
+                        return _itemHeight[i];
+                    } else {
+                        if (topPosition < _itemHeight[i + 1]) {
+                            _setIndexes(i);
+                            return _itemHeight[i];
+                        }
+                    }
+                }
+            }
+            return curBlock;
+        },
+        _setIndexes = function (curIndex) {
+            _currentSlide = curIndex;
+
+            if (_itemHeight[curIndex - 1] === undefined) {
+                _prevSlide = curIndex;
+            } else {
+                _prevSlide = curIndex - 1;
+            }
+
+            if (_itemHeight[curIndex + 1] === undefined) {
+                _nextSlide = curIndex;
+            } else {
+                _nextSlide = _nextSlide + 1;
+            }
+
+        },
         _onEvents = function () {
             $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {
                 _swiper.detachEvents();
@@ -200,7 +258,7 @@ var Screen = function (obj) {
         _setTransformY = function (index, curTransform) {
             var transformY = 0;
             for (var i = 0; i < index; i++) {
-                transformY += 0 - parseInt(_itemHeight[i]);
+                transformY +=parseInt(_itemHeight[i]);
             }
             if (transformY + curTransform > 0) {
                 transformY = 0;
@@ -208,16 +266,17 @@ var Screen = function (obj) {
             return transformY;
         },
 
-        _blockAnalize = function (i) {
+        _blockAnalize = function () {
+            _screenHeight = $(window).height();
             _item.each(function () {
                 _wrap = $(this).find('>div');
-
                 if ($(this).height() < _wrap.outerHeight()) {
                     $(this).height(_wrap.outerHeight());
                 }
-                _itemHeight.push($(this).outerHeight());
+                _maxTransitionHeight += $(this).outerHeight();
+                _itemHeight.push(0-$(this).outerHeight());
             });
-            console.log(_itemHeight);
+            _maxTransitionHeight -= Math.abs(_itemHeight[_item.length - 1]);
         },
         _direct = function () {
             prev = _swiper.previousIndex;

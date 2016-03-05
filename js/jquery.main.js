@@ -69,6 +69,8 @@ var Screen = function (obj) {
         _obj = obj,
         _swiper,
         _itemHeight = [],
+        _itemHeightPos = [],
+        _itemHeightPosBottom = [],
         _maxTransitionHeight = 0,
         _screenHeight = 0,
         _currentSlide = 0,
@@ -91,14 +93,21 @@ var Screen = function (obj) {
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
-                simulateTouch: false,
+                simulateTouch: true,
+                touchAngle: 180,
+                touchEventsTarget: 'none',
                 mousewheelControl: false,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 grabCursor: false,
-                longSwipesMs: 0,
+                longSwipes: false,
+                threshold: 10,
                 freeMode: true,
+                autoHeight: false,
                 onSlideChangeEnd: function (swiper) {
+                    _slideIndicate();
+                    //console.log('MY active slide -> ',_currentSlide);
+                    //console.log('active slide -> ', swiper.activeIndex);
                     //var direct = _direct();
                     //if(direct<0){
                     //    console.log('up');
@@ -110,84 +119,24 @@ var Screen = function (obj) {
                 },
                 onTransitionEnd: function (swiper) {
                     _slideIndicate();
-                    //if(swiper.activeIndex!=swiper.previousIndex){
-                    translateY = _setTransformY(swiper.activeIndex, swiper.translate);
-                    console.log('translateY -> ', translateY);
-
-                    $('.site__wrapper').css('transition-duration', '300ms');
-                    $('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
-
-                    //}
-
-                    //console.log('trans',swiper.activeIndex, swiper.progress, swiper.translate);
-                    //_top = $(swiper.slides[swiper.previousIndex]).outerHeight();
-                    //translateY = swiper.translate+_top;
-                    //$('.site__wrapper').css('transition-duration','400ms');
-                    //if(translateY>0){
-                    //    translateY=0;
-                    //}
-                    //$('.site__wrapper').css('transform','translate3d(0px, '+parseInt(translateY)+'px, 0px)');
-                    //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
-                    //console.log('translateY -> ',translateY);
-                    //$('.site__wrapper').css('transition-duration', '400ms');
-                    //$('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
-
+                    console.log('MY active slide -> ', _currentSlide);
+                    //console.log('prev slide -> ', _prevSlide);
+                    //console.log('next slide -> ', _nextSlide);
                 },
                 onTouchMove: function (swiper) {
                     _slideIndicate();
-                    console.log('MY active slide -> ',_currentSlide);
-                    console.log('active slide -> ', swiper.activeIndex);
-
-
-                    //_wrap = $(swiper.slides[swiper.activeIndex]).find('>div');
-                    //_container = $(swiper.slides[swiper.activeIndex]);
-                    //if(_container.height()<_wrap.height()){
-                    //    swiper.params.freeMode = true;
-                    //    //_container.css('height', _wrap.height()+'px');
-                    //}
-                    //console.log(swiper.activeIndex, swiper.progress, swiper.translate);
+                    //console.log('MY active slide -> ',_currentSlide);
+                    //console.log('prev slide -> ', _prevSlide);
+                    //console.log('next slide -> ', _nextSlide);
                 },
                 onTouchEnd: function (swiper) {
-                    translateY = _setTransformY(swiper.activeIndex, swiper.translate);
-                    console.log('translateY -> ', translateY);
-                    $('.site__wrapper').css('transition-duration', '990ms');
-                    $('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
-
-                    //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
-                    //console.log(translateY);
-                    //_top = $(swiper.slides[swiper.activeIndex]).outerHeight();
-                    //translateY = swiper.translate + _top;
-                    //$('.site__wrapper').css('transition-duration', '400ms');
-                    //if (translateY > 0) {
-                    //    translateY = 0;
-                    //}
-                    //$('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
-
-                    //console.log(swiper);
-                    //_wrap = $(swiper.slides[swiper.activeIndex]).find('>div');
-                    //_container = $(swiper.slides[swiper.activeIndex]);
-                    //
-                    //if(_container.height()<_wrap.height()){
-                    //    swiper.params.freeMode = true;
-                    //    swiper.params.size=_wrap.height();
-                    //    _wrap.css('height', 'auto');
-                    //    _top = $(swiper.slides[swiper.previousIndex]).offset().top;
-                    //
-                    //}else{
-                    //    _wrap.css('height', _container.height());
-                    //    swiper.params.freeMode = false;
-                    //    swiper.update();
-                    //    swiper.slideTo(swiper.previousIndex);
-                    //    console.log('ne nado');
-                    //}
-                    //console.log();
-                    //swiper.params.freeMode = true;
-                    //console.log(swiper.activeIndex);
-                    //swiper.slideTo(swiper.activeIndex, 500);
-                    //curSlidePos = $(swiper.slides[swiper.previousIndex]).offset().top;
-                    //$('.site').scrollTop(curSlidePos);
+                    _slideIndicate();
+                    console.log('MY active slide -> ', _currentSlide);
+                    //console.log('prev slide -> ', _prevSlide);
+                    //console.log('next slide -> ', _nextSlide);
                 }
             });
+            _blockAnalize();
             setTimeout(function () {
                 _swiper.detachEvents();
                 _swiper.params.simulateTouch = false;
@@ -203,24 +152,24 @@ var Screen = function (obj) {
             _halfPastScreen = _screenHeight / 2;
             var translate = _swiper.translate;
             var ecvator = translate - _halfPastScreen;
-            console.log(ecvator);
-            console.log(_itemHeight[0],_itemHeight[1]);
-            return _whatIsSlide(ecvator);
+            return _whatIsSlide(ecvator, _halfPastScreen);
         },
-        _whatIsSlide = function (topPosition) {
+        _whatIsSlide = function (topPosition, _halfPastScreen) {
             var curBlock = 0;
-            for (var i = 0; i <= _itemHeight.length; i++) {
-                if (_itemHeight[i] < topPosition) {
-                    if (_itemHeight[i + 1] !== undefined) {
+            for (var i = 0; i <= _itemHeightPos.length; i++) {
+
+                if (_itemHeightPos[i] < topPosition) {
+                    if (_itemHeightPos[i + 1] === undefined) {
                         _setIndexes(i);
-                        return _itemHeight[i];
+                        return false;
                     } else {
-                        if (topPosition < _itemHeight[i + 1]) {
+                        if (topPosition < _itemHeightPos[i + 1]) {
                             _setIndexes(i);
-                            return _itemHeight[i];
+                            return false;
                         }
                     }
                 }
+
             }
             return curBlock;
         },
@@ -236,7 +185,7 @@ var Screen = function (obj) {
             if (_itemHeight[curIndex + 1] === undefined) {
                 _nextSlide = curIndex;
             } else {
-                _nextSlide = _nextSlide + 1;
+                _nextSlide = curIndex + 1;
             }
 
         },
@@ -258,7 +207,7 @@ var Screen = function (obj) {
         _setTransformY = function (index, curTransform) {
             var transformY = 0;
             for (var i = 0; i < index; i++) {
-                transformY +=parseInt(_itemHeight[i]);
+                transformY += parseInt(_itemHeight[i]);
             }
             if (transformY + curTransform > 0) {
                 transformY = 0;
@@ -268,15 +217,31 @@ var Screen = function (obj) {
 
         _blockAnalize = function () {
             _screenHeight = $(window).height();
-            _item.each(function () {
-                _wrap = $(this).find('>div');
-                if ($(this).height() < _wrap.outerHeight()) {
-                    $(this).height(_wrap.outerHeight());
+
+            _item.each(function (i) {
+                _wrapHeight = $(this).find('>div').outerHeight();
+
+                if ($(this).height() < _wrapHeight) {
+                    $(this).height(_wrapHeight);
                 }
-                _maxTransitionHeight += $(this).outerHeight();
-                _itemHeight.push(0-$(this).outerHeight());
+                _containerHeight = $(this).outerHeight();
+
+                _maxTransitionHeight += _containerHeight;
+
+                _itemHeight.push(0 - _containerHeight);
+                if (i == 0) {
+                    _itemHeightPos.push(i);
+                    _itemHeightPosBottom.push(_itemHeight[i]);
+                } else {
+                    _itemHeightPos.push(_itemHeightPos[i - 1] + _itemHeight[i - 1]);
+
+                    _itemHeightPosBottom.push(_itemHeightPosBottom[i-1]+ _itemHeight[i]);
+                }
             });
+
             _maxTransitionHeight -= Math.abs(_itemHeight[_item.length - 1]);
+            _swiper.onResize();
+            console.log(_itemHeightPosBottom);
         },
         _direct = function () {
             prev = _swiper.previousIndex;
@@ -296,7 +261,6 @@ var Screen = function (obj) {
             if ($(window).width() <= 768) {
                 _initContentScroll();
                 _initNicescroll();
-                _blockAnalize();
             } else {
                 _initContentScroll();
             }
@@ -551,7 +515,7 @@ var Menu = function (obj) {
                 cursorborderradius: 0,
                 cursorwidth: '2px'
             });
-            console.log(_menuContent)
+            //console.log(_menuContent)
         },
         init = function () {
             _initContentScroll();

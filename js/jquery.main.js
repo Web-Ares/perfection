@@ -149,27 +149,17 @@ var Screen = function (obj) {
 
         },
         _slideIndicate = function () {
-            _halfPastScreen = _screenHeight / 2;
+            var _halfPastScreen = _screenHeight / 2;
             var translate = _swiper.translate;
             var ecvator = translate - _halfPastScreen;
             return _whatIsSlide(ecvator, _halfPastScreen);
         },
-        _whatIsSlide = function (topPosition, _halfPastScreen) {
-            var curBlock = 0;
+        _whatIsSlide = function (centerPosition) {
             for (var i = 0; i <= _itemHeightPos.length; i++) {
-
-                if (_itemHeightPos[i] < topPosition) {
-                    if (_itemHeightPos[i + 1] === undefined) {
-                        _setIndexes(i);
-                        return false;
-                    } else {
-                        if (topPosition < _itemHeightPos[i + 1]) {
-                            _setIndexes(i);
-                            return false;
-                        }
-                    }
+                if (_itemHeightPosBottom[i] < centerPosition && _itemHeightPos[i]>centerPosition) {
+                    _setIndexes(i);
+                    return false;
                 }
-
             }
             return curBlock;
         },

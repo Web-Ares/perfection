@@ -68,6 +68,7 @@ var Screen = function (obj) {
     var _self = this,
         _obj = obj,
         _swiper,
+        _itemHeight = [],
         _item = _obj.find('.screen');
 
 
@@ -79,25 +80,89 @@ var Screen = function (obj) {
     var _initContentScroll = function () {
             _swiper = new Swiper('.site', {
                 direction: 'vertical',
-                slidesPerView: 1,
+                slidesPerView: 'auto',
                 scrollbarDraggable: true,
                 scrollbarSnapOnRelease: true,
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
                 simulateTouch: false,
-                mousewheelControl: true,
+                mousewheelControl: false,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 grabCursor: false,
                 freeMode: false,
-                onSlideChangeStart: function (swiper) {
-                    //console.log(swiper);
-                    //$('#section1').css('height', 'auto');
-                    ////_swiper.params.freeMode = true;
-                    //console.log(swiper.activeIndex);
+                onSlideChangeEnd: function (swiper) {
+                    var direct = _direct();
+                    if(direct<0){
+                        console.log('up');
+                    }else if(direct>0){
+                        console.log('down');
+                    }else{
+                        console.log('current');
+                    }
                 },
-                onSlideChangeEnd: function (swiper, i) {
+                onTransitionEnd: function (swiper) {
+                    //console.log('trans',swiper.activeIndex, swiper.progress, swiper.translate);
+                    //_top = $(swiper.slides[swiper.previousIndex]).outerHeight();
+                    //translateY = swiper.translate+_top;
+                    //$('.site__wrapper').css('transition-duration','400ms');
+                    //if(translateY>0){
+                    //    translateY=0;
+                    //}
+                    //$('.site__wrapper').css('transform','translate3d(0px, '+parseInt(translateY)+'px, 0px)');
+                    //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
+                    //console.log('translateY -> ',translateY);
+                    //$('.site__wrapper').css('transition-duration', '400ms');
+                    //$('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
+
+                },
+                onTouchMove: function (swiper) {
+
+                    console.log('active slide -> ', swiper.activeIndex);
+
+
+                    //_wrap = $(swiper.slides[swiper.activeIndex]).find('>div');
+                    //_container = $(swiper.slides[swiper.activeIndex]);
+                    //if(_container.height()<_wrap.height()){
+                    //    swiper.params.freeMode = true;
+                    //    //_container.css('height', _wrap.height()+'px');
+                    //}
+                    //console.log(swiper.activeIndex, swiper.progress, swiper.translate);
+                },
+                onTouchEnd: function (swiper) {
+                    //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
+                    //console.log('translateY -> ',translateY);
+                    //$('.site__wrapper').css('transition-duration', '400ms');
+                    //$('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
+
+                    //translateY = _setTransformY(swiper.activeIndex,swiper.translate);
+                    //console.log(translateY);
+                    //_top = $(swiper.slides[swiper.activeIndex]).outerHeight();
+                    //translateY = swiper.translate + _top;
+                    //$('.site__wrapper').css('transition-duration', '400ms');
+                    //if (translateY > 0) {
+                    //    translateY = 0;
+                    //}
+                    //$('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
+
+                    //console.log(swiper);
+                    //_wrap = $(swiper.slides[swiper.activeIndex]).find('>div');
+                    //_container = $(swiper.slides[swiper.activeIndex]);
+                    //
+                    //if(_container.height()<_wrap.height()){
+                    //    swiper.params.freeMode = true;
+                    //    swiper.params.size=_wrap.height();
+                    //    _wrap.css('height', 'auto');
+                    //    _top = $(swiper.slides[swiper.previousIndex]).offset().top;
+                    //
+                    //}else{
+                    //    _wrap.css('height', _container.height());
+                    //    swiper.params.freeMode = false;
+                    //    swiper.update();
+                    //    swiper.slideTo(swiper.previousIndex);
+                    //    console.log('ne nado');
+                    //}
                     //console.log();
                     //swiper.params.freeMode = true;
                     //console.log(swiper.activeIndex);
@@ -106,18 +171,16 @@ var Screen = function (obj) {
                     //$('.site').scrollTop(curSlidePos);
                 }
             });
-            setTimeout(function(){
+            setTimeout(function () {
                 _swiper.detachEvents();
                 _swiper.params.simulateTouch = false;
                 _swiper.params.onlyExternal = false;
                 _swiper.attachEvents();
-            },100);
+            }, 100);
 
         },
         _initNicescroll = function () {
-            _item.on('scroll', function (e) {
-                console.log(e);
-            })
+
         },
         _onEvents = function () {
             $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {
@@ -134,12 +197,47 @@ var Screen = function (obj) {
                 _swiper.attachEvents();
             });
         },
+        _setTransformY = function (index, curTransform) {
+            var transformY = 0;
+            for (var i = 0; i < index; i++) {
+                transformY += 0 - parseInt(_itemHeight[i]);
+            }
+            if (transformY + curTransform > 0) {
+                transformY = 0;
+            }
+            return transformY;
+        },
 
+        _blockAnalize = function (i) {
+            _item.each(function () {
+                _wrap = $(this).find('>div');
+
+                if ($(this).height() < _wrap.outerHeight()) {
+                    $(this).height(_wrap.outerHeight());
+                }
+                _itemHeight.push($(this).outerHeight());
+            });
+            console.log(_itemHeight);
+        },
+        _direct = function () {
+            prev = _swiper.previousIndex;
+            current = _swiper.activeIndex;
+            var direct = 0;
+            if (prev > current) {
+                direct = -1;
+            } else if (prev < current) {
+                direct = 1;
+            } else {
+                direct = 0;
+            }
+
+            return parseInt(direct);
+        },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
                 _initContentScroll();
                 _initNicescroll();
-                //_item.find('>div').css('height','auto');
+                _blockAnalize();
             } else {
                 _initContentScroll();
             }
@@ -165,10 +263,10 @@ var Screen = function (obj) {
 
     //public properties
     _self.detachSwiper = function () {
-       _detachSwiper();
+        _detachSwiper();
     };
     _self.atachSwiper = function () {
-       _atachSwiper();
+        _atachSwiper();
     };
     //public methods
     _init();

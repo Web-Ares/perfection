@@ -76,6 +76,7 @@ var Screen = function (obj) {
         _currentSlide = 0,
         _prevSlide = 0,
         _nextSlide = 0,
+        _old_start_y = 0,
         _item = _obj.find('.screen');
 
 
@@ -88,52 +89,55 @@ var Screen = function (obj) {
             _swiper = new Swiper('.site', {
                 direction: 'vertical',
                 slidesPerView: 'auto',
-                scrollbarDraggable: true,
-                scrollbarSnapOnRelease: true,
+                scrollbarDraggable: false,
+                scrollbarSnapOnRelease: false,
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
-                simulateTouch: true,
-                touchAngle: 180,
+                simulateTouch: false,
                 touchEventsTarget: 'none',
                 mousewheelControl: false,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 grabCursor: false,
                 longSwipes: false,
+                resistance:false,
+                iOSEdgeSwipeDetection:true,
+                iOSEdgeSwipeThreshold:150,
                 threshold: 10,
                 freeMode: true,
                 autoHeight: false,
                 onSlideChangeEnd: function (swiper) {
                     _slideIndicate();
-                    //console.log('MY active slide -> ',_currentSlide);
-                    //console.log('active slide -> ', swiper.activeIndex);
-                    //var direct = _direct();
-                    //if(direct<0){
-                    //    console.log('up');
-                    //}else if(direct>0){
-                    //    console.log('down');
-                    //}else{
-                    //    console.log('current');
-                    //}
                 },
                 onTransitionEnd: function (swiper) {
                     _slideIndicate();
-                    console.log('MY active slide -> ', _currentSlide);
-                    //console.log('prev slide -> ', _prevSlide);
-                    //console.log('next slide -> ', _nextSlide);
+                    //if (_isScroll())
+                    //    _slideTo(_currentSlide);
                 },
-                onTouchMove: function (swiper) {
+                onTouchMove: function (swiper,event) {
                     _slideIndicate();
-                    //console.log('MY active slide -> ',_currentSlide);
-                    //console.log('prev slide -> ', _prevSlide);
-                    //console.log('next slide -> ', _nextSlide);
                 },
                 onTouchEnd: function (swiper) {
                     _slideIndicate();
-                    console.log('MY active slide -> ', _currentSlide);
-                    //console.log('prev slide -> ', _prevSlide);
-                    //console.log('next slide -> ', _nextSlide);
+                    swiper.setWrapperTransition(100);
+                    _whatSwipe(swiper.touches.diff,true);
+                    //if (_isScroll())
+                    //    _slideTo(_currentSlide);
+                },
+                onTouchStart: function (swiper) {
+                    swiper.setWrapperTransition(100);
+                    _whatSwipe(swiper.touches.diff,false);
+                    _slideIndicate();
+                    //if (_isScroll()===false){
+                    //    _slideTo(_nextSlide);
+                    //}
+                },
+                onSetTranslate: function (swiper,event) {
+                   console.log(swiper,event)
+                },
+                onSetTransition: function (swiper,event) {
+                   console.log('move',event)
                 }
             });
             _blockAnalize();
@@ -143,6 +147,17 @@ var Screen = function (obj) {
                 _swiper.params.onlyExternal = false;
                 _swiper.attachEvents();
             }, 100);
+
+        },
+        _whatSwipe = function(start_y,is_end){
+            if(is_end){
+                if(Math.abs(start_y)-Math.abs(_old_start_y)>10){
+                    return false;
+                }
+            }else{
+                _old_start_y = 0;
+            }
+
 
         },
         _initNicescroll = function () {
@@ -156,12 +171,11 @@ var Screen = function (obj) {
         },
         _whatIsSlide = function (centerPosition) {
             for (var i = 0; i <= _itemHeightPos.length; i++) {
-                if (_itemHeightPosBottom[i] < centerPosition && _itemHeightPos[i]>centerPosition) {
+                if (_itemHeightPosBottom[i] < centerPosition && _itemHeightPos[i] > centerPosition) {
                     _setIndexes(i);
                     return false;
                 }
             }
-            return curBlock;
         },
         _setIndexes = function (curIndex) {
             _currentSlide = curIndex;
@@ -205,6 +219,27 @@ var Screen = function (obj) {
             return transformY;
         },
 
+        _slideTo = function (index) {
+            translateY = _itemHeightPos[index];
+            $('.site__wrapper').css('transition-duration', '800ms');
+            $('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
+            setTimeout(function () {
+                _setIndexes(index);
+            },400)
+        },
+
+        _isScroll = function () {
+
+            var topLine = _swiper.translate;
+            var bottomLine = _swiper.translate - _screenHeight;
+            if(_itemHeightPos[_currentSlide]>=topLine && _itemHeightPosBottom[_currentSlide]<bottomLine){
+                return true;
+            }
+            return false;
+            //console.log('ramka',topLine,bottomLine);
+            //console.log('slide',_itemHeightPos[_currentSlide],_itemHeightPosBottom[_currentSlide]);
+        },
+
         _blockAnalize = function () {
             _screenHeight = $(window).height();
 
@@ -225,13 +260,12 @@ var Screen = function (obj) {
                 } else {
                     _itemHeightPos.push(_itemHeightPos[i - 1] + _itemHeight[i - 1]);
 
-                    _itemHeightPosBottom.push(_itemHeightPosBottom[i-1]+ _itemHeight[i]);
+                    _itemHeightPosBottom.push(_itemHeightPosBottom[i - 1] + _itemHeight[i]);
                 }
             });
 
             _maxTransitionHeight -= Math.abs(_itemHeight[_item.length - 1]);
             _swiper.onResize();
-            console.log(_itemHeightPosBottom);
         },
         _direct = function () {
             prev = _swiper.previousIndex;
@@ -505,7 +539,6 @@ var Menu = function (obj) {
                 cursorborderradius: 0,
                 cursorwidth: '2px'
             });
-            //console.log(_menuContent)
         },
         init = function () {
             _initContentScroll();

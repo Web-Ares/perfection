@@ -109,9 +109,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
     left: 0;
     right: 0;
     z-index: 3;
-    height: 79px;
+    height: 50px;
     margin: 0 auto;
-    padding: 19px 0;
+    padding: 11px 0;
     border-bottom: 1px solid transparent;
     font: 12px "Proxima Nova Semibold", sans-serif;
     text-align: right;
@@ -205,6 +205,12 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .site__header.white .logo:after{
     opacity: 1;
 }
+.site__header.site__header_drop-menu .logo img{
+    opacity: 1;
+}
+.site__header.site__header_drop-menu .logo:after{
+    opacity: 0;
+}
 /* --------------- /logo --------------- */
 
 /* --------------- btn --------------- */
@@ -269,6 +275,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     display: inline-block;
     padding-top: 9px;
     margin-right: 19px;
+    font-size: 12px;
     color: #fff;
     text-transform: uppercase;
     transition: opacity .3s ease, color .3s ease;
@@ -1199,6 +1206,12 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
 @media (min-width: 550px) {
 
+    /* --------------- header-menu --------------- */
+    .header-menu__item {
+        font-size: 18px;
+    }
+    /* --------------- /header-menu --------------- */
+
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
@@ -1248,6 +1261,10 @@ html{overflow-y:hidden;overflow-x:hidden;}
     .site {
         font-size: 2.67vmin;
         line-height: 4vmin;
+    }
+    .site__header{
+        height: 100px;
+        padding: 35px 0;
     }
     .site__title{
         margin: 0 0 28px;
@@ -2117,14 +2134,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 @media (min-height: 600px) {
 
-    /* --------------- site --------------- */
-    .site__header {
-        height: 100px;
-        padding: 35px 0;
-        font-size: 18px;
-    }
-    /* --------------- /site --------------- */
-
     /* --------------- header-menu --------------- */
     .header-menu__item{
         padding-top: 7px;
@@ -2145,6 +2154,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
 }
 @media (min-height: 715px) {
+
     /* --------------- promo --------------- */
     .promo__logo{
         margin-bottom: 96px;

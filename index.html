@@ -11,11 +11,150 @@
     <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
+    <style>
+        /*------------preloader---------*/
+        .preloader {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0, .95);
+            -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+        }
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader__wrap {
+            position:absolute;
+            width:400px;
+            height:36px;
+            left:50%;
+            top:50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            overflow:visible;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            cursor:default;
+        }
+        .preloader__wrap div {
+            position:absolute;
+            width:20px;
+            height:36px;
+            opacity:0;
+            font-family: "Proxima Nova Regular", sans-serif;
+            animation:move 2s linear infinite;
+            -webkit-animation:move 2s linear infinite;
+            transform:rotate(180deg);
+            -webkit-transform:rotate(180deg);
+            color:#fff;
+        }
+        .preloader__wrap div:nth-child(2) {
+            animation-delay:0.2s;
+            -webkit-animation-delay:0.2s;
+        }
+        .preloader__wrap div:nth-child(3) {
+            animation-delay:0.4s;
+            -webkit-animation-delay:0.4s;
+        }
+        .preloader__wrap div:nth-child(4) {
+            animation-delay:0.6s;
+            -webkit-animation-delay:0.6s;
+        }
+        .preloader__wrap div:nth-child(5) {
+            animation-delay:0.8s;
+            -webkit-animation-delay:0.8s;
+        }
+        .preloader__wrap div:nth-child(6) {
+            animation-delay:1s;
+            -webkit-animation-delay:1s;
+        }
+        .preloader__wrap div:nth-child(7) {
+            animation-delay:1.2s;
+            -webkit-animation-delay:1.2s;
+        }
+
+        @keyframes move {
+            0% {
+                left:0;
+                opacity:0;
+            }
+            35% {
+                left: 41%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            65% {
+                left:59%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            100% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+        }
+        @-webkit-keyframes move {
+            0% {
+                left:0;
+                opacity:0;
+            }
+            35% {
+                left:41%;
+                -webkit-transform:rotate(0deg);
+                opacity:1;
+            }
+            65% {
+                left:59%;
+                -webkit-transform:rotate(0deg);
+                opacity:1;
+            }
+            100% {
+                left:100%;
+                -webkit-transform:rotate(-180deg);
+                opacity:0;
+            }
+        }
+        /*------------/preloader---------*/
+
+        @media (min-width: 768px) {
+
+        }
+
+    </style>
+
 </head>
 <body>
 
 <!-- site -->
 <div class="site">
+
+    <!--preloader-->
+    <div class="preloader">
+
+        <!--preloader__wrap-->
+        <div class="preloader__wrap">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+        </div>
+        <!--/preloader__wrap-->
+
+    </div>
+    <!--/preloader-->
 
     <!-- site__header -->
     <header class="site__header">
@@ -87,29 +226,10 @@
     <!-- site__header -->
     
     <!-- Add Scrollbar -->
-    <div class="swiper-scrollbar"></div>
-    <div class="site__wrapper swiper-wrapper">
+    <div class="pages">
 
-    <!--preloader-->
-    <div class="preloader">
-
-        <!--preloader__wrap-->
-        <div class="preloader__wrap">
-            <div>G</div>
-            <div>N</div>
-            <div>I</div>
-            <div>D</div>
-            <div>A</div>
-            <div>O</div>
-            <div>L</div>
-        </div>
-        <!--/preloader__wrap-->
-
-    </div>
-    <!--/preloader-->
-        
         <!-- promo -->
-        <div id="section0" class="promo swiper-slide screen section">
+        <div id="section0" data-header-color="black" class="promo pages__item active">
 
             <!-- promo__wrap -->
             <div class="promo__wrap">
@@ -146,7 +266,7 @@
         <!-- /promo -->
 
         <!-- /site__content -->
-        <section id="section1" class="screen swiper-slide screen_next section">
+        <section id="section1" data-header-color="white" class="pages__item">
 
             <!-- sharpest-icons -->
             <div class="sharpest-icons">
@@ -282,7 +402,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section id="section2" class="screen swiper-slide screen_next section">
+        <section id="section2" data-header-color="white" class="pages__item">
 
             <!-- pixel-grid -->
             <div class="pixel-grid">
@@ -335,7 +455,7 @@
                     <!-- /pixel-grid__layout -->
 
                     <!-- pixel-grid__list -->
-                    <div class="pixel-grid__slider swiper-container">
+                    <div class="pixel-grid__slider">
 
                         <!-- swiper-container -->
                         <div class="swiper-container">
@@ -415,7 +535,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section  id="section3" class="screen swiper-slide screen_next section">
+        <section  id="section3" data-header-color="white" class="pages__item">
 
             <!-- customizable -->
             <div class="customizable">
@@ -451,7 +571,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section id="section4" class="screen swiper-slide screen_next section" style="background-color: #242a2f">
+        <section id="section4" data-header-color="black" class="pages__item" style="background-color: #242a2f">
 
             <!-- we-impressed -->
             <div class="we-impressed">
@@ -502,7 +622,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section id="section5" class="screen swiper-slide screen_next">
+        <section id="section5" data-header-color="white" class="pages__item screen_next">
 
             <!-- formats -->
             <div class="formats">
@@ -678,7 +798,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section id="section6" class="screen swiper-slide screen_next" style="background-color: #fff">
+        <section id="section6" data-header-color="white" class="pages__item" style="background-color: #fff">
 
             <!-- line-solid -->
             <div class="line-solid">
@@ -772,7 +892,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section id="section7" class="screen swiper-slide screen_next section" style="background-color: #fff">
+        <section id="section7" data-header-color="white" class="pages__item" style="background-color: #fff">
 
             <!-- easy-way -->
             <div class="easy-way">
@@ -824,7 +944,7 @@
         <!-- /site__content -->
 
         <!-- /site__content -->
-        <section id="section8" class="screen swiper-slide screen_next section" style="background-color: #fff">
+        <section id="section8" data-header-color="black" class="pages__item" style="background-color: #fff">
 
             <!-- pack-includes -->
             <div class="pack-includes">
@@ -991,7 +1111,7 @@
         </section>
         <!-- /site__content -->
 
-        <section id="section9" class="screen swiper-slide screen_next section" style="background-color: #fff">
+        <section id="section9" data-header-color="white" class="pages__item" style="background-color: #fff">
 
             <!-- icons-promo -->
             <div class="icons-promo">
@@ -1112,6 +1232,7 @@
 
 <script src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="js/jquery.pages.js"></script>
 
 <script src="js/swiper.min.js"></script>
 <script src="js/jquery.main.js"></script>

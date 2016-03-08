@@ -106,7 +106,6 @@ var Preloader = function (obj) {
                         _obj.addClass('hide');
 
                         setTimeout(function () {
-                            console.log('start');
                             $('.site').each(function () {
                                 new Screen($(this));
                             });
@@ -192,7 +191,6 @@ var Screen = function (obj) {
                 _wrapHeight = $(this).find('>div').outerHeight();
                 if (_screenHeight < _wrapHeight) {
                     if ($(window).width() <= 768) {
-
                         $(this).css('overflow', 'scroll');
                     } else {
                         $(this).css('overflow', 'hidden');
@@ -215,28 +213,27 @@ var Screen = function (obj) {
             }
         },
         _init = function () {
-            console.log('tut');
             _sizeEvents();
             _onEvents();
-        },
-        _detachSwiper = function () {
-            _swiper.detachEvents();
-            _swiper.scrollbar.disableDraggable();
-            _swiper.disableMousewheelControl();
-        },
-        _atachSwiper = function () {
-            _swiper.attachEvents();
-            _swiper.scrollbar.enableDraggable();
-            _swiper.enableMousewheelControl();
         };
+        //_detachSwiper = function () {
+        //    _swiper.detachEvents();
+        //    _swiper.scrollbar.disableDraggable();
+        //    _swiper.disableMousewheelControl();
+        //},
+        //_atachSwiper = function () {
+        //    _swiper.attachEvents();
+        //    _swiper.scrollbar.enableDraggable();
+        //    _swiper.enableMousewheelControl();
+        //};
 
     //public properties
-    _self.detachSwiper = function () {
-        _detachSwiper();
-    };
-    _self.atachSwiper = function () {
-        _atachSwiper();
-    };
+    //_self.detachSwiper = function () {
+    //    _detachSwiper();
+    //};
+    //_self.atachSwiper = function () {
+    //    _atachSwiper();
+    //};
     //public methods
     _init();
 };

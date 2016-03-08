@@ -290,7 +290,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
 /* --------------- screen --------------- */
 .screen {
-    border-top: 1px solid red;
     position: relative;
     overflow: hidden;
     /*min-height: 100vh;*/

@@ -88,9 +88,9 @@ var Screen = function (obj) {
     var _initContentScroll = function () {
             _swiper = new Swiper('.site', {
                 direction: 'vertical',
-                slidesPerView: 1,
-                scrollbarDraggable: false,
-                scrollbarSnapOnRelease: false,
+                slidesPerView: 'auto',
+                scrollbarDraggable: true,
+                scrollbarSnapOnRelease: true,
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
@@ -103,216 +103,57 @@ var Screen = function (obj) {
                 resistance:false,
                 iOSEdgeSwipeDetection:true,
                 threshold: 10,
-                freeMode: true,
-                autoHeight:false,
-                onSlideChangeEnd: function (swiper) {
-                    _slideIndicate();
-                    _isScroll();
-
-                },
-                onTransitionEnd: function (swiper) {
-                    _slideIndicate();
-                    _isScroll();
-                    //if (_isScroll())
-                    //    _slideTo(_currentSlide);
-                },
-                onTouchMove: function (swiper,event) {
-                    _slideIndicate();
-                    _isScroll();
-                },
-                onTouchEnd: function (swiper) {
-                    _slideIndicate();
-                    _isScroll();
-                },
-                onTouchStart: function (swiper) {
-                    _isScroll();
-                    //_whatSwipe(swiper.touches.diff,false);
-                    _slideIndicate();
-                    //if (_isScroll()){
-                    //        _swiper.detachEvents();
-                    //    _swiper.params.freeMode = true;
-                    //    _swiper.attachEvents();
-                    //}else{
-                    //    _swiper.detachEvents();
-                    //    _swiper.params.freeMode = false;
-                    //    _swiper.attachEvents();
-                    //}
-                }
+                freeMode: false,
+                autoHeight:false
             });
-            _blockAnalize();
-
-            setTimeout(function () {
-                _swiper.detachEvents();
-                _swiper.params.simulateTouch = false;
-                _swiper.params.onlyExternal = false;
-                _swiper.attachEvents();
-            }, 100);
-
-        },
-        _whatSwipe = function(start_y,is_end){
-            if(is_end){
-                if(Math.abs(start_y)-Math.abs(_old_start_y)>10){
-                    return false;
+            var startScroll, touchStart, touchCurrent;
+            _swiper.slides.on('touchstart', function (e) {
+                startScroll = this.scrollTop;
+                touchStart = e.targetTouches[0].pageY;
+            }, true);
+            _swiper.slides.on('touchmove', function (e) {
+                touchCurrent = e.targetTouches[0].pageY;
+                var touchesDiff = touchCurrent - touchStart;
+                var slide = this;
+                var onlyScrolling =
+                    ( slide.scrollHeight > slide.offsetHeight ) &&
+                    (
+                        ( touchesDiff < 0 && startScroll === 0 ) ||
+                        ( touchesDiff > 0 && startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) ||
+                        ( startScroll > 0 && startScroll < ( slide.scrollHeight - slide.offsetHeight ) )
+                    );
+                if (onlyScrolling) {
+                    e.stopPropagation();
                 }
-            }else{
-                _old_start_y = 0;
-            }
-
-
-        },
-        _initNicescroll = function () {
-
-        },
-        _slideIndicate = function () {
-            var _halfPastScreen = _screenHeight / 2;
-            var translate = _swiper.translate;
-            var ecvator = translate - _halfPastScreen;
-            return _whatIsSlide(ecvator, _halfPastScreen);
-        },
-        _whatIsSlide = function (centerPosition) {
-            for (var i = 0; i <= _itemHeightPos.length; i++) {
-                if (_itemHeightPosBottom[i] < centerPosition && _itemHeightPos[i] > centerPosition) {
-                    _setIndexes(i);
-                    return false;
-                }
-            }
-        },
-        _setIndexes = function (curIndex) {
-            _currentSlide = curIndex;
-
-            if (_itemHeight[curIndex - 1] === undefined) {
-                _prevSlide = curIndex;
-            } else {
-                _prevSlide = curIndex - 1;
-            }
-
-            if (_itemHeight[curIndex + 1] === undefined) {
-                _nextSlide = curIndex;
-            } else {
-                _nextSlide = curIndex + 1;
-            }
-
-        },
-        _onEvents = function () {
-            $('.site.swiper-container-vertical > .swiper-scrollbar').mouseenter(function () {
-                _swiper.detachEvents();
-                _swiper.params.simulateTouch = true;
-                _swiper.params.onlyExternal = true;
-                _swiper.attachEvents();
-            });
-
-            $('.site.swiper-container-vertical > .swiper-scrollbar').mouseleave(function () {
-                _swiper.detachEvents();
-                _swiper.params.simulateTouch = false;
-                _swiper.params.onlyExternal = false;
-                _swiper.attachEvents();
-            });
-        },
-        _setTransformY = function (index, curTransform) {
-            var transformY = 0;
-            for (var i = 0; i < index; i++) {
-                transformY += parseInt(_itemHeight[i]);
-            }
-            if (transformY + curTransform > 0) {
-                transformY = 0;
-            }
-            return transformY;
+            }, true);
         },
 
-        _slideTo = function (index) {
-            translateY = _itemHeightPos[index];
-            $('.site__wrapper').css('transition-duration', '800ms');
-            $('.site__wrapper').css('transform', 'translate3d(0px, ' + parseInt(translateY) + 'px, 0px)');
-            setTimeout(function () {
-                _setIndexes(index);
-            },400)
-        },
-        _slideEndTo = function (index) {
-            translateY = _itemHeightPosBottom[index];
-            $('.site__wrapper').css('transition-duration', '800ms');
-            $('.site__wrapper').css('transform', 'translate3d(0px, ' + (parseInt(translateY)+_screenHeight) + 'px, 0px)');
-            setTimeout(function () {
-                _setIndexes(index);
-            },400)
-        },
-
-        _isScroll = function () {
-            var topLine = _swiper.translate;
-            var bottomLine = _swiper.translate - _screenHeight;
-            if(_itemHeightPos[_currentSlide]>=topLine && _itemHeightPosBottom[_currentSlide]<bottomLine){
-                _swiper.detachEvents();
-                    _swiper.params.freeMode = true;
-                _swiper.attachEvents();
-                return true;
-            }else{
-                _swiper.detachEvents();
-                _swiper.params.freeMode = false;
-                _swiper.attachEvents();
-            }
-            _visibleBlocks();
-            return false;
-        },
-        _visibleBlocks = function(){
-            var topLine = _swiper.translate;
-            var bottomLine = _swiper.translate - _screenHeight;
-            for(var i=0; i<=_itemHeightPos.length;i++){
-                if(_itemHeightPos[i]>bottomLine && _itemHeightPos[i]<topLine ){
-                    console.log('visible', i);
-                    _setIndexes(i);
-                    if(_itemHeightPos[i]>topLine+(_screenHeight/2)){
-                        _slideTo(i);
-                    }else{
-                        _slideEndTo(i);
-                    }
-                }
-            }
-        },
         _blockAnalize = function () {
             _screenHeight = $(window).height();
 
             _item.each(function (i) {
                 _wrapHeight = $(this).find('>div').outerHeight();
 
-                if ($(this).height() < _wrapHeight) {
-                    $(this).height(_wrapHeight);
-                }
-                _containerHeight = $(this).outerHeight();
+                if (_screenHeight < _wrapHeight) {
+                    if ($(window).width() <= 768) {
+                        console.log('tut');
+                        $(this).css('overflow', 'scroll');
+                    }else{
+                        $(this).css('overflow', 'hidden');
+                    }
 
-                _maxTransitionHeight += _containerHeight;
-
-                _itemHeight.push(0 - _containerHeight);
-
-                if (i == 0) {
-                    _itemHeightPos.push(i);
-                    _itemHeightPosBottom.push(_itemHeight[i]);
-                } else {
-                    _itemHeightPos.push(_itemHeightPos[i - 1] + _itemHeight[i - 1]);
-
-                    _itemHeightPosBottom.push(_itemHeightPosBottom[i - 1] + _itemHeight[i]);
                 }
             });
-
-            _maxTransitionHeight -= Math.abs(_itemHeight[_item.length - 1]);
-            _swiper.onResize();
         },
-        _direct = function () {
-            prev = _swiper.previousIndex;
-            current = _swiper.activeIndex;
-            var direct = 0;
-            if (prev > current) {
-                direct = -1;
-            } else if (prev < current) {
-                direct = 1;
-            } else {
-                direct = 0;
-            }
-
-            return parseInt(direct);
+        _onEvents = function(){
+            $(window).on('resize',function(){
+                    _blockAnalize();
+            })
         },
         _sizeEvents = function () {
             if ($(window).width() <= 768) {
                 _initContentScroll();
-                _initNicescroll();
+                _blockAnalize();
             } else {
                 _initContentScroll();
             }

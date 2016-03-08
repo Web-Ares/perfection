@@ -40,10 +40,11 @@ var Preloader = function (obj) {
                         _obj.addClass('hide');
 
                         setTimeout(function () {
+                            _obj.remove();
+
                             $('.site').each(function () {
                                 mainSwiper = new Screen($(this));
                             });
-                            _obj.remove()
 
                         }, 400);
 
@@ -68,15 +69,7 @@ var Screen = function (obj) {
     var _self = this,
         _obj = obj,
         _swiper,
-        _itemHeight = [],
-        _itemHeightPos = [],
-        _itemHeightPosBottom = [],
-        _maxTransitionHeight = 0,
         _screenHeight = 0,
-        _currentSlide = 0,
-        _prevSlide = 0,
-        _nextSlide = 0,
-        _old_start_y = 0,
         _item = _obj.find('.screen');
 
 

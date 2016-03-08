@@ -106,6 +106,7 @@ var Preloader = function (obj) {
                         _obj.addClass('hide');
 
                         setTimeout(function () {
+                            console.log('start');
                             $('.site').each(function () {
                                 new Screen($(this));
                             });
@@ -132,15 +133,7 @@ var Screen = function (obj) {
     var _self = this,
         _obj = obj,
         _swiper,
-        _itemHeight = [],
-        _itemHeightPos = [],
-        _itemHeightPosBottom = [],
-        _maxTransitionHeight = 0,
         _screenHeight = 0,
-        _currentSlide = 0,
-        _prevSlide = 0,
-        _nextSlide = 0,
-        _old_start_y = 0,
         _item = _obj.find('.screen');
 
 
@@ -197,10 +190,9 @@ var Screen = function (obj) {
 
             _item.each(function (i) {
                 _wrapHeight = $(this).find('>div').outerHeight();
-
                 if (_screenHeight < _wrapHeight) {
                     if ($(window).width() <= 768) {
-                        console.log('tut');
+
                         $(this).css('overflow', 'scroll');
                     } else {
                         $(this).css('overflow', 'hidden');
@@ -223,6 +215,7 @@ var Screen = function (obj) {
             }
         },
         _init = function () {
+            console.log('tut');
             _sizeEvents();
             _onEvents();
         },

@@ -20,7 +20,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     header-menu
 
-    screen
+    pages
 
     drop-menu
 
@@ -49,8 +49,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     easy-way
 
     we-impressed
-
-    preloader
 
 */
 
@@ -99,7 +97,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     overflow: hidden;
     min-width: 320px;
     position: relative;
-    z-index: 1;
     font-size: 14px;
     line-height: 17px;
     font-family: "Proxima Nova Light", sans-serif;
@@ -111,24 +108,24 @@ html{overflow-y:hidden;overflow-x:hidden;}
     left: 0;
     right: 0;
     z-index: 3;
-    max-width: 1920px;
-    height: 79px;
+    height: 50px;
     margin: 0 auto;
-    padding: 19px 0;
+    padding: 11px 0;
+    border-bottom: 1px solid transparent;
     font: 12px "Proxima Nova Semibold", sans-serif;
-    -webkit-transition: -webkit-transform .3s linear, background .3s, top .3s, opacity .3s;
-    transition: transform .3s linear, background .3s, top .3s, opacity .3s;
-    -webkit-transition: transform .3s linear, background .3s, top .3s, opacity .3s;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
     text-align: right;
+    transition: border-bottom .2s ease, background-color .2s ease;
+    -webkit-transition: border-bottom .2s ease, background-color .2s ease;
+}
+.site__header.white{
+    border-bottom-color: #e8e8e8;
+    background-color: #fff;
 }
 .site__header-layout{
     position: relative;
     top: 0;
     right: 0;
     left: 0;
-    max-width: 1514px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -153,17 +150,64 @@ html{overflow-y:hidden;overflow-x:hidden;}
     color: #151414;
     display: block;
 }
+#ascrail2000{
+    display: block!important;
+    opacity: 1!important;
+}
 /* --------------- /site --------------- */
+
+/* --------------- pages --------------- */
+.pages{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.pages__item{
+    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+}
+/* --------------- /pages --------------- */
 
 /* --------------- logo --------------- */
 .logo {
     position: absolute;
     top: 0;
     left: 15px;
-    z-index: 4;
+    z-index: 6;
 }
 .logo img{
     max-width: 67px;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.logo:after{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 67px;
+    height: 31px;
+    background: url("../img/logo-small-black.png") no-repeat 0 0;
+    background-size: contain;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+    content: '';
+}
+.site__header.white .logo img{
+    opacity: 0;
+}
+.site__header.white .logo:after{
+    opacity: 1;
+}
+.site__header.site__header_drop-menu .logo img{
+    opacity: 1;
+}
+.site__header.site__header_drop-menu .logo:after{
+    opacity: 0;
 }
 /* --------------- /logo --------------- */
 
@@ -229,13 +273,17 @@ html{overflow-y:hidden;overflow-x:hidden;}
     display: inline-block;
     padding-top: 9px;
     margin-right: 19px;
+    font-size: 12px;
     color: #fff;
     text-transform: uppercase;
-    transition: opacity .3s ease;
-    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease, color .3s ease;
+    -webkit-transition: opacity .3s ease, color .3s ease;
 }
 .header-menu__item:hover{
     opacity: .8;
+}
+.site__header.white .header-menu__item{
+    color: #555;
 }
 /* --------------- /header-menu --------------- */
 
@@ -248,7 +296,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     width: 30px;
     height: 25px;
     margin-right: 1px;
-    z-index: 4;
+    z-index: 6;
     overflow: hidden;
     text-indent: 999px;
 }
@@ -286,17 +334,16 @@ html{overflow-y:hidden;overflow-x:hidden;}
 .site__header_drop-menu .drop-menu-btn span:before{
     opacity: 0;
 }
-/* --------------- /drop-menu --------------- */
-
-/* --------------- screen --------------- */
-.screen {
-    position: relative;
-    overflow: hidden;
-    /*min-height: 100vh;*/
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+.site__header.white .drop-menu-btn span,
+.site__header.white .drop-menu-btn span:after,
+.site__header.white .drop-menu-btn span:before{
+    background-color: #555;
 }
-/* --------------- /screen --------------- */
+.site__header_drop-menu.white .drop-menu-btn span,
+.site__header_drop-menu.white .drop-menu-btn span:after{
+    background-color: #fff;
+}
+/* --------------- /drop-menu --------------- */
 
 /* --------------- drop-menu --------------- */
 .drop-menu {
@@ -305,7 +352,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     left: 0;
     right: 0;
     height: 100vh;
-    z-index: 3;
+    z-index: 5;
     background-color: rgba(21,101,192,.99);
     color: #fff;
     text-align: center;
@@ -319,6 +366,16 @@ html{overflow-y:hidden;overflow-x:hidden;}
     visibility: visible;
 }
 .drop-menu__inner {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
     position: relative;
     height: 100vh;
     max-width: 1484px;
@@ -326,11 +383,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
     padding: 70px 15px;
 }
 .drop-menu__inner-wrap{
-    height: 100%;
+    padding: 0 50px;
 }
 .drop-menu__menu{
-    margin-bottom: 50px;
-    font: 44px/60px "Proxima Nova Semibold", sans-serif;
+    margin-bottom: 20px;
+    font: 24px/33px "Proxima Nova Semibold", sans-serif;
 }
 .drop-menu__menu-item{
     color: #fff;
@@ -341,8 +398,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     color: #90bff4;
 }
 .drop-menu__navigation{
-    margin-bottom: 50px;
-    font: 30px/44px "Proxima Nova Light", sans-serif;
+    margin-bottom: 20px;
+    font: 20px/33px "Proxima Nova Light", sans-serif;
 }
 .drop-menu__navigation-item{
     color: #fff;
@@ -353,7 +410,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     color: #90bff4;
 }
 .drop-menu__legally{
-    font: 20px/34px "Proxima Nova Light", sans-serif;
+    font: 14px/24px "Proxima Nova Light", sans-serif;
 }
 .drop-menu__legally-item{
     color: #fff;
@@ -460,7 +517,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     -webkit-align-items: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 .promo__logo{
     width: 90%;
@@ -882,8 +939,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    min-height: 100%;
-    padding: 20px 0;
+    min-height: 100vh;
+    padding: 60px 0;
     text-align: center;
 }
 .icons-promo p {
@@ -1036,8 +1093,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    min-height: 100%;
-    padding: 20px 0;
+    min-height: 100vh;
+    padding: 60px 0;
 }
 .easy-way__content {
     text-align: left;
@@ -1155,125 +1212,16 @@ html{overflow-y:hidden;overflow-x:hidden;}
 }
 /* --------------- /we-impressed --------------- */
 
-/*------------preloader---------*/
-.preloader {
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0, .95);
-    -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
-    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
-}
-.preloader.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-.preloader__wrap {
-    position:absolute;
-    width:400px;
-    height:36px;
-    left:50%;
-    top:50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    overflow:visible;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
-    cursor:default;
-}
-.preloader__wrap div {
-    position:absolute;
-    width:20px;
-    height:36px;
-    opacity:0;
-    font-family: "Proxima Nova Regular", sans-serif;
-    animation:move 2s linear infinite;
-    -webkit-animation:move 2s linear infinite;
-    transform:rotate(180deg);
-    -webkit-transform:rotate(180deg);
-    color:#fff;
-}
-.preloader__wrap div:nth-child(2) {
-    animation-delay:0.2s;
-    -webkit-animation-delay:0.2s;
-}
-.preloader__wrap div:nth-child(3) {
-    animation-delay:0.4s;
-    -webkit-animation-delay:0.4s;
-}
-.preloader__wrap div:nth-child(4) {
-    animation-delay:0.6s;
-    -webkit-animation-delay:0.6s;
-}
-.preloader__wrap div:nth-child(5) {
-    animation-delay:0.8s;
-    -webkit-animation-delay:0.8s;
-}
-.preloader__wrap div:nth-child(6) {
-    animation-delay:1s;
-    -webkit-animation-delay:1s;
-}
-.preloader__wrap div:nth-child(7) {
-    animation-delay:1.2s;
-    -webkit-animation-delay:1.2s;
-}
-
-@keyframes move {
-    0% {
-        left:0;
-        opacity:0;
-    }
-    35% {
-        left: 41%;
-        transform:rotate(0deg);
-        opacity:1;
-    }
-    65% {
-        left:59%;
-        transform:rotate(0deg);
-        opacity:1;
-    }
-    100% {
-        left:100%;
-        transform:rotate(-180deg);
-        opacity:0;
-    }
-}
-@-webkit-keyframes move {
-    0% {
-        left:0;
-        opacity:0;
-    }
-    35% {
-        left:41%;
-        -webkit-transform:rotate(0deg);
-        opacity:1;
-    }
-    65% {
-        left:59%;
-        -webkit-transform:rotate(0deg);
-        opacity:1;
-    }
-    100% {
-        left:100%;
-        -webkit-transform:rotate(-180deg);
-        opacity:0;
-    }
-}
-/*------------/preloader---------*/
-
 @media (min-width: 550px) {
+
+    /* --------------- header-menu --------------- */
+    .header-menu__item {
+        font-size: 18px;
+    }
+    /* --------------- /header-menu --------------- */
 
     /* --------------- promo --------------- */
     .promo__logo {
-        width: auto;
         max-height: 31vh;
     }
     /* --------------- /promo --------------- */
@@ -1317,10 +1265,16 @@ html{overflow-y:hidden;overflow-x:hidden;}
 @media (min-width: 768px) {
 
     /* --------------- site --------------- */
-
     .site {
         font-size: 2.67vmin;
         line-height: 4vmin;
+    }
+    .site__header{
+        height: 74px;
+        padding: 21px 0;
+    }
+    .site__header-layout{
+        margin: 0 65px;
     }
     .site__title{
         margin: 0 0 28px;
@@ -1339,11 +1293,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
     }
     /* --------------- /site --------------- */
 
-    /* --------------- screen --------------- */
-    .screen {
+    /* --------------- pages --------------- */
+    .pages__item {
         height: 100vh;
     }
-    /* --------------- screen --------------- */
+    /* --------------- /pages --------------- */
 
     /* --------------- btn --------------- */
     .btn {
@@ -1366,12 +1320,35 @@ html{overflow-y:hidden;overflow-x:hidden;}
     }
     /* --------------- /header-menu --------------- */
 
+    /* --------------- drop-menu --------------- */
+    .drop-menu__menu{
+        margin-bottom: 50px;
+        font: 44px/60px "Proxima Nova Semibold", sans-serif;
+    }
+    .drop-menu__navigation{
+        margin-bottom: 50px;
+        font: 30px/44px "Proxima Nova Light", sans-serif;
+    }
+    .drop-menu__legally{
+        font: 20px/34px "Proxima Nova Light", sans-serif;
+    }
+    /* --------------- /drop-menu --------------- */
+
     /* --------------- social --------------- */
     .social{
+        left: auto;
         right: 15px;
         bottom: 35px;
     }
     /* --------------- /social --------------- */
+
+    /* --------------- copyright --------------- */
+    .copyright{
+        right: auto;
+        left: 15px;
+        bottom: 35px;
+    }
+    /* --------------- /copyright --------------- */
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons{
@@ -1407,8 +1384,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
         vertical-align: top;
         width: 43.5%;
         text-align: left;
-        -webkit-transform: translateX(120%);
-        transform: translateX(120%);
+        -webkit-transform: translateX(200%);
+        transform: translateX(200%);
         -webkit-transition: transform 0.3s linear 0.3s;
         transition: transform 0.3s linear 0.3s;
     }
@@ -1619,7 +1596,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
     /* --------------- /pack-includes --------------- */
 
     /* ------------ icons-promo ------------ */
-
+    .icons-promo {
+        padding: 110px 0;
+    }
     .icons-promo__wrap {
         text-align: justify;
         margin-bottom: 2vmin;
@@ -1681,17 +1660,17 @@ html{overflow-y:hidden;overflow-x:hidden;}
         -webkit-transition-delay: 1s;
         transition-delay: 1s;
     }
-    .screen.active .icons-preview {
+    .pages__item.active .icons-preview {
         opacity: 1;
         visibility: visible;
     }
-    .screen.active .icons-preview:nth-child(1),
-    .screen.active .icons-preview:nth-child(3) {
+    .pages__item.active .icons-preview:nth-child(1),
+    .pages__item.active .icons-preview:nth-child(3) {
         -ms-transform: translateX(0);
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
-    .screen.active .icons-preview:nth-child(2) {
+    .pages__item.active .icons-preview:nth-child(2) {
         -ms-transform: scale(1);
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -1866,6 +1845,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
     /* -----------we-impressed --------------- */
 
     /* ------------ easy-way ------------ */
+    .easy-way {
+        padding: 110px 0;
+    }
     .easy-way__content {
         display: inline-block;
         vertical-align: middle;
@@ -1905,7 +1887,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
         -webkit-transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
         transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s ease;
     }
-    .screen.active .easy-way__pic-wrapper {
+    .pages__item.active .easy-way__pic-wrapper {
         opacity: 1;
         visibility: visible;
         -ms-transform: scale(1);
@@ -2117,7 +2099,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     /* ------------ easy-way ------------ */
     .easy-way .site__title {
-        font-size: 7.9vmin;
+        font-size: 66px;
         line-height: 0.95;
         margin-bottom: 25px;
     }
@@ -2150,15 +2132,22 @@ html{overflow-y:hidden;overflow-x:hidden;}
     }
     /* --------------- /promo --------------- */
 
+    /* --------------- drop-menu --------------- */
+    .drop-menu__menu{
+        margin-bottom: 20px;
+        font: 24px/33px "Proxima Nova Semibold", sans-serif;
+    }
+    .drop-menu__navigation{
+        margin-bottom: 20px;
+        font: 20px/33px "Proxima Nova Light", sans-serif;
+    }
+    .drop-menu__legally{
+        font: 14px/24px "Proxima Nova Light", sans-serif;
+    }
+    /* --------------- /drop-menu --------------- */
+
 }
 @media (min-height: 600px) {
-
-    /* --------------- site --------------- */
-    .site__header {
-        padding: 45px 0;
-        font-size: 18px;
-    }
-    /* --------------- /site --------------- */
 
     /* --------------- header-menu --------------- */
     .header-menu__item{
@@ -2180,6 +2169,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
 }
 @media (min-height: 715px) {
+
     /* --------------- promo --------------- */
     .promo__logo{
         margin-bottom: 96px;

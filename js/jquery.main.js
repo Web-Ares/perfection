@@ -56,37 +56,7 @@ var Menu = function (obj) {
                             _header.addClass( $( this ).data( 'header-color' ) )
                         }
 
-                    } );
-                }
-            });
-        },
-        _contentScroll = function() {
-            _menuContent.outerHeight( 'auto' );
-            if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
-                _menuContent.outerHeight( '100%' );
-                _initContentScroll();
-                _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();
-            } else {
-                _menuContent.outerHeight( 'auto' );
-                _menuContent.getNiceScroll().hide();
-            }
-        },
-        _initContentScroll = function() {
-            _menuContent.niceScroll( {
-                cursorcolor: '#fff',
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursorwidth: '2px'
-            } );
-        },
-        init = function() {
-            _scrollNavigation();
-            _contentScroll();
-            _onEvents();
-        };
+});
 
     init()
 };
@@ -124,6 +94,129 @@ var Preloader = function ( obj ) {
             _onEvents();
         };
 
+    _init();
+};
+
+
+var Screen = function (obj) {
+
+    //private properties
+    var _self = this,
+        _obj = obj,
+        _swiper,
+        _itemHeight = [],
+        _itemHeightPos = [],
+        _itemHeightPosBottom = [],
+        _maxTransitionHeight = 0,
+        _screenHeight = 0,
+        _currentSlide = 0,
+        _prevSlide = 0,
+        _nextSlide = 0,
+        _old_start_y = 0,
+        _item = _obj.find('.screen');
+
+
+    _obj[0].obj = _self;
+
+    //private methods
+
+
+    var _initContentScroll = function () {
+            _swiper = new Swiper('.site', {
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                scrollbarDraggable: true,
+                scrollbarSnapOnRelease: true,
+                paginationClickable: false,
+                spaceBetween: 0,
+                slideActiveClass: 'active',
+                simulateTouch: true,
+                mousewheelControl: true,
+                scrollbar: '.swiper-scrollbar',
+                scrollbarHide: false,
+                grabCursor: false,
+                longSwipes: false,
+                resistance:false,
+                iOSEdgeSwipeDetection:true,
+                threshold: 10,
+                freeMode: false,
+                autoHeight:false
+            });
+            var startScroll, touchStart, touchCurrent;
+            _swiper.slides.on('touchstart', function (e) {
+                startScroll = this.scrollTop;
+                touchStart = e.targetTouches[0].pageY;
+            }, true);
+            _swiper.slides.on('touchmove', function (e) {
+                touchCurrent = e.targetTouches[0].pageY;
+                var touchesDiff = touchCurrent - touchStart;
+                var slide = this;
+                var onlyScrolling =
+                    ( slide.scrollHeight > slide.offsetHeight ) &&
+                    (
+                        ( touchesDiff < 0 && startScroll === 0 ) ||
+                        ( touchesDiff > 0 && startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) ||
+                        ( startScroll > 0 && startScroll < ( slide.scrollHeight - slide.offsetHeight ) )
+                    );
+                if (onlyScrolling) {
+                    e.stopPropagation();
+                }
+            }, true);
+        },
+
+        _blockAnalize = function () {
+            _screenHeight = $(window).height();
+
+            _item.each(function (i) {
+                _wrapHeight = $(this).find('>div').outerHeight();
+
+                if (_screenHeight < _wrapHeight) {
+                    if ($(window).width() <= 768) {
+                        console.log('tut');
+                        $(this).css('overflow', 'scroll');
+                    }else{
+                        $(this).css('overflow', 'hidden');
+                    }
+
+                }
+            });
+        },
+        _onEvents = function(){
+            $(window).on('resize',function(){
+                    _blockAnalize();
+            })
+        },
+        _sizeEvents = function () {
+            if ($(window).width() <= 768) {
+                _initContentScroll();
+                _blockAnalize();
+            } else {
+                _initContentScroll();
+            }
+        },
+        _init = function () {
+            _sizeEvents();
+            _onEvents();
+        },
+        _detachSwiper = function () {
+            _swiper.detachEvents();
+            _swiper.scrollbar.disableDraggable();
+            _swiper.disableMousewheelControl();
+        },
+        _atachSwiper = function () {
+            _swiper.attachEvents();
+            _swiper.scrollbar.enableDraggable();
+            _swiper.enableMousewheelControl();
+        };
+
+    //public properties
+    _self.detachSwiper = function () {
+        _detachSwiper();
+    };
+    _self.atachSwiper = function () {
+        _atachSwiper();
+    };
+    //public methods
     _init();
 };
 
@@ -347,107 +440,3 @@ var SliderSingle = function (obj) {
 
     _init();
 };
-
-/*var  _swiper;
-
- var Screen = function ( obj ) {
-
- //private properties
- var _self = this,
- _obj = obj,
-
- _item = _obj.find( '.screen' );
-
-
- _obj[ 0 ].obj = _self;
-
- //private methods
-
-
- var _initContentScroll = function () {
- _swiper = new Swiper( '.site', {
- direction: 'vertical',
- slidesPerView: 1,
- scrollbarDraggable: true,
- scrollbarSnapOnRelease: true,
- paginationClickable: false,
- spaceBetween: 0,
- slideActiveClass: 'active',
- simulateTouch: true,
- mousewheelControl: true,
- scrollbar: '.swiper-scrollbar',
- scrollbarHide: false,
- hashnav: true,
- grabCursor: false,
- onSlideChangeEnd: function() {
- //_swiper.detachEvents();
- _swiper.detachEvents();
-
- _item.addClass('swiper-slide2');
- _item.removeClass('swiper-slide');
-
- }
- });
-
- _obj.mouseenter(function () {
- _swiper.detachEvents();
- _swiper.params.simulateTouch = false;
- _swiper.params.onlyExternal = false;
- _swiper.attachEvents();
- });
- },
- _initNicescroll = function(){
- _item.niceScroll({
- cursorcolor: 'transparent',
- cursorborder: "0 solid transparent",
- zindex: 10,
- autohidemode: true,
- horizrailenabled: false,
- cursorborderradius: 0,
- cursoropacitymin: 1,
- cursorwidth: '5px',
- mousescrollstep: 24,
- enablemousewheel: true,
- touchbehavior: true,
- usetransition: true,
- smoothscroll:false
- });
- _item.on('scroll',function(e){
- console.log(e);
- })
- },
- _onEvents = function () {
- $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseenter(function () {
- _swiper.detachEvents();
- _swiper.params.simulateTouch = true;
- _swiper.params.onlyExternal = true;
- _swiper.attachEvents();
- });
-
- $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseleave(function () {
- _swiper.detachEvents();
- _swiper.params.simulateTouch = false;
- _swiper.params.onlyExternal = false;
- _swiper.attachEvents();
- });
- },
-
- _sizeEvents = function () {
- if ( $(window).width() <= 768 ) {
- _initContentScroll();
- _initNicescroll();
- _item.css('overflow-y','auto');
- } else {
- _initContentScroll();
- }
- },
- _init = function () {
- _sizeEvents();
- _onEvents();
- };
-
- //public properties
-
- //public methods
- _init();
- };*/

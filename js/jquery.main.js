@@ -94,19 +94,16 @@ var Screen = function (obj) {
                 paginationClickable: false,
                 spaceBetween: 0,
                 slideActiveClass: 'active',
-                simulateTouch: false,
-                touchEventsTarget: 'none',
-                mousewheelControl: false,
+                simulateTouch: true,
+                mousewheelControl: true,
                 scrollbar: '.swiper-scrollbar',
                 scrollbarHide: false,
                 grabCursor: false,
                 longSwipes: false,
                 resistance:false,
                 iOSEdgeSwipeDetection:true,
-                iOSEdgeSwipeThreshold:150,
                 threshold: 10,
-                freeMode: true,
-                autoHeight: false,
+                freeMode: false,
                 onSlideChangeEnd: function (swiper) {
                     _slideIndicate();
                 },
@@ -122,16 +119,22 @@ var Screen = function (obj) {
                     _slideIndicate();
                     swiper.setWrapperTransition(100);
                     _whatSwipe(swiper.touches.diff,true);
-                    //if (_isScroll())
-                    //    _slideTo(_currentSlide);
+                    if (_isScroll())
+                        _slideTo(_currentSlide);
                 },
                 onTouchStart: function (swiper) {
                     swiper.setWrapperTransition(100);
                     _whatSwipe(swiper.touches.diff,false);
                     _slideIndicate();
-                    //if (_isScroll()===false){
-                    //    _slideTo(_nextSlide);
-                    //}
+                    if (_isScroll()){
+                            _swiper.detachEvents();
+                        _swiper.params.freeMode = true;
+                        _swiper.attachEvents();
+                    }else{
+                        _swiper.detachEvents();
+                        _swiper.params.freeMode = false;
+                        _swiper.attachEvents();
+                    }
                 },
                 onSetTranslate: function (swiper,event) {
                    console.log(swiper,event)

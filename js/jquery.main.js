@@ -95,9 +95,7 @@ var Screen = function (obj) {
                 longSwipes: false,
                 resistance:false,
                 iOSEdgeSwipeDetection:true,
-                threshold: 10,
-                freeMode: false,
-                autoHeight:false
+                freeMode: false
             });
             var startScroll, touchStart, touchCurrent;
             _swiper.slides.on('touchstart', function (e) {
@@ -108,6 +106,8 @@ var Screen = function (obj) {
                 touchCurrent = e.targetTouches[0].pageY;
                 var touchesDiff = touchCurrent - touchStart;
                 var slide = this;
+                console.log( slide.scrollHeight,slide.offsetHeight );
+
                 var onlyScrolling =
                     ( slide.scrollHeight > slide.offsetHeight ) &&
                     (

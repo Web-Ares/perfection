@@ -18,48 +18,7 @@ $(function () {
 
 });
 
-var Menu = function (obj) {
-    var _obj = obj,
-        _site = $( '.pages' ),
-        _btn = $( '.drop-menu-btn' ),
-        _header = $( '.site__header' ),
-        _siteSections = $( '.pages__item' ),
-        _menuContent = _obj.find( '.drop-menu__inner-wrap'),
-        _window = $( window );
 
-    var is_article = false;
-    var _onEvents = function() {
-            _btn.on( {
-                click: function() {
-                    if( _header.hasClass( 'site__header_drop-menu' ) ) {
-                        _header.removeClass( 'site__header_drop-menu' );
-                    } else {
-                        _header.addClass( 'site__header_drop-menu' );
-                    }
-                }
-            } );
-            _window.on( {
-                resize: function() {
-                    _contentScroll();
-                }
-            } )
-        },
-        _scrollNavigation = function() {
-            _site.on( {
-                scroll: function() {
-                    _siteSections.each( function() {
-                        var siteSectionsTop = $( this ).offset().top,
-                            headerTop = _header.offset().top;
-
-                        if( siteSectionsTop == $( window ).scrollTop() ) {
-                            _header.removeClass( 'white' );
-                            _header.addClass( $( this ).data( 'header-color' ) )
-                        }
-
-});
-
-    init()
-};
 
 var Preloader = function ( obj ) {
 

@@ -149,8 +149,8 @@
                     cursorborderradius: '0px',
                     cursorcolor: '#1565c0',
                     horizrailenabled: false,
-                    autohidemode: false
-
+                    autohidemode: false,
+                    zindex: 4
                 } );
             },
             _scroll = function( e ){

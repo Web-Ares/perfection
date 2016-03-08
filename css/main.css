@@ -97,7 +97,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     overflow: hidden;
     min-width: 320px;
     position: relative;
-    z-index: 1;
     font-size: 14px;
     line-height: 17px;
     font-family: "Proxima Nova Light", sans-serif;
@@ -115,8 +114,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
     border-bottom: 1px solid transparent;
     font: 12px "Proxima Nova Semibold", sans-serif;
     text-align: right;
-    transition: border-bottom .3s ease, background-color .3s ease;
-    -webkit-transition: border-bottom .3s ease, background-color .3s ease;
+    transition: border-bottom .2s ease, background-color .2s ease;
+    -webkit-transition: border-bottom .2s ease, background-color .2s ease;
 }
 .site__header.white{
     border-bottom-color: #e8e8e8;
@@ -127,7 +126,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
     top: 0;
     right: 0;
     left: 0;
-    max-width: 1514px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -152,7 +150,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     color: #151414;
     display: block;
 }
-.nicescroll-rails{
+#ascrail2000{
     display: block!important;
     opacity: 1!important;
 }
@@ -179,7 +177,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     position: absolute;
     top: 0;
     left: 15px;
-    z-index: 4;
+    z-index: 6;
 }
 .logo img{
     max-width: 67px;
@@ -194,7 +192,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     width: 67px;
     height: 31px;
     background: url("../img/logo-small-black.png") no-repeat 0 0;
-    background-size: cover;
+    background-size: contain;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
     content: '';
@@ -298,7 +296,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     width: 30px;
     height: 25px;
     margin-right: 1px;
-    z-index: 4;
+    z-index: 6;
     overflow: hidden;
     text-indent: 999px;
 }
@@ -354,7 +352,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     left: 0;
     right: 0;
     height: 100vh;
-    z-index: 3;
+    z-index: 5;
     background-color: rgba(21,101,192,.99);
     color: #fff;
     text-align: center;
@@ -368,6 +366,16 @@ html{overflow-y:hidden;overflow-x:hidden;}
     visibility: visible;
 }
 .drop-menu__inner {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
     position: relative;
     height: 100vh;
     max-width: 1484px;
@@ -375,7 +383,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
     padding: 70px 15px;
 }
 .drop-menu__inner-wrap{
-    height: 100%;
+    padding: 0 50px;
 }
 .drop-menu__menu{
     margin-bottom: 20px;
@@ -1214,7 +1222,6 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     /* --------------- promo --------------- */
     .promo__logo {
-        width: auto;
         max-height: 31vh;
     }
     /* --------------- /promo --------------- */
@@ -1263,8 +1270,11 @@ html{overflow-y:hidden;overflow-x:hidden;}
         line-height: 4vmin;
     }
     .site__header{
-        height: 100px;
-        padding: 35px 0;
+        height: 74px;
+        padding: 21px 0;
+    }
+    .site__header-layout{
+        margin: 0 65px;
     }
     .site__title{
         margin: 0 0 28px;

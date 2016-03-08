@@ -24,7 +24,8 @@ var Menu = function (obj) {
         _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
-        _menuContent = _obj.find( '.drop-menu__inner-wrap' );
+        _menuContent = _obj.find( '.drop-menu__inner-wrap'),
+        _window = $( window );
 
     var is_article = false;
     var _onEvents = function() {
@@ -35,6 +36,11 @@ var Menu = function (obj) {
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
                     }
+                }
+            } );
+            _window.on( {
+                resize: function() {
+                    _contentScroll();
                 }
             } )
         },
@@ -54,6 +60,18 @@ var Menu = function (obj) {
                 }
             });
         },
+        _contentScroll = function() {
+            _menuContent.outerHeight( 'auto' );
+            if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
+                _menuContent.outerHeight( '100%' );
+                _initContentScroll();
+                _menuContent.getNiceScroll().show();
+                _menuContent.getNiceScroll().resize();
+            } else {
+                _menuContent.outerHeight( 'auto' );
+                _menuContent.getNiceScroll().hide();
+            }
+        },
         _initContentScroll = function() {
             _menuContent.niceScroll( {
                 cursorcolor: '#fff',
@@ -65,8 +83,8 @@ var Menu = function (obj) {
             } );
         },
         init = function() {
-            _initContentScroll();
             _scrollNavigation();
+            _contentScroll();
             _onEvents();
         };
 

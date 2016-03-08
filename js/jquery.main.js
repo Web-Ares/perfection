@@ -69,8 +69,8 @@ var Screen = function (obj) {
     var _self = this,
         _obj = obj,
         _swiper,
-        _screenHeight = 0,
-        _item = _obj.find('.screen');
+        _screenHeight = $(window).height(),
+        _item = _obj.find('.pages__item');
 
 
     _obj[0].obj = _self;
@@ -126,10 +126,8 @@ var Screen = function (obj) {
 
             _item.each(function (i) {
                 _wrapHeight = $(this).find('>div').outerHeight();
-
                 if (_screenHeight < _wrapHeight) {
                     if ($(window).width() <= 768) {
-                        console.log('tut');
                         $(this).css('overflow', 'scroll');
                     }else{
                         $(this).css('overflow', 'hidden');
@@ -422,7 +420,7 @@ var SliderSingle = function (obj) {
                 pagination: $('.swiper-pagination'),
                 paginationClickable: true,
                 loop: false,
-                direction: 'vertical',
+                direction: 'horizontal',
                 spaceBetween: 30
 
             });

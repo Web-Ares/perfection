@@ -1,95 +1,29 @@
+var mainSwiper;
 $(function () {
-
     $('.drop-menu').each(function () {
         new Menu($(this));
     });
 
-    $.each($('.preloader'), function () {
-        new Preloader($(this));
-    });
-
     $.each($('.pixel-grid__slider'), function () {
+
         new SliderSingle($(this));
+
     });
 
     $.each($('.formats__slider'), function () {
+
         new SliderFormats($(this));
+
+    });
+
+    $.each($('.preloader'), function () {
+
+        new Preloader($(this));
+
     });
 
 });
 
-var Menu = function (obj) {
-    var _obj = obj,
-        _site = $('.pages'),
-        _btn = $('.drop-menu-btn'),
-        _header = $('.site__header'),
-        _siteSections = $('.pages__item'),
-        _menuContent = _obj.find('.drop-menu__inner-wrap'),
-        _window = $(window);
-
-    var is_article = false;
-    var _onEvents = function () {
-            _btn.on({
-                click: function () {
-                    if (_header.hasClass('site__header_drop-menu')) {
-                        _header.removeClass('site__header_drop-menu');
-                    } else {
-                        _header.addClass('site__header_drop-menu');
-                    }
-                }
-            });
-            _window.on({
-                resize: function () {
-                    _contentScroll();
-                }
-            })
-        },
-        _scrollNavigation = function () {
-            _site.on({
-                scroll: function () {
-                    _siteSections.each(function () {
-                        var siteSectionsTop = $(this).offset().top,
-                            headerTop = _header.offset().top;
-
-                        if (siteSectionsTop == $(window).scrollTop()) {
-                            _header.removeClass('white');
-                            _header.addClass($(this).data('header-color'))
-                        }
-
-                    });
-                }
-            });
-        },
-        _contentScroll = function () {
-            _menuContent.outerHeight('auto');
-            if (_menuContent.outerHeight() > _window.outerHeight() - 140) {
-                _menuContent.outerHeight('100%');
-                _initContentScroll();
-                _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();
-            } else {
-                _menuContent.outerHeight('auto');
-                _menuContent.getNiceScroll().hide();
-            }
-        },
-        _initContentScroll = function () {
-            _menuContent.niceScroll({
-                cursorcolor: '#fff',
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursorwidth: '2px'
-            });
-        },
-        init = function () {
-            _scrollNavigation();
-            _contentScroll();
-            _onEvents();
-        };
-
-    init()
-};
 
 var Preloader = function (obj) {
 
@@ -107,7 +41,7 @@ var Preloader = function (obj) {
 
                         setTimeout(function () {
                             $('.site').each(function () {
-                                new Screen($(this));
+                                mainSwiper = new Screen($(this));
                             });
                             _obj.remove()
 
@@ -126,13 +60,23 @@ var Preloader = function (obj) {
 
     _init();
 };
+
+
 var Screen = function (obj) {
 
     //private properties
     var _self = this,
         _obj = obj,
         _swiper,
+        _itemHeight = [],
+        _itemHeightPos = [],
+        _itemHeightPosBottom = [],
+        _maxTransitionHeight = 0,
         _screenHeight = 0,
+        _currentSlide = 0,
+        _prevSlide = 0,
+        _nextSlide = 0,
+        _old_start_y = 0,
         _item = _obj.find('.screen');
 
 
@@ -156,11 +100,11 @@ var Screen = function (obj) {
                 scrollbarHide: false,
                 grabCursor: false,
                 longSwipes: false,
-                resistance: false,
-                iOSEdgeSwipeDetection: true,
+                resistance:false,
+                iOSEdgeSwipeDetection:true,
                 threshold: 10,
                 freeMode: false,
-                autoHeight: false
+                autoHeight:false
             });
             var startScroll, touchStart, touchCurrent;
             _swiper.slides.on('touchstart', function (e) {
@@ -189,19 +133,21 @@ var Screen = function (obj) {
 
             _item.each(function (i) {
                 _wrapHeight = $(this).find('>div').outerHeight();
+
                 if (_screenHeight < _wrapHeight) {
                     if ($(window).width() <= 768) {
+                        console.log('tut');
                         $(this).css('overflow', 'scroll');
-                    } else {
+                    }else{
                         $(this).css('overflow', 'hidden');
                     }
 
                 }
             });
         },
-        _onEvents = function () {
-            $(window).on('resize', function () {
-                _blockAnalize();
+        _onEvents = function(){
+            $(window).on('resize',function(){
+                    _blockAnalize();
             })
         },
         _sizeEvents = function () {
@@ -215,25 +161,25 @@ var Screen = function (obj) {
         _init = function () {
             _sizeEvents();
             _onEvents();
+        },
+        _detachSwiper = function () {
+            _swiper.detachEvents();
+            _swiper.scrollbar.disableDraggable();
+            _swiper.disableMousewheelControl();
+        },
+        _atachSwiper = function () {
+            _swiper.attachEvents();
+            _swiper.scrollbar.enableDraggable();
+            _swiper.enableMousewheelControl();
         };
-        //_detachSwiper = function () {
-        //    _swiper.detachEvents();
-        //    _swiper.scrollbar.disableDraggable();
-        //    _swiper.disableMousewheelControl();
-        //},
-        //_atachSwiper = function () {
-        //    _swiper.attachEvents();
-        //    _swiper.scrollbar.enableDraggable();
-        //    _swiper.enableMousewheelControl();
-        //};
 
     //public properties
-    //_self.detachSwiper = function () {
-    //    _detachSwiper();
-    //};
-    //_self.atachSwiper = function () {
-    //    _atachSwiper();
-    //};
+    _self.detachSwiper = function () {
+        _detachSwiper();
+    };
+    _self.atachSwiper = function () {
+        _atachSwiper();
+    };
     //public methods
     _init();
 };
@@ -428,6 +374,45 @@ var SliderFormats = function (obj) {
     _init();
 };
 
+var Menu = function (obj) {
+    var _obj = obj,
+        _btn = $('.drop-menu-btn'),
+        _parentWrap = $('.site__header'),
+        _menuContent = _obj.find('.drop-menu__inner-wrap');
+
+    var is_article = false;
+    var _onEvents = function () {
+            _btn.on({
+                click: function () {
+                    if (_parentWrap.hasClass('site__header_drop-menu')) {
+                        _parentWrap.removeClass('site__header_drop-menu');
+                        mainSwiper.atachSwiper();
+
+                    } else {
+                        _parentWrap.addClass('site__header_drop-menu');
+                        mainSwiper.detachSwiper();
+                    }
+                }
+            })
+        },
+        _initContentScroll = function () {
+            _menuContent.niceScroll({
+                cursorcolor: '#fff',
+                zindex: 10,
+                autohidemode: false,
+                horizrailenabled: false,
+                cursorborderradius: 0,
+                cursorwidth: '2px'
+            });
+        },
+        init = function () {
+            _initContentScroll();
+            _onEvents();
+        };
+
+    init()
+};
+
 var SliderSingle = function (obj) {
 
     //private properties
@@ -443,7 +428,8 @@ var SliderSingle = function (obj) {
 
                 pagination: $('.swiper-pagination'),
                 paginationClickable: true,
-                loop: true,
+                loop: false,
+                direction: 'vertical',
                 spaceBetween: 30
 
             });

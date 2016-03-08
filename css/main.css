@@ -2089,7 +2089,7 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     /* ------------ easy-way ------------ */
     .easy-way .site__title {
-        font-size: 7.9vmin;
+        font-size: 66px;
         line-height: 0.95;
         margin-bottom: 25px;
     }

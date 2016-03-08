@@ -107,39 +107,36 @@ var Screen = function (obj) {
                 autoHeight:false,
                 onSlideChangeEnd: function (swiper) {
                     _slideIndicate();
+                    _isScroll();
+
                 },
                 onTransitionEnd: function (swiper) {
                     _slideIndicate();
+                    _isScroll();
                     //if (_isScroll())
                     //    _slideTo(_currentSlide);
                 },
                 onTouchMove: function (swiper,event) {
                     _slideIndicate();
+                    _isScroll();
                 },
                 onTouchEnd: function (swiper) {
                     _slideIndicate();
-                    if (_isScroll()){
-                        _swiper.detachEvents();
-                        _swiper.params.freeMode = true;
-                        _swiper.attachEvents();
-                    }else{
-                        _swiper.detachEvents();
-                        _swiper.params.freeMode = false;
-                        _swiper.attachEvents();
-                    }
+                    _isScroll();
                 },
                 onTouchStart: function (swiper) {
+                    _isScroll();
                     //_whatSwipe(swiper.touches.diff,false);
                     _slideIndicate();
-                    if (_isScroll()){
-                            _swiper.detachEvents();
-                        _swiper.params.freeMode = true;
-                        _swiper.attachEvents();
-                    }else{
-                        _swiper.detachEvents();
-                        _swiper.params.freeMode = false;
-                        _swiper.attachEvents();
-                    }
+                    //if (_isScroll()){
+                    //        _swiper.detachEvents();
+                    //    _swiper.params.freeMode = true;
+                    //    _swiper.attachEvents();
+                    //}else{
+                    //    _swiper.detachEvents();
+                    //    _swiper.params.freeMode = false;
+                    //    _swiper.attachEvents();
+                    //}
                 }
             });
             _blockAnalize();
@@ -230,19 +227,46 @@ var Screen = function (obj) {
                 _setIndexes(index);
             },400)
         },
+        _slideEndTo = function (index) {
+            translateY = _itemHeightPosBottom[index];
+            $('.site__wrapper').css('transition-duration', '800ms');
+            $('.site__wrapper').css('transform', 'translate3d(0px, ' + (parseInt(translateY)+_screenHeight) + 'px, 0px)');
+            setTimeout(function () {
+                _setIndexes(index);
+            },400)
+        },
 
         _isScroll = function () {
-
             var topLine = _swiper.translate;
             var bottomLine = _swiper.translate - _screenHeight;
             if(_itemHeightPos[_currentSlide]>=topLine && _itemHeightPosBottom[_currentSlide]<bottomLine){
+                _swiper.detachEvents();
+                    _swiper.params.freeMode = true;
+                _swiper.attachEvents();
                 return true;
+            }else{
+                _swiper.detachEvents();
+                _swiper.params.freeMode = false;
+                _swiper.attachEvents();
             }
+            _visibleBlocks();
             return false;
-            //console.log('ramka',topLine,bottomLine);
-            //console.log('slide',_itemHeightPos[_currentSlide],_itemHeightPosBottom[_currentSlide]);
         },
-
+        _visibleBlocks = function(){
+            var topLine = _swiper.translate;
+            var bottomLine = _swiper.translate - _screenHeight;
+            for(var i=0; i<=_itemHeightPos.length;i++){
+                if(_itemHeightPos[i]>bottomLine && _itemHeightPos[i]<topLine ){
+                    console.log('visible', i);
+                    _setIndexes(i);
+                    if(_itemHeightPos[i]>topLine+(_screenHeight/2)){
+                        _slideTo(i);
+                    }else{
+                        _slideEndTo(i);
+                    }
+                }
+            }
+        },
         _blockAnalize = function () {
             _screenHeight = $(window).height();
 
@@ -253,8 +277,6 @@ var Screen = function (obj) {
                     $(this).height(_wrapHeight);
                 }
                 _containerHeight = $(this).outerHeight();
-
-                console.log(_containerHeight);
 
                 _maxTransitionHeight += _containerHeight;
 
@@ -270,9 +292,8 @@ var Screen = function (obj) {
                 }
             });
 
-
             _maxTransitionHeight -= Math.abs(_itemHeight[_item.length - 1]);
-            //_swiper.onResize();
+            _swiper.onResize();
         },
         _direct = function () {
             prev = _swiper.previousIndex;
@@ -304,15 +325,11 @@ var Screen = function (obj) {
             _swiper.detachEvents();
             _swiper.scrollbar.disableDraggable();
             _swiper.disableMousewheelControl();
-            _item.addClass('swiper-slide2');
-            _item.removeClass('swiper-slide');
         },
         _atachSwiper = function () {
             _swiper.attachEvents();
             _swiper.scrollbar.enableDraggable();
             _swiper.enableMousewheelControl();
-            _item.addClass('swiper-slide');
-            _item.removeClass('swiper-slide2');
         };
 
     //public properties

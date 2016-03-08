@@ -88,7 +88,7 @@ var Screen = function (obj) {
     var _initContentScroll = function () {
             _swiper = new Swiper('.site', {
                 direction: 'vertical',
-                slidesPerView: 'auto',
+                slidesPerView: 1,
                 scrollbarDraggable: false,
                 scrollbarSnapOnRelease: false,
                 paginationClickable: false,
@@ -103,7 +103,8 @@ var Screen = function (obj) {
                 resistance:false,
                 iOSEdgeSwipeDetection:true,
                 threshold: 10,
-                freeMode: false,
+                freeMode: true,
+                autoHeight:false,
                 onSlideChangeEnd: function (swiper) {
                     _slideIndicate();
                 },
@@ -117,14 +118,18 @@ var Screen = function (obj) {
                 },
                 onTouchEnd: function (swiper) {
                     _slideIndicate();
-                    swiper.setWrapperTransition(100);
-                    _whatSwipe(swiper.touches.diff,true);
-                    if (_isScroll())
-                        _slideTo(_currentSlide);
+                    if (_isScroll()){
+                        _swiper.detachEvents();
+                        _swiper.params.freeMode = true;
+                        _swiper.attachEvents();
+                    }else{
+                        _swiper.detachEvents();
+                        _swiper.params.freeMode = false;
+                        _swiper.attachEvents();
+                    }
                 },
                 onTouchStart: function (swiper) {
-                    swiper.setWrapperTransition(100);
-                    _whatSwipe(swiper.touches.diff,false);
+                    //_whatSwipe(swiper.touches.diff,false);
                     _slideIndicate();
                     if (_isScroll()){
                             _swiper.detachEvents();
@@ -135,15 +140,10 @@ var Screen = function (obj) {
                         _swiper.params.freeMode = false;
                         _swiper.attachEvents();
                     }
-                },
-                onSetTranslate: function (swiper,event) {
-                   console.log(swiper,event)
-                },
-                onSetTransition: function (swiper,event) {
-                   console.log('move',event)
                 }
             });
             _blockAnalize();
+
             setTimeout(function () {
                 _swiper.detachEvents();
                 _swiper.params.simulateTouch = false;
@@ -254,9 +254,12 @@ var Screen = function (obj) {
                 }
                 _containerHeight = $(this).outerHeight();
 
+                console.log(_containerHeight);
+
                 _maxTransitionHeight += _containerHeight;
 
                 _itemHeight.push(0 - _containerHeight);
+
                 if (i == 0) {
                     _itemHeightPos.push(i);
                     _itemHeightPosBottom.push(_itemHeight[i]);
@@ -267,8 +270,9 @@ var Screen = function (obj) {
                 }
             });
 
+
             _maxTransitionHeight -= Math.abs(_itemHeight[_item.length - 1]);
-            _swiper.onResize();
+            //_swiper.onResize();
         },
         _direct = function () {
             prev = _swiper.previousIndex;

@@ -579,9 +579,9 @@ html{overflow-y:hidden;overflow-x:hidden;}
     -webkit-flex-direction: row;
     justify-content: center;
     -webkit-justify-content: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    -ms-flex-align:flex-start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
     padding: 50px 0;
     background: #242a2f;
     color: #fff;

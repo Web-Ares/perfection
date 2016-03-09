@@ -42,7 +42,9 @@ var Menu = function (obj) {
                 }
             } );
             _window.on( {
-
+                resize: function() {
+                    _contentScroll
+                },
                 scroll: function() {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
@@ -85,6 +87,7 @@ var Menu = function (obj) {
             } );
         },
         init = function() {
+            _contentScroll();
             _onEvents();
         };
 

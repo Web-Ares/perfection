@@ -1243,7 +1243,7 @@
 
     /* --------------- promo --------------- */
     .promo__logo {
-        width: auto;
+        max-width: auto;
         max-height: 31vh;
     }
     /* --------------- /promo --------------- */
@@ -1787,11 +1787,12 @@
         -webkit-align-items: flex-start;
         align-items: flex-start;
         position: absolute;
-        top: 0;
+        top: -20px;
         right: -31px;
         margin: 0;
         padding: 5px 2vmin;
         width: 18.5vmin;
+        min-width: 170px;
         height: 10vmin;
         font-size: 1.6vmin;
         line-height: 2vmin;
@@ -2058,7 +2059,6 @@
         line-height: 38px;
     }
     .pixel-grid__perfect {
-        top: 98px;
         width: 176px;
         height: 95px;
         padding: 5px 10px 5px 20px;
@@ -2211,9 +2211,11 @@
     }
     /* --------------- /line-solid --------------- */
 
-    /* --------------- pixel-grid --------------- */
-
-    /* --------------- /pixel-grid --------------- */
+    /* ------------ pixel-grid ------------ */
+    .pixel-grid__perfect {
+        top: 98px;
+    }
+    /* ------------ /pixel-grid ------------ */
 
     /* ------------ easy-way ------------ */
     .easy-way .site__title {

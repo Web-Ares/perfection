@@ -35,11 +35,11 @@ var Menu = function (obj) {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
 
-                        $('html').css ( { 'overflow': 'scroll' } )
+                        $('body').css ( { 'overflow': 'visible' } )
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
 
-                        $('html').css ( {  'overflow': 'hidden' } )
+                        $('body').css ( {  'overflow': 'hidden' } )
                     }
                 }
             } );
@@ -59,7 +59,6 @@ var Menu = function (obj) {
                         }
 
                         if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
-                            _siteSections.removeClass ( 'active' );
                             $( this ).addClass( 'active' );
                         }
 

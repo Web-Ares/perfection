@@ -524,6 +524,10 @@
     color: #999;
     font: 14px/22px "Proxima Nova Light", sans-serif;
 }
+
+.promo_inner:before{
+    display: none;
+}
 .promo:before{
     position: absolute;
     left: 50%;

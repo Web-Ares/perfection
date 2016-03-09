@@ -31,10 +31,23 @@ var Menu = function (obj) {
     var _onEvents = function() {
             _btn.on( {
                 click: function() {
+
+                    var scrollHeight = $('html').scrollTop || $('body') && $('body').scrollTop || 0;
+
+                    console.log(scrollHeight)
+
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
+
+                        if ( _window.width() < 780 ) {
+                            $('html').css ( { 'overflow': 'scroll', } )
+                        }
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
+
+                        if ( _window.width() < 780 ) {
+                            $('html').css ( {  'overflow': 'hidden', } )
+                        }
                     }
                 }
             } );

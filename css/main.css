@@ -82,12 +82,6 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: "Proxima Nova Semibold";
-    src: url("../fonts/proximanova-semibold.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
 /* --------------- /fonts --------------- */
 
 /* --------------- site --------------- */
@@ -110,7 +104,7 @@
     margin: 0 auto;
     padding: 11px 0;
     border-bottom: 1px solid transparent;
-    font: 12px "Proxima Nova Semibold", sans-serif;
+    font-size: 12px;
     text-align: right;
     transition: border-bottom .2s ease, background-color .2s ease;
     -webkit-transition: border-bottom .2s ease, background-color .2s ease;
@@ -258,7 +252,7 @@
     max-width: 90%;
     height: 50px;
     margin: 0 auto;
-    color: #666666;
+    color: #666;
     background: #f5f5f5;
     border-radius: 0;
     font-size: 16px;
@@ -271,7 +265,7 @@
     display: inline-block;
     padding-top: 9px;
     margin-right: 19px;
-    font-size: 12px;
+    font: 12px 'Proxima Nova Regular', sans-serif;
     color: #fff;
     text-transform: uppercase;
     transition: opacity .3s ease, color .3s ease;
@@ -385,7 +379,8 @@
 }
 .drop-menu__menu{
     margin-bottom: 20px;
-    font: 24px/33px "Proxima Nova Semibold", sans-serif;
+    font-size: 24px;
+    line-height: 33px;
 }
 .drop-menu__menu-item{
     color: #fff;
@@ -760,9 +755,6 @@
     background: url("../img/half-round.png") no-repeat center left;
     background-size: 16px;
 }
-.formats__footnote span{
-    font-family: "Proxima Nova Semibold", sans-serif;
-}
 .formats__layout{
     margin: 0 0 10px;
 }
@@ -873,7 +865,6 @@
 }
 .formats__slider-text dl dt{
     display: inline;
-    font-family: "Proxima Nova Semibold", sans-serif;
 }
 .formats__slider-text dl dd{
     display: inline;
@@ -1109,7 +1100,7 @@
     margin: 0 0 20px;
 }
 .easy-way__txt b {
-    font-family: "Proxima Nova Semibold", sans-serif;
+    font-family: "Proxima Nova Regular", sans-serif;
 }
 .easy-way__warning {
     position: relative;
@@ -1205,7 +1196,6 @@
     font-size: 2.4vh;
 }
 .we-impressed__info-user span {
-    font-family: 'Proxima Nova Semibold', sans-serif;
     color: #fff;
 }
 /* --------------- /we-impressed --------------- */
@@ -1321,7 +1311,8 @@
     /* --------------- drop-menu --------------- */
     .drop-menu__menu{
         margin-bottom: 50px;
-        font: 44px/60px "Proxima Nova Semibold", sans-serif;
+        font-size: 44px;
+        line-height: 60px;
     }
     .drop-menu__navigation{
         margin-bottom: 50px;
@@ -2133,7 +2124,8 @@
     /* --------------- drop-menu --------------- */
     .drop-menu__menu{
         margin-bottom: 20px;
-        font: 24px/33px "Proxima Nova Semibold", sans-serif;
+        font-size: 24px;
+        line-height: 33px;
     }
     .drop-menu__navigation{
         margin-bottom: 20px;

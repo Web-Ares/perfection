@@ -44,14 +44,15 @@ var Menu = function (obj) {
                 },
                 scroll: function() {
                     _siteSections.each( function() {
-                        var siteSectionsTop = $( this ).offset().top;
+                        var siteSectionsTop = $( this ).offset().top,
+                            siteSectionsHeight = $( this ).offsetHeight();
 
                         if( siteSectionsTop <= $( window ).scrollTop() ) {
                             _header.removeClass( 'white' );
                             _header.addClass( $( this ).data( 'header-color' ) );
                         }
 
-                        if( ( siteSectionsTop <= $( window ).scrollTop() + 80 ) ) {
+                        if( ( siteSectionsTop <= $( window ).scrollTop() + 80 ) && ( siteSectionsTop + siteSectionsHeight >= $( window ).scrollTop() + 80 ) ) {
                             _siteSections.removeClass ( 'active' );
                             $( this ).addClass( 'active' );
                         }

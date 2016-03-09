@@ -1,160 +1,26 @@
 @charset "utf-8";
-/* --------------- Style to null --------------- */
-*{-moz-box-sizing:border-box;box-sizing:border-box;}html,body,div,span,h1,h2,h3,h4,h5,h6,p,em,img,strong,sub,sup,b,u,i,dl,dt,dd,ol,ul,li,fieldset,form,label,table,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,a,footer,header,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;vertical-align:baseline;background:transparent;font-size:100%;margin:0;padding:0;}a{background:transparent;}table{border-collapse:collapse;border-spacing:0;}td,td img{vertical-align:top;}input,select,button,textarea{font-size:12px;font-family:Arial, Helvetica, sans-serif;margin:0;}input[type="text"],input[type="password"],textarea,input[type="email"],input[type="phone"],input[type="number"]{font:12px Arial, Helvetica, sans-serif;padding:0;}input[type="checkbox"]{vertical-align:bottom;}input[type="radio"]{vertical-align:text-bottom;}sub{vertical-align:sub;font-size:smaller;}sup{vertical-align:super;font-size:smaller;}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block;}ul,ol{list-style:none;}html,body{height:100%;}body{line-height:1;color:#000;text-align:left;z-index:1;position:relative;}input [type='text']{padding:0;}textarea{resize:none;overflow:auto;}label,input[type="button"],input[type="submit"],button{cursor:pointer;}input[type="button"],input[type="reset"],input[type="submit"],button,input[type="text"],input[type="password"],textarea,input[type="email"],input[type="tel"],input[type="phone"],input[type="number"]{-webkit-appearance:none;}a,a:visited,a:hover,a:focus,a:active{text-decoration:none;}input[type="submit"]::-moz-focus-inner,button::-moz-focus-inner{border:0;padding:0;}input:invalid{outline:none;-moz-box-shadow:none;border:none;}::-ms-clear{display:none;}input,textarea,input[type="search"]:focus,:focus{outline:none;}
-/* --------------- Style to null --------------- */
 
 /*
-    main styles
+    about styles
     version: 03.03.2016
 
-    placeholder
 
-    fonts
-
-    site
-
-    logo
-
-    btn
-
-    header-menu
-
-    pages
-
-    drop-menu
-
-    social
-
-    copyright
-
-    promo
-
-    pack-includes
-
-    customizable
-
-    sharpest-icons
-
-    line-solid
-
-    formats
-
-    icons-promo
-
-    icons-preview
-
-    pixel-grid
-
-    easy-way
-
-    we-impressed
 
 */
 
-/* --------------- placeholder --------------- */
-::-webkit-input-placeholder {
-    color: #000;
-}
-:-moz-placeholder {
-    color: #000;
-}
-.placeholder {
-    color: #000;
-}
-/* --------------- /placeholder --------------- */
+/* --------------- about --------------- */
 
-/* --------------- fonts --------------- */
-@font-face {
-    font-family: "Proxima Nova Bold";
-    src: url("../fonts/proximanova-bold.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Proxima Nova Light";
-    src: url("../fonts/proximanova-light.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Proxima Nova Regular";
-    src: url("../fonts/proximanova-regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Proxima Nova Semibold";
-    src: url("../fonts/proximanova-semibold.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-/* --------------- /fonts --------------- */
-
-/* --------------- site --------------- */
-.site {
-    overflow: hidden;
-    min-width: 320px;
-    position: relative;
-    font-size: 14px;
-    line-height: 17px;
-    font-family: "Proxima Nova Light", sans-serif;
-    color: #666666;
-}
-.site__header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
-    height: 50px;
-    margin: 0 auto;
-    padding: 11px 0;
-    border-bottom: 1px solid transparent;
-    font: 12px "Proxima Nova Semibold", sans-serif;
-    text-align: right;
-    transition: border-bottom .2s ease, background-color .2s ease;
-    -webkit-transition: border-bottom .2s ease, background-color .2s ease;
-}
-.site__header.white{
-    border-bottom-color: #e8e8e8;
-    background-color: #fff;
-}
-.site__header-layout{
-    position: relative;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-.site__content {
-    position: relative;
-    z-index: 2;
-}
-.site__centered{
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1211px;
-    padding: 0 15px;
-    margin: 0 auto;
-}
-.site__title{
-    margin: 0 0 20px;
-    font-size: 7.7vmin;
-    line-height: 7.7vmin;
-    font-family: "Proxima Nova Bold", sans-serif;
-    font-weight: 400;
-    color: #151414;
-    display: block;
-}
-#ascrail2000{
-    display: block!important;
-    opacity: 1!important;
-}
 /* --------------- /site --------------- */
 
 /* --------------- pages --------------- */
+.pages{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 .pages__item{
     overflow: hidden;
     position: relative;
@@ -2169,4 +2035,13 @@
     }
     /* --------------- promo --------------- */
 
+}
+
+html {
+    height  : 100%;
+    overflow: hidden;
+}
+body {
+    height  : 100%;
+    overflow: auto;
 }

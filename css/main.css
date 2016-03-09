@@ -583,10 +583,13 @@
     color: #fff;
     text-align: center;
 }
+.pack-includes__wrap{
+    text-align: center;
+}
 .pack-includes__item{
     display: inline-block;
     vertical-align: top;
-    width: 90%;
+    width: 70%;
     margin-bottom: 6vmin;
     font: 3.5vmin "Proxima Nova Light";
     text-align: center;
@@ -1270,6 +1273,9 @@
     /* ------------ /icons-preview ------------ */
 
     /* ------------ pack-includes ------------ */
+    .pack-includes__wrap{
+        text-align: left;
+    }
     .pack-includes__item {
         width: 45%;
         margin: 0 2vmin 4vmin;

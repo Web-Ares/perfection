@@ -35,9 +35,12 @@ var Menu = function (obj) {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
 
+                        $( 'body').css ( 'overflow', 'visible' )
+
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
 
+                        $( 'body').css ( 'overflow', 'hidden' );
                     }
                 }
             } );

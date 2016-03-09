@@ -742,7 +742,8 @@
     display: inline-block;
     position: relative;
     width: 23.7%;
-    height: 15.5vmin;
+    height: 9.5vmin;
+    min-height: 67px;
 }
 .line-solid__list>div img {
     position: absolute;
@@ -1232,6 +1233,7 @@
 
     /* --------------- promo --------------- */
     .promo__logo {
+        width: auto;
         max-height: 31vh;
     }
     /* --------------- /promo --------------- */

@@ -89,7 +89,6 @@ var Menu = function (obj) {
             } );
         },
         init = function() {
-            _contentScroll();
             _onEvents();
         };
 

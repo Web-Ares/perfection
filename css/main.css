@@ -365,7 +365,7 @@
     -webkit-align-items: center;
     align-items: center;
     position: relative;
-    height: 100vh;
+    height: 100%;
     max-width: 1484px;
     margin: 0 auto;
     padding: 70px 15px;

@@ -44,9 +44,7 @@ var Menu = function (obj) {
                 }
             } );
             _window.on( {
-                resize: function() {
-                    _contentScroll();
-                },
+
                 scroll: function() {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,

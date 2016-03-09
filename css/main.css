@@ -590,7 +590,7 @@
     display: inline-block;
     vertical-align: top;
     width: 90%;
-    margin-bottom: 4vmin;
+    margin-bottom: 6vmin;
     font: 3.5vmin "Proxima Nova Light";
     text-align: center;
 }
@@ -598,6 +598,7 @@
     position: relative;
     width: 100%;
     height: 16.5vmin;
+    margin-bottom: 5px;
 }
 .pack-includes__pic img{
     position: absolute;
@@ -1797,7 +1798,7 @@
     .we-impressed__text:before {
         width: 66px;
         height: 53px;
-        margin: 0 auto 50px;
+        margin: 0 0 50px 224px;
     }
     .we-impressed__pic {
         opacity: 0;
@@ -1805,7 +1806,7 @@
         top: 0;
         right: 0;
         left: auto;
-        width: 50%;
+        width: 43%;
         height: 100%;
         padding-bottom: 0;
         -webkit-transition: opacity .5s ease-in-out .5s;
@@ -1953,6 +1954,9 @@
     /* ------------ /icons-preview ------------ */
 
     /* ------------ formats ------------ */
+    .formats {
+        padding-top: 172px;
+    }
     .formats__slider-text>div{
         font-size: 16px;
         line-height: 24px;
@@ -2059,10 +2063,11 @@
     /* --------------- customizable --------------- */
     .customizable {
         height: 100%;
-        padding: 225px 0;
+        padding: 225px 0 254px;
     }
     .customizable__layout{
         width: 36%;
+        margin-right: 177px;
         min-height: 39%;
         font-size: 26px;
         line-height: 37px;
@@ -2074,6 +2079,7 @@
 
     /* --------------- icons-promo --------------- */
     .icons-promo {
+        min-height: 100%;
         padding: 0 0 110px;
     }
     .icons-promo p {
@@ -2098,7 +2104,32 @@
     .icons-promo__wrap {
         margin-bottom: 88px;
     }
+
     /* --------------- /icons-promo --------------- */
+
+    /* --------------- we-impressed --------------- */
+    .we-impressed__layout {
+       width: 610px;
+       margin: 0 auto;
+    }
+    .we-impressed__layout-wrap{
+        padding: 158px 15px 180px;
+        margin: 0 263px 0 -313px;
+    }
+    .we-impressed__text {
+        margin: 0 0 70px;
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .we-impressed__pic {
+        z-index: 2;
+    }
+    .we-impressed__info-user {
+         font-size: 20px;
+         margin-top: 19px;
+         margin-left: 11px;
+     }
+    /* --------------- /we-impressed --------------- */
 
 }
 @media (min-width: 1200px) {
@@ -2140,22 +2171,6 @@
     /* --------------- pixel-grid --------------- */
 
     /* --------------- /pixel-grid --------------- */
-
-    /* --------------- we-impressed --------------- */
-    .we-impressed__layout {
-        padding-left: 13.2%;
-        padding-right: 9%;
-    }
-    .we-impressed__text{
-        margin: 0 0 70px;
-    }
-    .we-impressed__pic {
-        width: 44.5%;
-    }
-    .we-impressed__info-user span {
-        padding: 0 5px 0 0;
-    }
-    /* --------------- /we-impressed --------------- */
 
     /* ------------ easy-way ------------ */
     .easy-way .site__title {

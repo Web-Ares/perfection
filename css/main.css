@@ -1243,7 +1243,7 @@
 
     /* --------------- promo --------------- */
     .promo__logo {
-        max-width: auto;
+        width: auto;
         max-height: 31vh;
     }
     /* --------------- /promo --------------- */
@@ -2249,15 +2249,6 @@
         font: 14px/24px "Proxima Nova Light", sans-serif;
     }
     /* --------------- /drop-menu --------------- */
-
-}
-@media (min-height: 568px) {
-
-    /* --------------- promo --------------- */
-    .promo__logo {
-        width: auto;
-    }
-    /* --------------- promo --------------- */
 
 }
 @media (min-height: 600px) {

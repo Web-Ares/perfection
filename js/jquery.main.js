@@ -8,6 +8,13 @@ $(function () {
         new Preloader( $( this ) );
     } );
 
+    $.each( $('.pixel-grid__slider'), function() {
+        new SliderSingle( $( this ) );
+    } );
+
+    $.each( $('.formats__slider'), function() {
+        new SliderFormats( $( this ) );
+    } );
 
 });
 

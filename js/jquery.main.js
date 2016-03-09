@@ -45,16 +45,15 @@ var Menu = function (obj) {
                 scroll: function() {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
-                            siteSectionsHeight = $( this ).height();
+                            siteSectionsHeight = $( this ).height(),
+                            spaceBeforeBloc = 160;
 
-                        if( siteSectionsTop <= $( window ).scrollTop() ) {
+                        if( siteSectionsTop <= _window.scrollTop() ) {
                             _header.removeClass( 'white' );
                             _header.addClass( $( this ).data( 'header-color' ) );
                         }
 
-                        console.log (siteSectionsHeight)
-
-                        if( ( siteSectionsTop <= $( window ).scrollTop() + 80 ) && ( siteSectionsTop + siteSectionsHeight >= $( window ).scrollTop() - 80 ) ) {
+                        if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                             _siteSections.removeClass ( 'active' );
                             $( this ).addClass( 'active' );
                         }

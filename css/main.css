@@ -575,7 +575,7 @@
     margin-bottom: 50px;
     background: #242a2f;
     color: #fff;
-    text-align: center;
+    text-align: justify;
 }
 .pack-includes .site__title{
     width: 100%;
@@ -1962,7 +1962,7 @@
 
     /* ------------ icons-preview ------------ */
     .icons-preview {
-        width: 371px;
+        width: 31.4%;
         padding: 20px 32px 7px;
         border-radius: 5px;
     }
@@ -1970,12 +1970,13 @@
         margin: 0 -2px 10px;
         height: 8.5vmin;
     }
-    .icons-preview div.icons-preview__footer {
-        padding-top: 0;
-    }
     .icons-preview img {
         -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
         transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+    .icons-preview div.icons-preview__footer {
+        padding: 0 7px 0 14px;
+        margin-top: 16px;
     }
     /* ------------ /icons-preview ------------ */
 
@@ -2123,9 +2124,6 @@
     .icons-preview__footer span {
         font-size: 18px;
         line-height: 18px;
-    }
-    .icons-preview div.icons-preview__footer {
-        padding: 3px 7px 0 14px;
     }
     .icons-promo__wrap {
         margin-bottom: 88px;

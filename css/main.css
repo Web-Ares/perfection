@@ -53,13 +53,16 @@
 
 /* --------------- placeholder --------------- */
 ::-webkit-input-placeholder {
-    color: #000;
+    color: #aeaeae;
+    font-size: 17px;
 }
 :-moz-placeholder {
-    color: #000;
+    color: #aeaeae;
+    font-size: 17px;
 }
 .placeholder {
-    color: #000;
+    color: #aeaeae;
+    font-size: 17px;
 }
 /* --------------- /placeholder --------------- */
 

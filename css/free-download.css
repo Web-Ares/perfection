@@ -1,0 +1,52 @@
+/* --------------- logo --------------- */
+.logo_inner{
+
+}
+.logo_inner img{
+
+}
+
+/* --------------- /logo --------------- */
+
+/* --------------- promo --------------- */
+.promo_inner:before{
+    display: none;
+}
+.promo__content span{
+    font-size: 16px;
+}
+/* --------------- /promo --------------- */
+/* --------------- site --------------- */
+.site__header_inner {
+    position: absolute;
+}
+/* --------------- /site --------------- */
+
+/* --------------- social --------------- */
+.social_inner{
+
+}
+.social__item_inner{
+    display: inline-block;
+    opacity: 1;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+    position: relative;
+    background: url('../img/social_inner_sprite.png') no-repeat;
+    width: 29px;
+    height: 29px;
+    margin-left: 20px;
+}
+.social__item_inner:hover{
+    opacity: .8;
+}
+.social_inner .social__item_fb{
+    background-position: 0 0;
+}
+.social_inner .social__item_tw{
+    background-position: -59px 0;
+}
+.social_inner .social__item_mail{
+    background-position: -117px 0;
+}
+/* --------------- /social --------------- */

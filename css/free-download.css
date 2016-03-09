@@ -1,6 +1,6 @@
 /* --------------- logo --------------- */
 .logo_inner{
-
+    padding-top: 7px;
 }
 .logo_inner img{
 
@@ -13,12 +13,18 @@
     display: none;
 }
 .promo__content span{
-    font-size: 16px;
+    font-size: 13px;
+}
+.promo__topic_inner{
+
 }
 /* --------------- /promo --------------- */
 /* --------------- site --------------- */
 .site__header_inner {
     position: absolute;
+}
+.site__inner-page{
+padding: 50px 0;
 }
 /* --------------- /site --------------- */
 
@@ -28,6 +34,7 @@
 }
 .social__item_inner{
     display: inline-block;
+    vertical-align: middle;
     opacity: 1;
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
@@ -35,7 +42,7 @@
     background: url('../img/social_inner_sprite.png') no-repeat;
     width: 29px;
     height: 29px;
-    margin-left: 20px;
+    margin: 0 9px;
 }
 .social__item_inner:hover{
     opacity: .8;
@@ -49,4 +56,110 @@
 .social_inner .social__item_mail{
     background-position: -117px 0;
 }
+ .social__title {
+    display: inline-block;
+    vertical-align: middle;
+     color: #999;
+    font-size: 20px;
+    text-transform: none;
+}
+.social__title {
+    display: inline-block;
+    vertical-align: middle;
+    color: #999;
+    font-size: 20px;
+    text-transform: none;
+    margin-right: 9px;
+}
 /* --------------- /social --------------- */
+
+/* --------------- btn --------------- */
+.btn_down{
+    width: 100%;
+    height: 50px;
+    padding-top: 19px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: "Proxima Nova Bold", sans-serif;
+}
+/* --------------- /btn --------------- */
+
+/* --------------- download --------------- */
+.download{
+    padding: 30px 10px;
+    background: #f7f7f7;
+    text-align: center;
+}
+.download__title{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+.download input{
+    width: 100%;
+    height: 50px;
+    border: 2px solid #e8e8e8;
+    border-radius: 5px;
+    color: #aeaeae;
+    font-size: 17px;
+    font-family: "Proxima Nova Regular", sans-serif;
+    padding: 0 15px;
+}
+/* --------------- /download --------------- */
+
+@media (min-width: 768px) {
+    /* --------------- site --------------- */
+    .site__inner-page {
+        padding: 60px 0;
+    }
+    /* --------------- /site --------------- */
+    /* --------------- social --------------- */
+    .social_inner{
+        margin-right: 40px;
+    }
+    .social__item_inner{
+        margin: 0;
+        margin-left: 7px;
+    }
+    /* --------------- /social --------------- */
+    /* --------------- download --------------- */
+    .download{
+        padding: 37px 0;
+    }
+    .download input{
+        width: 336px;
+        padding: 0 54px;
+        background: #fff url("../img/download_image.png") 15px 50% no-repeat;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+    /* --------------- /download ---------------- */
+    /* --------------- btn ---------------- */
+    .btn_down{
+        width: 186px;
+        margin-left: -7px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+    /* --------------- /btn ---------------- */
+}
+@media (min-width: 992px) {
+    /* --------------- logo --------------- */
+    .logo img {
+        max-width: 104px;
+    }
+    /* --------------- /logo --------------- */
+    /* --------------- promo --------------- */
+    .promo__content span {
+        font-size: 16px;
+    }
+    /* --------------- /promo --------------- */
+    /* --------------- download --------------- */
+    .download {
+        width: 700px;
+        padding-bottom: 55px;
+        margin: 0 auto;
+    }
+    /* --------------- /download --------------- */
+
+}

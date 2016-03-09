@@ -1835,8 +1835,8 @@
         width: 43%;
         height: 100%;
         padding-bottom: 0;
-        -webkit-transition: opacity .5s ease-in-out .5s;
-        transition: opacity .5s ease-in-out .5s;
+        -webkit-transition: opacity .2s ease-in-out .2s;
+        transition: opacity .2s ease-in-out .2s;
     }
     .we-impressed__info a {
         width: auto;
@@ -2055,7 +2055,6 @@
     /* --------------- pack-includes --------------- */
     .pack-includes{
         padding: 100px 0 77px;
-        margin-bottom: 116px;
     }
 
     .pack-includes__title {
@@ -2107,7 +2106,7 @@
     /* --------------- icons-promo --------------- */
     .icons-promo {
         min-height: 100%;
-        padding: 0 0 110px;
+        padding: 116px 0 110px;
     }
     .icons-promo p {
         font-size: 26px;

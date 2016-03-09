@@ -178,7 +178,6 @@
     top: 0;
     left: 0;
     width: 67px;
-    height: 31px;
     background: url("../img/logo-small-black.png") no-repeat 0 0;
     background-size: contain;
     transition: opacity .3s ease;

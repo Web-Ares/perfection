@@ -71,12 +71,13 @@ var Menu = function (obj) {
             _menuContent.outerHeight( 'auto' );
             if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
                 _menuContent.outerHeight( '100%' );
-                _initContentScroll();
+                _menuContent.css( 'overflow-y', 'scroll' );
+                /*_initContentScroll();
                 _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();
+                _menuContent.getNiceScroll().resize();*/
             } else {
-                _menuContent.outerHeight( 'auto' );
-                _menuContent.getNiceScroll().hide();
+                /*_menuContent.outerHeight( 'auto' );
+                _menuContent.getNiceScroll().hide();*/
             }
         },
         _initContentScroll = function() {

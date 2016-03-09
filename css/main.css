@@ -689,6 +689,9 @@
     align-items: center;
     padding: 0 0 9px;
 }
+.sharpest-icons__list{
+    text-align: center;
+}
 .sharpest-icons__list>div{
     display: inline-block;
     vertical-align: top;
@@ -711,7 +714,7 @@
 /* --------------- line-solid --------------- */
 .line-solid__layout {
     position: relative;
-    padding: 50px 15px;
+    padding: 50px 0;
     margin: 0 0 40px;
     background-color: #f8f8f8;
 }

@@ -5,8 +5,8 @@
     margin: 0 auto;
 }
 .pricing__title{
-    font: 26px "Proxima Nova Regular";
     margin-bottom: 10px;
+    font: 26px "Proxima Nova Regular";
 }
 .pricing__item{
     position: relative;
@@ -40,8 +40,8 @@
     font-family:"Proxima Nova Bold" , 'sans-serif';
 }
 .pricing__purchase li{
-    position: relative;
     display: block;
+    position: relative;
     margin-bottom: 11px;
     line-height: 20px;
 }

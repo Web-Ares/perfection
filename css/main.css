@@ -716,8 +716,8 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
 /* --------------- line-solid --------------- */
 .line-solid__layout {
-    padding: 30px 15px 30px;
-    margin: 0 0 40px;
+    padding: 85px 15px 30px;
+    margin: 0 -15px 40px;
     background: #f8f8f8;
 }
 .line-solid__text {
@@ -1460,26 +1460,40 @@ html{overflow-y:hidden;overflow-x:hidden;}
         display: -ms-flexbox;
         display: -webkit-flex;
         flex-direction: row;
-        justify-content: flex-start;
+        flex-wrap: wrap;
         -webkit-justify-content: flex-start;
-        -webkit-align-items: center;
+        justify-content: flex-start;
+        -webkit-flex-align: center;
         -ms-flex-align: center;
+        -webkit-align-items: center;
         align-items: center;
+        padding-top: 78px;
         height: 100%;
     }
-    .line-solid__layout{
-        display: flex;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        flex-direction: column;
-        -webkit-flex-direction: column;
-        justify-content: center;
-        -webkit-justify-content: center;
-        height: 100%;
+    .line-solid:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
         width: 50%;
+        background: #f8f8f8;
+        content: '';
+    }
+    .line-solid__layout{
+        /* display: flex; */
+        display: -ms-flexbox;
+        /* display: -webkit-flex; */
+        /* flex-direction: column; */
+        /* -webkit-flex-direction: column; */
+        /* justify-content: center; */
+        /* -webkit-justify-content: center; */
+        /* height: 100%; */
+        /* width: 50%; */
         margin-bottom: 0;
         padding-bottom: 0;
-        text-align: left;
+        /* text-align: left; */
+        display: inline-block;
+        width: 47%;
     }
     .line-solid__text {
         margin: 0 0 39px;
@@ -2026,14 +2040,15 @@ html{overflow-y:hidden;overflow-x:hidden;}
 
     /* --------------- line-solid --------------- */
     .line-solid__layout {
-        padding-left: 13.2%;
-        padding-right: 9%;
+        /* padding-left: 13.2%; */
+        /* padding-right: 9%; */
+        padding: 0;
     }
     .line-solid__text{
         margin: 0 0 39px;
     }
     .line-solid__list {
-        margin-top: 72px;
+        /* margin-top: 72px; */
     }
     /* --------------- /line-solid --------------- */
 

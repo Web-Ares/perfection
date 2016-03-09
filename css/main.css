@@ -694,8 +694,10 @@
     vertical-align: top;
     position: relative;
     width: 18%;
+    max-width: 92px;
     height: 9.5vmin;
     min-height: 60px;
+    max-height: 100px;
 }
 .sharpest-icons__list>div img{
     position: absolute;
@@ -994,7 +996,6 @@
 /* --------------- pixel-grid --------------- */
 .pixel-grid{
     position: relative;
-    padding: 50px 0;
 }
 .pixel-grid__text{
     margin: 0 0 20px;
@@ -1264,19 +1265,21 @@
         margin: 0 65px;
     }
     .site__title{
-        margin: 0 0 28px;
+        margin: 0 0 25px;
         font-size: 6.7vmin;
         line-height: 6.7vmin;
     }
     .site_justify{
-        text-align: justify;
-        vertical-align: middle;
-    }
-    .site_justify:after{
-        display: inline-block;
-        width: 100%;
-        height: 0;
-        content: '';
+        display: flex;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-align: flex-start;
+        -ms-flex-align: flex-start;
+        -webkit-align-items: flex-start;
     }
     /* --------------- /site --------------- */
 
@@ -1675,6 +1678,7 @@
         -webkit-align-items: center;
         align-items: center;
         height: 100%;
+        padding-top: 154px;
     }
     .pixel-grid:after{
         position: absolute;
@@ -1693,7 +1697,8 @@
         vertical-align: top;
         width: 50%;
         margin: 0;
-        padding: 120px 20px 0 0;
+        padding-top: 73px;
+        padding-right: 20px;
         text-align: left;
         opacity: 0;
         -webkit-transition: opacity 0.3s linear 0.3s;
@@ -1703,18 +1708,18 @@
         opacity: 1;
     }
     .pixel-grid__text{
-        margin: 0 0 39px;
+        margin: 0 100px 39px 0;
     }
     .pixel-grid__slider{
         display: inline-block;
         vertical-align: top;
-        width: 43.5%;
+        width: 40.5%;
+        max-width: 697px;
         text-align: left;
     }
     .pixel-grid__slider .swiper-container{
         padding-bottom: 66px;
-        height: 73vmin;
-        min-height: 500px;
+        height: 697px;
     }
     .pixel-grid__img_small{
         width: 205px;
@@ -1755,10 +1760,6 @@
         border-left: 14px solid #0d4686;
         border-top: 14px solid #0d4686;
         content: '';
-    }
-    .pixel-grid__perfect span {
-        font-size: 3vmin;
-        line-height: 3.2vmin;
     }
     /* --------------- /pixel-grid --------------- */
 
@@ -1993,23 +1994,36 @@
     /* ------------ sharpest-icons ------------ */
     .sharpest-icons__text{
         font-size: 26px;
-        line-height: 36px;
+        line-height: 38px;
     }
     .sharpest-icons__approved-text{
+        width: 245px;
         font-size: 18px;
         line-height: 24px;
     }
-    .sharpest-icons__list>div {
-        height: 100px;
-    }
     /* ------------ /sharpest-icons ------------ */
+
+    /* ------------ pixel-grid ------------ */
+    .pixel-grid__text {
+        font-size: 26px;
+        line-height: 38px;
+    }
+    .pixel-grid__perfect {
+        top: 98px;
+        width: 176px;
+        height: 95px;
+        padding: 5px 10px 5px 20px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    /* ------------ /pixel-grid ------------ */
 
 }
 @media (min-width: 1200px) {
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons {
-        padding: 205px 0 120px;
+        padding: 205px 0 156px;
     }
     .sharpest-icons__text{
         margin: 0 70px 39px 0;
@@ -2065,12 +2079,7 @@
     /* --------------- /pack-includes --------------- */
 
     /* --------------- pixel-grid --------------- */
-    .pixel-grid__layout{
-        padding: 6% 11% 0 0;
-    }
-    .pixel-grid__perfect{
-        top: 18%;
-    }
+
     /* --------------- /pixel-grid --------------- */
 
     /* ------------ icons-promo ------------ */

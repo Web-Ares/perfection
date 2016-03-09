@@ -334,8 +334,7 @@ var SliderSingle = function (obj) {
 
                 pagination: $('.swiper-pagination'),
                 paginationClickable: true,
-                loop: true,
-                spaceBetween: 30
+                loop: true
 
             });
 

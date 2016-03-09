@@ -4,18 +4,6 @@ $(function () {
         new  Menu( $( this ) );
     } );
 
-    $.each( $( '.preloader' ), function() {
-        new Preloader( $( this ) );
-    } );
-
-    $.each( $('.pixel-grid__slider'), function() {
-        new SliderSingle( $( this ) );
-    } );
-
-    $.each( $('.formats__slider'), function() {
-        new SliderFormats( $( this ) );
-    } );
-
 });
 
 var Menu = function (obj) {
@@ -35,14 +23,18 @@ var Menu = function (obj) {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
 
+                        $('body').css ( { 'overflow': 'visible' } )
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
 
+                        $('body').css ( {  'overflow': 'hidden' } )
                     }
                 }
             } );
             _window.on( {
-
+                resize: function() {
+                    _contentScroll();
+                },
                 scroll: function() {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
@@ -85,6 +77,7 @@ var Menu = function (obj) {
             } );
         },
         init = function() {
+            _contentScroll
             _onEvents();
         };
 

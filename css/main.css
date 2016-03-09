@@ -371,7 +371,9 @@
     padding: 70px 15px;
 }
 .drop-menu__inner-wrap{
+    position: relative;
     padding: 0 50px;
+    z-index: 3;
 }
 .drop-menu__menu{
     margin-bottom: 20px;

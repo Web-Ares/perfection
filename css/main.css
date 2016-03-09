@@ -693,6 +693,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    width: 60%;
     padding: 0 0 9px;
 }
 .sharpest-icons__list{

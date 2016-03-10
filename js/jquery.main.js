@@ -27,7 +27,7 @@ var Menu = function (obj) {
         _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
-        _menuContent = _obj.find( '.drop-menu__inner-wrap'),
+        _menuContent = _obj.find( '.drop-menu__inner-wrap' ),
         _window = $( window );
 
     var is_article = false;
@@ -38,12 +38,12 @@ var Menu = function (obj) {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
 
-                        $( 'body').css ( 'overflow', 'visible' )
+                        $( 'body' ).css ( 'overflow', 'visible' )
 
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
 
-                        $( 'body').css ( 'overflow', 'hidden' );
+                        $( 'body' ).css ( 'overflow', 'hidden' );
                     }
                 }
             } );
@@ -370,65 +370,65 @@ var Tabs = function (obj) {
 
     var _addEvents = function () {
 
-            _window.on({
-                'load': function(){
+            _window.on( {
+                'load': function() {
                     _showContentWhenLoading();
                 }
             });
 
             _tabBtnInner.on({
-                mousedown: function(){
-                    _tabContent.css({
+                mousedown: function() {
+                    _tabContent.css( {
                         'height': _tabContent.innerHeight()
                     }, 300);
                 },
-                mouseup: function(){
+                mouseup: function() {
                     var curItem = $(this),
                         parent = curItem.parent(),
                         index = parent.index();
                     var activeContent = _tabContentItem.eq( index ),
                         activeContentHeight = activeContent.innerHeight();
-                    _tabContent.animate({
+                    _tabContent.animate( {
                         'height': activeContentHeight
                     }, 300);
-                    setTimeout(function(){
-                        _tabContent.css({
+                    setTimeout(function() {
+                        _tabContent.css( {
                             "height": ""
                         });
                     },400)
                 },
-                click: function(){
+                click: function() {
                     var curItem = $( this ),
                         parent = curItem.parent(),
                         index = parent.index();
                     _tabBtn.removeClass( 'active' );
-                    _tabBtn.eq(index).addClass( 'active' );
-                    _showContent(index);
+                    _tabBtn.eq( index ).addClass( 'active' );
+                    _showContent( index );
                     _controls.removeClass( 'active' );
                 }
             });
 
-            _body.on({
-                click: function(){
-                    _controls.removeClass("active");
+            _body.on( {
+                click: function() {
+                    _controls.removeClass( 'active' );
                 }
             });
 
         },
-        _showContentWhenLoading = function(){
+        _showContentWhenLoading = function() {
             var index = _tabBtn.filter( '.active' ).index();
-            if ( index == '-1' ){
+            if ( index == '-1' ) {
                 index = 0;
-                _tabBtn.eq(index).addClass( 'active' );
+                _tabBtn.eq( index ).addClass( 'active' );
             }
-            _showContent(index);
+            _showContent( index );
         },
-        _showContent = function(i){
+        _showContent = function( i ) {
             var activeContent = _tabContentItem.eq( i );
             _tabContentItem.css( {
                 'display': 'none'
             });
-            activeContent.css({
+            activeContent.css( {
                 'display': 'block'
             });
         },

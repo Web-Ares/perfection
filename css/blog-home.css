@@ -1,0 +1,189 @@
+/* --------------- blog-home --------------- */
+.blog-home {
+    max-width: 962px;
+    margin: 0 auto;
+    padding: 3px 0 98px;
+}
+.blog-home__list li {
+    margin-top: 30px;
+    padding: 50px 0 42px;
+    border-bottom: 2px solid #f3f3f3;
+    text-align: justify;
+}
+.blog-home__list li:first-child {
+    margin-top: 0;
+}
+.blog-home__list li:after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+.blog-home__inner,
+.blog-home__pic {
+    display: inline-block;
+    vertical-align: top;
+    width: 31.25%;
+    height: auto;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+.blog-home__inner {
+    position: relative;
+    width: 65.5%;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: left;
+}
+.blog-home__pic img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.blog-home__information{
+    margin-bottom: 13px;
+    font-size: 18px;
+    line-height: 33px;
+    color: #7f7f7f;
+}
+.blog-home__title {
+    display: inline-block;
+    font-size: 30px;
+    line-height: 37px;
+    color: #000;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
+.blog-home__inner time {
+    text-transform: uppercase;
+}
+.blog-home__inner p {
+    overflow: hidden;
+    max-height: 84px;
+    margin-bottom: 25px;
+    color: #000;
+}
+.blog-home__more {
+    display: inline-block;
+    position: relative;
+    color: #0e81b7;
+    font-size: 18px;
+}
+.blog-home__more:after {
+    position: absolute;
+    top: 50%;
+    right: -41px;
+    width: 28px;
+    height: 9px;
+    margin-top: -3px;
+    background: url("../img/blog-home__arrow.png") no-repeat;
+    -webkit-transition: margin .15s ease;
+    transition: margin .15s ease;
+    content: '';
+}
+.blog-home__more:hover {
+    color: #0e81b7;
+}
+.blog-home__more:hover:after {
+    margin-right: -3px;
+}
+/* --------------- /blog-home --------------- */
+
+/* --------------- pagination --------------- */
+.pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: space-between;
+    padding: 21px 0 39px;
+    border-bottom: 2px solid #f3f3f3;
+}
+.pagination > * {
+    margin-left: 85px;
+}
+.pagination__next,
+.pagination__prev {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    color: #000;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.pagination__prev {
+    padding-left: 40px;
+}
+.pagination__next {
+    padding-right: 40px;
+}
+.pagination__next:after,
+.pagination__prev:after {
+    content: '';
+    position: absolute;
+    background: url("../img/pagination__arrows.png") no-repeat;
+    width: 28px;
+    height: 9px;
+    top: 50%;
+    left: 0;
+    margin-top: -4px;
+    -webkit-transition: margin .15s ease;
+    transition: margin .15s ease;
+}
+.pagination__next:after {
+    left: auto;
+    right: 0;
+    background: url("../img/pagination__arrows.png") no-repeat bottom;
+}
+.pagination__next:hover,
+.pagination__prev:hover {
+    color: #000;
+}
+.pagination__next:hover:after {
+    margin-right: -3px;
+}
+.pagination__prev:hover:after {
+    margin-left: -3px;
+}
+/* --------------- /pagination --------------- */
+
+@media (max-width: 767px) {
+
+    /* --------------- blog-home --------------- */
+    .blog-home {
+        padding: 30px 0 30px;
+    }
+    .blog-home__list li {
+        margin: 30px 0 0;
+        padding: 20px 0 20px;
+    }
+    .blog-home__list li {
+        text-align: center;
+    }
+    .blog-home__pic {
+        width: 100%;
+        max-width: 325px;
+        margin-bottom: 30px;
+    }
+    .blog-home__inner {
+        text-align: left;
+        width: 100%;
+    }
+    /* --------------- /blog-home --------------- */
+
+    /* --------------- pagination --------------- */
+    .pagination__next,
+    .pagination__prev {
+        font-size: 10px;
+    }
+    .pagination > * {
+        margin-left: 20px;
+    }
+    .pagination > *:first-child {
+        margin-left: 0;
+    }
+    .pagination__next:after, .pagination__prev:after {
+        margin-top: -5px;
+    }
+    /* --------------- /pagination --------------- */
+
+}

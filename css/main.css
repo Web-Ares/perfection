@@ -1366,6 +1366,12 @@
     }
     /* --------------- /header-menu --------------- */
 
+    /* --------------- logo --------------- */
+    .logo_inner {
+        margin-top: 8px;
+    }
+    /* --------------- /logo --------------- */
+
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
@@ -1460,7 +1466,7 @@
 
     /* --------------- logo --------------- */
     .logo_inner{
-        margin-top: 5px;
+        margin-top: 3px;
     }
     /* --------------- /logo --------------- */
 
@@ -2143,6 +2149,18 @@
     }
     /* --------------- /btn --------------- */
 
+    /* --------------- logo --------------- */
+    .logo_inner img {
+        max-width: 104px;
+    }
+    /* --------------- /logo --------------- */
+
+    /* --------------- promo --------------- */
+    .promo__content span {
+        font-size: 16px;
+    }
+    /* --------------- /promo --------------- */
+
     /* ------------ icons-preview ------------ */
     .icons-preview {
         width: 31.4%;
@@ -2238,7 +2256,6 @@
     .pack-includes{
         padding: 100px 0 77px;
     }
-
     .pack-includes__title {
         font-size: 22px;
         margin-bottom: 11px;
@@ -2335,18 +2352,6 @@
          margin-left: 11px;
      }
     /* --------------- /we-impressed --------------- */
-
-    /* --------------- logo --------------- */
-    .logo_inner img {
-        max-width: 104px;
-    }
-    /* --------------- /logo --------------- */
-
-    /* --------------- promo --------------- */
-    .promo__content span {
-        font-size: 16px;
-    }
-    /* --------------- /promo --------------- */
 
 }
 @media (min-width: 1200px) {

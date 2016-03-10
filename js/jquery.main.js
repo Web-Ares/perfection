@@ -29,6 +29,7 @@ var Menu = function (obj) {
         _promoSections = $( '.promo' ),
         _menuContent = _obj.find( '.drop-menu__inner-wrap'),
         _action = false,
+        _lastPos,
         _window = $( window );
 
     var is_article = false;

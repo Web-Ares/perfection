@@ -76,11 +76,11 @@ var Menu = function (obj) {
                 _menuContent.outerHeight( '100%' );
                 _menuContent.css( 'overflow-y', 'scroll' );
                 /*_initContentScroll();
-                _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();*/
+                 _menuContent.getNiceScroll().show();
+                 _menuContent.getNiceScroll().resize();*/
             } else {
                 /*_menuContent.outerHeight( 'auto' );
-                _menuContent.getNiceScroll().hide();*/
+                 _menuContent.getNiceScroll().hide();*/
             }
         },
         _initContentScroll = function() {
@@ -104,7 +104,7 @@ var Menu = function (obj) {
 var Preloader = function ( obj ) {
 
     var _obj = obj,
-        _delay = _obj.data( 'delay' ),
+        _deelay = _obj.data( 'deelay' ),
         _window = $( window);
 
     var _onEvents = function () {
@@ -116,14 +116,14 @@ var Preloader = function ( obj ) {
                         _obj.addClass( 'hide' );
 
                         /*setTimeout(function () {
-                            $('.site').each(function () {
-                                new Screen($(this));
-                            });
-                            _obj.remove()
+                         $('.site').each(function () {
+                         new Screen($(this));
+                         });
+                         _obj.remove()
 
-                        },400);*/
+                         },400);*/
 
-                    }, _delay);
+                    }, _deelay);
 
                 }
             });
@@ -436,91 +436,5 @@ var Tabs = function (obj) {
             _addEvents();
         };
 
-
- var _initContentScroll = function () {
- _swiper = new Swiper( '.site', {
- direction: 'vertical',
- slidesPerView: 1,
- scrollbarDraggable: true,
- scrollbarSnapOnRelease: true,
- paginationClickable: false,
- spaceBetween: 0,
- slideActiveClass: 'active',
- simulateTouch: true,
- mousewheelControl: true,
- scrollbar: '.swiper-scrollbar',
- scrollbarHide: false,
- hashnav: true,
- grabCursor: false,
- onSlideChangeEnd: function() {
- //_swiper.detachEvents();
- _swiper.detachEvents();
-
- _item.addClass('swiper-slide2');
- _item.removeClass('swiper-slide');
-
- }
- });
-
- _obj.mouseenter(function () {
- _swiper.detachEvents();
- _swiper.params.simulateTouch = false;
- _swiper.params.onlyExternal = false;
- _swiper.attachEvents();
- });
- },
- _initNicescroll = function(){
- _item.niceScroll({
- cursorcolor: 'transparent',
- cursorborder: "0 solid transparent",
- zindex: 10,
- autohidemode: true,
- horizrailenabled: false,
- cursorborderradius: 0,
- cursoropacitymin: 1,
- cursorwidth: '5px',
- mousescrollstep: 24,
- enablemousewheel: true,
- touchbehavior: true,
- usetransition: true,
- smoothscroll:false
- });
- _item.on('scroll',function(e){
- console.log(e);
- })
- },
- _onEvents = function () {
- $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseenter(function () {
- _swiper.detachEvents();
- _swiper.params.simulateTouch = true;
- _swiper.params.onlyExternal = true;
- _swiper.attachEvents();
- });
-
- $( '.site.swiper-container-vertical > .swiper-scrollbar' ).mouseleave(function () {
- _swiper.detachEvents();
- _swiper.params.simulateTouch = false;
- _swiper.params.onlyExternal = false;
- _swiper.attachEvents();
- });
- },
-
- _sizeEvents = function () {
- if ( $(window).width() <= 768 ) {
- _initContentScroll();
- _initNicescroll();
- _item.css('overflow-y','auto');
- } else {
- _initContentScroll();
- }
- },
- _init = function () {
- _sizeEvents();
- _onEvents();
- };
-
- //public properties
-
- //public methods
- _init();
- };*/
+    _init();
+};

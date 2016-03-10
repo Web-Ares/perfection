@@ -94,7 +94,7 @@ var Menu = function (obj) {
 var Preloader = function ( obj ) {
 
     var _obj = obj,
-        _deelay = _obj.data( 'deelay' ),
+        _delay = _obj.data( 'delay' ),
         _window = $( window);
 
     var _onEvents = function () {
@@ -113,7 +113,7 @@ var Preloader = function ( obj ) {
 
                         },400);*/
 
-                    }, _deelay);
+                    }, _delay);
 
                 }
             });

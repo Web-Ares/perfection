@@ -236,7 +236,7 @@
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
 }
-.btn_down{
+.btn_6{
     width: 100%;
     height: 50px;
     padding-top: 19px;
@@ -1515,11 +1515,16 @@
         font-size: 16px;
         line-height: 20px;
     }
-    .btn_down{
+    .btn_6{
         width: 186px;
+        height: 50px;
+        padding: 15px;
         margin-left: -7px;
+        border-radius: 5px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
+        font-size: 18px;
+        line-height: normal;
     }
     .btn_5{
         padding: 0 30px;

@@ -1,8 +1,9 @@
 /* --------------- download --------------- */
 .download{
     padding: 30px 10px;
+    margin-bottom: 40px;
     background: #f7f7f7;
-    text-align: center;
+    text-align: center;;
 }
 .download__title{
     display: block;
@@ -20,7 +21,16 @@
     padding: 0 15px;
 }
 /* --------------- /download --------------- */
-
+/* --------------- free-icons --------------- */
+.free-icons_title{
+    font: 20px "Proxima Nova Regular", sans-serif;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.free-icons img{
+    width: 100%;
+}
+/* --------------- /free-icons --------------- */
 @media (min-width: 768px) {
     /* --------------- download --------------- */
     .download{
@@ -34,15 +44,28 @@
         border-top-left-radius: 0;
     }
     /* --------------- /download ---------------- */
+    /* --------------- free-icons --------------- */
+    .free-icons_title{
 
+    }
+    .free-icons img{
+
+    }
+    /* --------------- /free-icons --------------- */
 }
 @media (min-width: 992px) {
     /* --------------- download --------------- */
     .download {
         width: 700px;
         padding-bottom: 55px;
-        margin: 0 auto;
+        margin: 0 auto 57px;
     }
     /* --------------- /download --------------- */
-
+    /* --------------- free-icons --------------- */
+    .free-icons img {
+        display: block;
+        width: 700px;
+        margin: 0 auto;
+    }
+    /* --------------- /free-icons --------------- */
 }

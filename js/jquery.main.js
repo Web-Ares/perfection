@@ -150,28 +150,28 @@ var Preloader = function ( obj ) {
         _delay = _obj.data( 'delay' ),
         _window = $( window);
 
-    var _onEvents = function () {
+    var _onEvents = function() {
 
-            _window.on({
+            _window.on( {
                 load: function(){
 
-                    setTimeout(function () {
+                    setTimeout( function () {
                         _obj.addClass( 'hide' );
 
-                        setTimeout(function () {
+                        setTimeout( function () {
 
                              _obj.remove()
 
-                             },400);
+                             }, 400 );
 
-                    }, _delay);
+                    }, _delay );
 
                 }
-            });
+            } );
 
         },
 
-        _init = function () {
+        _init = function() {
             _onEvents();
         };
 

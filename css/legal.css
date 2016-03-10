@@ -6,7 +6,7 @@
     color: #292929;
     line-height: 22px;
 }
-.policy__title{
+.policy h2{
     font-family:'Proxima Nova Bold', 'sans-serif';
     text-transform: uppercase;
 }
@@ -18,11 +18,11 @@
     margin-bottom: 15px;
     line-height: 22px;
 }
-.policy__links{
+.policy a{
     color: #292929;
     text-decoration: underline;
 }
-.policy__links a:hover{
+.policy a:hover{
     text-decoration: none;
 }
 .tabs__controls-wrap {
@@ -34,6 +34,10 @@
     border-radius: 30px;
     border: 2px solid #242a2f;
     background: #242a2f;
+}
+.tabs__controls-wrap div span{
+    display: block;
+    line-height: 40px;
 }
 .tabs__controls-wrap div{
     display: table-cell;
@@ -54,6 +58,12 @@
     background: #242a2f;
     color: #fff;
     cursor: default;
+}
+.tabs__controls-wrap div:hover{
+    background:rgba(255, 255, 255, 0.58);
+}
+.tabs__controls-wrap div.active:hover{
+    background: #242a2f;
 }
 .tabs__wrapper {
     padding-bottom: 30px;

@@ -1,7 +1,7 @@
 /* --------------- pricing --------------- */
 .pricing{
     max-width: 1181px;
-    padding: 100px 15px;
+    padding: 40px 15px;
     margin: 0 auto;
 }
 .pricing__title{
@@ -156,8 +156,7 @@
     transform: translateX(-50%);
 }
 .pricing__pay {
-    text-align: left;
-    padding-left: 85px;
+    text-align: center;
 }
 .pricing__pay a{
     display: inline-block;
@@ -197,7 +196,7 @@
 
 @media (min-width: 992px) {
     .pricing {
-        padding: 100px 0;
+        padding: 27px 0;
     }
     .pricing__wrap {
         display: inline-table;

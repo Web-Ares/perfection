@@ -670,6 +670,7 @@
     margin-bottom: 6vmin;
     font: 3.5vmin "Proxima Nova Light";
     text-align: center;
+    color: #e6e6e6;
 }
 .pack-includes__pic{
     position: relative;
@@ -688,6 +689,7 @@
     display: block;
     font: 4vmin "Proxima Nova Regular";
     line-height: 5vmin;
+    color: #fff;
 }
 /* --------------- /pack-includes --------------- */
 
@@ -1730,6 +1732,9 @@
         height: 100%;
         padding-top: 100px;
     }
+    .pack-includes__wrap {
+        text-align: justify;
+    }
     .pack-includes__wrap:after{
         display: inline-block;
         width: 100%;
@@ -2271,7 +2276,7 @@
     }
     .pack-includes__pic {
         height: 61px;
-        margin-bottom: 26px;
+        margin-bottom: 30px;
     }
     .pack-includes__pic img {
         position: relative;

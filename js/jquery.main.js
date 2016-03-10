@@ -29,6 +29,7 @@ var Menu = function (obj) {
         _menuContent = _obj.find( '.drop-menu__inner-wrap'),
         _action = false,
         _lastPos,
+        _myScroll,
         _window = $( window );
 
     var _onEvents = function() {
@@ -49,9 +50,6 @@ var Menu = function (obj) {
                 }
             } );
             _window.on( {
-                'resize': function() {
-                    _contentScroll();
-                },
                 'scroll': function () {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
@@ -113,34 +111,16 @@ var Menu = function (obj) {
                 _header.removeClass('site__header_hidden');
             };
         },
-        _contentScroll = function() {
-            _menuContent.outerHeight( 'auto' );
-            if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
-                _menuContent.outerHeight( '100%' );
-                _initContentScroll();
-            } else {
-                _menuContent.outerHeight( '100%' );
-                _initContentScroll();
-            }
-        },
         _initContentScroll = function() {
-            self.myScroll = new IScroll( '#scroll-wrap' , {
+            self._myScroll = new IScroll( '#scroll-wrap' , {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,
                 shrinkScrollbars: 'scale'
             });
-            /*.niceScroll( {
-                cursorcolor: '#fff',
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursorwidth: '2px'
-            } );*/
         },
         init = function() {
-            _contentScroll();
+            _initContentScroll();
             _onEvents();
         };
 

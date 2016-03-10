@@ -92,8 +92,8 @@
     overflow: hidden;
     min-width: 320px;
     position: relative;
-    font-size: 4vmin;
-    line-height: 5vmin;
+    font-size: 5vmin;
+    line-height: 6.2vmin;
     font-family: "Proxima Nova Light", sans-serif;
     color: #666;
 }
@@ -134,7 +134,7 @@
     z-index: 1;
     width: 100%;
     max-width: 1211px;
-    padding: 0 15px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 .site__title{
@@ -220,8 +220,8 @@
     width: 194px;
     background: #1565c0;
     color: #fff;
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 15px;
+    line-height: 15px;
     border-radius: 30px;
     text-align: center;
     font-family: "Proxima Nova Regular", sans-serif;
@@ -578,13 +578,14 @@
     margin-bottom: 25px;
 }
 .promo__topic{
+    margin-bottom: 10px;
     color: #fff;
     font: normal 35px/1 "Proxima Nova Bold", sans-serif;
 }
 .promo__content{
     margin-bottom: 20px;
     color: #999;
-    font: 14px/22px "Proxima Nova Light", sans-serif;
+    font: 17px/22px "Proxima Nova Light", sans-serif;
 }
 .promo__content_inner{
     margin-bottom: 0;
@@ -668,7 +669,7 @@
     vertical-align: top;
     width: 70%;
     margin-bottom: 6vmin;
-    font: 3.5vmin "Proxima Nova Light";
+    font: 4.6vmin "Proxima Nova Light";
     text-align: center;
 }
 .pack-includes__pic{
@@ -686,8 +687,8 @@
 }
 .pack-includes__title{
     display: block;
-    font: 4vmin "Proxima Nova Regular";
-    line-height: 5vmin;
+    font: 5.3vmin "Proxima Nova Regular";
+    line-height: 6.3vmin;
 }
 /* --------------- /pack-includes --------------- */
 
@@ -738,7 +739,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 14px;
 }
 .sharpest-icons__approved-img{
@@ -826,7 +827,7 @@
     vertical-align: top;
     display: inline-block;
     position: relative;
-    width: 23.7%;
+    width: 23.3%;
     height: 9.5vmin;
     min-height: 67px;
 }
@@ -851,8 +852,8 @@
     position: relative;
     padding: 0 46% 0 34px;
     color: #666666;
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 13px;
+    line-height: 14px;
     min-height: 16px;
     background: url("../img/half-round.png") no-repeat 0 5px;
     background-size: 16px;
@@ -1035,7 +1036,7 @@
     text-align: center;
 }
 .icons-promo p {
-    font-size: 4.7vmin;
+    font-size: 5vmin;
     line-height: 1.462;
     margin-bottom: 20px;
 }
@@ -1191,8 +1192,10 @@
     margin-bottom: 30px;
 }
 .easy-way .site__title {
-    font-size: 5.5vmin;
-    line-height: 1;
+    /* font-size: 5.5vmin; */
+    font-size: 7.7vmin;
+    line-height: 7.7vmin;
+    /* line-height: 1; */
 }
 .easy-way .site__title span {
     display: block;
@@ -1250,7 +1253,7 @@
 .we-impressed__layout {
     z-index: 2;
     position: relative;
-    padding: 17px 15px 30px;
+    padding: 17px 20px 30px;
     /* margin: 0 0 40px; */
     background: #242a2f;
 }
@@ -1294,7 +1297,7 @@
 .we-impressed__info-user {
     margin-top: 3px;
     margin-left: 9px;
-    font-size: 2.4vh;
+    font-size: 3.1vh;
 }
 .we-impressed__info-user span {
     color: #fff;
@@ -2331,8 +2334,8 @@
 
     /* --------------- we-impressed --------------- */
     .we-impressed__layout {
-       width: 610px;
-       margin: 0 auto;
+        width: 610px;
+        margin: 0 auto;
     }
     .we-impressed__layout-wrap{
         padding: 158px 15px 180px;
@@ -2347,10 +2350,10 @@
         z-index: 2;
     }
     .we-impressed__info-user {
-         font-size: 20px;
-         margin-top: 19px;
-         margin-left: 11px;
-     }
+        font-size: 20px;
+        margin-top: 19px;
+        margin-left: 11px;
+    }
     /* --------------- /we-impressed --------------- */
 
 }

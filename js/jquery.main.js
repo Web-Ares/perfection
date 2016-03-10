@@ -16,6 +16,9 @@ $(function () {
         new SliderFormats( $( this ) );
     } );
 
+    $.each( $( '.tabs' ), function () {
+        new Tabs( $( this ) );
+    });
 });
 
 var Menu = function (obj) {
@@ -349,6 +352,88 @@ var SliderSingle = function (obj) {
             _initSlider();
             _obj[0].obj = _self;
 
+        };
+
+    _init();
+};
+
+var Tabs = function (obj) {
+
+    var _obj = obj,
+        _window = $( window ),
+        _body = $( 'body' ),
+        _tabBtn = _obj.find( '.tabs__controls-wrap > div' ),
+        _tabBtnInner = _tabBtn.find( '> span' ),
+        _tabContent = _obj.find( '.tabs__wrapper' ),
+        _controls = _obj.find( '.tabs__controls-wrap' ),
+        _tabContentItem = _tabContent.find( '> div' );
+
+    var _addEvents = function () {
+
+            _window.on({
+                'load': function(){
+                    _showContentWhenLoading();
+                }
+            });
+
+            _tabBtnInner.on({
+                mousedown: function(){
+                    _tabContent.css({
+                        'height': _tabContent.innerHeight()
+                    }, 300);
+                },
+                mouseup: function(){
+                    var curItem = $(this),
+                        parent = curItem.parent(),
+                        index = parent.index();
+                    var activeContent = _tabContentItem.eq( index ),
+                        activeContentHeight = activeContent.innerHeight();
+                    _tabContent.animate({
+                        'height': activeContentHeight
+                    }, 300);
+                    setTimeout(function(){
+                        _tabContent.css({
+                            "height": ""
+                        });
+                    },400)
+                },
+                click: function(){
+                    var curItem = $( this ),
+                        parent = curItem.parent(),
+                        index = parent.index();
+                    _tabBtn.removeClass( 'active' );
+                    _tabBtn.eq(index).addClass( 'active' );
+                    _showContent(index);
+                    _controls.removeClass( 'active' );
+                }
+            });
+
+            _body.on({
+                click: function(){
+                    _controls.removeClass("active");
+                }
+            });
+
+        },
+        _showContentWhenLoading = function(){
+            var index = _tabBtn.filter( '.active' ).index();
+            if ( index == '-1' ){
+                index = 0;
+                _tabBtn.eq(index).addClass( 'active' );
+            }
+            _showContent(index);
+        },
+        _showContent = function(i){
+            var activeContent = _tabContentItem.eq( i );
+            _tabContentItem.css( {
+                'display': 'none'
+            });
+            activeContent.css({
+                'display': 'block'
+            });
+        },
+        _init = function () {
+            _addEvents();
         };
 
     _init();

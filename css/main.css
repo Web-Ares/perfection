@@ -482,7 +482,7 @@
 .iScrollIndicator {
     width: 5px !important;
     border-radius: 0 !important;
-    background: 0 0 !important;
+    background: #fff!important;
     z-index: 3 !important;
     border: none !important
 }

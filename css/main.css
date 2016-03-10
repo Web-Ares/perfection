@@ -758,8 +758,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    font-size: 13px;
-    line-height: 14px;
+    font-size: 15px;
+    line-height: 19px;
 }
 .sharpest-icons__approved-img{
     margin-right: 8px;
@@ -1458,8 +1458,8 @@
 
     /* --------------- site --------------- */
     .site {
-        font-size: 2.67vmin;
-        line-height: 4vmin;
+        font-size: 26px;
+        line-height: 38px;
     }
     .site__header{
         height: 64px;
@@ -1607,7 +1607,7 @@
         margin: 0 70px 39px 0;
     }
     .sharpest-icons__approved{
-        font-size: 1.85vmin;
+        font-size: 2.5vmin;
         line-height: 2.5vmin;
     }
     .sharpest-icons__list{
@@ -1657,8 +1657,6 @@
     }
     .formats__text{
         margin: 33px 0 40px;
-        font-size: 26px;
-        line-height: 38px;
     }
     .formats__slider{
         display: inline-block;
@@ -2304,10 +2302,20 @@
     .icons-promo__wrap {
         margin-bottom: 88px;
     }
-
     /* --------------- /icons-promo --------------- */
 
     /* --------------- we-impressed --------------- */
+    .we-impressed {
+        padding: 100px 0;
+    }
+    /* --------------- /we-impressed --------------- */
+}
+@media (min-width: 1200px) {
+
+    /* --------------- we-impressed --------------- */
+    .we-impressed {
+        padding: 0;
+    }
     .we-impressed__layout {
         width: 610px;
         margin: 0 auto;
@@ -2330,9 +2338,6 @@
         margin-left: 11px;
     }
     /* --------------- /we-impressed --------------- */
-
-}
-@media (min-width: 1200px) {
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons {

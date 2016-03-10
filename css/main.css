@@ -194,6 +194,9 @@
     -webkit-transition: opacity .3s ease;
     content: '';
 }
+.logo_inner{
+    margin-top: 5px;
+}
 .site__header.white .logo img{
     opacity: 0;
 }
@@ -1454,6 +1457,12 @@
         padding: 60px 0;
     }
     /* --------------- /site --------------- */
+
+    /* --------------- logo --------------- */
+    .logo_inner{
+        margin-top: 5px;
+    }
+    /* --------------- /logo --------------- */
 
     /* --------------- btn --------------- */
     .btn {

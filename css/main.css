@@ -1298,6 +1298,56 @@
 }
 /* --------------- /we-impressed --------------- */
 
+/* --------------- article --------------- */
+.article {
+    max-width: 616px;
+    padding-right: 10px;
+    margin: 0 auto;
+    color: #292929;
+    font-size: 14px;
+    line-height: 22px;
+}
+.article a {
+    border-bottom: 1px solid #1565c0;
+    color: #1565c0;
+    transition: border-bottom-color .3s ease;
+    -webkit-transition: border-bottom-color .3s ease;
+}
+.article a:hover {
+    border-bottom-color: transparent;
+}
+.article p {
+    margin-bottom: 19px;
+}
+.article ul {
+    margin-bottom: 31px;
+}
+.article li {
+    position: relative;
+    margin-bottom: 1px;
+    padding-left: 25px;
+}
+.article li:before {
+    position: absolute;
+    top: 9px;
+    left: 11px;
+    width: 4px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: #292929;
+    content: '';
+}
+.article__title {
+    margin-bottom: 20px;
+    font-family: "Proxima Nova Bold" , sans-serif;
+    line-height: 42px;
+}
+.article__subtitle {
+    margin-bottom: 20px;
+    line-height: 42px;
+}
+/* --------------- /article --------------- */
+
 @media (min-width: 550px) {
 
     /* --------------- site --------------- */
@@ -1417,6 +1467,12 @@
         border-radius: 0;
         font-size: 16px;
         line-height: 20px;
+    }
+    .btn_down{
+        width: 186px;
+        margin-left: -7px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
     }
     /* --------------- /btn --------------- */
 
@@ -2045,14 +2101,20 @@
         transform: translateX(0);
     }
     /* --------------- /customizable --------------- */
-    /* --------------- btn ---------------- */
-    .btn_down{
-        width: 186px;
-        margin-left: -7px;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
+
+    /* --------------- article --------------- */
+    .article {
+        font-size: 22px;
+        line-height: 26px;
     }
-    /* --------------- /btn ---------------- */
+    .article li:before {
+        top: 10px;
+        left: 2px;
+        width: 6px;
+        height: 6px;
+    }
+    /* --------------- /article --------------- */
+
 }
 @media (min-width: 992px) {
 

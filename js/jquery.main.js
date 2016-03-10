@@ -117,14 +117,13 @@ var Menu = function (obj) {
             _menuContent.outerHeight( 'auto' );
             if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
                 _menuContent.outerHeight( '100%' );
-                _menuContent.css( 'overflow-y', 'scroll' );
                 _initContentScroll();
             } else {
 
             }
         },
         _initContentScroll = function() {
-            self.myScroll = new IScroll(_menuContent , {
+            self.myScroll = new IScroll( '#scroll-wrap' , {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,

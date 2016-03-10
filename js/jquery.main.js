@@ -26,7 +26,6 @@ var Menu = function (obj) {
         _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
-        _promoSections = $( '.promo' ),
         _menuContent = _obj.find( '.drop-menu__inner-wrap'),
         _action = false,
         _lastPos,
@@ -38,8 +37,14 @@ var Menu = function (obj) {
 
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
+
+                        $( 'body').css ( 'overflow', 'visible' )
+
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
+
+                        $( 'body').css ( 'overflow', 'hidden' );
+
                     }
                 }
             } );

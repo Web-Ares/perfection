@@ -117,24 +117,26 @@ var Menu = function (obj) {
             _menuContent.outerHeight( 'auto' );
             if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
                 _menuContent.outerHeight( '100%' );
-                _menuContent.css( 'overflow-y', 'scroll' );
-                /*_initContentScroll();
-                _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();*/
+                _initContentScroll();
             } else {
-                /*_menuContent.outerHeight( 'auto' );
-                _menuContent.getNiceScroll().hide();*/
+
             }
         },
         _initContentScroll = function() {
-            _menuContent.niceScroll( {
+            self.myScroll = new IScroll( '#scroll-wrap' , {
+                mouseWheel: true,
+                scrollbars: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale'
+            });
+            /*.niceScroll( {
                 cursorcolor: '#fff',
                 zindex: 10,
                 autohidemode: false,
                 horizrailenabled: false,
                 cursorborderradius: 0,
                 cursorwidth: '2px'
-            } );
+            } );*/
         },
         init = function() {
             _contentScroll();

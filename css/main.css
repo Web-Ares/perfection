@@ -408,6 +408,7 @@
 }
 .drop-menu__inner-wrap{
     position: relative;
+    overflow: hidden;
     padding: 0 50px 20px;
     z-index: 3;
 }

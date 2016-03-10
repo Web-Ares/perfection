@@ -1,0 +1,231 @@
+/* --------------- pricing --------------- */
+.pricing{
+    max-width: 1181px;
+    padding: 100px 15px;
+    margin: 0 auto;
+}
+.pricing__title{
+    margin-bottom: 10px;
+    font: 26px "Proxima Nova Regular";
+}
+.pricing__item{
+    position: relative;
+    max-width: 337px;
+    padding: 32px 10px 108px;
+    margin: 0 auto 14px;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+    text-align: center;
+}
+.pricing__price sup{
+    font-size: 42px;
+}
+.pricing__price{
+    padding-right: 19px;
+    margin-bottom: 10px;
+    font: 80px "Proxima Nova Light";
+    line-height: 44px;
+}
+.pricing__pic{
+    width:100%;
+    height: 174px;
+    margin-bottom: 17px;
+    background: center no-repeat;
+}
+.pricing__purchase{
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+.pricing__purchase span{
+    font-family:"Proxima Nova Bold" , 'sans-serif';
+}
+.pricing__purchase li{
+    display: block;
+    position: relative;
+    margin-bottom: 11px;
+    line-height: 20px;
+}
+.pricing__item li div{
+    display: inline-block;
+    vertical-align: top;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f2f2f2 url("../img/questions.png") no-repeat center;
+}
+.pricing__each{
+    margin-bottom: 66px;
+}
+.pricing__pack-title{
+    margin-bottom: 15px;
+    font: 18px "Open Sans";
+    font-weight: 600;
+}
+.pricing__each li{
+    position: relative;
+    padding-left: 3px;
+    margin-bottom: 15px;
+    font: 18px 'Open Sans', 'sans-serif';
+    color: #999999;
+}
+.pricing__each li:before{
+    position: absolute;
+    top: 3px;
+    left: -25px;
+    width: 7px;
+    height: 12px;
+    border-radius: 4px;
+    border-right: 5px solid #26b43d;
+    border-bottom: 5px solid #26b43d;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    content: '';
+}
+.pricing_pack{
+    padding: 32px 0 0 33px;
+    border: none;
+    text-align: left;
+}
+.pricing__text {
+    position: relative;
+    padding: 40px 0 0 33px;
+    line-height: 20px;
+    font-size: 18px;
+    color: #999999;
+}
+.pricing__text p{
+    margin-bottom: 9px;
+}
+.pricing__text:before {
+    position: absolute;
+    top: 0;
+    left: 116px;
+    width: 23px;
+    height: 19px;
+    background: url(../pic/pricing__text01.png) no-repeat;
+    background-size: contain;
+    content: '';
+}
+.pricing__info{
+    margin-bottom: 43px;
+}
+.pricing__info a {
+    display: inline-block;
+    width: 63px;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.pricing__info a:hover{
+    opacity: .8;
+}
+.pricing__info img {
+    width: 100%;
+}
+.pricing__info-user {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 9px;
+    font-size: 15px;
+}
+.pricing__license{
+    width: 280px;
+    padding-top: 22px;
+    margin-left: -64px;
+    border-top: 1px solid #efefef;
+    font: 16px 'Open Sans', 'sans-serif';
+    color: #666666;
+    text-align: center;
+}
+.pricing__user{
+    position: absolute;
+    top: 38px;
+    left: -35px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: center no-repeat;
+}
+/* --------------- /pricing --------------- */
+
+/* --------------- btn --------------- */
+.btn_4{
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    border-radius: 6px;
+    transform: translateX(-50%);
+}
+.pricing__pay {
+    text-align: left;
+    padding-left: 85px;
+}
+.pricing__pay a{
+    display: inline-block;
+    vertical-align: middle;
+    width: 37px;
+    height: 50px;
+    background: center no-repeat;
+    margin-left: 8px;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.pricing__pay a:hover{
+    opacity: 0.8;
+}
+/* --------------- /btn --------------- */
+
+@media (min-width: 768px) {
+    .pricing__wrap {
+        display: table;
+        width: 100%;
+        border-spacing: 47px 18px;
+    }
+    .pricing__item {
+        display: table-cell;
+        vertical-align: top;
+        position: relative;
+        max-width: 337px;
+        width: 40%;
+    }
+    .pricing_pack {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        margin-left: 45px;
+    }
+}
+
+@media (min-width: 992px) {
+    .pricing {
+        padding: 100px 0;
+    }
+    .pricing__wrap {
+        display: inline-table;
+        width: 69%;
+        padding-bottom: 20px;
+        margin-left: -27px;
+        border-spacing: 47px 18px;
+    }
+    .pricing__item {
+        display: table-cell;
+        vertical-align: top;
+        width: 337px;
+        max-width: initial;
+    }
+    .pricing_pack {
+        display: inline-block;
+        width: 30%;
+        padding: 51px 0 0 50px;
+    }
+    .pricing__pay {
+        padding-left: 24.2%;
+        text-align: left;
+    }
+    .pricing__license {
+        margin-left: -20px;
+    }
+    .pricing_pack {
+        margin-left: 0;
+    }
+
+}

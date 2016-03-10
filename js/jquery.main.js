@@ -1,26 +1,29 @@
 $(function () {
 
-    $( '.drop-menu' ).each( function() {
-        new Menu( $( this ) );
+    $.each( $( '.drop-menu' ), function() {
+        new  Menu( $( this ) );
     } );
 
-    $.each($( '.preloader' ), function () {
-        new Preloader($(this));
-    });
+    $.each( $( '.preloader' ), function() {
+        new Preloader( $( this ) );
+    } );
 
-    $.each($('.pixel-grid__slider'), function () {
-        new SliderSingle($(this));
-    });
+    $.each( $('.pixel-grid__slider'), function() {
+        new SliderSingle( $( this ) );
+    } );
 
-    $.each($('.formats__slider'), function () {
-        new SliderFormats($(this));
-    });
+    $.each( $('.formats__slider'), function() {
+        new SliderFormats( $( this ) );
+    } );
 
+    $.each( $( '.tabs' ), function () {
+        new Tabs( $( this ) );
+    });
 });
 
 var Menu = function (obj) {
     var _obj = obj,
-        _site = $( '.pages' ),
+        _site = $( '.site' ),
         _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
@@ -31,45 +34,53 @@ var Menu = function (obj) {
     var _onEvents = function() {
             _btn.on( {
                 click: function() {
+
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
+
+                        $( 'body').css ( 'overflow', 'visible' )
+
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
+
+                        $( 'body').css ( 'overflow', 'hidden' );
                     }
                 }
             } );
             _window.on( {
                 resize: function() {
-                    _contentScroll();
-                }
-            } )
-        },
-        _scrollNavigation = function() {
-            _site.on( {
+                    _contentScroll
+                },
                 scroll: function() {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
-                            headerTop = _header.offset().top;
+                            siteSectionsHeight = $( this ).height(),
+                            spaceBeforeBloc = 160;
 
-                        if( siteSectionsTop == $( window ).scrollTop() ) {
+                        if( siteSectionsTop <= _window.scrollTop() ) {
                             _header.removeClass( 'white' );
-                            _header.addClass( $( this ).data( 'header-color' ) )
+                            _header.addClass( $( this ).data( 'header-color' ) );
+                        }
+
+                        if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
+                            $( this ).addClass( 'active' );
                         }
 
                     } );
                 }
-            });
+            } )
         },
         _contentScroll = function() {
             _menuContent.outerHeight( 'auto' );
             if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
                 _menuContent.outerHeight( '100%' );
-                _initContentScroll();
+                _menuContent.css( 'overflow-y', 'scroll' );
+                /*_initContentScroll();
                 _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();
+                _menuContent.getNiceScroll().resize();*/
             } else {
-                _menuContent.outerHeight( 'auto' );
-                _menuContent.getNiceScroll().hide();
+                /*_menuContent.outerHeight( 'auto' );
+                _menuContent.getNiceScroll().hide();*/
             }
         },
         _initContentScroll = function() {
@@ -83,7 +94,6 @@ var Menu = function (obj) {
             } );
         },
         init = function() {
-            _scrollNavigation();
             _contentScroll();
             _onEvents();
         };
@@ -332,8 +342,7 @@ var SliderSingle = function (obj) {
 
                 pagination: $('.swiper-pagination'),
                 paginationClickable: true,
-                loop: true,
-                spaceBetween: 30
+                loop: true
 
             });
 
@@ -348,20 +357,84 @@ var SliderSingle = function (obj) {
     _init();
 };
 
-/*var  _swiper;
+var Tabs = function (obj) {
 
- var Screen = function ( obj ) {
+    var _obj = obj,
+        _window = $( window ),
+        _body = $( 'body' ),
+        _tabBtn = _obj.find( '.tabs__controls-wrap > div' ),
+        _tabBtnInner = _tabBtn.find( '> span' ),
+        _tabContent = _obj.find( '.tabs__wrapper' ),
+        _controls = _obj.find( '.tabs__controls-wrap' ),
+        _tabContentItem = _tabContent.find( '> div' );
 
- //private properties
- var _self = this,
- _obj = obj,
+    var _addEvents = function () {
 
- _item = _obj.find( '.screen' );
+            _window.on({
+                'load': function(){
+                    _showContentWhenLoading();
+                }
+            });
 
+            _tabBtnInner.on({
+                mousedown: function(){
+                    _tabContent.css({
+                        'height': _tabContent.innerHeight()
+                    }, 300);
+                },
+                mouseup: function(){
+                    var curItem = $(this),
+                        parent = curItem.parent(),
+                        index = parent.index();
+                    var activeContent = _tabContentItem.eq( index ),
+                        activeContentHeight = activeContent.innerHeight();
+                    _tabContent.animate({
+                        'height': activeContentHeight
+                    }, 300);
+                    setTimeout(function(){
+                        _tabContent.css({
+                            "height": ""
+                        });
+                    },400)
+                },
+                click: function(){
+                    var curItem = $( this ),
+                        parent = curItem.parent(),
+                        index = parent.index();
+                    _tabBtn.removeClass( 'active' );
+                    _tabBtn.eq(index).addClass( 'active' );
+                    _showContent(index);
+                    _controls.removeClass( 'active' );
+                }
+            });
 
- _obj[ 0 ].obj = _self;
+            _body.on({
+                click: function(){
+                    _controls.removeClass("active");
+                }
+            });
 
- //private methods
+        },
+        _showContentWhenLoading = function(){
+            var index = _tabBtn.filter( '.active' ).index();
+            if ( index == '-1' ){
+                index = 0;
+                _tabBtn.eq(index).addClass( 'active' );
+            }
+            _showContent(index);
+        },
+        _showContent = function(i){
+            var activeContent = _tabContentItem.eq( i );
+            _tabContentItem.css( {
+                'display': 'none'
+            });
+            activeContent.css({
+                'display': 'block'
+            });
+        },
+        _init = function () {
+            _addEvents();
+        };
 
 
  var _initContentScroll = function () {

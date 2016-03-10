@@ -25,3 +25,37 @@
 .policy a:hover{
     text-decoration: none;
 }
+.tabs__controls-wrap {
+    display: table;
+    overflow: hidden;
+    width: 338px;
+    height: 42px;
+    margin: 0 auto 32px;
+    border-radius: 20px;
+    border: 2px solid #242a2f;
+}
+.tabs__controls-wrap div{
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    width: 48.5%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    color:#242a2f;
+    cursor: pointer;
+}
+.tabs__controls-wrap div.active{
+    background: #242a2f;
+    color: #fff;
+}
+.tabs__wrapper {
+    padding-bottom: 30px;
+}
+.tabs {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 51px;
+}

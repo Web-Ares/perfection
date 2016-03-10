@@ -23,11 +23,12 @@ $(function () {
 
 var Menu = function (obj) {
     var _obj = obj,
-        _site = $( '.site' ),
         _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
-        _menuContent = _obj.find( '.drop-menu__inner-wrap' ),
+        _promoSections = $( '.promo' ),
+        _menuContent = _obj.find( '.drop-menu__inner-wrap'),
+        _action = false,
         _window = $( window );
 
     var is_article = false;
@@ -38,20 +39,22 @@ var Menu = function (obj) {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _header.removeClass( 'site__header_drop-menu' );
 
-                        $( 'body' ).css ( 'overflow', 'visible' )
+                        $( 'body').css ( 'overflow', 'visible' )
 
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
 
-                        $( 'body' ).css ( 'overflow', 'hidden' );
+                        $( 'body').css ( 'overflow', 'hidden' );
                     }
                 }
             } );
             _window.on( {
-                resize: function() {
-                    _contentScroll
+                'resize': function() {
+                    _contentScroll();
                 },
-                scroll: function() {
+                'scroll': function () {
+                    _fixedHeader();
+
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
                             siteSectionsHeight = $( this ).height(),
@@ -67,8 +70,68 @@ var Menu = function (obj) {
                         }
 
                     } );
+
+                    _action = _window.scrollTop() >= _header.innerHeight();
+
+                },
+                'DOMMouseScroll': function ( e ) {
+
+                    var delta = e.originalEvent.detail;
+
+                    if ( delta ) {
+                        var direction = ( delta > 0 ) ? 1 : -1;
+
+                        _checkScroll( direction );
+
+                    }
+
+                },
+                'mousewheel': function ( e ) {
+
+                    var delta = e.originalEvent.wheelDelta;
+
+                    if ( delta ) {
+                        var direction = ( delta > 0 ) ? -1 : 1;
+
+                        _checkScroll( direction );
+
+                    }
+
+                },
+                'touchmove': function ( e ) {
+
+                    var currentPos = e.originalEvent.touches[0].clientY;
+
+                    if ( currentPos > _lastPos ) {
+
+                        _checkScroll( -1 );
+
+
+                    } else if ( currentPos < _lastPos ) {
+
+                        _checkScroll( 1 );
+
+                    }
+
+                    _lastPos = currentPos;
+
                 }
             } )
+        },
+        _checkScroll = function( direction ){
+
+            if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ){
+
+                _header.addClass( 'site__header_hidden' );
+
+            }
+
+            if( direction < 0 && _header.hasClass( 'site__header_hidden' ) && _action ){
+
+                _header.removeClass('site__header_hidden');
+
+            }
+
         },
         _contentScroll = function() {
             _menuContent.outerHeight( 'auto' );
@@ -76,11 +139,18 @@ var Menu = function (obj) {
                 _menuContent.outerHeight( '100%' );
                 _menuContent.css( 'overflow-y', 'scroll' );
                 /*_initContentScroll();
-                 _menuContent.getNiceScroll().show();
-                 _menuContent.getNiceScroll().resize();*/
+                _menuContent.getNiceScroll().show();
+                _menuContent.getNiceScroll().resize();*/
             } else {
                 /*_menuContent.outerHeight( 'auto' );
-                 _menuContent.getNiceScroll().hide();*/
+                _menuContent.getNiceScroll().hide();*/
+            }
+        },
+        _fixedHeader = function() {
+            if( _promoSections.height() <= _window.scrollTop() ) {
+                _header.addClass( 'site__header_fixed' );
+            } else {
+                _header.removeClass( 'site__header_fixed' );
             }
         },
         _initContentScroll = function() {
@@ -95,6 +165,7 @@ var Menu = function (obj) {
         },
         init = function() {
             _contentScroll();
+            _fixedHeader();
             _onEvents();
         };
 

@@ -1366,12 +1366,12 @@
     background-color: #292929;
     content: '';
 }
-.article__title {
+.article h2 {
     margin-bottom: 20px;
     font-family: "Proxima Nova Bold" , sans-serif;
     line-height: 42px;
 }
-.article__subtitle {
+.article h2 {
     margin-bottom: 20px;
     line-height: 42px;
 }

@@ -373,9 +373,9 @@
 .drop-menu {
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    height: 100vh;
+    bottom: 0;
+    left: 0;
     z-index: 5;
     background-color: rgba(21,101,192,.99);
     color: #fff;
@@ -404,11 +404,11 @@
     height: 100%;
     max-width: 1484px;
     margin: 0 auto;
-    padding: 70px 15px;
+    padding: 70px 15px 140px;
 }
 .drop-menu__inner-wrap{
     position: relative;
-    padding: 0 50px;
+    padding: 0 50px 20px;
     z-index: 3;
 }
 .drop-menu__menu{
@@ -437,7 +437,7 @@
     color: #90bff4;
 }
 .drop-menu__legally{
-    font: 14px/24px "Proxima Nova Light", sans-serif;
+    font: 14px/34px "Proxima Nova Light", sans-serif;
 }
 .drop-menu__legally-item{
     color: #fff;
@@ -453,7 +453,7 @@
 .social{
     position: absolute;
     right: 0;
-    bottom: 25px;
+    bottom: 75px;
     left: 0;
     color: #90bff4;
     font: 16px 'Proxima Nova Light', sans-serif;
@@ -556,7 +556,7 @@
 .copyright{
     position: absolute;
     right: 0;
-    bottom: 5px;
+    bottom: 55px;
     left: 0;
     font: 14px 'Proxima Nova Light', sans-serif;
     color: #90bff4;

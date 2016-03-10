@@ -614,7 +614,7 @@
     animation-timing-function: linear;
 }
 .promo_inner{
-    height: 50vh;
+    height: 100vh;
     padding-top: 0;
 }
 .promo_inner:before{

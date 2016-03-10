@@ -410,7 +410,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding: 0 50px 20px;
+    padding: 0 0 20px;
     z-index: 3;
 }
 .drop-menu__menu{

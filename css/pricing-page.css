@@ -136,6 +136,14 @@
     color: #666666;
     text-align: center;
 }
+.pricing__license a{
+    color: #666666;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.pricing__license a:hover{
+    opacity: .8;
+}
 .pricing__user{
     position: absolute;
     top: 38px;
@@ -158,7 +166,7 @@
 .pricing__pay {
     text-align: center;
 }
-.pricing__pay a{
+.pricing__pay-item{
     display: inline-block;
     vertical-align: middle;
     width: 37px;
@@ -167,9 +175,6 @@
     margin-left: 8px;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
-}
-.pricing__pay a:hover{
-    opacity: 0.8;
 }
 /* --------------- /btn --------------- */
 

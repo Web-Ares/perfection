@@ -104,7 +104,7 @@ var Menu = function (obj) {
 var Preloader = function ( obj ) {
 
     var _obj = obj,
-        _deelay = _obj.data( 'deelay' ),
+        _delay = _obj.data( 'delay' ),
         _window = $( window);
 
     var _onEvents = function () {
@@ -115,15 +115,13 @@ var Preloader = function ( obj ) {
                     setTimeout(function () {
                         _obj.addClass( 'hide' );
 
-                        /*setTimeout(function () {
-                         $('.site').each(function () {
-                         new Screen($(this));
-                         });
-                         _obj.remove()
+                        setTimeout(function () {
 
-                         },400);*/
+                             _obj.remove()
 
-                    }, _deelay);
+                             },400);
+
+                    }, _delay);
 
                 }
             });

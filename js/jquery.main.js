@@ -148,7 +148,7 @@ var Preloader = function ( obj ) {
 
     var _obj = obj,
         _delay = _obj.data( 'delay' ),
-        _window = $( window);
+        _window = $( window );
 
     var _onEvents = function() {
 

@@ -409,6 +409,7 @@
 .drop-menu__inner-wrap{
     position: relative;
     overflow: hidden;
+    width: 100%;
     padding: 0 50px 20px;
     z-index: 3;
 }
@@ -447,6 +448,43 @@
 }
 .drop-menu__legally-item:hover{
     color: #90bff4;
+}
+#scroll-wrap{
+    position: relative;
+    overflow: hidden;
+}
+#scroller {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none
+}
+.iScrollVerticalScrollbar {
+    background: 0 0 !important;
+    width: 9px !important
+}
+.iScrollIndicator {
+    width: 5px !important;
+    border-radius: 0 !important;
+    background: 0 0 !important;
+    z-index: 3 !important;
+    border: none !important
 }
 /* --------------- /drop-menu --------------- */
 

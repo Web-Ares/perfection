@@ -119,7 +119,8 @@ var Menu = function (obj) {
                 _menuContent.outerHeight( '100%' );
                 _initContentScroll();
             } else {
-
+                _menuContent.outerHeight( '100%' );
+                _initContentScroll();
             }
         },
         _initContentScroll = function() {

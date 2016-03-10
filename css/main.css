@@ -611,7 +611,7 @@
     animation-timing-function: linear;
 }
 .promo_inner{
-    height: 500px;
+    height: 50vh;
     padding-top: 0;
 }
 .promo_inner:before{
@@ -1693,6 +1693,9 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+    }
+    .promo_inner{
+        height: 500px;
     }
     .promo__logo{
         width: auto;

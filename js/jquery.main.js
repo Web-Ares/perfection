@@ -32,7 +32,6 @@ var Menu = function (obj) {
         _lastPos,
         _window = $( window );
 
-    var is_article = false;
     var _onEvents = function() {
             _btn.on( {
                 click: function() {
@@ -54,8 +53,6 @@ var Menu = function (obj) {
                     _contentScroll();
                 },
                 'scroll': function () {
-                    _fixedHeader();
-
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
                             siteSectionsHeight = $( this ).height(),
@@ -71,9 +68,7 @@ var Menu = function (obj) {
                         }
 
                     } );
-
                     _action = _window.scrollTop() >= _header.innerHeight();
-
                 },
                 'DOMMouseScroll': function ( e ) {
 
@@ -100,39 +95,23 @@ var Menu = function (obj) {
 
                 },
                 'touchmove': function ( e ) {
-
                     var currentPos = e.originalEvent.touches[0].clientY;
-
                     if ( currentPos > _lastPos ) {
-
                         _checkScroll( -1 );
-
-
                     } else if ( currentPos < _lastPos ) {
-
                         _checkScroll( 1 );
-
                     }
-
                     _lastPos = currentPos;
-
                 }
             } )
         },
         _checkScroll = function( direction ){
-
-            if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ){
-
+            if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.addClass( 'site__header_hidden' );
-
-            }
-
-            if( direction < 0 && _header.hasClass( 'site__header_hidden' ) && _action ){
-
+            };
+            if( direction < 0 && _header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.removeClass('site__header_hidden');
-
-            }
-
+            };
         },
         _contentScroll = function() {
             _menuContent.outerHeight( 'auto' );
@@ -147,13 +126,6 @@ var Menu = function (obj) {
                 _menuContent.getNiceScroll().hide();*/
             }
         },
-        _fixedHeader = function() {
-            if( _promoSections.height() <= _window.scrollTop() ) {
-                _header.addClass( 'site__header_fixed' );
-            } else {
-                _header.removeClass( 'site__header_fixed' );
-            }
-        },
         _initContentScroll = function() {
             _menuContent.niceScroll( {
                 cursorcolor: '#fff',
@@ -166,7 +138,6 @@ var Menu = function (obj) {
         },
         init = function() {
             _contentScroll();
-            _fixedHeader();
             _onEvents();
         };
 

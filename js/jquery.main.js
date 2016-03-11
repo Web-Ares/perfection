@@ -57,7 +57,7 @@ var Menu = function (obj) {
                             _header.removeClass( 'white' );
                             _header.addClass( $( this ).data( 'header-color' ) );
                         }
-                        if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
+                        if( ( siteSectionsTop <= _window.scrollTop() + siteSectionsHeight - spaceBeforeBloc ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                             $( this ).addClass( 'active' );
                         }
                     } );
@@ -97,8 +97,7 @@ var Menu = function (obj) {
             }
         },
         _initContentScroll = function() {
-            $('.drop-menu__inner-wrap').css('height', '100%')
-            new IScroll( '#scroll-wrap' , {
+            new IScroll( '#scroll-wrap', {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,
@@ -232,11 +231,11 @@ var SliderFormats = function (obj) {
         },
         _positionItems = function () {
 
-            if (_window.width() < 768) {
+            if (_window.width() < 550) {
 
                 _distance = 20;
 
-            } else if (_window.width() >= 768 && _window.width() < 1200) {
+            } else if (_window.width() >= 550 && _window.width() < 1200) {
 
                 _distance = 70;
 

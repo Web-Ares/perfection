@@ -98,12 +98,6 @@
     color: #666;
 }
 .site__header{
-    display: flex;
-    -webkit-display: flex;
-    -moz-display: flex;
-    -moz-display: flex;
-    align-items: center;
-    justify-content: flex-end;
     position: fixed;
     top: 0;
     left: 0;
@@ -111,6 +105,7 @@
     z-index: 3;
     height: 50px;
     margin: 0 auto;
+    padding-top: 11px;
     border-bottom: 1px solid transparent;
     font-size: 12px;
     text-align: right;
@@ -128,7 +123,6 @@
 }
 .site__header-layout{
     position: relative;
-    width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -140,7 +134,7 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 1211px;
+    max-width: 1228px;
     padding: 0 20px;
     margin: 0 auto;
 }
@@ -179,7 +173,7 @@
 /* --------------- logo --------------- */
 .logo {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 15px;
     width: 50px;
     z-index: 6;
@@ -237,8 +231,9 @@
     transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
 }
 .btn:hover{
-    opacity: 0.8;
+    opacity: .9;
 }
+.btn>div,
 .btn>span{
     display: flex;
     display: -ms-flexbox;
@@ -320,6 +315,7 @@
 .header-menu__item{
     display: inline-block;
     margin-right: 19px;
+    padding-top: 6px;
     font: 12px 'Proxima Nova Regular', sans-serif;
     color: #fff;
     text-transform: uppercase;
@@ -327,7 +323,7 @@
     -webkit-transition: opacity .3s ease, color .3s ease;
 }
 .header-menu__item:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .site__header.white .header-menu__item{
     color: #555;
@@ -577,7 +573,7 @@
     margin: 0 9px;
 }
 .social__item_inner:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .social_inner .social__item_fb{
     background-position: 0 0;
@@ -612,6 +608,7 @@
     margin-left: 7px;
 }
 .social_inner-item {
+    opacity: .9;
     display: inline-block;
     width: 28px;
     height: 28px;
@@ -619,8 +616,8 @@
     background-color: transparent;
     border: 2px solid #7c7f82;
     border-radius: 25px;
-    transition: box-shadow .3s ease;
-    -webkit-transition: box-shadow .3s ease;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
 }
 .social_inner-item svg {
     position: relative;
@@ -628,7 +625,7 @@
     width: 12px;
 }
 .social_inner-item:hover {
-    box-shadow: 2px 2px 3px rgba(255,255,255,.3);
+    opacity: 1;
 }
 /* --------------- /social --------------- */
 
@@ -1466,6 +1463,7 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item {
+        padding-top: 3px;
         font-size: 18px;
     }
     /* --------------- /header-menu --------------- */
@@ -1568,6 +1566,18 @@
     .formats__footnote {
         font-size: 18px;
         line-height: 20px;
+        margin-bottom: 50px;
+    }
+    .formats__slider-item {
+        width: 120px;
+        height: 120px;
+        margin: -60px 0 0 -60px;
+        font-size: 25px;
+        line-height: 27px;
+    }
+    .formats__slider-text>div {
+        font-size: 19px;
+        line-height: 24px;
     }
     /* ------------ /formats ------------ */
 
@@ -1594,6 +1604,7 @@
     }
     .site__header{
         height: 64px;
+        padding-top: 14px;
     }
     .site__header_inner {
         padding: 28px 0 0;
@@ -1625,7 +1636,7 @@
 
     /* --------------- logo --------------- */
     .logo {
-        top: 2px;
+        top: 3px;
         width: 67px;
     }
     .logo_inner{
@@ -1673,7 +1684,8 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item{
-        margin-right: 34px;
+        margin-right: 35px;
+        padding-top: 8px;
     }
     /* --------------- /header-menu --------------- */
 
@@ -1741,11 +1753,14 @@
         padding: 100px 0;
     }
     .sharpest-icons__layout{
+        opacity: 0;
         display: inline-block;
         vertical-align: middle;
         width: 49%;
         margin: 0;
         text-align: left;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
     }
     .sharpest-icons__text{
         margin: 0 70px 39px 0;
@@ -1757,14 +1772,11 @@
     .sharpest-icons__list{
         display: inline-block;
         vertical-align: middle;
-        opacity: 0;
         width: 43.5%;
         margin-left: 5%;
         text-align: left;
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
     }
-    .active .sharpest-icons__list{
+    .active .sharpest-icons__layout{
         opacity: 1;
     }
     .sharpest-icons__list>div{
@@ -1789,16 +1801,23 @@
         padding: 100px 0;
     }
     .formats__layout{
+        opacity: 0;
         display: inline-block;
         vertical-align: middle;
         width: 49%;
         max-width: 491px;
         margin: 0;
         text-align: left;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
+    }
+    .active .formats__layout {
+        opacity: 1;
     }
     .formats__footnote{
         font-size: 16px;
         line-height: 24px;
+        margin-bottom: 0;
     }
     .formats__text{
         margin: 33px 0 40px;
@@ -1842,6 +1861,7 @@
         height: 100%;
     }
     .line-solid__layout{
+
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -1854,7 +1874,13 @@
         padding-right: 20px;
         margin-bottom: 0;
         text-align: left;
+        opacity: 0;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
     }
+    .active .line-solid__layout {
+         opacity: 1;
+     }
     .line-solid__layout:after{
         display: none;
     }
@@ -1865,15 +1891,12 @@
         position: absolute;
         top: 50%;
         right: 0;
-        opacity: 0;
         width: 50%;
         max-width: 434px;
         text-align: left;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
     }
     .line-solid__list>div{
         width: 23.5%;
@@ -1882,9 +1905,7 @@
         max-height: 100px;
         margin-bottom: 10px;
     }
-    .active .line-solid__list {
-        opacity: 1;
-    }
+
     /* -----------line-solid --------------- */
 
     /* --------------- promo --------------- */
@@ -1980,14 +2001,11 @@
 
     /* ------------ icons-preview ------------ */
     .icons-preview {
-        opacity: 0;
         display: inline-block;
         vertical-align: top;
         width: 30%;
         margin: 0;
         padding: 20px;
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
     }
     .icons-preview div {
         margin: 0 -2px 10px;
@@ -1997,9 +2015,6 @@
     .icons-preview div.icons-preview__footer {
         padding: 3px 4% 0;
         font-size: 18px;
-    }
-    .pages__item.active .icons-preview {
-        opacity: 1;
     }
     /* ------------ /icons-preview ------------ */
 
@@ -2111,6 +2126,7 @@
         padding: 50px 0;
     }
     .we-impressed__layout {
+        opacity: 0;
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -2123,6 +2139,8 @@
         margin-bottom: 0;
         padding-bottom: 0;
         text-align: left;
+        -webkit-transition: opacity .2s ease-in-out .2s;
+        transition: opacity .2s ease-in-out .2s;
     }
     .we-impressed__text {
         margin: 0 0 39px;
@@ -2133,7 +2151,6 @@
         margin: 0 0 50px 224px;
     }
     .we-impressed__pic {
-        opacity: 0;
         position: absolute;
         top: 0;
         right: 0;
@@ -2141,8 +2158,6 @@
         width: 43%;
         height: 100%;
         padding-bottom: 0;
-        -webkit-transition: opacity .2s ease-in-out .2s;
-        transition: opacity .2s ease-in-out .2s;
     }
     .we-impressed__info a {
         width: auto;
@@ -2151,7 +2166,7 @@
         transition: opacity .3s ease-in-out;
     }
     .we-impressed__info a:hover {
-        opacity: .85;
+        opacity: .9;
     }
     .we-impressed__info img  {
         width: auto;
@@ -2159,7 +2174,7 @@
     .we-impressed__info-user {
         font-size: 19px;
     }
-    .active .we-impressed__pic {
+    .active .we-impressed__layout {
         opacity: 1;
     }
     /* -----------we-impressed --------------- */
@@ -2169,10 +2184,13 @@
         padding: 100px 0;
     }
     .easy-way__content {
+        opacity: 0;
         display: inline-block;
         vertical-align: middle;
         width: 47%;
         padding-right: 30px;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
     }
     .easy-way__warning {
         padding-left: 37px;
@@ -2199,12 +2217,7 @@
         margin-left: 3%;
         height: 100%;
     }
-    .easy-way__pic-wrapper {
-        opacity: 0;
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
-    }
-    .pages__item.active .easy-way__pic-wrapper {
+    .active .easy-way__content {
         opacity: 1;
     }
     /* ------------ /easy-way ------------ */
@@ -2230,25 +2243,25 @@
         align-items: center;
     }
     .customizable__layout{
+        opacity: 0;
         display: inline-block;
         vertical-align: top;
         width: 49%;
         padding-right: 25px;
         margin: 0;
         text-align: left;
+        -webkit-transition: opacity .3s ease;
+        transition: opacity .3s ease;
     }
     .customizable__image{
         display: inline-block;
         vertical-align: top;
-        opacity: 0;
         width: 48.5%;
         height: auto;
         padding-bottom: 0;
         text-align: left;
-        -webkit-transition: opacity .3s ease;
-        transition: opacity .3s ease;
     }
-    .active .customizable__image{
+    .active .customizable__layout{
         opacity: 1;
     }
     /* --------------- /customizable --------------- */
@@ -2387,16 +2400,18 @@
 
     /* --------------- pack-includes --------------- */
     .pack-includes{
-        padding: 100px 0;
+        padding: 111px 0 79px;
     }
     .pack-includes__title {
         font-size: 22px;
         margin-bottom: 11px;
+        line-height: 20px;
     }
     .pack-includes__item {
         width: 21%;
         font-size: 20px;
-        margin-bottom: 64px;
+        margin-bottom: 43px;
+        line-height: 24px;
     }
     .pack-includes .site__title {
         margin-bottom: 112px;
@@ -2404,7 +2419,7 @@
     }
     .pack-includes__pic {
         height: 61px;
-        margin-bottom: 30px;
+        margin-bottom: 28px;
     }
     .pack-includes__pic img {
         position: relative;

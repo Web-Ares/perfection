@@ -870,7 +870,7 @@
 /* --------------- line-solid --------------- */
 .line-solid__layout {
     position: relative;
-    padding: 50px 0;
+    padding: 75px 0;
     margin: 0 0 40px;
     background-color: #f8f8f8;
 }
@@ -1493,7 +1493,6 @@
 
     /* ------------ pack-includes ------------ */
     .pack-includes__wrap{
-        text-align: left;
     }
     .pack-includes__item {
         width: 45%;
@@ -1775,7 +1774,7 @@
         vertical-align: middle;
         width: 43.8%;
         padding-bottom: 45.8%;
-        margin: 0 0 0 10%;
+        margin: 0 0 0 6%;
         text-align: left;
     }
     .formats__slider-item{
@@ -1938,6 +1937,10 @@
     }
     .icons-promo .site__title {
         margin-bottom: 22px;
+    }
+    .icons-preview img {
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(0.75);
+        transform: translateX(-50%) translateY(-50%) scale(0.75);
     }
     /* ------------ /icons-promo ------------ */
 

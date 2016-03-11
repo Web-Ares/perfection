@@ -41,17 +41,9 @@
         padding: 0 54px;
         background: #fff url("../img/download_image.png") 15px 50% no-repeat;
         border-top-right-radius: 0;
-        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     /* --------------- /download ---------------- */
-    /* --------------- free-icons --------------- */
-    .free-icons_title{
-
-    }
-    .free-icons img{
-
-    }
-    /* --------------- /free-icons --------------- */
 }
 @media (min-width: 992px) {
     /* --------------- download --------------- */

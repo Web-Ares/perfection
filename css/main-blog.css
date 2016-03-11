@@ -615,7 +615,19 @@
 
 /* --------------- article-author --------------- */
 .article-author{
-
+    font-size: 18px;
+    color: #999;
+}
+.article-author time{
+    display: block;
+    font-size: 12px;
+}
+.article-author__ava {
+    float: left;
+    width: 49px;
+}
+.article-author__ava img{
+    width: 100%;
 }
 /* --------------- /article-author --------------- */
 

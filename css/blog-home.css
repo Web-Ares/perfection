@@ -158,8 +158,9 @@
     background-color: #fff;
     border: 2px solid #cdcdcd;
     border-radius: 25px;
-    transition: box-shadow .3s ease;
-    -webkit-transition: box-shadow .3s ease;
+    opacity: 0.8;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
 }
 .pagination__social-item svg{
     position: relative;
@@ -167,7 +168,7 @@
     width: 12px;
 }
 .pagination__social-item:hover {
-    box-shadow: 2px 2px 3px rgba(0,0,0,.3);
+    opacity: 1;
 }
 /* --------------- /pagination --------------- */
 

@@ -97,7 +97,7 @@ var Menu = function (obj) {
             }
         },
         _initContentScroll = function() {
-            $('.drop-menu__inner-wrap').css('height', '100%')
+            $( '.drop-menu__inner-wrap' ).css( 'height', '100%' )
             new IScroll( '#scroll-wrap' , {
                 mouseWheel: true,
                 scrollbars: true,

@@ -160,6 +160,7 @@
 }
 .logo img{
     width: 100%;
+    margin-top: 5px;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }
@@ -619,12 +620,6 @@
     }
     /* --------------- /header-menu --------------- */
 
-    /* --------------- logo --------------- */
-    .logo {
-        margin-top: 8px;
-    }
-    /* --------------- /logo --------------- */
-
 }
 @media (min-width: 768px) {
 
@@ -667,6 +662,9 @@
         top: 2px;
         width: 104px;
         margin-top: 3px;
+    }
+    .logo img {
+        margin-top: 0;
     }
     .logo__subtopic{
         top: auto;

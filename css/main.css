@@ -224,7 +224,7 @@
     display: inline-block;
     vertical-align: top;
     padding: 5px;
-    height: 30px;
+    height: 40px;
     width: 194px;
     background: #1565c0;
     color: #fff;
@@ -1192,8 +1192,12 @@
     box-shadow: 0 0 0 5px rgba(231, 231, 231, 0.35);
 }
 .pixel-grid__img{
-    max-width: 100%;
-    margin: 0 auto;
+    width: 100%;
+    height: 360px;
+    margin: 0 auto 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 }
 .pixel-grid__img_big-icon{
     max-width: 76%;
@@ -1213,20 +1217,7 @@
     height: 162px;
 }
 .pixel-grid__card{
-    display: flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    flex-wrap: wrap;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-flex-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+
 }
 .pixel-grid__perfect div{
     display: inline-block;
@@ -1509,7 +1500,7 @@
     /* ------------ /line-solid ------------ */
 
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) {
 
     /* --------------- site --------------- */
     .site {
@@ -1560,7 +1551,7 @@
 
     /* --------------- btn --------------- */
     .btn {
-        height: 55px;
+        height: 42px;
         font-size: 2.9vmin;
         line-height: 1.9vmin;
     }
@@ -1680,6 +1671,7 @@
         vertical-align: middle;
         opacity: 0;
         width: 43.5%;
+        margin-left: 5%;
         text-align: left;
         -webkit-transition: opacity .3s ease;
         transition: opacity .3s ease;
@@ -1728,7 +1720,7 @@
         vertical-align: middle;
         width: 45.8%;
         padding-bottom: 45.8%;
-        margin: 0;
+        margin: 0 0 0 10%;
         text-align: left;
     }
     .formats__slider-item{
@@ -1967,7 +1959,7 @@
     .pixel-grid__slider{
         display: inline-block;
         vertical-align: top;
-        width: 38.5%;
+        width: 44.5%;
         max-width: 697px;
         text-align: left;
     }
@@ -1975,17 +1967,8 @@
         padding-bottom: 0;
         height: 600px;
     }
-    .pixel-grid__img_small{
-        width: 205px;
-        height: 98px;
-    }
-    .pixel-grid__img_big{
-        width: 433px;
-        height: 240px;
-    }
-    .pixel-grid__img_big-icon{
-        width: 342px;
-        height: auto;
+    .pixel-grid__img {
+        height: 430px;
     }
     .pixel-grid__perfect{
         display: flex;
@@ -2097,6 +2080,7 @@
         display: inline-block;
         vertical-align: middle;
         width: 47%;
+        padding-right: 30px;
     }
     .easy-way__warning {
         padding-left: 37px;

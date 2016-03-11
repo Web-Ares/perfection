@@ -239,6 +239,7 @@
 .btn:hover{
     opacity: 0.8;
 }
+.btn>div,
 .btn>span{
     display: flex;
     display: -ms-flexbox;
@@ -612,6 +613,7 @@
     margin-left: 7px;
 }
 .social_inner-item {
+    opacity: .8;
     display: inline-block;
     width: 28px;
     height: 28px;
@@ -619,8 +621,8 @@
     background-color: transparent;
     border: 2px solid #7c7f82;
     border-radius: 25px;
-    transition: box-shadow .3s ease;
-    -webkit-transition: box-shadow .3s ease;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
 }
 .social_inner-item svg {
     position: relative;
@@ -628,7 +630,7 @@
     width: 12px;
 }
 .social_inner-item:hover {
-    box-shadow: 2px 2px 3px rgba(255,255,255,.3);
+    opacity: 1;
 }
 /* --------------- /social --------------- */
 

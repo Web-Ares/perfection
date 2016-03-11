@@ -45,14 +45,6 @@
     margin-bottom: 11px;
     line-height: 20px;
 }
-.pricing__item li div{
-    display: inline-block;
-    vertical-align: top;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #f2f2f2 url("../img/questions.png") no-repeat center;
-}
 .pricing__each{
     margin-bottom: 66px;
 }
@@ -153,6 +145,48 @@
     border-radius: 50%;
     background: center no-repeat;
 }
+.pricing__tooltips{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #f2f2f2 url("../img/questions.png") no-repeat center;
+}
+.pricing__tooltips span {
+    visibility: hidden;
+    position: absolute;
+    width:140px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #efefef;
+    background: #f2f2f2;
+    font: 18px 'Open Sans', 'sans-serif';
+    color: #999999;
+    line-height: 25px;
+    text-align: left;
+}
+.pricing__tooltips span:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #f2f2f2;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+.pricing__tooltips:hover.pricing__tooltips span {
+    visibility: visible;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -70px;
+    z-index: 3;
+}
+
 /* --------------- /pricing --------------- */
 
 /* --------------- btn --------------- */
@@ -177,43 +211,6 @@
     -webkit-transition: opacity .3s ease;
 }
 /* --------------- /btn --------------- */
-
-.tooltips {
-    position: relative;
-    display: inline;
-}
-.tooltips span {
-    visibility: hidden;
-    position: absolute;
-    width:140px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #efefef;
-    background: #f2f2f2;
-    font: 18px 'Open Sans', 'sans-serif';
-    color: #999999;
-    line-height: 25px;
-    text-align: left;
-}
-.tooltips span:after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -8px;
-    width: 0;
-    height: 0;
-    border-top: 8px solid #f2f2f2;
-    border-right: 8px solid transparent;
-    border-left: 8px solid transparent;
-}
-.tooltips:hover.tooltips span {
-    visibility: visible;
-    bottom: 30px;
-    left: 50%;
-    margin-left: -70px;
-    z-index: 3;
-}
 
 @media (min-width: 768px) {
     .pricing__wrap {

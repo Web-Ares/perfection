@@ -224,11 +224,11 @@
     display: inline-block;
     vertical-align: top;
     padding: 5px;
-    height: 40px;
+    height: 50px;
     width: 194px;
     background: #1565c0;
     color: #fff;
-    font-size: 15px;
+    font-size: 20px;
     line-height: 15px;
     border-radius: 50px;
     text-align: center;
@@ -897,7 +897,7 @@
 /* --------------- line-solid --------------- */
 .line-solid__layout {
     position: relative;
-    padding: 50px 0;
+    padding: 75px 0;
     margin: 0 0 40px;
     background-color: #f8f8f8;
 }
@@ -1346,6 +1346,9 @@
 /* ------------ /easy-way ------------ */
 
 /* --------------- we-impressed --------------- */
+.we-impressed{
+    padding-top: 50px;
+}
 .we-impressed__layout {
     z-index: 2;
     position: relative;
@@ -1444,8 +1447,9 @@
     font-family: "Proxima Nova Bold" , sans-serif;
     line-height: 42px;
 }
-.article h2 {
+.article h3 {
     margin-bottom: 20px;
+    font-family: "Proxima Nova Regular" , sans-serif;
     line-height: 42px;
 }
 /* --------------- /article --------------- */
@@ -1487,6 +1491,10 @@
     .sharpest-icons {
         padding: 100px 0;
     }
+    .sharpest-icons__approved {
+        font-size: 22px;
+        line-height: 25px;
+    }
     /* --------------- /sharpest-icons --------------- */
 
     /* ------------ icons-preview ------------ */
@@ -1512,7 +1520,6 @@
 
     /* ------------ pack-includes ------------ */
     .pack-includes__wrap{
-        text-align: left;
     }
     .pack-includes__item {
         width: 45%;
@@ -1540,6 +1547,12 @@
     .pixel-grid__img {
         height: 400px;
     }
+    .pixel-grid__perfect {
+        width: 366px;
+        height: 54px;
+        padding: 12px 15px;
+        font-size: 23px;
+    }
     /* ------------ /pixel-grid ------------ */
 
     /* ------------ customizable ------------ */
@@ -1552,11 +1565,18 @@
     .formats {
         padding: 100px 0;
     }
+    .formats__footnote {
+        font-size: 18px;
+        line-height: 20px;
+    }
     /* ------------ /formats ------------ */
 
     /* ------------ easy-way ------------ */
     .easy-way {
         padding-bottom: 100px;
+    }
+    .we-impressed{
+        padding-top: 50px;
     }
     /* ------------ /easy-way ------------ */
     /* ------------ social ------------ */
@@ -1788,7 +1808,7 @@
         vertical-align: middle;
         width: 43.8%;
         padding-bottom: 45.8%;
-        margin: 0 0 0 10%;
+        margin: 0 0 0 6%;
         text-align: left;
     }
     .formats__slider-item{
@@ -1951,6 +1971,10 @@
     }
     .icons-promo .site__title {
         margin-bottom: 22px;
+    }
+    .icons-preview img {
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(0.75);
+        transform: translateX(-50%) translateY(-50%) scale(0.75);
     }
     /* ------------ /icons-promo ------------ */
 

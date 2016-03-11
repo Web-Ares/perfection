@@ -29,10 +29,8 @@ var Menu = function (obj) {
     var _onEvents = function() {
             _btn.on( {
                 click: function() {
-
-
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
-                        _site.css ( 'height', 'auto' )
+                        _site.css ( 'height', 'auto' );
                         _header.removeClass( 'site__header_drop-menu' );
                         _window.scrollTop( siteScrollTop );
                         return false;
@@ -55,42 +53,29 @@ var Menu = function (obj) {
                         var siteSectionsTop = $( this ).offset().top,
                             siteSectionsHeight = $( this ).height(),
                             spaceBeforeBloc = 160;
-
                         if( siteSectionsTop <= _window.scrollTop() ) {
                             _header.removeClass( 'white' );
                             _header.addClass( $( this ).data( 'header-color' ) );
                         }
-
                         if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                             $( this ).addClass( 'active' );
                         }
-
                     } );
                     _action = _window.scrollTop() >= _header.innerHeight();
                 },
                 'DOMMouseScroll': function ( e ) {
-
                     var delta = e.originalEvent.detail;
-
                     if ( delta ) {
                         var direction = ( delta > 0 ) ? 1 : -1;
-
                         _checkScroll( direction );
-
                     }
-
                 },
                 'mousewheel': function ( e ) {
-
                     var delta = e.originalEvent.wheelDelta;
-
                     if ( delta ) {
                         var direction = ( delta > 0 ) ? -1 : 1;
-
                         _checkScroll( direction );
-
                     }
-
                 },
                 'touchmove': function ( e ) {
                     var currentPos = e.originalEvent.touches[0].clientY;
@@ -106,13 +91,14 @@ var Menu = function (obj) {
         _checkScroll = function( direction ){
             if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.addClass( 'site__header_hidden' );
-            };
+            }
             if( direction < 0 && _header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.removeClass('site__header_hidden');
-            };
+            }
         },
         _initContentScroll = function() {
-            self._myScroll = new IScroll( '#scroll-wrap' , {
+            $('.drop-menu__inner-wrap').css('height', '100%')
+            new IScroll( '#scroll-wrap' , {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,

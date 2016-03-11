@@ -706,8 +706,8 @@
     display: -ms-flexbox;
     display: -webkit-flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    -webkit-flex-direction: row;
+    flex-direction: column;
+    -webkit-flex-direction: column;
     justify-content: center;
     -webkit-justify-content: center;
     -ms-flex-align: center;
@@ -1899,6 +1899,7 @@
     }
     .icons-preview div.icons-preview__footer {
         padding: 3px 4% 0;
+        font-size: 18px;
     }
     .pages__item.active .icons-preview {
         opacity: 1;

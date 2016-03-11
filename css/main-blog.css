@@ -611,7 +611,69 @@
     margin-bottom: 36px;
     font: 30px "Proxima Nova Regular" , sans-serif;
 }
+.alignleft{
+    float: left;
+    margin: 76px 25px 76px 0;
+}
+.aligncenter{
+    display: inline-block;
+    margin: 76px 20px;
+}
+.alignright{
+    float: right;
+    margin: 76px 0 76px 25px;
+}
+.alignnone{
+    display: block;
+    width: 100%;
+    margin: 76px auto;
+}
 /* --------------- /article --------------- */
+
+/* --------------- quote --------------- */
+.quote{
+    display: block;
+    position: relative;
+    margin: 63px 0 97px;
+    padding-left: 32px;
+    padding-right: 30px;
+    font-size: 30px;
+    line-height: 40px;
+    color: #1565c0;
+}
+.quote:before{
+    position: absolute;
+    top: 6px;
+    bottom: 10px;
+    left: 0;
+    width: 5px;
+    background-color: #1565c0;
+    content: '';
+}
+/* --------------- /quote --------------- */
+
+/* --------------- author --------------- */
+.author{
+    overflow: hidden;
+    padding-bottom: 18px;
+    border-bottom: 3px solid #f3f3f3;
+}
+.author__ava {
+    float: left;
+    margin-right: 27px;
+}
+.author__content {
+    overflow: hidden;
+}
+.author__content p {
+    margin-bottom: 0;
+}
+.author__name {
+    display: inline-block;
+    margin-bottom: 6px;
+    font: 26px 'Proxima Nova Regular', sans-serif;
+}
+/* --------------- /author --------------- */
 
 /* --------------- article-author --------------- */
 .article-author{

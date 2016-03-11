@@ -155,21 +155,18 @@
     width: 28px;
     height: 28px;
     margin: 0 3px;
-    background: url("../img/icons-social-small.png") no-repeat;
+    border: 2px solid #cdcdcd;
+    border-radius: 25px;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }
+.pagination__social-item svg{
+    position: relative;
+    top: -9px;
+    width: 12px;
+}
 .pagination__social-item:hover {
     opacity: .8;
-}
-.pagination__social-item_fb{
-    background-position: 0 0;
-}
-.pagination__social-item_tw{
-    background-position: -40px 0;
-}
-.pagination__social-item_gg{
-    background-position: -80px 0;
 }
 /* --------------- /pagination --------------- */
 

@@ -558,12 +558,13 @@
 
 /* --------------- article --------------- */
 .article {
-    max-width: 616px;
+    max-width: 812px;
+    padding-top: 31px;
     padding-right: 10px;
     margin: 0 auto;
     color: #292929;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 30px;
 }
 .article a {
     border-bottom: 1px solid #1565c0;
@@ -595,6 +596,12 @@
     background-color: #292929;
     content: '';
 }
+.article h1 {
+    margin-bottom: 75px;
+    font-size: 66px;
+    line-height: 64px;
+    font-family: "Proxima Nova Bold" , sans-serif;
+}
 .article h2 {
     margin-bottom: 20px;
     font-family: "Proxima Nova Bold" , sans-serif;
@@ -602,9 +609,15 @@
 }
 .article h3 {
     margin-bottom: 20px;
-    line-height: 42px;
+    font: 30px "Proxima Nova Regular" , sans-serif;
 }
 /* --------------- /article --------------- */
+
+/* --------------- article-author --------------- */
+.article-author{
+
+}
+/* --------------- /article-author --------------- */
 
 @media (min-width: 550px) {
 

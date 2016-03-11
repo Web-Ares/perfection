@@ -1109,9 +1109,8 @@
     text-align: center;
 }
 .icons-promo p {
-    font-size: 5vmin;
-    line-height: 1.462;
     margin-bottom: 20px;
+    text-align: left;
 }
 .icons-promo__controls a {
     margin: 0 22px 15px;
@@ -1155,8 +1154,7 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-    width: 24%;
-    height: 10.5vmin;
+    width: 23%;
     height: 15.5vmin;
 }
 .icons-preview img {
@@ -1430,8 +1428,8 @@
 
     /* --------------- site --------------- */
     .site {
-        font-size: 3vmin;
-        line-height: 4vmin;
+        font-size: 4.6vmin;
+        line-height: 6vmin;
     }
     /* --------------- /site --------------- */
 
@@ -1459,6 +1457,9 @@
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
     }
+    .sharpest-icons {
+        padding: 100px 0;
+    }
     /* --------------- /sharpest-icons --------------- */
 
     /* ------------ icons-preview ------------ */
@@ -1467,8 +1468,8 @@
         height: 15.5vmin;
     }
     .icons-preview img {
-        -webkit-transform: translateX(-50%) translateY(-50%) scale(0.75);
-        transform: translateX(-50%) translateY(-50%) scale(0.75);
+        -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+        transform: translateX(-50%) translateY(-50%) scale(1);
     }
     .icons-preview div.icons-preview__footer {
         height: 40px;
@@ -1490,6 +1491,9 @@
         width: 45%;
         margin: 0 2vmin 4vmin;
     }
+    .pack-includes {
+        margin-bottom: 100px;
+    }
     /* ------------ /pack-includes ------------ */
 
     /* ------------ line-solid ------------ */
@@ -1497,7 +1501,37 @@
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
     }
+    .line-solid{
+        padding-bottom: 100px;
+    }
     /* ------------ /line-solid ------------ */
+
+    /* ------------ pixel-grid ------------ */
+    .pixel-grid__slider .swiper-container {
+        height: 550px;
+    }
+    .pixel-grid__img {
+        height: 400px;
+    }
+    /* ------------ /pixel-grid ------------ */
+
+    /* ------------ customizable ------------ */
+    .customizable {
+        padding-bottom: 100px;
+    }
+    /* ------------ /customizable ------------ */
+
+    /* ------------ formats ------------ */
+    .formats {
+        padding: 100px 0;
+    }
+    /* ------------ /formats ------------ */
+
+    /* ------------ easy-way ------------ */
+    .easy-way {
+        padding-bottom: 100px;
+    }
+    /* ------------ /easy-way ------------ */
 
 }
 @media (min-width: 800px) {
@@ -1718,7 +1752,7 @@
     .formats__slider{
         display: inline-block;
         vertical-align: middle;
-        width: 45.8%;
+        width: 43.8%;
         padding-bottom: 45.8%;
         margin: 0 0 0 10%;
         text-align: left;

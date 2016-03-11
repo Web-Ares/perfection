@@ -1,3 +1,4 @@
+/* --------------- policy --------------- */
 .policy{
     max-width: 636px;
     padding: 47px 15px;
@@ -25,6 +26,29 @@
 .policy a:hover{
     text-decoration: none;
 }
+/* --------------- /policy --------------- */
+
+/* --------------- tabs --------------- */
+.tabs {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 51px;
+}
+.tabs__wrapper {
+    padding-bottom: 30px;
+}
+.tabs__links{
+    display: block;
+    line-height: 40px;
+    color:#242a2f;
+    text-decoration: none !important;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
+.tabs__controls_hide{
+    display: none;
+}
 .tabs__controls-wrap {
     display: table;
     overflow: hidden;
@@ -34,14 +58,6 @@
     border-radius: 30px;
     border: 2px solid #242a2f;
     background: #242a2f;
-}
-.tabs__links{
-    display: block;
-    line-height: 40px;
-    color:#242a2f;
-    text-decoration: none !important;
-    -webkit-transition: color .3s ease;
-    transition: color .3s ease;
 }
 .tabs__controls-wrap div{
     display: table-cell;
@@ -75,26 +91,26 @@
 .tabs__controls-wrap div.active:hover{
     background: #242a2f;
 }
-.tabs__wrapper {
-    padding-bottom: 30px;
-}
-.tabs {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 51px;
-}
+/* --------------- /tabs --------------- */
+
 @media (min-width: 768px){
+
+    /* --------------- policy --------------- */
     .policy{
         font-size: 22px;
         line-height: 25px;
-    }
-    .tabs__controls-wrap {
-        width: 338px;
     }
     .policy p{
         margin-bottom: 25px;
         line-height: 27px;
     }
+    /* --------------- policy --------------- */
+
+    /* --------------- tabs --------------- */
+    .tabs__controls-wrap {
+        width: 338px;
+    }
+    /* --------------- /tabs --------------- */
+
 }
 

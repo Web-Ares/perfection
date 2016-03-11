@@ -110,7 +110,7 @@
     -webkit-transition: opacity .3s ease;
 }
 .pricing__info a:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .pricing__info img {
     width: 100%;
@@ -136,7 +136,7 @@
     -webkit-transition: opacity .3s ease;
 }
 .pricing__license a:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .pricing__user{
     position: absolute;

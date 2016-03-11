@@ -158,7 +158,7 @@
     background-color: #fff;
     border: 2px solid #cdcdcd;
     border-radius: 25px;
-    opacity: 0.8;
+    opacity: .9;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }

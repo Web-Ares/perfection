@@ -98,12 +98,6 @@
     color: #666;
 }
 .site__header{
-    display: flex;
-    -webkit-display: flex;
-    -moz-display: flex;
-    -moz-display: flex;
-    align-items: center;
-    justify-content: flex-end;
     position: fixed;
     top: 0;
     left: 0;
@@ -111,6 +105,7 @@
     z-index: 3;
     height: 50px;
     margin: 0 auto;
+    padding-top: 11px;
     border-bottom: 1px solid transparent;
     font-size: 12px;
     text-align: right;
@@ -128,7 +123,6 @@
 }
 .site__header-layout{
     position: relative;
-    width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -179,7 +173,7 @@
 /* --------------- logo --------------- */
 .logo {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 15px;
     width: 50px;
     z-index: 6;
@@ -237,7 +231,7 @@
     transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
 }
 .btn:hover{
-    opacity: 0.8;
+    opacity: .9;
 }
 .btn>div,
 .btn>span{
@@ -321,6 +315,7 @@
 .header-menu__item{
     display: inline-block;
     margin-right: 19px;
+    padding-top: 6px;
     font: 12px 'Proxima Nova Regular', sans-serif;
     color: #fff;
     text-transform: uppercase;
@@ -328,7 +323,7 @@
     -webkit-transition: opacity .3s ease, color .3s ease;
 }
 .header-menu__item:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .site__header.white .header-menu__item{
     color: #555;
@@ -578,7 +573,7 @@
     margin: 0 9px;
 }
 .social__item_inner:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .social_inner .social__item_fb{
     background-position: 0 0;
@@ -613,7 +608,7 @@
     margin-left: 7px;
 }
 .social_inner-item {
-    opacity: .8;
+    opacity: .9;
     display: inline-block;
     width: 28px;
     height: 28px;
@@ -1468,6 +1463,7 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item {
+        padding-top: 3px;
         font-size: 18px;
     }
     /* --------------- /header-menu --------------- */
@@ -1608,6 +1604,7 @@
     }
     .site__header{
         height: 64px;
+        padding-top: 14px;
     }
     .site__header_inner {
         padding: 28px 0 0;
@@ -1639,7 +1636,7 @@
 
     /* --------------- logo --------------- */
     .logo {
-        top: 2px;
+        top: 3px;
         width: 67px;
     }
     .logo_inner{
@@ -1687,7 +1684,8 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item{
-        margin-right: 34px;
+        margin-right: 35px;
+        padding-top: 8px;
     }
     /* --------------- /header-menu --------------- */
 
@@ -2166,7 +2164,7 @@
         transition: opacity .3s ease-in-out;
     }
     .we-impressed__info a:hover {
-        opacity: .85;
+        opacity: .9;
     }
     .we-impressed__info img  {
         width: auto;

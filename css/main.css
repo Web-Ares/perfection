@@ -618,6 +618,7 @@
 
 /* --------------- promo --------------- */
 .promo{
+    position: relative;
     padding-top: 16px;
     text-align: center;
     background-color: #242a2f;

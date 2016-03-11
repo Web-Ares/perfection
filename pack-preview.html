@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <title>Perfection</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/pricing-page.css"/>
+
+    <style>
+
+        /*------------preloader---------*/
+        .preloader {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0, 1);
+            -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+        }
+        .preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader__wrap {
+            position:absolute;
+            width:350px;
+            height:70px;
+            left:50%;
+            top:50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            overflow:hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+        .preloader__wrap div {
+            position: absolute;
+            width: 30px;
+            height: 46px;
+            opacity: 0;
+            font-family: "Nexa Regular", sans-serif;
+            font-size: 26px;
+            color: #fff;
+            -webkit-animation: move 2.5s linear infinite;
+            animation: move 2.5s linear infinite;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            -webkit-animation-delay: -1.8s;
+            animation-delay: -1.8s;
+        }
+        .preloader__wrap div:nth-child(2) {
+            -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
+        }
+        .preloader__wrap div:nth-child(3) {
+            -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
+        }
+        .preloader__wrap div:nth-child(4) {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+        .preloader__wrap div:nth-child(5) {
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
+        }
+        .preloader__wrap div:nth-child(6) {
+            -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
+        }
+        .preloader__wrap div:nth-child(7) {
+            -webkit-animation-delay:0s;
+            animation-delay:0s;
+        }
+
+        @-webkit-keyframes move {
+            0% {
+                left:0;
+                opacity:0;
+            }
+            30% {
+                left:41%;
+                -webkit-transform:rotate(0deg);
+                opacity:1;
+            }
+            65% {
+                left:59%;
+                -webkit-transform:rotate(0deg);
+                opacity:1;
+            }
+            90% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+            100% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+        }
+        @keyframes move {
+            0% {
+                left:0;
+                opacity:0;
+            }
+            30% {
+                left: 41%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            65% {
+                left:59%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            90% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+            100% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+        }
+        /*------------/preloader---------*/
+
+        @media (min-width: 992px) {
+
+            /*---------preloader--------*/
+            .preloader__wrap {
+                width:400px;
+                overflow: visible;
+            }
+            /*---------/preloader--------*/
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!-- site -->
+<div class="site">
+
+    <!--preloader-->
+    <div class="preloader">
+
+        <!--preloader__wrap-->
+        <div class="preloader__wrap">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+        </div>
+        <!--/preloader__wrap-->
+
+    </div>
+    <!--/preloader-->
+
+    <!-- site__header -->
+    <header class="site__header site__header_inner">
+
+        <!-- site__header-layout -->
+        <div class="site__header-layout">
+
+            <!-- logo -->
+            <a href="#" class="logo logo_inner">
+                <img src="img/logo_inside.png" alt="logo">
+            </a>
+            <!-- /logo -->
+
+            <!-- site__header__menu-drop -->
+            <a class="drop-menu-btn" href="#"><span></span></a>
+            <!-- /site__header__menu-drop -->
+
+        </div>
+        <!-- /site__header-layout -->
+
+        <!-- drop-menu -->
+        <div class="drop-menu">
+
+            <!-- drop-menu__inner -->
+            <div class="drop-menu__inner">
+
+                <!-- drop-menu__inner-wrap -->
+                <div class="drop-menu__inner-wrap"  id="scroll-wrap" >
+
+                    <!-- scroller -->
+                    <div  id="scroller">
+
+                        <!-- drop-menu__menu -->
+                        <ul class="drop-menu__menu">
+                            <li><a href="#" class="drop-menu__menu-item">View icons</a></li>
+                            <li><a href="#" class="drop-menu__menu-item">Pricing</a></li>
+                        </ul>
+                        <!-- /drop-menu__menu -->
+
+                        <!-- drop-menu__navigation -->
+                        <ul class="drop-menu__navigation">
+                            <li><a href="#" class="drop-menu__navigation-item">About</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Blog</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Affilates</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Support</a></li>
+                        </ul>
+                        <!-- /drop-menu__navigation -->
+
+                        <!-- drop-menu__legally -->
+                        <ul class="drop-menu__legally">
+                            <li><a href="#" class="drop-menu__legally-item">Classic license</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Extended license</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Terms of use</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Privicy policy</a></li>
+                        </ul>
+                        <!-- /drop-menu__legally -->
+
+                    </div>
+                    <!-- /scroller -->
+
+                </div>
+                <!-- /drop-menu__inner-wrap -->
+
+                <!-- drop-menu__inner -->
+                <span class="copyright">© ICON54 2016. All rights reserved</span>
+                <!-- drop-menu__inner -->
+
+                <!-- social -->
+                <div class="social">
+                    <a href="#" class="social__item social__item_mail"></a>
+                    <a href="#" class="social__item social__item_btn"></a>
+                    <a href="#" class="social__item social__item_tw"></a>
+                    <a href="#" class="social__item social__item_fb"></a>
+                </div>
+                <!-- /social -->
+
+            </div>
+            <!-- /drop-menu__inner -->
+
+        </div>
+        <!-- /drop-menu -->
+
+    </header>
+    <!-- site__header -->
+
+    <!-- promo -->
+    <div data-header-color="black" class="promo promo_inner">
+
+        <!-- promo__wrap -->
+        <div class="promo__wrap promo__wrap_inner">
+
+            <!-- site__centered -->
+            <div class="site__centered">
+
+                <!-- promo__content -->
+                <div class="promo__content promo__content_inner">
+
+                    <!-- promo__topic -->
+                    <h1 class="promo__topic">Preview 3,000 icons</h1>
+                    <!-- /promo__topic -->
+
+                    <p>The sharpest icons ever</p>
+                </div>
+                <!-- /promo__content -->
+
+            </div>
+            <!-- /site__centered -->
+
+        </div>
+        <!-- /promo__wrap -->
+
+    </div>
+    <!-- /promo -->
+
+    <!-- pricing -->
+    <div class="pricing">
+
+        <!-- pricing__wrap -->
+        <div class="pricing__wrap">
+
+            <!-- pricing__item -->
+            <div class="pricing__item">
+
+                <!-- pricing__title -->
+                <h2 class="pricing__title">Standard</h2>
+                <!-- /pricing__title -->
+
+                <!-- pricing__price -->
+                <div class="pricing__price"><sup>$</sup>67</div>
+                <!-- /pricing__price -->
+
+                <!-- pricing__pic -->
+                <div class="pricing__pic" style="background-image: url(pic/pricing01.jpg)"></div>
+                <!-- /pricing__pic -->
+
+                <!-- pricing__purchase -->
+                <ul class="pricing__purchase">
+                    <li><span>5</span> Users</li>
+                    <li><span>3,000</span> Icons</li>
+                    <li><span>Iconjar</span> Mac app <div class="pricing__tooltips"><span>bla bla</span></div></li>
+                </ul>
+                <!-- /pricing__purchase -->
+
+                <!-- btn btn_4 -->
+                <a href="#" class="btn btn_4"><span>Purchase</span></a>
+                <!-- /btn btn_4 -->
+
+            </div>
+            <!-- /pricing__item -->
+
+            <!-- pricing__item -->
+            <div class="pricing__item">
+
+                <!-- pricing__title -->
+                <h2 class="pricing__title">Premium</h2>
+                <!-- /pricing__title -->
+
+                <!-- /pricing__title -->
+                <div class="pricing__price"><sup>$</sup>97</div>
+                <!-- /pricing__title -->
+
+                <!-- pricing__pic -->
+                <div class="pricing__pic" style="background-image: url(pic/pricing02.jpg)"></div>
+                <!-- /pricing__pic -->
+
+                <!-- pricing__purchase -->
+                <ul class="pricing__purchase">
+                    <li><span>5</span> Users</li>
+                    <li><span>3,000</span> Icons</li>
+                    <li><span>Iconjar</span> Mac app <div class="pricing__tooltips"><span>bla bla</span></div></li>
+                    <li><span>Unlimited</span> Icons update <div class="pricing__tooltips"><span>bla bla</span></div></li>
+                </ul>
+                <!-- /pricing__purchase -->
+
+                <!-- btn btn_4 -->
+                <a href="#" class="btn btn_4"><span>Purchase</span></a>
+                <!-- /btn btn_4 -->
+
+            </div>
+            <!-- /pricing__item -->
+
+        </div>
+        <!-- /pricing__wrap -->
+
+        <!-- pricing__item pricing_pack -->
+        <div class="pricing__item pricing_pack">
+
+            <!-- pricing__pack-title -->
+            <h2 class="pricing__pack-title">Each pack includes</h2>
+            <!-- /pricing__pack-title -->
+
+            <!-- pricing__each -->
+            <ul class="pricing__each">
+                <li>One time payment</li>
+                <li>30 day money back guarantee </li>
+                <li>Line & Glyph (6,000 icons in total)</li>
+                <li>Royality free licenses <div class="pricing__tooltips"><span>bla bla bla bla bla bla bla bla</span></div></li>
+                <li>iOS & Android ready</li>
+                <li>Eps. Ai. Svg, Sketch fons and Css</li>
+            </ul>
+            <!-- /pricing__each -->
+
+            <!--pricing__text-->
+            <div class="pricing__text">
+
+                <p>Highly reccomended for
+                    Designers and web-devlopers.
+                </p>
+
+                <!--pricing__info-->
+                <div class="pricing__info">
+
+                    <a href="#">
+                        <img src="pic/pricing_company.png" alt="pricing_company">
+                    </a>
+
+                    <!--pricing__info-user-->
+                    <div class="pricing__info-user">
+                        Nir Yuz - UX Studio Manager
+                    </div>
+                    <!--/pricing__info-user-->
+
+                </div>
+                <!--/pricing__info-->
+
+                <!--pricing__licenser-->
+                <div class="pricing__license"><a href="#">Looking for a customized license?</a></div>
+                <!--/pricing__license-->
+
+                <!--pricing__user-->
+                <div class="pricing__user" style="background-image: url(pic/pricing-face.jpg)"></div>
+                <!--/pricing__user-->
+
+            </div>
+            <!--/pricing__text-->
+
+        </div>
+        <!-- /pricing__item pricing_pack -->
+
+        <!-- pricing__pay -->
+        <div class="pricing__pay">
+            <div class="pricing__pay-item" style="background-image:url(pic/pricing-pay01.png)"></div>
+            <div class="pricing__pay-item" style="background-image:url(pic/pricing-pay02.png)"></div>
+            <div class="pricing__pay-item" style="background-image:url(pic/pricing-pay03.png)"></div>
+            <div class="pricing__pay-item" style="background-image:url(pic/pricing-pay04.png)"></div>
+        </div>
+        <!-- /pricing__pay -->
+
+    </div>
+    <!-- /pricing -->
+
+</div>
+<!-- /site -->
+
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/iscroll.js"></script>
+<script src="js/jquery.main.js"></script>
+
+</body>
+</html>

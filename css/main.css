@@ -140,7 +140,7 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 1211px;
+    max-width: 1228px;
     padding: 0 20px;
     margin: 0 auto;
 }
@@ -2400,7 +2400,7 @@
 
     /* --------------- pack-includes --------------- */
     .pack-includes{
-        padding: 100px 0;
+        padding: 111px 0 69px;
     }
     .pack-includes__title {
         font-size: 22px;
@@ -2409,7 +2409,7 @@
     .pack-includes__item {
         width: 21%;
         font-size: 20px;
-        margin-bottom: 64px;
+        margin-bottom: 43px;
     }
     .pack-includes .site__title {
         margin-bottom: 112px;
@@ -2417,7 +2417,7 @@
     }
     .pack-includes__pic {
         height: 61px;
-        margin-bottom: 30px;
+        margin-bottom: 21px;
     }
     .pack-includes__pic img {
         position: relative;

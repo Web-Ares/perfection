@@ -620,6 +620,7 @@
 .promo{
     padding-top: 16px;
     text-align: center;
+    background-color: #242a2f;
 }
 .promo__wrap{
     display: -webkit-box;

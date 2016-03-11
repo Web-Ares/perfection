@@ -2402,16 +2402,18 @@
 
     /* --------------- pack-includes --------------- */
     .pack-includes{
-        padding: 111px 0 69px;
+        padding: 111px 0 79px;
     }
     .pack-includes__title {
         font-size: 22px;
         margin-bottom: 11px;
+        line-height: 20px;
     }
     .pack-includes__item {
         width: 21%;
         font-size: 20px;
         margin-bottom: 43px;
+        line-height: 24px;
     }
     .pack-includes .site__title {
         margin-bottom: 112px;
@@ -2419,7 +2421,7 @@
     }
     .pack-includes__pic {
         height: 61px;
-        margin-bottom: 21px;
+        margin-bottom: 28px;
     }
     .pack-includes__pic img {
         position: relative;

@@ -52,13 +52,14 @@
 .pricing__pack-title{
     margin-bottom: 15px;
     font: 18px "Open Sans";
-    font-weight: 600;
+    font-weight: 700;
 }
 .pricing__each li{
     position: relative;
     padding-left: 3px;
     margin-bottom: 15px;
     font: 18px 'Open Sans', 'sans-serif';
+    font-weight: 400;
     color: #999999;
 }
 .pricing__each li:before{
@@ -163,7 +164,7 @@
     border-radius: 6px;
     border: 1px solid #efefef;
     background: #f2f2f2;
-    font: 18px 'Open Sans', 'sans-serif';
+    font: 18px 'Proxima Nova Light', 'sans-serif';
     color: #999999;
     line-height: 25px;
     text-align: left;

@@ -232,11 +232,11 @@ var SliderFormats = function (obj) {
         },
         _positionItems = function () {
 
-            if (_window.width() < 768) {
+            if (_window.width() < 550) {
 
                 _distance = 20;
 
-            } else if (_window.width() >= 768 && _window.width() < 1200) {
+            } else if (_window.width() >= 550 && _window.width() < 1200) {
 
                 _distance = 70;
 

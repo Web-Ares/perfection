@@ -22,30 +22,34 @@ $(function () {
 });
 
 var Menu = function (obj) {
-    var _obj = obj,
-        _btn = $( '.drop-menu-btn' ),
+    var _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
-        _menuContent = _obj.find( '.drop-menu__inner-wrap'),
         _action = false,
         _lastPos,
-        _myScroll,
+        _site = $( '.site' ),
         _window = $( window );
 
     var _onEvents = function() {
             _btn.on( {
                 click: function() {
 
+
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
+                        _site.css ( 'height', 'auto' )
                         _header.removeClass( 'site__header_drop-menu' );
-
-                        $( 'body').css ( 'overflow', 'visible' )
-
+                        _window.scrollTop( siteScrollTop );
+                        return false;
                     } else {
+                        siteScrollTop = _window.scrollTop();
                         _header.addClass( 'site__header_drop-menu' );
 
-                        $( 'body').css ( 'overflow', 'hidden' );
+                        // for css animation
+                        setTimeout( function() {
+                            _site.css ( 'height', '100%' );
+                        }, 300);
 
+                        return false;
                     }
                 }
             } );

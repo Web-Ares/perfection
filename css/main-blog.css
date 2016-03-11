@@ -114,7 +114,6 @@
     border-bottom: 1px solid transparent;
     font-size: 12px;
     text-align: right;
-    background-color: #242a2f;
     transition: border-bottom .2s ease, background-color .2s ease, transform .3s ease;
     -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .3s ease;
 }
@@ -515,6 +514,8 @@
     max-height: 500px;
     padding-top: 0;
     text-align: center;
+    background-position: center;
+    background-size: cover;
     background-color: #242a2f;
 }
 .promo__wrap{

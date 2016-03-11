@@ -230,19 +230,11 @@
     color: #fff;
     font-size: 15px;
     line-height: 15px;
-    border-radius: 30px;
+    border-radius: 50px;
     text-align: center;
     font-family: "Proxima Nova Regular", sans-serif;
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
-}
-.btn_6{
-    width: 100%;
-    height: 50px;
-    padding-top: 19px;
-    border-radius: 5px;
-    font-size: 17px;
-    font-family: "Proxima Nova Bold", sans-serif;
 }
 .btn:hover{
     opacity: 0.8;
@@ -283,13 +275,38 @@
     line-height: 20px;
 }
 .btn_4{
+
 }
 .btn_5>span{
     height: 84%;
     font-size: 17px;
 }
 .btn_5 span>span{
-    font-family: "Proxima Nova Bold";
+    font-family: "Proxima Nova Bold", sans-serif;
+}
+.btn_6{
+    width: 100%;
+    height: 50px;
+    padding-top: 19px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: "Proxima Nova Bold", sans-serif;
+}
+.btn_7{
+    margin-top: 35px;
+    margin-right: -3px;
+    border: 2px solid #242a2f!important;;
+    background-color: #242a2f;
+    border-radius: 25px 0 0 25px;
+    color: #fff!important;
+}
+.btn_8{
+    margin-top: 35px;
+    margin-left: -3px;
+    border: 2px solid #242a2f!important;
+    border-radius: 0 25px 25px 0;
+    background-color: transparent;
+    color: #242a2f!important;;
 }
 /* --------------- /btn --------------- */
 
@@ -1528,6 +1545,7 @@
         width: 67px;
     }
     .logo_inner{
+        width: 104px;
         margin-top: 3px;
     }
     /* --------------- /logo --------------- */
@@ -1535,7 +1553,6 @@
     /* --------------- btn --------------- */
     .btn {
         height: 44px;
-        border-radius: 44px;
         font-size: 1.9vmin;
         line-height: 1.9vmin;
     }

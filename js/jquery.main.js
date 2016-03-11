@@ -138,16 +138,13 @@ var Preloader = function ( obj ) {
             _window.on( {
                 load: function(){
 
+                    _obj.addClass( 'hide' );
+
                     setTimeout( function () {
-                        _obj.addClass( 'hide' );
 
-                        setTimeout( function () {
+                         _obj.remove()
 
-                             _obj.remove()
-
-                             }, 400 );
-
-                    }, _delay );
+                    }, 400 );
 
                 }
             } );

@@ -1568,6 +1568,18 @@
     .formats__footnote {
         font-size: 18px;
         line-height: 20px;
+        margin-bottom: 50px;
+    }
+    .formats__slider-item {
+        width: 120px;
+        height: 120px;
+        margin: -60px 0 0 -60px;
+        font-size: 25px;
+        line-height: 27px;
+    }
+    .formats__slider-text>div {
+        font-size: 19px;
+        line-height: 24px;
     }
     /* ------------ /formats ------------ */
 
@@ -1799,6 +1811,7 @@
     .formats__footnote{
         font-size: 16px;
         line-height: 24px;
+        margin-bottom: 0;
     }
     .formats__text{
         margin: 33px 0 40px;

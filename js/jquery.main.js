@@ -29,6 +29,7 @@ var Menu = function (obj) {
         _menuContent = _obj.find( '.drop-menu__inner-wrap'),
         _action = false,
         _lastPos,
+        _myScroll,
         _window = $( window );
 
     var _onEvents = function() {
@@ -49,9 +50,6 @@ var Menu = function (obj) {
                 }
             } );
             _window.on( {
-                'resize': function() {
-                    _contentScroll();
-                },
                 'scroll': function () {
                     _siteSections.each( function() {
                         var siteSectionsTop = $( this ).offset().top,
@@ -113,31 +111,16 @@ var Menu = function (obj) {
                 _header.removeClass('site__header_hidden');
             };
         },
-        _contentScroll = function() {
-            _menuContent.outerHeight( 'auto' );
-            if( _menuContent.outerHeight() > _window.outerHeight() - 140 ) {
-                _menuContent.outerHeight( '100%' );
-                _menuContent.css( 'overflow-y', 'scroll' );
-                /*_initContentScroll();
-                _menuContent.getNiceScroll().show();
-                _menuContent.getNiceScroll().resize();*/
-            } else {
-                /*_menuContent.outerHeight( 'auto' );
-                _menuContent.getNiceScroll().hide();*/
-            }
-        },
         _initContentScroll = function() {
-            _menuContent.niceScroll( {
-                cursorcolor: '#fff',
-                zindex: 10,
-                autohidemode: false,
-                horizrailenabled: false,
-                cursorborderradius: 0,
-                cursorwidth: '2px'
-            } );
+            self._myScroll = new IScroll( '#scroll-wrap' , {
+                mouseWheel: true,
+                scrollbars: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale'
+            });
         },
         init = function() {
-            _contentScroll();
+            _initContentScroll();
             _onEvents();
         };
 

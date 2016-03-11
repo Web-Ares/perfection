@@ -57,7 +57,7 @@ var Menu = function (obj) {
                             _header.removeClass( 'white' );
                             _header.addClass( $( this ).data( 'header-color' ) );
                         }
-                        if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
+                        if( ( siteSectionsTop <= _window.scrollTop() + siteSectionsHeight - spaceBeforeBloc ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                             $( this ).addClass( 'active' );
                         }
                     } );

@@ -191,7 +191,7 @@
     transition: opacity .3s ease;
 }
 .btn:hover{
-    opacity: 0.8;
+    opacity: .9;
 }
 .btn>span{
     display: flex;
@@ -219,7 +219,7 @@
     -webkit-transition: opacity .3s ease, color .3s ease;
 }
 .header-menu__item:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .site__header.white .header-menu__item{
     color: #555;
@@ -469,7 +469,7 @@
     margin: 0 9px;
 }
 .social__item_inner:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .social_inner .social__item_fb{
     background-position: 0 0;

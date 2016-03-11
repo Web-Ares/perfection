@@ -162,7 +162,7 @@
     -webkit-transition: opacity .3s ease;
 }
 .similar-records__item:hover{
-    opacity: .8;
+    opacity: .9;
 }
 .similar-records__item img{
     width: 100%;

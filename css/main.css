@@ -233,8 +233,8 @@
     border-radius: 50px;
     text-align: center;
     font-family: "Proxima Nova Regular", sans-serif;
-    -webkit-transition: opacity .3s ease;
-    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
+    transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
 }
 .btn:hover{
     opacity: 0.8;
@@ -308,7 +308,11 @@
     border: 2px solid #242a2f!important;
     border-radius: 0 25px 25px 0;
     background-color: transparent;
-    color: #242a2f!important;;
+    color: #242a2f!important;
+}
+.btn_8:hover{
+    background-color: #242a2f;
+    color: #fff!important;
 }
 /* --------------- /btn --------------- */
 

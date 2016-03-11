@@ -160,9 +160,16 @@
 }
 .logo img{
     width: 100%;
-    margin-top: 5px;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
+}
+.logo__subtopic{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #999;
 }
 /* --------------- /logo --------------- */
 
@@ -660,6 +667,12 @@
         top: 2px;
         width: 104px;
         margin-top: 3px;
+    }
+    .logo__subtopic{
+        top: auto;
+        bottom: 7px;
+        left: 100%;
+        font-size: 22px;
     }
     /* --------------- /logo --------------- */
 

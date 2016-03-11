@@ -8,7 +8,6 @@
     <meta name="format-detection" content="address=no">
 
     <title>Perfection</title>
-    <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
     <style>
@@ -139,7 +138,7 @@
 <div class="site">
 
     <!--preloader-->
-    <div class="preloader">
+    <div class="preloader" data-delay="2000">
 
         <!--preloader__wrap-->
         <div class="preloader__wrap">
@@ -190,32 +189,38 @@
             <div class="drop-menu__inner">
 
                 <!-- drop-menu__inner-wrap -->
-                <div class="drop-menu__inner-wrap">
+                <div class="drop-menu__inner-wrap"  id="scroll-wrap" >
 
-                    <!-- drop-menu__menu -->
-                    <ul class="drop-menu__menu">
-                        <li><a href="#" class="drop-menu__menu-item">View icons</a></li>
-                        <li><a href="#" class="drop-menu__menu-item">Pricing</a></li>
-                    </ul>
-                    <!-- /drop-menu__menu -->
+                    <!-- scroller -->
+                    <div  id="scroller">
 
-                    <!-- drop-menu__navigation -->
-                    <ul class="drop-menu__navigation">
-                        <li><a href="#" class="drop-menu__navigation-item">About</a></li>
-                        <li><a href="#" class="drop-menu__navigation-item">Blog</a></li>
-                        <li><a href="#" class="drop-menu__navigation-item">Affilates</a></li>
-                        <li><a href="#" class="drop-menu__navigation-item">Support</a></li>
-                    </ul>
-                    <!-- /drop-menu__navigation -->
+                        <!-- drop-menu__menu -->
+                        <ul class="drop-menu__menu">
+                            <li><a href="#" class="drop-menu__menu-item">View icons</a></li>
+                            <li><a href="#" class="drop-menu__menu-item">Pricing</a></li>
+                        </ul>
+                        <!-- /drop-menu__menu -->
 
-                    <!-- drop-menu__legally -->
-                    <ul class="drop-menu__legally">
-                        <li><a href="#" class="drop-menu__legally-item">Classic license</a></li>
-                        <li><a href="#" class="drop-menu__legally-item">Extended license</a></li>
-                        <li><a href="#" class="drop-menu__legally-item">Terms of use</a></li>
-                        <li><a href="#" class="drop-menu__legally-item">Privicy policy</a></li>
-                    </ul>
-                    <!-- /drop-menu__legally -->
+                        <!-- drop-menu__navigation -->
+                        <ul class="drop-menu__navigation">
+                            <li><a href="#" class="drop-menu__navigation-item">About</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Blog</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Affilates</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Support</a></li>
+                        </ul>
+                        <!-- /drop-menu__navigation -->
+
+                        <!-- drop-menu__legally -->
+                        <ul class="drop-menu__legally">
+                            <li><a href="#" class="drop-menu__legally-item">Classic license</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Extended license</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Terms of use</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Privicy policy</a></li>
+                        </ul>
+                        <!-- /drop-menu__legally -->
+
+                    </div>
+                    <!-- /scroller -->
 
                 </div>
                 <!-- /drop-menu__inner-wrap -->
@@ -281,22 +286,24 @@
             <!-- article -->
             <article class="article">
 
-                <h2 class="article__title">Spread the word and earn</h2>
+                <h2>Spread the word and earn</h2>
 
                 <p>Icon54 cares about the quality of our icons product.  After 10 months of hard work our first pack was released. Our conversion rate is proven to be very high and by sending us your traffic you will benefit greatly.</p>
 
-                <h2 class="article__title">Easy as 123, no setup needed</h2>
+                <h2>Easy as 123, no setup needed</h2>
 
                 <p>In a few short minutes  your account is ready and you can start spreading the word and earning 25% on each sale.</p>
 
                 <p>Best of all, you will get your own dashboard to track all your sales. You can use your referral URL on your website, blog, faecbook, tweet and more.</p>
 
-                <div class="btn btn_1"><span>Sign up now</span></div>
+                <a href="#" class="btn btn_7"><span>Sign up now</span></a>
 
-                <div class="btn btn_3"><span>Login</span></div>
+                <a href="#" class="btn btn_8"><span>Login</span></a>
 
             </article>
             <!-- /article -->
+
+            
 
         </div>
         <!-- site__centered -->
@@ -308,8 +315,7 @@
 <!-- /site -->
 
 <script src="js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-<script src="js/swiper.min.js"></script>
+<script src="js/iscroll.js"></script>
 <script src="js/jquery.main.js"></script>
 
 </body>

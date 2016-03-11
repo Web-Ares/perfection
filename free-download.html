@@ -8,7 +8,6 @@
     <meta name="format-detection" content="address=no">
 
     <title>Perfection</title>
-    <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/free-download.css"/>
 
@@ -140,7 +139,7 @@
 <div class="site">
 
     <!--preloader-->
-    <div class="preloader">
+    <div class="preloader" data-delay="2000">
 
         <!--preloader__wrap-->
         <div class="preloader__wrap">
@@ -184,14 +183,14 @@
         </div>
         <!-- /site__header-layout -->
 
-        <!-- drop-menu -->
-        <div class="drop-menu">
+        <!-- drop-menu__inner -->
+        <div class="drop-menu__inner">
 
-            <!-- drop-menu__inner -->
-            <div class="drop-menu__inner">
+            <!-- drop-menu__inner-wrap -->
+            <div class="drop-menu__inner-wrap"  id="scroll-wrap" >
 
-                <!-- drop-menu__inner-wrap -->
-                <div class="drop-menu__inner-wrap">
+                <!-- scroller -->
+                <div  id="scroller">
 
                     <!-- drop-menu__menu -->
                     <ul class="drop-menu__menu">
@@ -219,32 +218,32 @@
                     <!-- /drop-menu__legally -->
 
                 </div>
-                <!-- /drop-menu__inner-wrap -->
-
-                <!-- drop-menu__inner -->
-                <span class="copyright">© ICON54 2016. All rights reserved</span>
-                <!-- drop-menu__inner -->
-
-                <!-- social -->
-                <div class="social">
-                    <a href="#" class="social__item social__item_mail"></a>
-                    <a href="#" class="social__item social__item_btn"></a>
-                    <a href="#" class="social__item social__item_tw"></a>
-                    <a href="#" class="social__item social__item_fb"></a>
-                </div>
-                <!-- /social -->
+                <!-- /scroller -->
 
             </div>
-            <!-- /drop-menu__inner -->
+            <!-- /drop-menu__inner-wrap -->
+
+            <!-- drop-menu__inner -->
+            <span class="copyright">© ICON54 2016. All rights reserved</span>
+            <!-- drop-menu__inner -->
+
+            <!-- social -->
+            <div class="social">
+                <a href="#" class="social__item social__item_mail"></a>
+                <a href="#" class="social__item social__item_btn"></a>
+                <a href="#" class="social__item social__item_tw"></a>
+                <a href="#" class="social__item social__item_fb"></a>
+            </div>
+            <!-- /social -->
 
         </div>
-        <!-- /drop-menu -->
+        <!-- /drop-menu__inner -->
 
     </header>
     <!-- site__header -->
 
     <!-- promo -->
-    <div class="promo promo_inner pages__item active">
+    <div class="promo promo_inner">
 
         <!-- promo__wrap -->
         <div class="promo__wrap promo__wrap_inner">
@@ -329,8 +328,7 @@
 <!-- /site -->
 
 <script src="js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
-<script src="js/swiper.min.js"></script>
+<script src="js/iscroll.js"></script>
 <script src="js/jquery.main.js"></script>
 </body>
 </html>

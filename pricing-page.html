@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -139,7 +140,7 @@
 <div class="site">
 
     <!--preloader-->
-    <div class="preloader">
+    <div class="preloader" data-delay="2000">
 
         <!--preloader__wrap-->
         <div class="preloader__wrap">
@@ -182,32 +183,38 @@
             <div class="drop-menu__inner">
 
                 <!-- drop-menu__inner-wrap -->
-                <div class="drop-menu__inner-wrap">
+                <div class="drop-menu__inner-wrap"  id="scroll-wrap" >
 
-                    <!-- drop-menu__menu -->
-                    <ul class="drop-menu__menu">
-                        <li><a href="#" class="drop-menu__menu-item">View icons</a></li>
-                        <li><a href="#" class="drop-menu__menu-item">Pricing</a></li>
-                    </ul>
-                    <!-- /drop-menu__menu -->
+                    <!-- scroller -->
+                    <div  id="scroller">
 
-                    <!-- drop-menu__navigation -->
-                    <ul class="drop-menu__navigation">
-                        <li><a href="#" class="drop-menu__navigation-item">About</a></li>
-                        <li><a href="#" class="drop-menu__navigation-item">Blog</a></li>
-                        <li><a href="#" class="drop-menu__navigation-item">Affilates</a></li>
-                        <li><a href="#" class="drop-menu__navigation-item">Support</a></li>
-                    </ul>
-                    <!-- /drop-menu__navigation -->
+                        <!-- drop-menu__menu -->
+                        <ul class="drop-menu__menu">
+                            <li><a href="#" class="drop-menu__menu-item">View icons</a></li>
+                            <li><a href="#" class="drop-menu__menu-item">Pricing</a></li>
+                        </ul>
+                        <!-- /drop-menu__menu -->
 
-                    <!-- drop-menu__legally -->
-                    <ul class="drop-menu__legally">
-                        <li><a href="#" class="drop-menu__legally-item">Classic license</a></li>
-                        <li><a href="#" class="drop-menu__legally-item">Extended license</a></li>
-                        <li><a href="#" class="drop-menu__legally-item">Terms of use</a></li>
-                        <li><a href="#" class="drop-menu__legally-item">Privicy policy</a></li>
-                    </ul>
-                    <!-- /drop-menu__legally -->
+                        <!-- drop-menu__navigation -->
+                        <ul class="drop-menu__navigation">
+                            <li><a href="#" class="drop-menu__navigation-item">About</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Blog</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Affilates</a></li>
+                            <li><a href="#" class="drop-menu__navigation-item">Support</a></li>
+                        </ul>
+                        <!-- /drop-menu__navigation -->
+
+                        <!-- drop-menu__legally -->
+                        <ul class="drop-menu__legally">
+                            <li><a href="#" class="drop-menu__legally-item">Classic license</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Extended license</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Terms of use</a></li>
+                            <li><a href="#" class="drop-menu__legally-item">Privicy policy</a></li>
+                        </ul>
+                        <!-- /drop-menu__legally -->
+
+                    </div>
+                    <!-- /scroller -->
 
                 </div>
                 <!-- /drop-menu__inner-wrap -->
@@ -235,7 +242,7 @@
     <!-- site__header -->
 
     <!-- promo -->
-    <div data-header-color="black" class="promo promo_inner pages__item active">
+    <div data-header-color="black" class="promo promo_inner">
 
         <!-- promo__wrap -->
         <div class="promo__wrap promo__wrap_inner">
@@ -404,7 +411,7 @@
 <!-- /site -->
 
 <script src="js/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script src="js/iscroll.js"></script>
 <script src="js/jquery.main.js"></script>
 
 </body>

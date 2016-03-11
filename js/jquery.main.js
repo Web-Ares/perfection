@@ -130,7 +130,6 @@ var Menu = function (obj) {
 var Preloader = function ( obj ) {
 
     var _obj = obj,
-        _delay = _obj.data( 'delay' ),
         _window = $( window );
 
     var _onEvents = function() {

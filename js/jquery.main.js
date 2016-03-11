@@ -15,37 +15,35 @@ $(function () {
     $.each( $('.formats__slider'), function() {
         new SliderFormats( $( this ) );
     } );
-
-    $.each( $( '.tabs' ), function () {
-        new Tabs( $( this ) );
-    });
 });
 
 var Menu = function (obj) {
-    var _obj = obj,
-        _btn = $( '.drop-menu-btn' ),
+    var _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
-        _menuContent = _obj.find( '.drop-menu__inner-wrap'),
         _action = false,
         _lastPos,
-        _myScroll,
+        _site = $( '.site' ),
         _window = $( window );
 
     var _onEvents = function() {
             _btn.on( {
                 click: function() {
-
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
+                        _site.css ( 'height', 'auto' );
                         _header.removeClass( 'site__header_drop-menu' );
-
-                        $( 'body').css ( 'overflow', 'visible' )
-
+                        _window.scrollTop( siteScrollTop );
+                        return false;
                     } else {
+                        siteScrollTop = _window.scrollTop();
                         _header.addClass( 'site__header_drop-menu' );
 
-                        $( 'body').css ( 'overflow', 'hidden' );
+                        // for css animation
+                        setTimeout( function() {
+                            _site.css ( 'height', '100%' );
+                        }, 300);
 
+                        return false;
                     }
                 }
             } );
@@ -55,42 +53,29 @@ var Menu = function (obj) {
                         var siteSectionsTop = $( this ).offset().top,
                             siteSectionsHeight = $( this ).height(),
                             spaceBeforeBloc = 160;
-
                         if( siteSectionsTop <= _window.scrollTop() ) {
                             _header.removeClass( 'white' );
                             _header.addClass( $( this ).data( 'header-color' ) );
                         }
-
                         if( ( siteSectionsTop - spaceBeforeBloc <= _window.scrollTop() ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                             $( this ).addClass( 'active' );
                         }
-
                     } );
                     _action = _window.scrollTop() >= _header.innerHeight();
                 },
                 'DOMMouseScroll': function ( e ) {
-
                     var delta = e.originalEvent.detail;
-
                     if ( delta ) {
                         var direction = ( delta > 0 ) ? 1 : -1;
-
                         _checkScroll( direction );
-
                     }
-
                 },
                 'mousewheel': function ( e ) {
-
                     var delta = e.originalEvent.wheelDelta;
-
                     if ( delta ) {
                         var direction = ( delta > 0 ) ? -1 : 1;
-
                         _checkScroll( direction );
-
                     }
-
                 },
                 'touchmove': function ( e ) {
                     var currentPos = e.originalEvent.touches[0].clientY;
@@ -106,13 +91,14 @@ var Menu = function (obj) {
         _checkScroll = function( direction ){
             if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.addClass( 'site__header_hidden' );
-            };
+            }
             if( direction < 0 && _header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.removeClass('site__header_hidden');
-            };
+            }
         },
         _initContentScroll = function() {
-            self._myScroll = new IScroll( '#scroll-wrap' , {
+            $('.drop-menu__inner-wrap').css('height', '100%')
+            new IScroll( '#scroll-wrap' , {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,
@@ -372,88 +358,6 @@ var SliderSingle = function (obj) {
             _initSlider();
             _obj[0].obj = _self;
 
-        };
-
-    _init();
-};
-
-var Tabs = function (obj) {
-
-    var _obj = obj,
-        _window = $( window ),
-        _body = $( 'body' ),
-        _tabBtn = _obj.find( '.tabs__controls-wrap > div' ),
-        _tabBtnInner = _tabBtn.find( '> span' ),
-        _tabContent = _obj.find( '.tabs__wrapper' ),
-        _controls = _obj.find( '.tabs__controls-wrap' ),
-        _tabContentItem = _tabContent.find( '> div' );
-
-    var _addEvents = function () {
-
-            _window.on( {
-                'load': function() {
-                    _showContentWhenLoading();
-                }
-            });
-
-            _tabBtnInner.on({
-                mousedown: function() {
-                    _tabContent.css( {
-                        'height': _tabContent.innerHeight()
-                    }, 300);
-                },
-                mouseup: function() {
-                    var curItem = $(this),
-                        parent = curItem.parent(),
-                        index = parent.index();
-                    var activeContent = _tabContentItem.eq( index ),
-                        activeContentHeight = activeContent.innerHeight();
-                    _tabContent.animate( {
-                        'height': activeContentHeight
-                    }, 300);
-                    setTimeout(function() {
-                        _tabContent.css( {
-                            "height": ""
-                        });
-                    },400)
-                },
-                click: function() {
-                    var curItem = $( this ),
-                        parent = curItem.parent(),
-                        index = parent.index();
-                    _tabBtn.removeClass( 'active' );
-                    _tabBtn.eq( index ).addClass( 'active' );
-                    _showContent( index );
-                    _controls.removeClass( 'active' );
-                }
-            });
-
-            _body.on( {
-                click: function() {
-                    _controls.removeClass( 'active' );
-                }
-            });
-
-        },
-        _showContentWhenLoading = function() {
-            var index = _tabBtn.filter( '.active' ).index();
-            if ( index == '-1' ) {
-                index = 0;
-                _tabBtn.eq( index ).addClass( 'active' );
-            }
-            _showContent( index );
-        },
-        _showContent = function( i ) {
-            var activeContent = _tabContentItem.eq( i );
-            _tabContentItem.css( {
-                'display': 'none'
-            });
-            activeContent.css( {
-                'display': 'block'
-            });
-        },
-        _init = function () {
-            _addEvents();
         };
 
     _init();

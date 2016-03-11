@@ -35,9 +35,13 @@
     border: 2px solid #242a2f;
     background: #242a2f;
 }
-.tabs__controls-wrap div span{
+.tabs__links{
     display: block;
     line-height: 40px;
+    color:#242a2f;
+    text-decoration: none !important;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
 }
 .tabs__controls-wrap div{
     display: table-cell;
@@ -59,6 +63,9 @@
     color: #fff;
     cursor: default;
 }
+.tabs__controls-wrap div.active .tabs__links{
+    color: #fff;
+}
 .tabs__controls-wrap div:hover{
     background:rgba(255, 255, 255, 0.58);
 }
@@ -74,7 +81,6 @@
     overflow: hidden;
     margin-bottom: 51px;
 }
-
 @media (min-width: 768px){
     .policy{
         font-size: 22px;

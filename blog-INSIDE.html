@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/blog-home.css"/>
 
     <style>
+
         /*------------preloader---------*/
         .preloader {
             opacity: 1;
@@ -22,7 +23,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background: rgba(0,0,0, .95);
+            background: rgba(0,0,0, 1);
             -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
             transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
         }
@@ -32,83 +33,65 @@
         }
         .preloader__wrap {
             position:absolute;
-            width:400px;
-            height:36px;
+            width:350px;
+            height:70px;
             left:50%;
             top:50%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            overflow:visible;
-            -webkit-user-select:none;
-            -moz-user-select:none;
-            -ms-user-select:none;
-            user-select:none;
-            cursor:default;
+            overflow:hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
         }
         .preloader__wrap div {
-            position:absolute;
-            width:20px;
-            height:36px;
-            opacity:0;
-            font-family: "Proxima Nova Regular", sans-serif;
-            animation:move 2s linear infinite;
-            -webkit-animation:move 2s linear infinite;
-            transform:rotate(180deg);
-            -webkit-transform:rotate(180deg);
-            color:#fff;
+            position: absolute;
+            width: 30px;
+            height: 46px;
+            opacity: 0;
+            font-family: "Nexa Regular", sans-serif;
+            font-size: 26px;
+            color: #fff;
+            -webkit-animation: move 2.5s linear infinite;
+            animation: move 2.5s linear infinite;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            -webkit-animation-delay: -1.8s;
+            animation-delay: -1.8s;
         }
         .preloader__wrap div:nth-child(2) {
-            animation-delay:0.2s;
-            -webkit-animation-delay:0.2s;
+            -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
         }
         .preloader__wrap div:nth-child(3) {
-            animation-delay:0.4s;
-            -webkit-animation-delay:0.4s;
+            -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
         }
         .preloader__wrap div:nth-child(4) {
-            animation-delay:0.6s;
-            -webkit-animation-delay:0.6s;
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
         }
         .preloader__wrap div:nth-child(5) {
-            animation-delay:0.8s;
-            -webkit-animation-delay:0.8s;
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
         }
         .preloader__wrap div:nth-child(6) {
-            animation-delay:1s;
-            -webkit-animation-delay:1s;
+            -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
         }
         .preloader__wrap div:nth-child(7) {
-            animation-delay:1.2s;
-            -webkit-animation-delay:1.2s;
+            -webkit-animation-delay:0s;
+            animation-delay:0s;
         }
 
-        @keyframes move {
-            0% {
-                left:0;
-                opacity:0;
-            }
-            35% {
-                left: 41%;
-                transform:rotate(0deg);
-                opacity:1;
-            }
-            65% {
-                left:59%;
-                transform:rotate(0deg);
-                opacity:1;
-            }
-            100% {
-                left:100%;
-                transform:rotate(-180deg);
-                opacity:0;
-            }
-        }
         @-webkit-keyframes move {
             0% {
                 left:0;
                 opacity:0;
             }
-            35% {
+            30% {
                 left:41%;
                 -webkit-transform:rotate(0deg);
                 opacity:1;
@@ -118,13 +101,55 @@
                 -webkit-transform:rotate(0deg);
                 opacity:1;
             }
+            90% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
             100% {
                 left:100%;
-                -webkit-transform:rotate(-180deg);
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+        }
+        @keyframes move {
+            0% {
+                left:0;
+                opacity:0;
+            }
+            30% {
+                left: 41%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            65% {
+                left:59%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            90% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+            100% {
+                left:100%;
+                transform:rotate(-180deg);
                 opacity:0;
             }
         }
         /*------------/preloader---------*/
+
+        @media (min-width: 992px) {
+
+            /*---------preloader--------*/
+            .preloader__wrap {
+                width:400px;
+                overflow: visible;
+            }
+            /*---------/preloader--------*/
+
+        }
 
     </style>
 
@@ -254,7 +279,7 @@
     <!-- /promo -->
 
     <!-- site__content -->
-    <section class="site__inner-page">
+    <div class="site__inner-page">
 
         <!-- site__centered -->
         <div class="site__centered">
@@ -264,17 +289,28 @@
 
                 <h1>All File Formats needed for Your Projects.</h1>
 
+                <!-- article -->
                 <div class="article-author">
 
+                    <!-- article-author__ava -->
                     <div class="article-author__ava">
                         <img src="pic/blog_ava.png" alt="ava"/>
                     </div>
+                    <!-- /article-author__ava -->
 
+                    <!-- article-author__content -->
                     <div class="article-author__content">
+
+                        <!-- article-author__name -->
                         <span class="article-author__name">Tal Revivo</span>
+                        <!-- /article-author__name -->
+
                         <time datetime="2016-24-09">24 September 2016</time>
                     </div>
+                    <!-- /article-author__content -->
+
                 </div>
+                <!-- article -->
 
                 <h3>Great headline (not h2)</h3>
 
@@ -286,6 +322,8 @@
 
                 <p>Te ius modus accusata concludaturque. Mel noster efficiantur delicatissimi id. Usu ei laudem graece principes. Pri te reque justo elaboraret, viderer torquatos deseruisse vix ex. Et stet reque vocibus vix, impedit blandit at pri, mea persius lobortis cu. Nobis ceteros no pri. Ocurreret comprehensam no his.</p>
 
+                <img src="pic/blog_004.png" alt="img"/>
+
                 <h3>Great headline (not h2)</h3>
 
                 <p>Lorem ipsum dolor sit amet, nisl oblique deseruisse ea vim, sed in posse epicurei. Ne iisque evertitur intellegam vix. Constituam scribentur liberavisse ius ad, ei duo elit sensibus, blandit detraxit an his. Simul postea vel an, mel inimicus splendid
@@ -295,6 +333,10 @@
                     ebat in, erat timeam vel ut. Vitae philosophia ad nam. Ad error appareat torquatos sea. Pro te justo porro utamur. Appetere tractatos assentior vel ad. Et justo consetetur efficiantur per, mel percipitur dissentiunt ei. Ut vivendo antiopam eloquentiam pri, mei ea conceptam delicatissimi.</p>
 
                 <p>Te ius modus accusata concludaturque. Mel noster efficiantur delicatissimi id. Usu ei laudem graece principes. Pri te reque justo elaboraret, viderer torquatos deseruisse vix ex. Et stet reque vocibus vix, impedit blandit at pri, mea persius lobortis cu. Nobis ceteros no pri. Ocurreret comprehensam no his.</p>
+
+                <div class="quote">
+
+                </div>
 
             </article>
             <!-- /article -->
@@ -302,7 +344,7 @@
         </div>
         <!-- site__centered -->
 
-    </section>
+    </div>
     <!-- /site__content -->
 
 </div>

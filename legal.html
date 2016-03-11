@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/legal.css"/>
 
     <style>
+
         /*------------preloader---------*/
         .preloader {
             opacity: 1;
@@ -23,7 +24,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background: rgba(0,0,0, .95);
+            background: rgba(0,0,0, 1);
             -webkit-transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
             transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
         }
@@ -33,83 +34,65 @@
         }
         .preloader__wrap {
             position:absolute;
-            width:400px;
-            height:36px;
+            width:350px;
+            height:70px;
             left:50%;
             top:50%;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-            overflow:visible;
-            -webkit-user-select:none;
-            -moz-user-select:none;
-            -ms-user-select:none;
-            user-select:none;
-            cursor:default;
+            overflow:hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: default;
         }
         .preloader__wrap div {
-            position:absolute;
-            width:20px;
-            height:36px;
-            opacity:0;
-            font-family: "Proxima Nova Regular", sans-serif;
-            animation:move 2s linear infinite;
-            -webkit-animation:move 2s linear infinite;
-            transform:rotate(180deg);
-            -webkit-transform:rotate(180deg);
-            color:#fff;
+            position: absolute;
+            width: 30px;
+            height: 46px;
+            opacity: 0;
+            font-family: "Nexa Regular", sans-serif;
+            font-size: 26px;
+            color: #fff;
+            -webkit-animation: move 2.5s linear infinite;
+            animation: move 2.5s linear infinite;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            -webkit-animation-delay: -1.8s;
+            animation-delay: -1.8s;
         }
         .preloader__wrap div:nth-child(2) {
-            animation-delay:0.2s;
-            -webkit-animation-delay:0.2s;
+            -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s;
         }
         .preloader__wrap div:nth-child(3) {
-            animation-delay:0.4s;
-            -webkit-animation-delay:0.4s;
+            -webkit-animation-delay: -1.2s;
+            animation-delay: -1.2s;
         }
         .preloader__wrap div:nth-child(4) {
-            animation-delay:0.6s;
-            -webkit-animation-delay:0.6s;
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
         }
         .preloader__wrap div:nth-child(5) {
-            animation-delay:0.8s;
-            -webkit-animation-delay:0.8s;
+            -webkit-animation-delay: -0.6s;
+            animation-delay: -0.6s;
         }
         .preloader__wrap div:nth-child(6) {
-            animation-delay:1s;
-            -webkit-animation-delay:1s;
+            -webkit-animation-delay: -0.3s;
+            animation-delay: -0.3s;
         }
         .preloader__wrap div:nth-child(7) {
-            animation-delay:1.2s;
-            -webkit-animation-delay:1.2s;
+            -webkit-animation-delay:0s;
+            animation-delay:0s;
         }
 
-        @keyframes move {
-            0% {
-                left:0;
-                opacity:0;
-            }
-            35% {
-                left: 41%;
-                transform:rotate(0deg);
-                opacity:1;
-            }
-            65% {
-                left:59%;
-                transform:rotate(0deg);
-                opacity:1;
-            }
-            100% {
-                left:100%;
-                transform:rotate(-180deg);
-                opacity:0;
-            }
-        }
         @-webkit-keyframes move {
             0% {
                 left:0;
                 opacity:0;
             }
-            35% {
+            30% {
                 left:41%;
                 -webkit-transform:rotate(0deg);
                 opacity:1;
@@ -119,15 +102,53 @@
                 -webkit-transform:rotate(0deg);
                 opacity:1;
             }
+            90% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
             100% {
                 left:100%;
-                -webkit-transform:rotate(-180deg);
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+        }
+        @keyframes move {
+            0% {
+                left:0;
+                opacity:0;
+            }
+            30% {
+                left: 41%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            65% {
+                left:59%;
+                transform:rotate(0deg);
+                opacity:1;
+            }
+            90% {
+                left:100%;
+                transform:rotate(-180deg);
+                opacity:0;
+            }
+            100% {
+                left:100%;
+                transform:rotate(-180deg);
                 opacity:0;
             }
         }
         /*------------/preloader---------*/
 
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
+
+            /*---------preloader--------*/
+            .preloader__wrap {
+                width:400px;
+                overflow: visible;
+            }
+            /*---------/preloader--------*/
 
         }
 
@@ -272,6 +293,7 @@
     <!-- pricing -->
     <div class="policy">
 
+        <!-- tabs -->
         <div class="tabs">
 
             <!-- tabs__controls -->
@@ -280,10 +302,10 @@
                 <!-- tabs__controls-wrap -->
                 <div class="tabs__controls-wrap">
                     <div class="active">
-                        <span>Terms of use</span>
+                        <a class="tabs__links" href="#">Terms of use</a>
                     </div>
                     <div>
-                        <span>Privacy policy</span>
+                        <a class="tabs__links" href="#">Privacy policy</a>
                     </div>
                 </div>
                 <!-- /tabs__controls-wrap -->
@@ -293,44 +315,6 @@
 
             <!-- tabs__wrapper -->
             <div class="tabs__wrapper">
-                <div>
-                    <h2>PRIVACY POLICY</h2>
-                    <h3>What information do we collect?</h3>
-                    <p>1st thing 1st NONE of your personal information is used for marketing purposes, EVER.</p>
-                    <p>We collect information from you when you place an order, enter a contest, respond to a survey or communication such as e-mail, or participate in another site features.</p>
-                    <p>Like many websites, we use “cookies” to enhance your experience and gather information about visitors. For more info. please refer to the “Do we use “cookies” ?” section below.</p>
-                    <p>We collect information when ordering  a product or registering on website. We  may ask you for your name, e-mail address, mailing address, phone number, credit card information or other required information. You may, however, visit our site anonymously.</p>
-                    <br>
-                    <h2>HOW DO WE USE YOUR INFORMATION ?</h2>
-                    <p>We use your information in the following ways:</p>
-                    <p>To quickly process your transactions.</p>
-                    <p>To administer a contest, promotion, survey or other site feature(s).</p>
-                    <p>To allow us to better service you in responding to your customer service requests.</p>
-                    <p>To personalize your site experience and to allow us to deliver the type of content and product offerings in which you are most interested.</p>
-                    <p>If you have opted-in to receive our e-mail newsletter, we may send you periodic e-mails. If you would no longer like to receive promotional e-mail from us, simply email with “Unsubscribe Me” in subject to
-                        <a href="#">support@icon54.com</a> Note: If you have not opted-in to receive e-mail newsletters, you will not receive these e-mails. Visitors who register or participate in other site features such as marketing programs and ‘members-only’ content will be given a choice to opt-in or opt-out at any given time.</p>
-                    <br>
-                    <h2>HOW DO WE PROTECT VISITOR INFORMATION ?</h2>
-                    <p>We implement a variety of security measures to maintain the safety of your personal information. Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. When you place orders or access your personal information, we offer the use of a secure server. All sensitive/credit information you supply is transmitted via Secure Socket Layer (SSL) technology and then encrypted into our databases to be only accessed as stated above.</p>
-                    <p>Do we use “Cookies” ? Yes. Cookies are small files that a site or its service provider transfers to your computer’s hard-drive through your web browser (if you allow) that enables the site’s or service provider’s systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.</p>
-                    <p>We may contract with third-party service providers to assist us in better understanding our site visitors. These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.</p>
-                    <p>You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your specific browser settings. As each browser is a little different, so look at your browser Help menu to learn the correct way to modify your cookies. If you turn cookies off, you won’t have access to many features that make your site experience more efficient and some of our services will not function properly.</p>
-                    <br>
-                    <h2>DO WE DISCLOSE THE INFORMATION WE COLLECT TO OUTSIDE PARTIES ?</h2>
-                    <p>No, Never, NOT even in dreams. We DO NOT sell, trade, or otherwise transfer to outside parties your personally identifiable information unless we provide you with advance notice, except as described. The term “outside parties” does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or servicing you. We may release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others’ rights, property, or safety. However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.</p>
-                    <br>
-                    <h2>HOW CAN YOU OPT_OUT, REMOVE OR MODIFY INFORMATION YOU HAVE PROVIDED TO US?</h2>
-                    <p>To modify your e-mail subscriptions or To delete all of your online account information from our database, please write to us at
-                        <a href="#">support@icon54.com</a></p>
-                    <p>Please note that due to email production schedules you may receive any emails already in production. Also make a note that we may maintain information about an individual sales transaction in order to service that transaction and for record keeping.</p>
-                    <p>Third Party Links In an attempt to provide you with increased value, we may include third party links on our site. These linked sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about the linked sites (including if a specific link does not work).</p>
-                    <p>Changes To Our Policy If we decide to change our privacy policy, we will post those changes on policy page. Policy changes will apply only to information collected after the date of the change. This policy was last modified on August 5th, 2015.</p>
-                    <p>Questions & Feedback’s We welcome your questions, comments and concerns about privacy. Please send us any and all feedback’s pertaining to privacy, or any other issue(s)
-                        <a href="#">www.icon54.com/contact</a></p>
-                    <p>Online Policy Only This online privacy policy applies only to information collected through our website and NOT to information collected offline.</p>
-                    <p>Your Consent By using our site, you consent to our privacy policy.</p>
-                </div>
-
                 <div>
                     <h2>PRIVACY POLICY</h2>
                     <h4>(Your Privacy is Our Priority)</h4>
@@ -369,11 +353,11 @@
                     <p>Online Policy Only This online privacy policy applies only to information collected through our website and NOT to information collected offline.</p>
                     <p>Your Consent By using our site, you consent to our privacy policy.</p>
                 </div>
-
             </div>
             <!-- /tabs__wrapper -->
 
         </div>
+        <!-- /tabs -->
 
     </div>
     <!-- /policy -->

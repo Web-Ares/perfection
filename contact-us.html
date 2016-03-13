@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -8,9 +8,8 @@
     <meta name="format-detection" content="address=no">
 
     <title>Perfection</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="css/pack-preview.css"/>
+    <link rel="stylesheet" href="css/main-blog.css"/>
+    <link rel="stylesheet" href="css/contact-us.css"/>
 
     <style>
 
@@ -185,10 +184,23 @@
         <div class="site__header-layout">
 
             <!-- logo -->
-            <a href="#" class="logo logo_inner">
+            <a href="#" class="logo">
                 <img src="img/logo_inside.png" alt="logo">
+
+                <!-- logo__subtopic
+                <span class="logo__subtopic">home</span>
+                <!-- /logo__subtopic -->
+
             </a>
             <!-- /logo -->
+
+            <!-- header-menu__item -->
+            <a href="#" class="header-menu__item">View Icons</a>
+            <!-- /header-menu__item -->
+
+            <!-- header-menu__item -->
+            <a href="#" class="header-menu__item">Buy Now</a>
+            <!-- /header-menu__item -->
 
             <!-- site__header__menu-drop -->
             <a class="drop-menu-btn" href="#"><span></span></a>
@@ -263,7 +275,7 @@
     <!-- site__header -->
 
     <!-- promo -->
-    <div data-header-color="black" class="promo promo_inner">
+    <div class="promo promo_inner">
 
         <!-- promo__wrap -->
         <div class="promo__wrap promo__wrap_inner">
@@ -275,11 +287,10 @@
                 <div class="promo__content promo__content_inner">
 
                     <!-- promo__topic -->
-                    <h1 class="promo__topic">Preview 3,000 icons</h1>
+                    <h1 class="promo__topic">Get in touch</h1>
                     <!-- /promo__topic -->
 
-                    <p>Our package includes a wide variety of icons
-                        that are continuously updated.</p>
+                    <p>Have any question or comments?</p>
 
                 </div>
                 <!-- /promo__content -->
@@ -293,45 +304,41 @@
     </div>
     <!-- /promo -->
 
-    <!-- pack-preview -->
-    <section class="pack-preview">
+    <!-- site__content -->
+    <div class="site__inner-page">
 
-        <!-- tabs -->
-        <div class="tabs">
+        <!-- site__centered -->
+        <div class="site__centered">
 
-            <!-- tabs__controls // Add class 'tabs__controls_hide' for hide-->
-            <div class="tabs__controls">
+            <!-- contact-form -->
+            <form method="get" action="#" class="contact-form">
 
-                <!-- tabs__controls-wrap -->
-                <div class="tabs__controls-wrap">
-                    <div class="active">
-                        <a class="tabs__links" href="#">Line version</a>
-                    </div>
-                    <div>
-                        <a class="tabs__links" href="#">Solid version</a>
-                    </div>
-                </div>
-                <!-- /tabs__controls-wrap -->
+                <fieldset>
+                    <input type="text" name="contact-form__name" class="contact-form__name" placeholder="Full Name"/>
+                </fieldset>
 
-            </div>
-            <!-- /tabs__controls -->
+                <fieldset>
+                    <input type="email" name="contact-form__email" class="contact-form__email" placeholder="Email Adress"/>
+                </fieldset>
 
-            <!-- tabs__wrapper -->
-            <div class="tabs__wrapper">
-                <div>
-                    <h2 class="pack-preview__title">Music</h2>
+                <fieldset>
+                    <textarea name="contact-form__message" class="contact-form__message" placeholder="Message"></textarea>
+                </fieldset>
 
-                    <img src="pic/img-pack-preview.png" alt="pack-preview"/>
+                <fieldset>
+                    <button type="submit" name="form__send" class="form__send">Send</button>
+                </fieldset>
 
-                </div>
-            </div>
-            <!-- /tabs__wrapper -->
+                <div class="form__message-frame"></div>
+
+            </form>
+            <!-- /contact-form -->
 
         </div>
-        <!-- /tabs -->
+        <!-- site__centered -->
 
-    </section>
-    <!-- /pack-preview -->
+    </div>
+    <!-- /site__content -->
 
 </div>
 <!-- /site -->

@@ -102,7 +102,15 @@
     border-bottom: 3px solid #f3f3f3;
 }
 .author__ava {
+    overflow: hidden;
+    width: 96px;
+    height: 96px;
     margin-right: 27px;
+    border-radius: 50%;
+}
+.author__ava img{
+    width: 100%;
+    height: 100%;
 }
 .author__content {
     overflow: hidden;
@@ -127,11 +135,6 @@
 .comments__title{
     margin-bottom: 32px;
     font: 30px 'Proxima Nova Regular', sans-serif;
-}
-.comments__frame{
-    overflow: hidden;
-    height: 342px;
-    background-color: #e6e5e5;
 }
 /* --------------- /comments --------------- */
 
@@ -199,11 +202,15 @@
 }
 .article-author__ava {
     float: left;
+    overflow: hidden;
     width: 49px;
+    height: 49px;
     margin-right: 12px;
+    border-radius: 50%;
 }
 .article-author__ava img{
     width: 100%;
+    height: 100%;
 }
 .article-author__content{
     overflow: hidden;

@@ -8,7 +8,7 @@
     <meta name="format-detection" content="address=no">
 
     <title>Perfection</title>
-    <link rel="stylesheet" href="css/main-blog.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/contact-us.css"/>
 
     <style>
@@ -311,27 +311,33 @@
         <div class="site__centered">
 
             <!-- contact-form -->
-            <form method="get" action="#" class="contact-form">
+            <div class="contact-form">
 
-                <fieldset>
-                    <input type="text" name="contact-form__name" class="contact-form__name" placeholder="Full Name"/>
-                </fieldset>
+                <form method="get" action="#">
 
-                <fieldset>
-                    <input type="email" name="contact-form__email" class="contact-form__email" placeholder="Email Adress"/>
-                </fieldset>
+                    <fieldset>
+                        <input type="text" name="contact-form__name" class="contact-form__name" placeholder="Full Name"/>
+                    </fieldset>
 
-                <fieldset>
-                    <textarea name="contact-form__message" class="contact-form__message" placeholder="Message"></textarea>
-                </fieldset>
+                    <fieldset>
+                        <input type="email" name="contact-form__email" class="contact-form__email" placeholder="Email Adress"/>
+                    </fieldset>
 
-                <fieldset>
-                    <button type="submit" name="form__send" class="form__send">Send</button>
-                </fieldset>
+                    <fieldset class="message-field">
 
-                <div class="form__message-frame"></div>
+                        <div class="message-field__text"></div>
 
-            </form>
+                        <div class="message-field__height"></div>
+
+                        <textarea name="contact-form__message" class="contact-form__message" placeholder="Message"></textarea>
+
+                    </fieldset>
+
+                    <button type="submit" name="form__send" class="btn btn_4">Send</button>
+
+                </form>
+
+            </div>
             <!-- /contact-form -->
 
         </div>

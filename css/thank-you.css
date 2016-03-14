@@ -1,0 +1,68 @@
+/* ---------------  promo_thank-you --------------- */
+.promo p{
+    margin-bottom: 95px;
+}
+.promo_thank-you{
+    padding-top: 0;
+}
+.promo_thank-you:before{
+    display: none;
+}
+.promo__img {
+    margin-bottom: 40px;
+}
+.promo__note{
+    display: inline-block;
+    color: #fff;
+    font-size: 18px;
+}
+.promo__content{
+    margin-bottom: 0;
+}
+span.promo__great{
+    color: #fff;
+    font-size: 28px;
+}
+/* --------------- / promo_thank-you --------------- */
+
+/* ---------------  copyright --------------- */
+.copyright{
+    color: #fff;
+}
+/* ---------------  /copyright --------------- */
+
+/* ---------------  social --------------- */
+.social__item_mail:before{
+    background-position: 0 0;
+}
+.social__item_mail:after{
+    background-position: 0 -26px;
+}
+.social__item_btn:before{
+    background-position: -29px 0;
+}
+.social__item_btn:after{
+    background-position: -29px -26px;
+}
+.social__item_tw:before{
+    background-position: -61px 0;
+}
+.social__item_tw:after{
+    background-position: -61px -26px;
+}
+.social__item_fb:before{
+    background-position: -94px 0;
+}
+.social__item_fb:after{
+    background-position: -94px -26px;
+}
+/* ---------------  /socials --------------- */
+
+@media (min-width: 768px){
+
+    /* ---------------  promo_thank-you --------------- */
+
+    /* ---------------  promo_thank-you --------------- */
+
+}
+

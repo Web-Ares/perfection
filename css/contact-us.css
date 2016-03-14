@@ -1,7 +1,70 @@
 /* --------------- contact-form --------------- */
 .contact-form{
+    position: relative;
     max-width: 422px;
     margin: 0 auto;
+}
+.contact-form fieldset{
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 21px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #e8e8e8;
+}
+.contact-form input,
+.contact-form textarea{
+    display: block;
+    width: 100%;
+    height: 25px;
+    padding-left: 60px;
+    border: none;
+    font: 17px/25px 'Proxima Nova Regular';
+}
+.contact-form__name{
+    background: url("../img/icons-persona.png") no-repeat 11px 50%;
+    background-size: 24px 24px;
+}
+.contact-form__email{
+    background: url("../img/download_image.png") no-repeat 11px 0;
+    background-size: 24px 18px;
+}
+.contact-form__message{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 25px;
+    background: url("../img/icons-message.png") no-repeat 10px 0;
+    background-size: 22px 21px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.ddd{
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    width: 100%;
+    min-height: 25px;
+    padding-left: 60px;
+    font: 17px/25px 'Proxima Nova Regular';
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    transition: height .3s ease;
+    -webkit-transition: height .3s ease;
+}
+.form__message-frame{
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    width: 100%;
+    min-height: 25px;
+    padding-left: 60px;
+    font: 17px/25px 'Proxima Nova Regular';
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    transition: height .3s ease;
+    -webkit-transition: height .3s ease;
 }
 /* --------------- /contact-form --------------- */
 

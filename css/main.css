@@ -54,16 +54,22 @@
 /* --------------- placeholder --------------- */
 ::-webkit-input-placeholder {
     color: #aeaeae;
-    font-size: 17px;
+    -webkit-transition: color 300ms ease-in-out;
 }
 :-moz-placeholder {
     color: #aeaeae;
-    font-size: 17px;
+    -webkit-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
 .placeholder {
     color: #aeaeae;
-    font-size: 17px;
+    -webkit-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
 /* --------------- /placeholder --------------- */
 
 /* --------------- fonts --------------- */
@@ -270,7 +276,9 @@
     line-height: 20px;
 }
 .btn_4{
-
+    width: 100%;
+    border: none;
+    border-radius: 5px;
 }
 .btn_5>span{
     height: 84%;
@@ -309,6 +317,12 @@
 .btn_8:hover{
     background-color: #242a2f;
     color: #fff!important;
+}
+.btn_9{
+    display: block;
+    width: 257px;
+    margin: 0 auto;
+    font-size: 18px;
 }
 /* --------------- /btn --------------- */
 
@@ -712,6 +726,9 @@
     padding-top: 16px;
     text-align: center;
     background-color: #242a2f;
+}
+.promo p{
+    max-width: 900px;
 }
 .promo__wrap{
     display: -webkit-box;
@@ -1722,6 +1739,10 @@
         border-radius: 0;
         font-size: 16px;
         line-height: 20px;
+    }
+    .btn_4{
+        height: 50px;
+        margin-top: 39px;
     }
     .btn_6{
         width: 186px;

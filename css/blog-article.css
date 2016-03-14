@@ -73,7 +73,7 @@
 /* --------------- /article --------------- */
 
 /* --------------- quote --------------- */
-.quote{
+quote{
     display: block;
     position: relative;
     margin: 63px 0;
@@ -83,7 +83,7 @@
     line-height: 25px;
     color: #1565c0;
 }
-.quote:before{
+quote:before{
     position: absolute;
     top: 6px;
     bottom: 10px;
@@ -96,7 +96,7 @@
 
 /* --------------- author --------------- */
 .author{
-    margin-bottom: 32px;
+    margin: 96px 0 32px;
     overflow: hidden;
     padding-bottom: 18px;
     border-bottom: 3px solid #f3f3f3;
@@ -230,7 +230,7 @@
     /* --------------- article --------------- */
 
     /* --------------- quote --------------- */
-    .quote{
+    quote{
         margin-bottom: 97px;
         font-size: 30px;
         line-height: 40px;

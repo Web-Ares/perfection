@@ -5,10 +5,8 @@
     margin: 0 auto;
 }
 .contact-form fieldset{
-    overflow: hidden;
     position: relative;
     margin-bottom: 21px;
-    padding-bottom: 14px;
     border-bottom: 2px solid #e8e8e8;
 }
 .contact-form input,
@@ -16,6 +14,7 @@
     display: block;
     width: 100%;
     height: 25px;
+    margin-bottom: 14px;
     padding-left: 60px;
     border: none;
     font: 17px/25px 'Proxima Nova Regular';
@@ -39,6 +38,8 @@
     background-size: 22px 21px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    transition: height .3s ease;
+    -webkit-transition: height .3s ease;
 }
 .message-field__height,
 .message-field__text {
@@ -47,6 +48,7 @@
     z-index: -1;
     width: 100%;
     min-height: 25px;
+    margin-bottom: 14px;
     padding-left: 60px;
     font: 17px/25px 'Proxima Nova Regular';
     white-space: pre-wrap;

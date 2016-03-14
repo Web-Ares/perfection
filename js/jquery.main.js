@@ -32,10 +32,10 @@ var MessageHigh = function ( obj ) {
     var _onEvents = function() {
 
             _obj.on( {
-                'keyup': function(){
+                'keydown': function(){
 
-                    _messageText.html( _message.val() );
-                    _message.css( 'height', _messageText.height() );
+                    _messageText.html( _message.val() + '___' );
+                    _message.css( 'height', _messageText.height() + 25 );
                     _messageHeight.css( 'height', _messageText.height() );
 
                 }

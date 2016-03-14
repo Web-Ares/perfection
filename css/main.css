@@ -160,13 +160,14 @@
     margin: 0 auto;
 }
 .site__title{
+    display: block;
     margin: 0 0 26px;
     font-size: 50px;
     line-height: 51px;
     font-family: "Proxima Nova Bold", sans-serif;
     font-weight: 400;
     color: #151414;
-    display: block;
+    word-wrap: break-word;
 }
 .site__header_inner {
     position: absolute;

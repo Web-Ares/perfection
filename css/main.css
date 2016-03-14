@@ -109,7 +109,7 @@
     left: 0;
     right: 0;
     z-index: 3;
-    height: 50px;
+    height: 73px;
     margin: 0 auto;
     padding-top: 11px;
     border-bottom: 1px solid transparent;
@@ -120,8 +120,8 @@
     -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .3s ease;
 }
 .site__header_hidden {
-    -webkit-transform: translateY( -64px );
-    transform: translateY( -64px );
+    -webkit-transform: translateY( -73px );
+    transform: translateY( -73px );
 }
 .site__header.white{
     border-bottom-color: #e8e8e8;
@@ -131,6 +131,21 @@
     position: relative;
     margin: 0 auto;
     padding: 0 21px;
+}
+.site__header-layout:before{
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    z-index: 7;
+    color: #fff;
+    font: 18px 'Proxima Nova Regular', sans-serif;
+    text-transform: uppercase;
+    content: 'ICONS';
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+}
+.site__header.white .site__header-layout:before{
+    color: #555;
 }
 .site__content {
     position: relative;
@@ -159,6 +174,12 @@
 .site__inner-page{
     padding: 50px 0;
 }
+.site__header.site__header_drop-menu .site__header-layout:before{
+    color: #fff;
+}
+.site__header_inner .site__header-layout:before{
+    display: none;
+}
 /* --------------- /site --------------- */
 
 /* --------------- pages --------------- */
@@ -179,10 +200,10 @@
 /* --------------- logo --------------- */
 .logo {
     position: absolute;
-    top: 2px;
+    top: 11px;
     left: 50%;
-    margin-left: -25px;
-    width: 50px;
+    margin-left: -34px;
+    width: 64px;
     z-index: 6;
 }
 .logo img{
@@ -204,7 +225,9 @@
     content: '';
 }
 .logo_inner{
-    margin-top: 5px;
+    left: 27px;
+    margin-top: 7px;
+    margin-left: 0;
 }
 .site__header.white .logo img{
     opacity: 0;
@@ -362,6 +385,7 @@
     display: inline-block;
     width: 30px;
     height: 25px;
+    margin-top: 14px;
     margin-right: 1px;
     z-index: 6;
     overflow: hidden;
@@ -437,7 +461,7 @@
     height: 100%;
     max-width: 1484px;
     margin: 0 auto;
-    padding: 50px 15px 80px;
+    padding: 80px 15px 80px;
 }
 .drop-menu__inner-wrap{
     position: relative;
@@ -1561,7 +1585,7 @@
 
     /* --------------- logo --------------- */
     .logo_inner {
-        margin-top: 8px;
+        margin-top: 0;
     }
     /* --------------- /logo --------------- */
 
@@ -1727,11 +1751,16 @@
     .site__inner-page {
         padding: 60px 0;
     }
+    .site__header-layout:before{
+        display: none;
+    }
     /* --------------- /site --------------- */
 
     /* --------------- logo --------------- */
     .logo {
         top: 3px;
+        left: 22px;
+        margin-left: 0;
         width: 67px;
     }
     .logo_inner{
@@ -1808,6 +1837,7 @@
     /* --------------- drop-menu-btn --------------- */
     .drop-menu-btn{
         top: 5px;
+        margin-top: 0;
     }
     /* --------------- /drop-menu-btn --------------- */
 

@@ -757,7 +757,6 @@
 /* --------------- promo --------------- */
 .promo{
     position: relative;
-    padding-top: 16px;
     text-align: center;
     background-color: #242a2f;
 }
@@ -1726,6 +1725,7 @@
         padding-top: 14px;
     }
     .site__header_inner {
+        margin-top: 0;
         padding: 25px 0 0;
     }
     .site__header-layout{
@@ -1753,6 +1753,13 @@
     }
     .site__header-layout:before{
         display: none;
+    }
+    .site__header.white,
+    .site__header.black{
+        margin-top: 0;
+    }
+    .site__header.header-top{
+        margin-top: 28px;
     }
     /* --------------- /site --------------- */
 
@@ -2054,6 +2061,7 @@
     }
     .promo__logo{
         width: auto;
+        max-width: 728px;;
     }
     .promo__content{
         font-size: 28px;

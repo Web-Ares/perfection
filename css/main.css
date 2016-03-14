@@ -171,6 +171,7 @@
 }
 .site__header_inner {
     position: absolute;
+    background: none;
 }
 .site__inner-page{
     padding: 50px 0;

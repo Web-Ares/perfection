@@ -318,6 +318,12 @@
     background-color: #242a2f;
     color: #fff!important;
 }
+.btn_9{
+    display: block;
+    width: 257px;
+    margin: 0 auto;
+    font-size: 18px;
+}
 /* --------------- /btn --------------- */
 
 /* --------------- header-menu --------------- */

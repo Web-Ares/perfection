@@ -44,24 +44,24 @@ span.promo__great{
     display: inline-block;
     vertical-align: middle;
 }
-.social__item:after{
+.social_1 .social__item:after{
     display: none;
 }
-.social__item:before{
+.social_1 .social__item:before{
     background-image: url("../img/iocns-social_1.png");
     background-size: auto 25px;
 }
-.social__item:hover::before{
+.social_1 .social__item:hover::before{
     opacity: .8;
     visibility: visible;
 }
-.social__item_btn:before{
+.social_1 .social__item_btn:before{
     background-position: 0 0;
 }
-.social__item_tw:before{
+.social_1 .social__item_tw:before{
     background-position: -51px 0;
 }
-.social__item_fb:before{
+.social_1 .social__item_fb:before{
     background-position: -100px 0;
 }
 /* ---------------  /socials --------------- */

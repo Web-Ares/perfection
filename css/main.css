@@ -1539,7 +1539,6 @@
 }
 /* --------------- /article --------------- */
 
-
 @media (min-width: 550px) {
 
     /* --------------- site --------------- */
@@ -1652,7 +1651,7 @@
         padding: 100px 0;
     }
     .formats__footnote {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 20px;
         margin-bottom: 50px;
     }
@@ -1677,6 +1676,7 @@
         padding-top: 50px;
     }
     /* ------------ /easy-way ------------ */
+
     /* ------------ social ------------ */
     .social__title {
         font-size: 20px;

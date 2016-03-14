@@ -75,6 +75,6 @@
 }
 div[role=alert],
 span[role=alert] {
-    display: none;
+    display: none!important;
 }
 /* --------------- /invalid --------------- */

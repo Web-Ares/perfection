@@ -27,6 +27,7 @@ span.promo__great{
 
 /* ---------------  copyright --------------- */
 .copyright_1{
+    padding-bottom: 4px;
     color: #999;
     font-size: 16px;
     text-transform: uppercase;

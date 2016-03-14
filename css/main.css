@@ -282,7 +282,8 @@
 .btn_6{
     width: 100%;
     height: 50px;
-    padding-top: 19px;
+    padding-top: 10px;
+    border: none;
     border-radius: 5px;
     font-size: 17px;
     font-family: "Proxima Nova Bold", sans-serif;

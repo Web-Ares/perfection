@@ -71,4 +71,15 @@
 .invalid fieldset{
     border-bottom-color: #b61010;
 }
+.invalid fieldset .your-message {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.invalid fieldset .your-message span {
+    display: none;
+}
+.wpcf7-response-output {
+    display: none;
+}
 /* --------------- /invalid --------------- */

@@ -188,17 +188,6 @@
     margin-left: -70px;
     z-index: 3;
 }
-
-/* --------------- /pricing --------------- */
-
-/* --------------- btn --------------- */
-.btn_4{
-    position: absolute;
-    bottom: 47px;
-    left: 50%;
-    border-radius: 6px;
-    transform: translateX(-50%);
-}
 .pricing__pay {
     text-align: center;
 }
@@ -212,7 +201,6 @@
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }
-/* --------------- /btn --------------- */
 
 @media (min-width: 768px) {
     .pricing__wrap {

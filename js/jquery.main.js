@@ -82,26 +82,9 @@ var Menu = function (obj) {
             } );
             _window.on( {
                 'scroll': function () {
-                    _siteSections.each( function() {
-                        var siteSectionsTop = $( this ).offset().top,
-                            siteSectionsHeight = $( this ).height(),
-                            spaceBeforeBloc = 160;
-                        if( siteSectionsTop <= _window.scrollTop() ) {
-                            _header.removeClass( 'white' );
-                            _header.addClass( $( this ).data( 'header-color' ) );
-                        }
-                        if( ( siteSectionsTop <= _window.scrollTop() + siteSectionsHeight - spaceBeforeBloc ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
-                            $( this ).addClass( 'active' );
-                        }
-                    } );
                     _action = _window.scrollTop() >= _header.innerHeight();
-
-                    if( _action  ) {
-                        _header.removeClass( 'header-top' );
-                    } else {
-                        _header.addClass( 'header-top' );
-                    }
-
+                    _colorTop();
+                    _marginTop();
                 },
                 'DOMMouseScroll': function ( e ) {
                     var delta = e.originalEvent.detail;
@@ -128,6 +111,27 @@ var Menu = function (obj) {
                 }
             } )
         },
+        _colorTop = function () {
+            _siteSections.each( function() {
+                var siteSectionsTop = $( this ).offset().top,
+                    siteSectionsHeight = $( this ).height(),
+                    spaceBeforeBloc = 160;
+                if( siteSectionsTop <= _window.scrollTop() ) {
+                    _header.removeClass( 'white' );
+                    _header.addClass( $( this ).data( 'header-color' ) );
+                }
+                if( ( siteSectionsTop <= _window.scrollTop() + siteSectionsHeight - spaceBeforeBloc ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
+                    $( this ).addClass( 'active' );
+                }
+            } );
+        },
+        _marginTop = function () {
+            if( _window.scrollTop() > 0 ) {
+                _header.removeClass( 'header-top' );
+            } else {
+                _header.addClass( 'header-top' );
+            }
+        },
         _checkScroll = function( direction ){
             if( direction > 0 && !_header.hasClass( 'site__header_hidden' ) && _action ) {
                 _header.addClass( 'site__header_hidden' );
@@ -145,6 +149,8 @@ var Menu = function (obj) {
             });
         },
         init = function() {
+            _colorTop();
+            _marginTop();
             _initContentScroll();
             _onEvents();
         };

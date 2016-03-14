@@ -54,16 +54,22 @@
 /* --------------- placeholder --------------- */
 ::-webkit-input-placeholder {
     color: #aeaeae;
-    font-size: 17px;
+    -webkit-transition: color 300ms ease-in-out;
 }
 :-moz-placeholder {
     color: #aeaeae;
-    font-size: 17px;
+    -webkit-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
 .placeholder {
     color: #aeaeae;
-    font-size: 17px;
+    -webkit-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
 }
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
 /* --------------- /placeholder --------------- */
 
 /* --------------- fonts --------------- */
@@ -270,7 +276,9 @@
     line-height: 20px;
 }
 .btn_4{
-
+    width: 100%;
+    border: none;
+    border-radius: 5px;
 }
 .btn_5>span{
     height: 84%;
@@ -1721,6 +1729,10 @@
         border-radius: 0;
         font-size: 16px;
         line-height: 20px;
+    }
+    .btn_4{
+        height: 50px;
+        margin-top: 39px;
     }
     .btn_6{
         width: 186px;

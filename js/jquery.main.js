@@ -15,7 +15,37 @@ $(function () {
     $.each( $('.formats__slider'), function() {
         new SliderFormats( $( this ) );
     } );
+
+    $.each( $( '.contact-form__message' ), function() {
+        new MessageHigh( $( this ) );
+    } );
+
 });
+
+var MessageHigh = function ( obj ) {
+
+    var _obj = obj,
+        _messageFrame = $( '.form__message-frame');
+
+    var _onEvents = function() {
+
+            _obj.on( {
+                'keyup': function(){
+
+                    _messageFrame.html( _obj.val() );
+                    _obj.css( 'height', _messageFrame.height() );
+
+                }
+            } );
+
+        },
+
+        _init = function() {
+            _onEvents();
+        };
+
+    _init();
+};
 
 var Menu = function (obj) {
     var _btn = $( '.drop-menu-btn' ),

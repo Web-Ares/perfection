@@ -1008,7 +1008,6 @@
     margin: 0 0 20px;
 }
 .line-solid__list {
-    padding: 0 15px;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -1024,8 +1023,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.5);
-    transform: translateX(-50%) translateY(-50%) scale(0.5);
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.65);
+    transform: translateX(-50%) translateY(-50%) scale(0.65);
 }
 /* --------------- /line-solid --------------- */
 
@@ -1039,10 +1038,10 @@
 }
 .formats__footnote{
     position: relative;
-    padding: 0 46% 0 34px;
+    padding: 0 26% 0 34px;
     color: #666666;
-    font-size: 13px;
-    line-height: 14px;
+    font-size: 18px;
+    line-height: 23px;
     min-height: 16px;
     background: url("../img/half-round.png") no-repeat 0 5px;
     background-size: 16px;
@@ -2380,6 +2379,12 @@
         width: 338px;
     }
     /* --------------- /tabs --------------- */
+
+    /* --------------- btn --------------- */
+    .btn_2 {
+        border: 2px solid #1565c0;
+    }
+    /* --------------- /btn --------------- */
 
 }
 @media (min-width: 992px) {

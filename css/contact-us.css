@@ -33,6 +33,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
     min-height: 25px;
     background: url("../img/icons-message.png") no-repeat 10px 0;
     background-size: 22px 21px;

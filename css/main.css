@@ -130,7 +130,7 @@
 .site__header-layout{
     position: relative;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 21px;
 }
 .site__content {
     position: relative;
@@ -180,7 +180,8 @@
 .logo {
     position: absolute;
     top: 2px;
-    left: 15px;
+    left: 50%;
+    margin-left: -25px;
     width: 50px;
     z-index: 6;
 }
@@ -299,6 +300,7 @@
     width: 130px;
     margin-top: 35px;
     margin-right: -3px;
+    padding-top: 12px;
     border: 2px solid #242a2f!important;;
     background-color: #242a2f;
     border-radius: 25px 0 0 25px;
@@ -308,6 +310,7 @@
     width: 130px;
     margin-top: 35px;
     margin-left: -3px;
+    padding-top: 12px;
     border: 2px solid #242a2f!important;
     border-radius: 0 25px 25px 0;
     background-color: transparent;
@@ -765,7 +768,7 @@
 .promo__topic{
     margin-bottom: 10px;
     color: #fff;
-    font: normal 50px/38px "Proxima Nova Bold", sans-serif;
+    font: normal 50px/67px "Proxima Nova Bold", sans-serif;
 }
 .promo__content{
     margin-bottom: 20px;
@@ -962,12 +965,8 @@
     padding: 0 0 9px;
 }
 .sharpest-icons__list{
-    position: absolute;
-    top: 50%;
     margin: 0 -20px;
     text-align: center;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
 }
 .sharpest-icons__list>div{
     display: inline-block;
@@ -1556,7 +1555,6 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item {
-        display: inline-block;
         padding-top: 3px;
     }
     /* --------------- /header-menu --------------- */
@@ -1623,6 +1621,9 @@
     /* ------------ /pack-includes ------------ */
 
     /* ------------ line-solid ------------ */
+    .line-solid__list{
+        margin: 0 auto;
+    }
     .line-solid__list>div img{
         -webkit-transform: translateX(-50%) translateY(-50%);
         transform: translateX(-50%) translateY(-50%);
@@ -1782,6 +1783,7 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item{
+        display: inline-block;
         margin-right: 35px;
         padding-top: 8px;
         font-size: 18px;
@@ -1871,10 +1873,14 @@
     .sharpest-icons__list{
         display: inline-block;
         vertical-align: middle;
+        position: absolute;
+        top: 50%;
         width: 43.5%;
         margin-left: 5%;
         margin-right: 0;
         text-align: left;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
     }
     .active .sharpest-icons__layout{
         opacity: 1;

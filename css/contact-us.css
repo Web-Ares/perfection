@@ -11,9 +11,6 @@
     transition: border-bottom-color .3s ease;
     -webkit-transition: border-bottom-color .3s ease;
 }
-.contact-form fieldset span{
-    display: none;
-}
 .contact-form input,
 .contact-form textarea{
     display: block;
@@ -65,21 +62,18 @@
     position: absolute;
     top: 0;
 }
+.message-field .your-message {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
 /* --------------- /contact-form --------------- */
 
 /* --------------- invalid --------------- */
 .invalid fieldset{
     border-bottom-color: #b61010;
 }
-.invalid fieldset .your-message {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 .invalid fieldset .your-message span {
-    display: none;
-}
-.wpcf7-response-output {
     display: none;
 }
 .wpcf7-response-output {

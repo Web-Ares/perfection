@@ -8,6 +8,11 @@
     position: relative;
     margin-bottom: 21px;
     border-bottom: 2px solid #e8e8e8;
+    transition: border-bottom-color .3s ease;
+    -webkit-transition: border-bottom-color .3s ease;
+}
+.contact-form fieldset span{
+    display: none;
 }
 .contact-form input,
 .contact-form textarea{
@@ -62,9 +67,8 @@
 }
 /* --------------- /contact-form --------------- */
 
-@media (min-width: 768px){
-
-
-
+/* --------------- invalid --------------- */
+.invalid fieldset{
+    border-bottom-color: #b61010;
 }
-
+/* --------------- /invalid --------------- */

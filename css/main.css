@@ -160,13 +160,14 @@
     margin: 0 auto;
 }
 .site__title{
+    display: block;
     margin: 0 0 26px;
     font-size: 50px;
     line-height: 51px;
     font-family: "Proxima Nova Bold", sans-serif;
     font-weight: 400;
     color: #151414;
-    display: block;
+    word-wrap: break-word;
 }
 .site__header_inner {
     position: absolute;
@@ -320,24 +321,23 @@
     font-family: "Proxima Nova Bold", sans-serif;
 }
 .btn_7{
+    float: left;
     width: 130px;
     margin-top: 35px;
-    margin-right: -3px;
-    padding-top: 12px;
     border: 2px solid #242a2f!important;;
     background-color: #242a2f;
     border-radius: 25px 0 0 25px;
     color: #fff!important;
+    line-height: 30px;
 }
 .btn_8{
     width: 130px;
     margin-top: 35px;
-    margin-left: -3px;
-    padding-top: 12px;
     border: 2px solid #242a2f!important;
     border-radius: 0 25px 25px 0;
     background-color: transparent;
     color: #242a2f!important;
+    line-height: 30px;
 }
 .btn_8:hover{
     background-color: #242a2f;
@@ -757,7 +757,6 @@
 /* --------------- promo --------------- */
 .promo{
     position: relative;
-    padding-top: 16px;
     text-align: center;
     background-color: #242a2f;
 }
@@ -989,7 +988,7 @@
     padding: 0 0 9px;
 }
 .sharpest-icons__list{
-    margin: 0 -20px;
+    margin: 0 -13px;
     text-align: center;
 }
 .sharpest-icons__list>div{
@@ -1036,8 +1035,7 @@
     margin: 0 0 20px;
 }
 .line-solid__list {
-    max-width: 500px;
-    margin: 0 -20px;
+    margin: 0 -14px;
 }
 .line-solid__list>div {
     vertical-align: top;
@@ -1369,7 +1367,7 @@
     margin: 0 0 5px;
 }
 .pixel-grid__perfect {
-    width: 282px;
+    width: 279px;
     height: 47px;
     padding: 8px 9px;
     margin: 0 0 22px;
@@ -1522,8 +1520,8 @@
     padding-right: 10px;
     margin: 0 auto;
     color: #292929;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 26px;
 }
 .article a {
     border-bottom: 1px solid #1565c0;
@@ -1566,7 +1564,6 @@
     line-height: 42px;
 }
 /* --------------- /article --------------- */
-
 
 @media (min-width: 550px) {
 
@@ -1683,7 +1680,7 @@
         padding: 100px 0;
     }
     .formats__footnote {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 20px;
         margin-bottom: 50px;
     }
@@ -1708,6 +1705,7 @@
         padding-top: 50px;
     }
     /* ------------ /easy-way ------------ */
+
     /* ------------ social ------------ */
     .social__title {
         font-size: 20px;
@@ -1726,6 +1724,7 @@
         padding-top: 14px;
     }
     .site__header_inner {
+        margin-top: 0;
         padding: 25px 0 0;
     }
     .site__header-layout{
@@ -1754,6 +1753,13 @@
     .site__header-layout:before{
         display: none;
     }
+    .site__header.white,
+    .site__header.black{
+        margin-top: 0;
+    }
+    .site__header.header-top{
+        margin-top: 28px;
+    }
     /* --------------- /site --------------- */
 
     /* --------------- logo --------------- */
@@ -1770,11 +1776,6 @@
     /* --------------- /logo --------------- */
 
     /* --------------- btn --------------- */
-    .btn {
-        height: 42px;
-        font-size: 2.9vmin;
-        line-height: 1.9vmin;
-    }
     .btn_3{
         height: 84px;
         border-radius: 0;
@@ -2054,6 +2055,7 @@
     }
     .promo__logo{
         width: auto;
+        max-width: 728px;;
     }
     .promo__content{
         font-size: 28px;
@@ -2404,10 +2406,6 @@
     /* --------------- /customizable --------------- */
 
     /* --------------- article --------------- */
-    .article {
-        font-size: 22px;
-        line-height: 26px;
-    }
     .article li:before {
         top: 10px;
         left: 2px;

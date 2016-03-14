@@ -1,6 +1,7 @@
 /* ---------------  promo_thank-you --------------- */
-.promo{
+.promo__wrap{
     height: auto;
+    min-height: 100vh;
 }
 .promo p{
     margin-bottom: 95px;
@@ -39,6 +40,7 @@ span.promo__great{
 
 /* ---------------  social --------------- */
 .social_1{
+    bottom: 45px;
     color: #999;
     font-size: 20px;
     text-transform: none;
@@ -69,13 +71,5 @@ span.promo__great{
 }
 /* ---------------  /socials --------------- */
 
-@media (min-width: 768px){
 
-    /* ---------------  promo_thank-you --------------- */
-    .promo{
-        height: 100vh;
-    }
-    /* ---------------  promo_thank-you --------------- */
-
-}
 

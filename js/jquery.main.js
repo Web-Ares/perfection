@@ -1,7 +1,10 @@
 $(function () {
 
     $(document).on('invalid.wpcf7', function () {
-        console.log('invalid.wpcf7 was triggered!');
+        $('.contact-form').find('fieldset').removeClass('novalid');
+        $('.contact-form').find('.wpcf7-not-valid-tip').each(function(){
+            $(this).parents('fieldset').addClass('novalid');
+        })
     });
 
     $.each( $( '.drop-menu' ), function() {

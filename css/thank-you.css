@@ -1,0 +1,20 @@
+/* ---------------  promo_thank-you --------------- */
+.promo_thank-you{
+    padding-top: 0;
+}
+.promo_thank-you:before{
+    display: none;
+}
+/* --------------- / promo_thank-you --------------- */
+
+@media (min-width: 768px){
+
+    /* ---------------  promo_thank-you --------------- */
+    .policy{
+        font-size: 22px;
+        line-height: 25px;
+    }
+    /* ---------------  promo_thank-you --------------- */
+
+}
+

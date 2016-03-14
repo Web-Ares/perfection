@@ -26,35 +26,43 @@ span.promo__great{
 /* --------------- / promo_thank-you --------------- */
 
 /* ---------------  copyright --------------- */
-.copyright{
-    color: #fff;
+.copyright_1{
+    padding-bottom: 4px;
+    color: #999;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 /* ---------------  /copyright --------------- */
 
 /* ---------------  social --------------- */
-.social__item_mail:before{
-    background-position: 0 0;
+.social_1{
+    color: #999;
+    font-size: 20px;
+    text-transform: none;
 }
-.social__item_mail:after{
-    background-position: 0 -26px;
+.social_1 a{
+    display: inline-block;
+    vertical-align: middle;
+}
+.social__item:after{
+    display: none;
+}
+.social__item:before{
+    background-image: url("../img/iocns-social_1.png");
+    background-size: auto 25px;
+}
+.social__item:hover::before{
+    opacity: .8;
+    visibility: visible;
 }
 .social__item_btn:before{
-    background-position: -29px 0;
-}
-.social__item_btn:after{
-    background-position: -29px -26px;
+    background-position: 0 0;
 }
 .social__item_tw:before{
-    background-position: -61px 0;
-}
-.social__item_tw:after{
-    background-position: -61px -26px;
+    background-position: -51px 0;
 }
 .social__item_fb:before{
-    background-position: -94px 0;
-}
-.social__item_fb:after{
-    background-position: -94px -26px;
+    background-position: -100px 0;
 }
 /* ---------------  /socials --------------- */
 

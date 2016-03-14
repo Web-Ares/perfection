@@ -729,6 +729,7 @@
 }
 .promo p{
     max-width: 900px;
+    margin: 0 auto;
 }
 .promo__wrap{
     display: -webkit-box;

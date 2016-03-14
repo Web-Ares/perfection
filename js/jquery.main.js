@@ -25,18 +25,18 @@ $(function () {
 var MessageHigh = function ( obj ) {
 
     var _obj = obj,
-        _message = _obj.find( '.contact-form__message'),
-        _messageText = _obj.find( '.message-field__text'),
-        _messageHeight = _obj.find( '.message-field__height');
+        _message = _obj.find( '.contact-form__message' ),
+        _messageText = _obj.find( '.message-field__text' ),
+        _messageHeight = _obj.find( '.message-field__height' );
 
     var _onEvents = function() {
 
             _obj.on( {
                 'keyup': function(){
 
-                    _messageFrame.html( _obj.val() );
-                    _obj.css( 'height', _messageFrame.height() );
-                    _messaged.css( 'height', _messageFrame.height() );
+                    _messageText.html( _message.val() );
+                    _message.css( 'height', _messageText.height() );
+                    _messageHeight.css( 'height', _messageText.height() );
 
                 }
             } );

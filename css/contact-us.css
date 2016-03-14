@@ -39,7 +39,8 @@
     white-space: pre-wrap;
     word-wrap: break-word;
 }
-.ddd{
+.message-field__height,
+.message-field__text {
     overflow: hidden;
     opacity: 0;
     z-index: -1;
@@ -52,19 +53,9 @@
     transition: height .3s ease;
     -webkit-transition: height .3s ease;
 }
-.form__message-frame{
+.message-field__text {
     position: absolute;
-    overflow: hidden;
-    opacity: 0;
-    z-index: -1;
-    width: 100%;
-    min-height: 25px;
-    padding-left: 60px;
-    font: 17px/25px 'Proxima Nova Regular';
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    transition: height .3s ease;
-    -webkit-transition: height .3s ease;
+    top: 0;
 }
 /* --------------- /contact-form --------------- */
 

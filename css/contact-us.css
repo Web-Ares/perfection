@@ -69,12 +69,12 @@
 }
 /* --------------- /contact-form --------------- */
 
-/* --------------- invalid --------------- */
-.invalid fieldset{
+/* --------------- novalid --------------- */
+fieldset.novalid{
     border-bottom-color: #b61010;
 }
 div[role=alert],
 span[role=alert] {
     display: none!important;
 }
-/* --------------- /invalid --------------- */
+/* --------------- /novalid --------------- */

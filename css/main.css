@@ -988,7 +988,7 @@
     padding: 0 0 9px;
 }
 .sharpest-icons__list{
-    margin: 0 -20px;
+    margin: 0 -13px;
     text-align: center;
 }
 .sharpest-icons__list>div{
@@ -1035,8 +1035,7 @@
     margin: 0 0 20px;
 }
 .line-solid__list {
-    max-width: 500px;
-    margin: 0 -20px;
+    margin: 0 -14px;
 }
 .line-solid__list>div {
     vertical-align: top;
@@ -1368,7 +1367,7 @@
     margin: 0 0 5px;
 }
 .pixel-grid__perfect {
-    width: 282px;
+    width: 279px;
     height: 47px;
     padding: 8px 9px;
     margin: 0 0 22px;

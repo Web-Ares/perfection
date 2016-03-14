@@ -1,5 +1,9 @@
 $(function () {
 
+    $(document).on('invalid.wpcf7', function () {
+        console.log('invalid.wpcf7 was triggered!');
+    });
+
     $.each( $( '.drop-menu' ), function() {
         new  Menu( $( this ) );
     } );

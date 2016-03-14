@@ -21,6 +21,7 @@
     font-size: 18px;
 }
 .promo__content{
+    min-height: 440px;
     margin-bottom: 0;
 }
 span.promo__great{

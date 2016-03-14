@@ -16,7 +16,7 @@ $(function () {
         new SliderFormats( $( this ) );
     } );
 
-    $.each( $( '.contact-form__message' ), function() {
+    $.each( $( '.message-field' ), function() {
         new MessageHigh( $( this ) );
     } );
 
@@ -25,7 +25,9 @@ $(function () {
 var MessageHigh = function ( obj ) {
 
     var _obj = obj,
-        _messageFrame = $( '.form__message-frame');
+        _message = _obj.find( '.contact-form__message'),
+        _messageText = _obj.find( '.message-field__text'),
+        _messageHeight = _obj.find( '.message-field__height');
 
     var _onEvents = function() {
 
@@ -34,6 +36,7 @@ var MessageHigh = function ( obj ) {
 
                     _messageFrame.html( _obj.val() );
                     _obj.css( 'height', _messageFrame.height() );
+                    _messaged.css( 'height', _messageFrame.height() );
 
                 }
             } );

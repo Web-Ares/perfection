@@ -727,6 +727,9 @@
     text-align: center;
     background-color: #242a2f;
 }
+.promo p{
+    max-width: 900px;
+}
 .promo__wrap{
     display: -webkit-box;
     display: -ms-flexbox;

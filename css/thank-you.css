@@ -1,4 +1,7 @@
 /* ---------------  promo_thank-you --------------- */
+.promo{
+    height: auto;
+}
 .promo p{
     margin-bottom: 95px;
 }
@@ -69,7 +72,9 @@ span.promo__great{
 @media (min-width: 768px){
 
     /* ---------------  promo_thank-you --------------- */
-
+    .promo{
+        height: 100vh;
+    }
     /* ---------------  promo_thank-you --------------- */
 
 }

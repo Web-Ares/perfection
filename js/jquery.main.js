@@ -34,8 +34,8 @@ var MessageHigh = function ( obj ) {
             _obj.on( {
                 'keyup': function(){
 
-                    _messageText.html( _message.val() );
-                    _message.css( 'height', _messageText.height() );
+                    _messageText.html( _message.val() + '__' );
+                    _message.css( 'height', _messageText.height() + 25 );
                     _messageHeight.css( 'height', _messageText.height() );
 
                 }

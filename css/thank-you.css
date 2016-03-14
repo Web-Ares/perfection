@@ -2,6 +2,7 @@
 .promo__wrap{
     height: auto;
     min-height: 100vh;
+    padding: 75px 0 90px;
 }
 .promo p{
     margin-bottom: 95px;

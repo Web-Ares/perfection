@@ -334,7 +334,7 @@
 
 /* --------------- header-menu --------------- */
 .header-menu__item{
-    display: inline-block;
+    display: none;
     margin-right: 19px;
     padding-top: 6px;
     font: 12px 'Proxima Nova Regular', sans-serif;
@@ -770,7 +770,7 @@
 .promo__content{
     margin-bottom: 20px;
     color: #999;
-    font: 29px/33px "Proxima Nova Light", sans-serif;
+    font: 28px/33px "Proxima Nova Light", sans-serif;
 }
 .promo__content_inner{
     margin-bottom: 0;
@@ -962,7 +962,12 @@
     padding: 0 0 9px;
 }
 .sharpest-icons__list{
+    position: absolute;
+    top: 50%;
+    margin: 0 -20px;
     text-align: center;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
 }
 .sharpest-icons__list>div{
     display: inline-block;
@@ -978,8 +983,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.65);
-    transform: translateX(-50%) translateY(-50%) scale(0.65);
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.75);
+    transform: translateX(-50%) translateY(-50%) scale(0.75);
 }
 /* --------------- /sharpest-icons --------------- */
 
@@ -1009,7 +1014,7 @@
 }
 .line-solid__list {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 -20px;
 }
 .line-solid__list>div {
     vertical-align: top;
@@ -1023,15 +1028,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.65);
-    transform: translateX(-50%) translateY(-50%) scale(0.65);
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.75);
+    transform: translateX(-50%) translateY(-50%) scale(0.75);
 }
 /* --------------- /line-solid --------------- */
 
 /* --------------- formats --------------- */
 .formats{
     padding: 50px 0;
-    font-family: "Proxima Nova Regular", sans-serif;
+    font-family: "Proxima Nova Light", sans-serif;
 }
 .formats__text{
     margin: 0 0 20px;
@@ -1551,8 +1556,8 @@
 
     /* --------------- header-menu --------------- */
     .header-menu__item {
+        display: inline-block;
         padding-top: 3px;
-        font-size: 18px;
     }
     /* --------------- /header-menu --------------- */
 
@@ -1565,6 +1570,7 @@
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
+        max-width: 100%;
         max-height: 31vh;
     }
     /* --------------- /promo --------------- */
@@ -1778,6 +1784,7 @@
     .header-menu__item{
         margin-right: 35px;
         padding-top: 8px;
+        font-size: 18px;
     }
     /* --------------- /header-menu --------------- */
 
@@ -1866,6 +1873,7 @@
         vertical-align: middle;
         width: 43.5%;
         margin-left: 5%;
+        margin-right: 0;
         text-align: left;
     }
     .active .sharpest-icons__layout{
@@ -1985,6 +1993,7 @@
         right: 0;
         width: 50%;
         max-width: 434px;
+        margin: 0 -20px;
         text-align: left;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);

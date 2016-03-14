@@ -95,6 +95,13 @@ var Menu = function (obj) {
                         }
                     } );
                     _action = _window.scrollTop() >= _header.innerHeight();
+
+                    if( _action  ) {
+                        _header.removeClass( 'header-top' );
+                    } else {
+                        _header.addClass( 'header-top' );
+                    }
+
                 },
                 'DOMMouseScroll': function ( e ) {
                     var delta = e.originalEvent.detail;

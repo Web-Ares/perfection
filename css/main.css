@@ -2429,41 +2429,6 @@
     /* --------------- /article --------------- */
 
 }
-@media (min-width: 768px) {
-
-    /* --------------- tabs --------------- */
-    .tabs__controls-wrap {
-        width: 338px;
-    }
-    /* --------------- /tabs --------------- */
-
-    /* --------------- btn --------------- */
-    .btn_2 {
-        border: 2px solid #1565c0;
-    }
-    .btn_6 {
-        width: 186px;
-        height: 49px;
-        padding: 15px;
-        margin-left: -9px;
-        border-radius: 5px;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        font-size: 18px;
-        line-height: normal;
-    }
-    /* --------------- /btn --------------- */
-
-    /* --------------- pixel-grid --------------- */
-    .pixel-grid__slider .swiper-container {
-        height: 570px;
-    }
-    .pixel-grid__img {
-        height: 451px;
-    }
-    /* --------------- /pixel-grid --------------- */
-
-}
 @media (min-width: 992px) {
 
     /* --------------- site --------------- */

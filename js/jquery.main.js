@@ -184,7 +184,8 @@ var Menu = function ( obj ) {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,
-                shrinkScrollbars: 'scale'
+                shrinkScrollbars: 'scale',
+                click: true
             });
         },
         init = function() {

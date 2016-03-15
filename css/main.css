@@ -2751,13 +2751,15 @@
 
     /* --------------- promo --------------- */
     .promo__logo{
-        max-height: 15vh;
+        width: auto;
+        max-height: 14vh;
     }
     .promo__topic{
         font-size: 45px;
         line-height: 45px;
     }
     .promo__content {
+        margin-bottom: 10px;
         font-size: 16px;
         line-height: 18px;
     }

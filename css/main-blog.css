@@ -366,6 +366,9 @@
     position: relative;
     overflow: hidden;
 }
+#scroll-wrap > div{
+    max-height: 375px;
+}
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
     width: 9px !important
@@ -557,18 +560,6 @@
     /* --------------- /header-menu --------------- */
 
 }
-@media (min-width: 800px) {
-
-    /* --------------- header-menu --------------- */
-    .header-menu__item{
-        display: inline-block;
-        margin-right: 35px;
-        padding-top: 8px;
-        font-size: 18px;
-    }
-    /* --------------- /header-menu --------------- */
-
-}
 @media (min-width: 768px) {
 
     /* --------------- site --------------- */
@@ -629,28 +620,6 @@
     }
     /* --------------- /btn --------------- */
 
-    /* --------------- drop-menu --------------- */
-    .drop-menu__menu{
-        margin-bottom: 50px;
-        font-size: 44px;
-        line-height: 60px;
-    }
-    .drop-menu__navigation{
-        margin-bottom: 50px;
-        font: 30px/44px "Proxima Nova Light", sans-serif;
-    }
-    .drop-menu__legally{
-        font: 20px/34px "Proxima Nova Light", sans-serif;
-    }
-    /* --------------- /drop-menu --------------- */
-
-    /* --------------- drop-menu-btn --------------- */
-    .drop-menu-btn{
-        top: 5px;
-        margin-top: 0;
-    }
-    /* --------------- /drop-menu-btn --------------- */
-
     /* --------------- social --------------- */
     .social{
         left: auto;
@@ -665,6 +634,40 @@
         margin-left: 7px;
     }
     /* --------------- /social --------------- */
+
+    /* --------------- header-menu --------------- */
+    .header-menu__item{
+        display: inline-block;
+        margin-right: 35px;
+        padding-top: 8px;
+        font-size: 18px;
+    }
+    /* --------------- /header-menu --------------- */
+
+    /* --------------- drop-menu --------------- */
+    .drop-menu__menu{
+        margin-bottom: 50px;
+        font-size: 44px;
+        line-height: 60px;
+    }
+    .drop-menu__navigation{
+        margin-bottom: 50px;
+        font: 30px/44px "Proxima Nova Light", sans-serif;
+    }
+    .drop-menu__legally{
+        font: 20px/34px "Proxima Nova Light", sans-serif;
+    }
+    #scroll-wrap > div{
+        max-height: 532px;
+    }
+    /* --------------- /drop-menu --------------- */
+
+    /* --------------- drop-menu-btn --------------- */
+    .drop-menu-btn{
+        top: 5px;
+        margin-top: 0;
+    }
+    /* --------------- /drop-menu-btn --------------- */
 
     /* --------------- copyright --------------- */
     .copyright{
@@ -754,6 +757,9 @@
     }
     .drop-menu__legally{
         font: 14px/24px "Proxima Nova Light", sans-serif;
+    }
+    #scroll-wrap > div{
+        max-height: 335px;
     }
     /* --------------- /drop-menu --------------- */
 

@@ -517,23 +517,6 @@
     position: relative;
     overflow: hidden;
 }
-#scroller {
-    position: absolute;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
     width: 9px !important
@@ -1415,7 +1398,13 @@
     margin: 0 0 20px;
 }
 .easy-way__txt b {
+    color: #666;
     font-family: "Proxima Nova Regular", sans-serif;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.easy-way__txt b:hover {
+    opacity: .8;
 }
 .easy-way__warning {
     position: relative;

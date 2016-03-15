@@ -518,6 +518,9 @@
     position: relative;
     overflow: hidden;
 }
+#scroller{
+    height: 523px;
+}
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
     width: 9px !important

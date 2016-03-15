@@ -155,7 +155,6 @@
     font-family: "Proxima Nova Bold", sans-serif;
     font-weight: 400;
     color: #151414;
-    word-wrap: break-word;
 }
 .site__header_inner {
     position: absolute;
@@ -216,8 +215,9 @@
 }
 .logo_inner{
     left: 27px;
-    margin-top: 7px;
+    margin-top: 1px;
     margin-left: 0;
+    width: 104px;
 }
 .site__header.white .logo img{
     opacity: 0;
@@ -315,7 +315,7 @@
     margin-top: 35px;
     border: 2px solid #242a2f!important;;
     background-color: #242a2f;
-    border-radius: 25px 0 0 25px;
+    border-radius: 50px 0 0 50px;
     color: #fff!important;
     line-height: 30px;
 }
@@ -323,7 +323,7 @@
     width: 130px;
     margin-top: 35px;
     border: 2px solid #242a2f!important;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 50px 50px 0;
     background-color: transparent;
     color: #242a2f!important;
     line-height: 30px;
@@ -518,22 +518,8 @@
     position: relative;
     overflow: hidden;
 }
-#scroller {
-    position: absolute;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+#scroller{
+    height: 375px;
 }
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
@@ -863,7 +849,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    padding: 24px 0;
+    padding: 50px 0;
     margin-bottom: 50px;
     background: #242a2f;
     color: #fff;
@@ -885,7 +871,7 @@
     margin-bottom: 60px;
     font: 20px "Proxima Nova Light";
     text-align: center;
-    color: #e6e6e6;
+    color: #BFBFBF;
 }
 .pack-includes__pic{
     position: relative;
@@ -925,6 +911,9 @@
     height: 100%;
     padding-bottom: 50px;
 }
+.customizable .site__title{
+    word-wrap: break-word;
+}
 .customizable__layout {
     margin: 0 0 25px;
 }
@@ -947,7 +936,7 @@
     margin: 0 0 38px;
 }
 .sharpest-icons__layout{
-    margin: 0 0 25px;
+    margin: 0 0 50px;
 }
 .sharpest-icons__approved{
     display: flex;
@@ -1015,7 +1004,7 @@
 /* --------------- line-solid --------------- */
 .line-solid__layout {
     position: relative;
-    padding: 75px 0;
+    padding: 55px 0;
     margin: 0 0 40px;
     background-color: #f8f8f8;
 }
@@ -1066,7 +1055,7 @@
 }
 .formats__footnote{
     position: relative;
-    padding: 0 26% 0 34px;
+    padding: 0 26% 36px 34px;
     color: #666666;
     font-size: 18px;
     line-height: 23px;
@@ -1097,9 +1086,9 @@
     top: 50%;
     left: 50%;
     z-index: 1;
-    width: 60px;
-    height: 60px;
-    margin: -30px 0 0 -30px;
+    width: 70px;
+    height: 70px;
+    margin: -35px 0 0 -35px;
     padding: 5px;
     border: 4px solid #fff;
     border-radius: 100%;
@@ -1337,8 +1326,8 @@
 }
 .pixel-grid__img{
     width: 100%;
-    height: 360px;
-    margin: 0 auto 30px;
+    height: 390px;
+    margin: 0 auto 20px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -1413,7 +1402,13 @@
     margin: 0 0 20px;
 }
 .easy-way__txt b {
+    color: #666;
     font-family: "Proxima Nova Regular", sans-serif;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.easy-way__txt b:hover {
+    opacity: .8;
 }
 .easy-way__warning {
     position: relative;
@@ -1460,13 +1455,12 @@
 
 /* --------------- we-impressed --------------- */
 .we-impressed{
-    padding-top: 50px;
+    padding-top: 35px;
 }
 .we-impressed__layout {
     z-index: 2;
     position: relative;
-    padding: 17px 20px 30px;
-    /* margin: 0 0 40px; */
+    padding: 17px 20px 52px;
     background: #242a2f;
 }
 .we-impressed__text {
@@ -1581,12 +1575,6 @@
         padding-top: 3px;
     }
     /* --------------- /header-menu --------------- */
-
-    /* --------------- logo --------------- */
-    .logo_inner {
-        margin-top: 0;
-    }
-    /* --------------- /logo --------------- */
 
     /* --------------- promo --------------- */
     .promo__logo {
@@ -1714,6 +1702,30 @@
     }
     /* ------------ social ------------ */
 }
+@media (min-width: 768px) {
+
+    /* --------------- tabs --------------- */
+    .tabs__controls-wrap {
+        width: 338px;
+    }
+    /* --------------- /tabs --------------- */
+
+    /* --------------- btn --------------- */
+    .btn_2 {
+        border: 2px solid #1565c0;
+    }
+    /* --------------- /btn --------------- */
+
+    /* --------------- pixel-grid --------------- */
+    .pixel-grid__slider .swiper-container {
+        height: 570px;
+    }
+    .pixel-grid__img {
+        height: 451px;
+    }
+    /* --------------- /pixel-grid --------------- */
+
+}
 @media (min-width: 800px) {
 
     /* --------------- site --------------- */
@@ -1791,17 +1803,6 @@
         height: 50px;
         margin-top: 39px;
     }
-    .btn_6{
-        width: 186px;
-        height: 49px;
-        padding: 15px;
-        margin-left: -9px;
-        border-radius: 5px;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-        font-size: 18px;
-        line-height: normal;
-    }
     .btn_5{
         padding: 0 10px;
         margin-top: 18px;
@@ -1837,6 +1838,9 @@
     }
     .drop-menu__legally{
         font: 20px/34px "Proxima Nova Light", sans-serif;
+    }
+    #scroller{
+        height: 532px;
     }
     /* --------------- /drop-menu --------------- */
 
@@ -2003,7 +2007,6 @@
         height: 100%;
     }
     .line-solid__layout{
-
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -2209,7 +2212,7 @@
         opacity: 1;
     }
     .pixel-grid__text{
-        margin: 0 20px 39px 0;
+        margin: 0 130px 39px 0;
     }
     .pixel-grid__slider{
         display: inline-block;
@@ -2220,10 +2223,12 @@
     }
     .pixel-grid__slider .swiper-container{
         padding-bottom: 0;
-        height: 600px;
+        margin: -50px 0;
+        height: 760px;
     }
     .pixel-grid__img {
-        height: 430px;
+        height: 580px;
+        margin-bottom: 50px;
     }
     .pixel-grid__perfect{
         display: flex;
@@ -2329,7 +2334,7 @@
 
     /* ------------ easy-way ------------ */
     .easy-way {
-        padding: 100px 0;
+        padding: 0 0 100px;
     }
     .easy-way__content {
         opacity: 0;
@@ -2436,7 +2441,27 @@
     .btn_2 {
         border: 2px solid #1565c0;
     }
+    .btn_6 {
+        width: 186px;
+        height: 49px;
+        padding: 15px;
+        margin-left: -9px;
+        border-radius: 5px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 18px;
+        line-height: normal;
+    }
     /* --------------- /btn --------------- */
+
+    /* --------------- pixel-grid --------------- */
+    .pixel-grid__slider .swiper-container {
+        height: 570px;
+    }
+    .pixel-grid__img {
+        height: 451px;
+    }
+    /* --------------- /pixel-grid --------------- */
 
 }
 @media (min-width: 992px) {
@@ -2488,7 +2513,7 @@
 
     /* ------------ formats ------------ */
     .formats {
-        padding-top: 172px;
+        padding: 160px 0;
     }
     .formats__slider-text>div{
         font-size: 16px;
@@ -2560,10 +2585,11 @@
     /* --------------- pack-includes --------------- */
     .pack-includes{
         padding: 111px 0 79px;
+        margin-bottom: 117px;
     }
     .pack-includes__title {
         font-size: 22px;
-        margin-bottom: 11px;
+        margin-bottom: 14px;
         line-height: 20px;
     }
     .pack-includes__item {
@@ -2595,11 +2621,11 @@
     /* --------------- customizable --------------- */
     .customizable {
         height: 100%;
-        padding: 225px 0;
+        padding: 240px 0;
     }
     .customizable__layout{
-        width: 36%;
-        margin-right: 15%;
+        width: 38%;
+        margin-right: 13%;
         min-height: 39%;
         font-size: 26px;
         line-height: 37px;
@@ -2612,7 +2638,7 @@
     /* --------------- icons-promo --------------- */
     .icons-promo {
         min-height: 100%;
-        padding: 116px 0;
+        padding: 0 0 100px;
     }
     .icons-promo p {
         font-size: 26px;
@@ -2631,9 +2657,21 @@
         line-height: 18px;
     }
     .icons-promo__wrap {
-        margin-bottom: 88px;
+        margin-bottom: 71px;
     }
     /* --------------- /icons-promo --------------- */
+
+    /* --------------- easy-way --------------- */
+    .easy-way {
+        padding: 0 0 160px;
+    }
+    /* --------------- /easy-way --------------- */
+
+    /* --------------- line-solid --------------- */
+    .line-solid {
+        padding-bottom: 160px;
+    }
+    /* --------------- /line-solid --------------- */
 
     /* --------------- we-impressed --------------- */
     .we-impressed {
@@ -2652,8 +2690,8 @@
         margin: 0 auto;
     }
     .we-impressed__layout-wrap{
-        padding: 158px 15px 180px;
-        margin: 0 263px 0 -313px;
+        padding: 161px 15px 168px;
+        margin: 0 250px 0 -311px;
     }
     .we-impressed__text {
         margin: 0 0 70px;
@@ -2665,14 +2703,14 @@
     }
     .we-impressed__info-user {
         font-size: 20px;
-        margin-top: 19px;
+        margin-top: 2px;
         margin-left: 11px;
     }
     /* --------------- /we-impressed --------------- */
 
     /* --------------- sharpest-icons --------------- */
     .sharpest-icons {
-        padding: 205px 0;
+        padding: 125px 0;
     }
     .sharpest-icons__text{
         margin: 0 70px 39px 0;
@@ -2681,7 +2719,7 @@
         margin: 0 0 44px;
     }
     .sharpest-icons__list{
-        margin: -17px -48px 0 0;
+        margin: -16px 0 0 11%;
     }
     /* --------------- /sharpest-icons --------------- */
 
@@ -2693,7 +2731,7 @@
 
     /* --------------- line-solid --------------- */
     .line-solid__layout {
-        padding: 154px 0;
+        padding: 100px 0;
     }
     .line-solid__list{
         padding-top: 0;
@@ -2738,12 +2776,18 @@
         font-size: 24px;
         line-height: 33px;
     }
+    .drop-menu__inner{
+        padding: 55px 15px 65px;
+    }
     .drop-menu__navigation{
         margin-bottom: 20px;
         font: 20px/33px "Proxima Nova Light", sans-serif;
     }
     .drop-menu__legally{
         font: 14px/24px "Proxima Nova Light", sans-serif;
+    }
+    #scroller{
+        height: 335px;
     }
     /* --------------- /drop-menu --------------- */
 

@@ -7,6 +7,10 @@ $(function () {
         })
     });
 
+    $.each( $( '.anchor' ), function() {
+        new Anchor( $( this ) );
+    } );
+
     $.each( $( '.drop-menu' ), function() {
         new  Menu( $( this ) );
     } );
@@ -28,6 +32,27 @@ $(function () {
     } );
 
 });
+
+var Anchor = function ( obj ) {
+    var _obj = obj,
+        _window = $( 'html, body' );
+
+    var _onEvents = function() {
+        _obj.on( {
+                click: function() {
+                    _window.animate({
+                        scrollTop: $( $.attr(this, 'href') ).offset().top + 20
+                    }, 300);
+                    return false;
+                }
+            } );
+        },
+        init = function() {
+            _onEvents();
+        };
+
+    init()
+};
 
 var MessageHigh = function ( obj ) {
 

@@ -315,7 +315,7 @@
     margin-top: 35px;
     border: 2px solid #242a2f!important;;
     background-color: #242a2f;
-    border-radius: 25px 0 0 25px;
+    border-radius: 50px 0 0 50px;
     color: #fff!important;
     line-height: 30px;
 }
@@ -323,7 +323,7 @@
     width: 130px;
     margin-top: 35px;
     border: 2px solid #242a2f!important;
-    border-radius: 0 25px 25px 0;
+    border-radius: 0 50px 50px 0;
     background-color: transparent;
     color: #242a2f!important;
     line-height: 30px;
@@ -518,8 +518,8 @@
     position: relative;
     overflow: hidden;
 }
-#scroll-wrap > div{
-    max-height: 375px;
+#scroller{
+    height: 375px;
 }
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
@@ -1826,8 +1826,8 @@
     .drop-menu__legally{
         font: 20px/34px "Proxima Nova Light", sans-serif;
     }
-    #scroll-wrap > div{
-        max-height: 532px;
+    #scroller{
+        height: 532px;
     }
     /* --------------- /drop-menu --------------- */
 
@@ -2737,6 +2737,9 @@
         font-size: 24px;
         line-height: 33px;
     }
+    .drop-menu__inner{
+        padding: 55px 15px 65px;
+    }
     .drop-menu__navigation{
         margin-bottom: 20px;
         font: 20px/33px "Proxima Nova Light", sans-serif;
@@ -2744,8 +2747,8 @@
     .drop-menu__legally{
         font: 14px/24px "Proxima Nova Light", sans-serif;
     }
-    #scroll-wrap > div{
-        max-height: 335px;
+    #scroller{
+        height: 335px;
     }
     /* --------------- /drop-menu --------------- */
 

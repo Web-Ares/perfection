@@ -366,8 +366,8 @@
     position: relative;
     overflow: hidden;
 }
-#scroll-wrap > div{
-    max-height: 375px;
+#scroller{
+    height: 375px;
 }
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
@@ -657,8 +657,8 @@
     .drop-menu__legally{
         font: 20px/34px "Proxima Nova Light", sans-serif;
     }
-    #scroll-wrap > div{
-        max-height: 532px;
+    #scroller{
+        height: 532px;
     }
     /* --------------- /drop-menu --------------- */
 
@@ -758,8 +758,8 @@
     .drop-menu__legally{
         font: 14px/24px "Proxima Nova Light", sans-serif;
     }
-    #scroll-wrap > div{
-        max-height: 335px;
+    #scroller{
+        height: 335px;
     }
     /* --------------- /drop-menu --------------- */
 

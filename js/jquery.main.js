@@ -58,9 +58,12 @@ var MessageHigh = function ( obj ) {
 };
 
 var Menu = function ( obj ) {
-    var _btn = $( '.drop-menu-btn' ),
+    var _obj = obj,
+        _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
+        _menuContent = _obj.find( '#scroll-wrap' ),
+        _menuItem = _obj.find( '#scroll-wrap > div'),
         _action = false,
         _lastPos,
         _site = $( '.site' ),
@@ -137,6 +140,10 @@ var Menu = function ( obj ) {
                 }
             } );
         },
+        _contentHeight = function() {
+            _menuContent.css( 'height', _menuItem.height() )
+            _initContentScroll();
+        },
         _marginTop = function() {
             if( _window.scrollTop() > 0 ) {
                 _header.removeClass( 'header-top' );
@@ -162,8 +169,8 @@ var Menu = function ( obj ) {
         },
         init = function() {
             _colorTop();
+            _contentHeight();
             _marginTop();
-            _initContentScroll();
             _onEvents();
         };
 

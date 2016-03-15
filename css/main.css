@@ -2747,16 +2747,6 @@
     /* --------------- /drop-menu --------------- */
 
 }
-@media (max-height: 550px) {
-
-    /* --------------- site --------------- */
-    .site__header.header-top{
-        transform: translateY(0);
-        -webkit-transform: translateY(0);
-    }
-    /* --------------- /site --------------- */
-
-}
 @media (max-height: 470px) {
 
     /* --------------- promo --------------- */

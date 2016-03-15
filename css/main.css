@@ -215,8 +215,9 @@
 }
 .logo_inner{
     left: 27px;
-    margin-top: 7px;
+    margin-top: 1px;
     margin-left: 0;
+    width: 104px;
 }
 .site__header.white .logo img{
     opacity: 0;
@@ -1572,12 +1573,6 @@
     }
     /* --------------- /header-menu --------------- */
 
-    /* --------------- logo --------------- */
-    .logo_inner {
-        margin-top: 0;
-    }
-    /* --------------- /logo --------------- */
-
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
@@ -1993,7 +1988,6 @@
         height: 100%;
     }
     .line-solid__layout{
-
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;

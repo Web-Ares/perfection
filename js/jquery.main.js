@@ -1,9 +1,9 @@
 $(function () {
 
-    $(document).on('invalid.wpcf7', function () {
-        $('.contact-form').find('fieldset').removeClass('novalid');
-        $('.contact-form').find('.wpcf7-not-valid-tip').each(function(){
-            $(this).parents('fieldset').addClass('novalid');
+    $(document).on( 'invalid.wpcf7' , function () {
+        $( '.contact-form' ).find( 'fieldset' ).removeClass( 'novalid' );
+        $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {
+            $( this ).parents( 'fieldset' ).addClass( 'novalid' );
         })
     });
 
@@ -15,11 +15,11 @@ $(function () {
         new Preloader( $( this ) );
     } );
 
-    $.each( $('.pixel-grid__slider'), function() {
+    $.each( $( '.pixel-grid__slider' ), function() {
         new SliderSingle( $( this ) );
     } );
 
-    $.each( $('.formats__slider'), function() {
+    $.each( $( '.formats__slider' ), function() {
         new SliderFormats( $( this ) );
     } );
 
@@ -39,7 +39,7 @@ var MessageHigh = function ( obj ) {
     var _onEvents = function() {
 
             _obj.on( {
-                'keydown': function(){
+                'keydown' : function() {
 
                     _messageText.html( _message.val() + '___' );
                     _message.css( 'height', _messageText.height() + 25 );
@@ -57,7 +57,7 @@ var MessageHigh = function ( obj ) {
     _init();
 };
 
-var Menu = function (obj) {
+var Menu = function ( obj ) {
     var _btn = $( '.drop-menu-btn' ),
         _header = $( '.site__header' ),
         _siteSections = $( '.pages__item' ),
@@ -70,7 +70,7 @@ var Menu = function (obj) {
             _btn.on( {
                 click: function() {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
-                        _site.css ( 'height', 'auto' );
+                        _site.css( 'height', 'auto' );
                         _header.removeClass( 'site__header_drop-menu' );
                         _window.scrollTop( siteScrollTop );
                         return false;
@@ -118,7 +118,7 @@ var Menu = function (obj) {
                 }
             } )
         },
-        _colorTop = function () {
+        _colorTop = function() {
             _siteSections.each( function() {
                 var siteSectionsTop = $( this ).offset().top,
                     siteSectionsHeight = $( this ).height(),
@@ -132,7 +132,7 @@ var Menu = function (obj) {
                 }
             } );
         },
-        _marginTop = function () {
+        _marginTop = function() {
             if( _window.scrollTop() > 0 ) {
                 _header.removeClass( 'header-top' );
             } else {

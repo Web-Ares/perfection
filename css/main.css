@@ -132,19 +132,7 @@
     margin: 0 auto;
     padding: 0 21px;
 }
-.site__header-layout:before{
-    position: absolute;
-    top: 17px;
-    left: 18px;
-    z-index: 7;
-    color: #fff;
-    font: 18px 'Proxima Nova Regular', sans-serif;
-    text-transform: uppercase;
-    content: 'ICONS';
-    transition: color .3s ease;
-    -webkit-transition: color .3s ease;
-}
-.site__header.white .site__header-layout:before{
+.site__header.white .header-menu__mobile-item{
     color: #555;
 }
 .site__content {
@@ -176,10 +164,10 @@
 .site__inner-page{
     padding: 50px 0;
 }
-.site__header.site__header_drop-menu .site__header-layout:before{
+.site__header.site__header_drop-menu .header-menu__mobile-item{
     color: #fff;
 }
-.site__header_inner .site__header-layout:before{
+.site__header_inner .header-menu__mobile-item{
     display: none;
 }
 /* --------------- /site --------------- */
@@ -376,6 +364,20 @@
 .site__header.white .header-menu__item{
     color: #555;
 }
+.header-menu__mobile-item{
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    z-index: 7;
+    color: #fff;
+    font: 18px 'Proxima Nova Regular', sans-serif;
+    text-transform: uppercase;
+    transition: color .3s ease, opacity .3s ease;
+    -webkit-transition: color .3s ease, opacity .3s ease;
+}
+.header-menu__mobile-item:hover{
+    opacity: .8;
+}
 /* --------------- /header-menu --------------- */
 
 /* --------------- drop-menu --------------- */
@@ -532,11 +534,6 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    -o-text-size-adjust: none;
-    text-size-adjust: none;
 }
 .iScrollVerticalScrollbar {
     background: 0 0 !important;
@@ -1755,7 +1752,7 @@
     .site__inner-page {
         padding: 60px 0;
     }
-    .site__header-layout:before{
+    .header-menu__mobile-item{
         display: none;
     }
     .site__header.white,
@@ -2057,9 +2054,13 @@
     /* --------------- promo --------------- */
     .promo{
         display: flex;
+        -webkit-display: flex;
         flex-direction: row;
+        -webkit-flex-direction: row;
         justify-content: flex-start;
+        -webkit-justify-content: flex-start;
         align-items: center;
+        -webkit-align-items: center;
     }
     .promo__logo{
         width: auto;

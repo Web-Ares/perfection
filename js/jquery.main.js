@@ -71,8 +71,13 @@ var Menu = function ( obj ) {
                 click: function() {
                     if( _header.hasClass( 'site__header_drop-menu' ) ) {
                         _site.css( 'height', 'auto' );
-                        _header.removeClass( 'site__header_drop-menu' );
                         _window.scrollTop( siteScrollTop );
+
+                        // for css animation
+                        setTimeout( function() {
+                            _header.removeClass( 'site__header_drop-menu' );
+                        }, 300);
+
                         return false;
                     } else {
                         siteScrollTop = _window.scrollTop();

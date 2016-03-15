@@ -557,6 +557,18 @@
     /* --------------- /header-menu --------------- */
 
 }
+@media (min-width: 800px) {
+
+    /* --------------- header-menu --------------- */
+    .header-menu__item{
+        display: inline-block;
+        margin-right: 35px;
+        padding-top: 8px;
+        font-size: 18px;
+    }
+    /* --------------- /header-menu --------------- */
+
+}
 @media (min-width: 768px) {
 
     /* --------------- site --------------- */
@@ -616,15 +628,6 @@
         line-height: 1.9vmin;
     }
     /* --------------- /btn --------------- */
-
-    /* --------------- header-menu --------------- */
-    .header-menu__item{
-        display: inline-block;
-        margin-right: 35px;
-        padding-top: 8px;
-        font-size: 18px;
-    }
-    /* --------------- /header-menu --------------- */
 
     /* --------------- drop-menu --------------- */
     .drop-menu__menu{

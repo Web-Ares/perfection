@@ -42,7 +42,7 @@ var Anchor = function ( obj ) {
                 click: function() {
                     _window.animate({
                         scrollTop: $( $.attr(this, 'href') ).offset().top + 20
-                    }, 300);
+                    }, 600);
                     return false;
                 }
             } );

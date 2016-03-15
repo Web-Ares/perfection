@@ -871,7 +871,7 @@
     margin-bottom: 60px;
     font: 20px "Proxima Nova Light";
     text-align: center;
-    color: #e6e6e6;
+    color: #BFBFBF;
 }
 .pack-includes__pic{
     position: relative;
@@ -1004,7 +1004,7 @@
 /* --------------- line-solid --------------- */
 .line-solid__layout {
     position: relative;
-    padding: 75px 0;
+    padding: 55px 0;
     margin: 0 0 40px;
     background-color: #f8f8f8;
 }
@@ -1055,7 +1055,7 @@
 }
 .formats__footnote{
     position: relative;
-    padding: 0 26% 0 34px;
+    padding: 0 26% 36px 34px;
     color: #666666;
     font-size: 18px;
     line-height: 23px;
@@ -1702,6 +1702,30 @@
     }
     /* ------------ social ------------ */
 }
+@media (min-width: 768px) {
+
+    /* --------------- tabs --------------- */
+    .tabs__controls-wrap {
+        width: 338px;
+    }
+    /* --------------- /tabs --------------- */
+
+    /* --------------- btn --------------- */
+    .btn_2 {
+        border: 2px solid #1565c0;
+    }
+    /* --------------- /btn --------------- */
+
+    /* --------------- pixel-grid --------------- */
+    .pixel-grid__slider .swiper-container {
+        height: 570px;
+    }
+    .pixel-grid__img {
+        height: 451px;
+    }
+    /* --------------- /pixel-grid --------------- */
+
+}
 @media (min-width: 800px) {
 
     /* --------------- site --------------- */
@@ -2199,7 +2223,7 @@
         opacity: 1;
     }
     .pixel-grid__text{
-        margin: 0 20px 39px 0;
+        margin: 0 130px 39px 0;
     }
     .pixel-grid__slider{
         display: inline-block;
@@ -2210,10 +2234,12 @@
     }
     .pixel-grid__slider .swiper-container{
         padding-bottom: 0;
-        height: 600px;
+        margin: -50px 0;
+        height: 760px;
     }
     .pixel-grid__img {
-        height: 430px;
+        height: 580px;
+        margin-bottom: 50px;
     }
     .pixel-grid__perfect{
         display: flex;
@@ -2319,7 +2345,7 @@
 
     /* ------------ easy-way ------------ */
     .easy-way {
-        padding: 100px 0;
+        padding: 0 0 100px;
     }
     .easy-way__content {
         opacity: 0;
@@ -2414,30 +2440,6 @@
     /* --------------- /article --------------- */
 
 }
-@media (min-width: 768px) {
-
-    /* --------------- tabs --------------- */
-    .tabs__controls-wrap {
-        width: 338px;
-    }
-    /* --------------- /tabs --------------- */
-
-    /* --------------- btn --------------- */
-    .btn_2 {
-        border: 2px solid #1565c0;
-    }
-    /* --------------- /btn --------------- */
-
-    /* --------------- pixel-grid --------------- */
-    .pixel-grid__slider .swiper-container {
-        height: 570px;
-    }
-    .pixel-grid__img {
-        height: 451px;
-    }
-    /* --------------- /pixel-grid --------------- */
-
-}
 @media (min-width: 992px) {
 
     /* --------------- site --------------- */
@@ -2487,7 +2489,7 @@
 
     /* ------------ formats ------------ */
     .formats {
-        padding-top: 172px;
+        padding: 160px 0;
     }
     .formats__slider-text>div{
         font-size: 16px;
@@ -2559,10 +2561,11 @@
     /* --------------- pack-includes --------------- */
     .pack-includes{
         padding: 111px 0 79px;
+        margin-bottom: 117px;
     }
     .pack-includes__title {
         font-size: 22px;
-        margin-bottom: 11px;
+        margin-bottom: 14px;
         line-height: 20px;
     }
     .pack-includes__item {
@@ -2594,11 +2597,11 @@
     /* --------------- customizable --------------- */
     .customizable {
         height: 100%;
-        padding: 225px 0;
+        padding: 240px 0;
     }
     .customizable__layout{
-        width: 36%;
-        margin-right: 15%;
+        width: 38%;
+        margin-right: 13%;
         min-height: 39%;
         font-size: 26px;
         line-height: 37px;
@@ -2611,7 +2614,7 @@
     /* --------------- icons-promo --------------- */
     .icons-promo {
         min-height: 100%;
-        padding: 116px 0;
+        padding: 0 0 100px;
     }
     .icons-promo p {
         font-size: 26px;
@@ -2630,9 +2633,21 @@
         line-height: 18px;
     }
     .icons-promo__wrap {
-        margin-bottom: 88px;
+        margin-bottom: 71px;
     }
     /* --------------- /icons-promo --------------- */
+
+    /* --------------- easy-way --------------- */
+    .easy-way {
+        padding: 0 0 160px;
+    }
+    /* --------------- /easy-way --------------- */
+
+    /* --------------- line-solid --------------- */
+    .line-solid {
+        padding-bottom: 160px;
+    }
+    /* --------------- /line-solid --------------- */
 
     /* --------------- we-impressed --------------- */
     .we-impressed {
@@ -2651,8 +2666,8 @@
         margin: 0 auto;
     }
     .we-impressed__layout-wrap{
-        padding: 158px 15px 180px;
-        margin: 0 263px 0 -313px;
+        padding: 161px 15px 168px;
+        margin: 0 250px 0 -311px;
     }
     .we-impressed__text {
         margin: 0 0 70px;
@@ -2664,7 +2679,7 @@
     }
     .we-impressed__info-user {
         font-size: 20px;
-        margin-top: 19px;
+        margin-top: 2px;
         margin-left: 11px;
     }
     /* --------------- /we-impressed --------------- */
@@ -2680,7 +2695,7 @@
         margin: 0 0 44px;
     }
     .sharpest-icons__list{
-        margin: -17px -48px 0 0;
+        margin: -16px 0 0 11%;
     }
     /* --------------- /sharpest-icons --------------- */
 
@@ -2692,7 +2707,7 @@
 
     /* --------------- line-solid --------------- */
     .line-solid__layout {
-        padding: 154px 0;
+        padding: 100px 0;
     }
     .line-solid__list{
         padding-top: 0;

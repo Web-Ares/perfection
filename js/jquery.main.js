@@ -76,7 +76,7 @@ var Menu = function ( obj ) {
                         // for css animation
                         setTimeout( function() {
                             _header.removeClass( 'site__header_drop-menu' );
-                        }, 300);
+                        }, 100);
 
                         return false;
                     } else {

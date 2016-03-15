@@ -116,8 +116,8 @@
     font-size: 12px;
     text-align: right;
     background-color: #242a2f;
-    transition: border-bottom .2s ease, background-color .2s ease, transform .3s ease;
-    -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .3s ease;
+    transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease;
+    -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease;
 }
 .site__header_hidden {
     -webkit-transform: translateY( -73px );

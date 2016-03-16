@@ -10,7 +10,8 @@
     font: 26px "Proxima Nova Regular";
 }
 .pricing__item{
-    position:relative;max-width:337px;
+    position:relative;
+    max-width:337px;
     padding:32px 10px 106px;
     margin:0 auto 14px;
     border-radius:4px;

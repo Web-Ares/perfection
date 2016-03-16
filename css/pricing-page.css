@@ -162,7 +162,6 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-    padding-top: 2px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -170,6 +169,7 @@
     font: 12px "Proxima Nova Regular";
     color: #999999;
     text-align: center;
+    line-height: 18px;
 }
 .pricing__tooltips span {
     visibility: hidden;

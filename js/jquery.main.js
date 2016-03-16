@@ -101,9 +101,8 @@ var Menu = function ( obj ) {
                         _header.removeClass( 'site__header_drop-menu' );
                         return false;
                     } else {
-                        siteScrollTop = _window.scrollTop();
                         _header.addClass( 'site__header_drop-menu' );
-
+                        siteScrollTop = _window.scrollTop();
                         // for css animation
                         setTimeout( function() {
                             _site.css ( 'height', '100%' );
@@ -164,9 +163,9 @@ var Menu = function ( obj ) {
         },
         _marginTop = function() {
             if( _window.scrollTop() > 0 ) {
-                _header.removeClass( 'header-top' );
+                _header.addClass( 'header-scroll' );
             } else {
-                _header.addClass( 'header-top' );
+                _header.removeClass( 'header-scroll' );
             }
         },
         _checkScroll = function( direction ){

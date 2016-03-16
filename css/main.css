@@ -116,8 +116,8 @@
     font-size: 12px;
     text-align: right;
     background-color: #242a2f;
-    transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease, height .3s ease, padding-top .3s ease;
-    -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease, height .3s ease, padding-top .3s ease;
+    transition: border-bottom .2s ease, padding-top .2s ease, background-color .3s ease, transform .3s ease, height .3s ease;
+    -webkit-transition: border-bottom .2s ease, padding-top .2s ease, background-color .3s ease, transform .3s ease, height .3s ease;
 }
 .site__header_hidden {
     -webkit-transform: translateY( -73px );
@@ -1255,7 +1255,7 @@
 }
 .icons-promo p {
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
 }
 .icons-promo__controls a {
     margin: 0 22px 15px;
@@ -1765,7 +1765,7 @@
     }
     .site__header{
         height: 64px;
-        padding-top: 14px;
+        padding-top: 28px;
     }
     .site__header_inner {
         margin-top: 0;
@@ -1801,10 +1801,11 @@
     .site__header.black{
         margin-top: 0;
     }
-    .site__header.header-top{
-        padding-top: 28px;
+    .site__header.header-scroll{
+        overflow: hidden;
+        padding-top: 14px;
     }
-    .site__header_drop-menu{
+    .site__header.site__header_drop-menu{
         padding-top: 28px;
     }
     /* --------------- /site --------------- */
@@ -2170,7 +2171,6 @@
         max-width: 875px;
         letter-spacing: -0.4px;
         margin: 0 auto 7vmin;
-        text-align: center;
     }
     .icons-promo .site__title {
         margin-bottom: 22px;

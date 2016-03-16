@@ -1,7 +1,5 @@
 $(function () {
 
-    new TopGif($(window));
-
     $(document).on( 'invalid.wpcf7' , function () {
         $( '.contact-form' ).find( 'fieldset' ).removeClass( 'novalid' );
         $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {
@@ -27,6 +25,10 @@ $(function () {
 
     $.each( $( '.message-field' ), function() {
         new MessageHigh( $( this ) );
+    } );
+
+    $.each( $( '#logov4' ), function() {
+        new TopGif( $( window ) );
     } );
 
 });
@@ -174,6 +176,10 @@ var Menu = function ( obj ) {
                     _action = _window.scrollTop() >= _header.innerHeight();
                     _colorTop();
                     _marginTop();
+                },
+                'resize': function () {
+                    console.log ('555')
+                    _menuContent.css( 'height', _menuItem.height() )
                 },
                 'DOMMouseScroll': function ( e ) {
                     var delta = e.originalEvent.detail;

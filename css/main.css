@@ -500,6 +500,7 @@
     color: #90bff4;
 }
 .drop-menu__legally{
+    margin-bottom: 5px;
     font: 14px/34px "Proxima Nova Light", sans-serif;
 }
 .drop-menu__legally-item{
@@ -1916,7 +1917,7 @@
     /* --------------- social --------------- */
     .social{
         left: auto;
-        right: 15px;
+        right: 87px;
         bottom: 35px;
     }
     .social_inner{
@@ -1933,7 +1934,7 @@
     /* --------------- copyright --------------- */
     .copyright{
         right: auto;
-        left: 15px;
+        left: 87px;
         bottom: 35px;
     }
     /* --------------- /copyright --------------- */

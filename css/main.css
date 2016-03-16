@@ -1346,6 +1346,10 @@
     background-size: contain;
     background-position: center center;
 }
+.pixel-grid__download{
+    margin: 0 4px;
+    font-weight: 700;
+}
 .pixel-grid__img_big-icon{
     max-width: 76%;
     width: 210px;

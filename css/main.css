@@ -116,8 +116,8 @@
     font-size: 12px;
     text-align: right;
     background-color: #242a2f;
-    transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease, height .3s ease, padding-top .3s ease;
-    -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease, height .3s ease, padding-top .3s ease;
+    transition: border-bottom .2s ease, padding-top .2s ease, background-color .3s ease, transform .3s ease, height .3s ease;
+    -webkit-transition: border-bottom .2s ease, padding-top .2s ease, background-color .3s ease, transform .3s ease, height .3s ease;
 }
 .site__header_hidden {
     -webkit-transform: translateY( -73px );
@@ -1802,9 +1802,10 @@
         margin-top: 0;
     }
     .site__header.header-scroll{
+        overflow: hidden;
         padding-top: 14px;
     }
-    .site__header_drop-menu{
+    .site__header.site__header_drop-menu{
         padding-top: 28px;
     }
     /* --------------- /site --------------- */

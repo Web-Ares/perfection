@@ -101,8 +101,8 @@ var Menu = function ( obj ) {
                         _header.removeClass( 'site__header_drop-menu' );
                         return false;
                     } else {
-                        siteScrollTop = _window.scrollTop();
                         _header.addClass( 'site__header_drop-menu' );
+                        siteScrollTop = _window.scrollTop();
                         // for css animation
                         setTimeout( function() {
                             _site.css ( 'height', '100%' );

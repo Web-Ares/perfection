@@ -1,1 +1,268 @@
-.article h1,.article h2{font-family:"Proxima Nova Bold",sans-serif}.article{max-width:812px;padding-top:31px;padding-right:10px;margin:0 auto;color:#292929;font-size:22px;line-height:26px}.article a{border-bottom:1px solid #1565c0;color:#1565c0;transition:border-bottom-color .3s ease;-webkit-transition:border-bottom-color .3s ease}.article a:hover{border-bottom-color:transparent}.article p{margin-bottom:30px}.article ul{margin-bottom:31px}.article li{position:relative;margin-bottom:1px;padding-left:25px}.article li:before,blockquote:before{position:absolute;content:''}.article li:before{top:9px;left:11px;width:4px;height:4px;border-radius:20px;background-color:#292929}.article-author__ava,.author__ava{border-radius:50%;overflow:hidden}.article h1{margin-bottom:30px;font-size:36px;line-height:35px}.article h2{margin-bottom:20px;font-size:33px;line-height:42px}.article h3,.article h4,.article h5,.article h6{margin-bottom:36px}.article h3{font:30px "Proxima Nova Regular",sans-serif}.article h4{font:28px "Proxima Nova Regular",sans-serif}.article h5{font:24px "Proxima Nova Regular",sans-serif}.article h6{font:20px "Proxima Nova Regular",sans-serif}.alignleft{float:left;margin:76px 25px 76px 0}.aligncenter{display:inline-block;margin:76px 20px}.alignright{float:right;margin:76px 0 76px 25px}.alignnone{display:block;width:100%;margin:76px auto}blockquote{display:block;position:relative;margin:63px 0;padding-left:32px;padding-right:30px;font-size:19px;line-height:25px;color:#1565c0}.comments,.similar-records{max-width:812px;padding-right:12px}blockquote:before{top:4px;bottom:6px;left:0;width:5px;background-color:#1565c0}.author{margin:96px 0 32px;overflow:hidden;padding-bottom:18px;border-bottom:3px solid #f3f3f3}.author__ava{width:96px;height:96px;margin-right:27px}.author__ava img{width:100%;height:100%}.author__content{overflow:hidden}.author__content p{margin-bottom:0}.author__name{display:inline-block;margin-bottom:6px;font:26px 'Proxima Nova Regular',sans-serif}.comments{margin:0 auto 95px;color:#000}.comments__title{margin-bottom:32px;font:30px 'Proxima Nova Regular',sans-serif}.similar-records{margin:0 auto;text-align:justify}.similar-records__title{margin-bottom:36px;font-size:25px;text-align:center;color:#000}.similar-records:after{content:'';display:inline-block;width:100%}.similar-records__item{display:block;width:100%;max-width:256px;margin:0 auto 25px;transition:opacity .3s ease;-webkit-transition:opacity .3s ease}.similar-records__item:hover{opacity:.9}.similar-records__item img{width:100%;margin-bottom:17px}.similar-records__topic{display:inline-block;margin:0 25px;color:#000;font:20px 'Proxima Nova Regular',sans-serif;line-height:24px;text-align:center}.similar-records__topic span{border-bottom:1px solid transparent;transition:border-bottom-color .3s ease;-webkit-transition:border-bottom-color .3s ease}.similar-records__item:hover span{border-bottom-color:#000}.article-author{overflow:hidden;margin-bottom:18px;font-size:18px;color:#999}.article-author time{display:block;font-size:12px}.article-author__ava{float:left;width:49px;height:49px;margin-right:12px}.article-author__ava img{width:100%;height:100%}.article-author__content{overflow:hidden;padding-top:8px;line-height:20px}@media (min-width:767px){.article h1{margin-bottom:75px;font-size:66px;line-height:64px}quote{margin-bottom:97px;font-size:30px;line-height:40px}.author__ava{float:left}.similar-records__item{display:inline-block;width:32%;margin:0}}
+/* --------------- article --------------- */
+.article {
+    max-width: 812px;
+    padding-top: 31px;
+    padding-right: 10px;
+    margin: 0 auto;
+    color: #292929;
+    font-size: 22px;
+    line-height: 26px;
+}
+.article a {
+    border-bottom: 1px solid #1565c0;
+    color: #1565c0;
+    transition: border-bottom-color .3s ease;
+    -webkit-transition: border-bottom-color .3s ease;
+}
+.article a:hover {
+    border-bottom-color: transparent;
+}
+.article p {
+    margin-bottom: 30px;
+}
+.article ul {
+    margin-bottom: 31px;
+}
+.article li {
+    position: relative;
+    margin-bottom: 1px;
+    padding-left: 25px;
+}
+.article li:before {
+    position: absolute;
+    top: 9px;
+    left: 11px;
+    width: 4px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: #292929;
+    content: '';
+}
+.article h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    line-height: 35px;
+    font-family: "Proxima Nova Bold" , sans-serif;
+}
+.article h2 {
+    margin-bottom: 20px;
+    font-size: 33px;
+    font-family: "Proxima Nova Bold" , sans-serif;
+    line-height: 42px;
+}
+.article h3 {
+    margin-bottom: 36px;
+    font: 30px "Proxima Nova Regular" , sans-serif;
+}
+.article h4 {
+    margin-bottom: 36px;
+    font: 28px "Proxima Nova Regular" , sans-serif;
+}
+.article h5 {
+    margin-bottom: 36px;
+    font: 24px "Proxima Nova Regular" , sans-serif;
+}
+.article h6 {
+    margin-bottom: 36px;
+    font: 20px "Proxima Nova Regular" , sans-serif;
+}
+.alignleft{
+    float: left;
+    margin: 76px 25px 76px 0;
+}
+.aligncenter{
+    display: inline-block;
+    margin: 76px 20px;
+}
+.alignright{
+    float: right;
+    margin: 76px 0 76px 25px;
+}
+.alignnone{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 76px auto;
+}
+/* --------------- /article --------------- */
+
+/* --------------- quote --------------- */
+blockquote{
+    display: block;
+    position: relative;
+    margin: 63px 0;
+    padding-left: 32px;
+    padding-right: 30px;
+    font-size: 19px;
+    line-height: 25px;
+    color: #1565c0;
+}
+blockquote:before{
+    position: absolute;
+    top: 6px;
+    bottom: 10px;
+    left: 0;
+    width: 5px;
+    background-color: #1565c0;
+    content: '';
+}
+/* --------------- /quote --------------- */
+
+/* --------------- author --------------- */
+.author{
+    margin: 96px 0 32px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    border-bottom: 3px solid #f3f3f3;
+}
+.author__ava {
+    overflow: hidden;
+    width: 96px;
+    height: 96px;
+    margin-right: 27px;
+    border-radius: 50%;
+}
+.author__ava img{
+    width: 100%;
+    height: 100%;
+}
+.author__content {
+    overflow: hidden;
+}
+.author__content p {
+    margin-bottom: 0;
+}
+.author__name {
+    display: inline-block;
+    margin-bottom: 6px;
+    font: 26px 'Proxima Nova Regular', sans-serif;
+}
+/* --------------- /author --------------- */
+
+/* --------------- comments --------------- */
+.comments{
+    max-width: 812px;
+    margin: 0 auto 95px;
+    padding-right: 12px;
+    color: #000;
+}
+.comments__title{
+    margin-bottom: 32px;
+    font: 30px 'Proxima Nova Regular', sans-serif;
+}
+/* --------------- /comments --------------- */
+
+/* --------------- similar-records --------------- */
+.similar-records{
+    max-width: 812px;
+    margin: 0 auto;
+    padding-right: 12px;
+    text-align: justify;
+}
+.similar-records__title{
+    margin-bottom: 36px;
+    font-size: 25px;
+    text-align: center;
+    color: #000;
+}
+.similar-records:after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+.similar-records__item{
+    display: block;
+    width: 100%;
+    max-width: 256px;
+    margin: 0 auto 25px;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.similar-records__item:hover{
+    opacity: .9;
+}
+.similar-records__item img{
+    width: 100%;
+    margin-bottom: 17px;
+}
+.similar-records__topic{
+    display: inline-block;
+    margin: 0 25px;
+    color: #000;
+    font: 20px 'Proxima Nova Regular', sans-serif;
+    line-height: 24px;
+    text-align: center;
+}
+.similar-records__topic span{
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color .3s ease;
+    -webkit-transition: border-bottom-color .3s ease;
+}
+.similar-records__item:hover span{
+    border-bottom-color: #000;
+}
+/* --------------- /similar-records --------------- */
+
+/* --------------- article-author --------------- */
+.article-author{
+    overflow: hidden;
+    margin-bottom: 18px;
+    font-size: 18px;
+    color: #999;
+}
+.article-author time{
+    display: block;
+    font-size: 12px;
+}
+.article-author__ava {
+    float: left;
+    overflow: hidden;
+    width: 49px;
+    height: 49px;
+    margin-right: 12px;
+    border-radius: 50%;
+}
+.article-author__ava img{
+    width: 100%;
+    height: 100%;
+}
+.article-author__content{
+    overflow: hidden;
+    padding-top: 8px;
+    line-height: 20px;
+}
+/* --------------- /article-author --------------- */
+
+@media (min-width: 767px) {
+
+    /* --------------- article --------------- */
+    .article h1 {
+        margin-bottom: 75px;
+        font-size: 66px;
+        line-height: 64px;
+    }
+    /* --------------- article --------------- */
+
+    /* --------------- blockquote --------------- */
+    blockquote{
+        margin-bottom: 97px;
+        font-size: 30px;
+        line-height: 40px;
+    }
+    /* --------------- /blockquote --------------- */
+
+    /* --------------- author --------------- */
+    .author__ava {
+        float: left;
+    }
+    /* --------------- /author --------------- */
+
+    /* --------------- similar-records --------------- */
+    .similar-records__item{
+        display: inline-block;
+        width: 32%;
+        margin: 0;
+    }
+    /* --------------- similar-records --------------- */
+
+}

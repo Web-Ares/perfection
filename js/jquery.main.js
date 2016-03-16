@@ -1,5 +1,7 @@
 $(function () {
 
+    new TopGif($(window));
+
     $(document).on( 'invalid.wpcf7' , function () {
         $( '.contact-form' ).find( 'fieldset' ).removeClass( 'novalid' );
         $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {
@@ -28,6 +30,61 @@ $(function () {
     } );
 
 });
+
+var TopGif = function (obj) {
+    var _obj = obj;
+    var validNavigation = false;
+    var _onEvents = function () {
+            $(document).bind('keypress', function (e) {
+                validNavigation = true;
+            });
+
+            $("a").on("click", function () {
+                validNavigation = true;
+            });
+
+            $("form").on("submit", function () {
+                validNavigation = true;
+            });
+
+            $("input[type=submit]").on("click", function () {
+                validNavigation = true;
+            });
+        },
+        _checkCookie = function(){
+            if($.cookie('animicon')===undefined){
+                var date = new Date();
+                var minutes = 60;
+                date.setTime(date.getTime() + (minutes * 60 *  1000));
+                $.cookie('animicon',true,{
+                    expires: date,
+                    path:"/"
+                    //secure: true
+                })
+                _logoAnimate ();
+            } else {
+                _logoAnimate ();
+            }
+        },
+        _logoAnimate = function () {
+            var animData = {
+                wrapper: document.getElementById('logov4'),
+                animType: 'html',
+                loop: false,
+                prerender: true,
+                autoplay: true,
+                path: 'http://res.cloudinary.com/rodetyo/raw/upload/v1458057303/logov2_e.json'
+            };
+
+            var anim = bodymovin.loadAnimation(animData);
+        },
+        init = function () {
+            _checkCookie();
+            _onEvents();
+        };
+
+    init()
+};
 
 var Anchor = function ( obj ) {
     var _obj = obj,

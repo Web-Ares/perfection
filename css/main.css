@@ -786,9 +786,19 @@
     height: 100%;
 }
 .promo__logo{
+    position: relative;
     width: 97%;
+    height: 199px;
     max-width: 728px;
-    margin-bottom: 25px;
+    margin: 0 auto 25px;
+}
+.promo__logo > div{
+    top: 50%!important;
+    left: 50%!important;
+    transform: translateX(-50%) translateY(-50%) matrix3d(0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
+    -webkit-transform: translateX(-50%) translateY(-50%) matrix3d(0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
+    transform-origin: center center 0!important;;
+    -webkit-transform-origin: center center 0!important;
 }
 .promo__topic{
     margin-bottom: 10px;
@@ -1596,6 +1606,10 @@
         max-width: 100%;
         max-height: 31vh;
     }
+    .promo__logo > div{
+        transform: translateX(-50%) translateY(-50%) matrix3d(0.7, 0, 0, 0, 0, 0.7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
+        -webkit-transform: translateX(-50%) translateY(-50%) matrix3d(0.7, 0, 0, 0, 0, 0.7, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
+    }
     /* --------------- /promo --------------- */
 
     /* --------------- sharpest-icons --------------- */
@@ -1717,6 +1731,13 @@
     /* ------------ social ------------ */
 }
 @media (min-width: 768px) {
+
+    /* --------------- promo --------------- */
+    .promo__logo > div{
+        transform: translateX(-50%) translateY(-50%) matrix3d(0.9, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
+        -webkit-transform: translateX(-50%) translateY(-50%) matrix3d(0.9, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
+    }
+    /* --------------- /promo --------------- */
 
     /* --------------- drop-menu --------------- */
     .drop-menu__menu-item:hover{

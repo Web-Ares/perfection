@@ -746,10 +746,7 @@
     cursor: default;
 }
 .tabs__controls-wrap div:hover{
-    background: #3A3F44;
-}
-.tabs__controls-wrap div:hover .tabs__links{
-    color: #fff;
+    opacity: .8;
 }
 .tabs__controls-wrap div.active:hover{
     background: #242a2f;
@@ -791,6 +788,7 @@
     height: 199px;
     max-width: 728px;
     margin: 0 auto 25px;
+    overflow: hidden;
 }
 .promo__logo > div{
     top: 50%!important;

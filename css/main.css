@@ -1349,6 +1349,12 @@
 .pixel-grid__download{
     margin: 0 4px;
     font-weight: 700;
+    color: #666;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+.pixel-grid__download:hover{
+    opacity: .9;
 }
 .pixel-grid__img_big-icon{
     max-width: 76%;

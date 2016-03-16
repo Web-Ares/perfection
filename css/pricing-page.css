@@ -105,12 +105,11 @@
 .pricing__text:before {
     position: absolute;
     top: 0;
-    left: 116px;
-    width: 23px;
-    height: 19px;
-    background: url(../pic/pricing__text01.png) no-repeat;
-    background-size: contain;
-    content: '';
+    left: 113px;
+    font: 80px "Proxima Nova Regular";
+    color: #26b43d;
+    line-height: 60px;
+    content: '“';
 }
 .pricing__info{
     margin-bottom: 43px;
@@ -163,10 +162,14 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
+    padding-top: 2px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #f2f2f2 url("../img/questions.png") no-repeat center;
+    background: #f2f2f2;
+    font: 12px "Proxima Nova Regular";
+    color: #999999;
+    text-align: center;
 }
 .pricing__tooltips span {
     visibility: hidden;
@@ -209,7 +212,6 @@
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }
-
 @media (min-width: 768px) {
     .pricing__wrap {
         display: table;

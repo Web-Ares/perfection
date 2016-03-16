@@ -1,1 +1,32 @@
-.promo_inner:before{display:block}.pack-preview{max-width:770px;margin:0 auto;padding:58px 15px 47px}.pack-preview img{width:100%;margin-bottom:25px}.pack-preview__title{margin-bottom:36px;color:#797979;font:20px/22px 'Proxima Nova Regular',sans-serif;text-align:center}
+/* --------------- promo_inner --------------- */
+.promo_inner:before{
+    display: block;
+}
+/* --------------- /promo_inner --------------- */
+
+/* --------------- pack-preview --------------- */
+.pack-preview{
+    max-width: 770px;
+    margin: 0 auto;
+    padding: 58px 15px 47px;
+}
+.pack-preview img{
+    width: 100%;
+    margin-bottom: 25px;
+}
+.pack-preview__title{
+    margin-bottom: 36px;
+    color: #797979;
+    font: 20px/22px 'Proxima Nova Regular', 'sans-serif';
+    text-align: center;
+}
+/* --------------- /pack-preview --------------- */
+
+@media (min-width: 768px){
+
+    /* --------------- pack-preview --------------- */
+    .pack-preview__title{
+    }
+    /* --------------- pack-preview --------------- */
+
+}

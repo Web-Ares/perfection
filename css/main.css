@@ -2590,6 +2590,9 @@
     .line-solid {
         padding-bottom: 125px;
     }
+    .line-solid__layout {
+        padding: 125px 0;
+    }
     /* --------------- /line-solid --------------- */
 
     /* --------------- we-impressed --------------- */
@@ -2660,9 +2663,6 @@
     }
     .line-solid__list {
         margin: 0;
-    }
-    .line-solid__layout {
-        padding: 125px 0;
     }
     /* --------------- /line-solid --------------- */
 

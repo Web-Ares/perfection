@@ -582,6 +582,7 @@ var SliderSingle = function (obj) {
                 paginationBulletRender: function (i, className) {
                     var _slide = _itemSlide.eq(i),
                         _bg_image = _slide.data( 'photo' );
+                        _bg_company = _slide.data( 'company' );
                     return '<span class="' + className + '" style="background-image: url('+ _bg_image +')"></span>';
                 }
             });

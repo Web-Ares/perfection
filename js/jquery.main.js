@@ -7,6 +7,10 @@ $(function () {
         })
     });
 
+    $.each( $( '.preloader' ), function() {
+        new Preloader( $( this ) );
+    } );
+
     $.each( $( '.anchor' ), function() {
         new Anchor( $( this ) );
     } );
@@ -256,6 +260,27 @@ var Menu = function ( obj ) {
         };
 
     init()
+};
+
+var Preloader = function(obj) {
+
+    //private properties
+    var _window = $(window),
+        _obg = obj;
+
+    //private methods
+    var _onEvents = function() {
+            _window.on( {
+                'load': function () {
+                    _obg.addClass( 'preloader_hide' );
+                }
+            } );
+        },
+        _init = function() {
+            _onEvents();
+        };
+
+    _init()
 };
 
 var SliderFormats = function (obj) {

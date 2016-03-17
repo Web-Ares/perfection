@@ -233,7 +233,7 @@ var Menu = function ( obj ) {
                             setTimeout( function() {
                                 $( _menuContent ).getNiceScroll().show();
                                 $( _menuContent ).getNiceScroll().resize();
-                            }, 100);
+                            }, 300);
 
                         }, 300);
 
@@ -308,8 +308,6 @@ var Menu = function ( obj ) {
                     }
                 }
             } )
-
-
         },
         _marginTop = function() {
             if( _window.scrollTop() > 0 ) {

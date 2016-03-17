@@ -27,6 +27,10 @@ $(function () {
         new SliderSingle( $( this ) );
     } );
 
+    $.each( $( '.we-impressed' ), function() {
+        new SliderSingle( $( this ) );
+    } );
+
     $.each( $( '.formats__slider' ), function() {
         new SliderFormats( $( this ) );
     } );
@@ -556,28 +560,35 @@ var SliderFormats = function (obj) {
 var SliderSingle = function (obj) {
 
     //private properties
-    var _self = this,
-        _obj = obj,
-        _sliderSwiper,
-        _slider = _obj.find('.swiper-container');
+    var _obj = obj,
+        _sliderSwiperPixel,
+        _sliderSwiperPersona,
+        _pixelSlider = _obj.find( '.pixel-grid__swiper'),
+        _personaSlider = _obj.find( '.we-impressed__swiper' ),
+        _itemSlide = _personaSlider.find( '.swiper-slide' );
 
     //private methods
     var _initSlider = function () {
-
-            _sliderSwiper = new Swiper(_slider, {
-
+            _sliderSwiperPixel = new Swiper(_pixelSlider, {
                 pagination: $('.swiper-pagination'),
                 paginationClickable: true,
                 loop: true
-
             });
-
+            _sliderSwiperPersona = new Swiper(_personaSlider, {
+                pagination: $('.we-impressed__swiper-pagination'),
+                paginationClickable: true,
+                loop: true,
+                effect: 'fade',
+                paginationBulletRender: function (i, className) {
+                    var _slide = _itemSlide.eq(i),
+                        _bg_image = _slide.data( 'photo' );
+                        _bg_company = _slide.data( 'company' );
+                    return '<span class="' + className + '" style="background-image: url('+ _bg_image +')"></span>';
+                }
+            });
         },
         _init = function () {
-
             _initSlider();
-            _obj[0].obj = _self;
-
         };
 
     _init();

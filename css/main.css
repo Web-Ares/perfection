@@ -778,7 +778,7 @@
 }
 .promo_inner{
     height: 100vh;
-    max-height: 500px;
+    max-height: 346px;
     padding-top: 0;
 }
 .promo_inner:before{
@@ -1060,9 +1060,12 @@
     color: #999999;
     font-size: 12px;
     line-height: 14px;
-    -webkit-transition: transform 2s linear, background 0.5s linear, color 0.5s linear;
-    transition: transform 2s linear, background 0.5s linear, color 0.5s linear;
+    -webkit-transition: transform 2s linear, background 0.5s linear, color 0.5s linear, opacity, color 0.3s ease;
+    transition: transform 2s linear, background 0.5s linear, color 0.5s linear, opacity 0.3s ease;
     cursor: pointer;
+}
+.formats__slider-item:hover{
+    opacity: .8;
 }
 .formats__slider-item>div{
     display: table;
@@ -1381,6 +1384,7 @@
 /* --------------- we-impressed --------------- */
 .we-impressed{
     padding-top: 35px;
+    background-color: #242a2f
 }
 .we-impressed__layout {
     z-index: 2;
@@ -1389,7 +1393,8 @@
     background: #242a2f;
 }
 .we-impressed__text {
-    margin: 0 0 35px;
+    margin: 0 0 20px;
+    font-family: "Proxima Nova Light", sans-serif;
     color: #c4c4c4;
 }
 .we-impressed__text:before {
@@ -1404,19 +1409,10 @@
 }
 .we-impressed__pic {
     width: 100%;
-    /*height: 400px;*/
     margin: 0 auto;
     padding-bottom: 90%;
-    /* position: absolute; */
-    /* top: 50%; */
-    /* right: 0; */
-    /* bottom: 0; */
-    /* left: 0; */
     background-size: cover;
     background-position:center;
-}
-.we-impressed__info {
-
 }
 .we-impressed__info a {
     display: inline-block;
@@ -1426,12 +1422,40 @@
     width: 100%;
 }
 .we-impressed__info-user {
-    margin-top: 3px;
-    margin-left: 9px;
+    color: #fff;
     font-size: 3.1vh;
 }
 .we-impressed__info-user span {
-    color: #fff;
+    font-family: "Proxima Nova Regular" , sans-serif;
+}
+.we-impressed__swiper .swiper-slide{
+    background-color: #242a2f
+}
+.we-impressed__swiper-pagination{
+    z-index: 2;
+    position: absolute;
+}
+.we-impressed__swiper-pagination > span{
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    opacity: .4;
+    transition: opacity .3s ease, filter .3s ease;
+    -webkit-transition: opacity .3s ease, filter .3s ease;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+}
+.we-impressed__swiper-pagination > .swiper-pagination-bullet-active{
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    opacity: 1;
 }
 /* --------------- /we-impressed --------------- */
 
@@ -2223,8 +2247,11 @@
         justify-content: flex-start;
         -webkit-justify-content: flex-start;
         align-items: center;
+        height: 860px;
+        padding-top: 0;
+    }
+    .we-impressed__swiper{
         height: 100%;
-        padding: 50px 0;
     }
     .we-impressed__layout {
         opacity: 0;
@@ -2242,9 +2269,6 @@
         text-align: left;
         -webkit-transition: opacity .2s ease-in-out .2s;
         transition: opacity .2s ease-in-out .2s;
-    }
-    .we-impressed__text {
-        margin: 0 0 39px;
     }
     .we-impressed__text:before {
         width: 66px;
@@ -2458,14 +2482,14 @@
         content: '';
         -webkit-transition: opacity 0.3s linear;
         transition: opacity 0.3s linear;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
     }
     .formats__slider-item.active .formats__slider-arrow:after{
         opacity: 1;
     }
     .formats__slider-item.active .formats__slider-arrow{
         opacity: 1;
-        -webkit-transition-delay: 1s;
-        transition-delay: 1s;
     }
     /* ------------ /formats ------------ */
 
@@ -2590,9 +2614,6 @@
     /* --------------- /line-solid --------------- */
 
     /* --------------- we-impressed --------------- */
-    .we-impressed {
-        padding: 100px 0;
-    }
     .we-impressed__layout {
         padding: 0 20px;
     }
@@ -2613,7 +2634,6 @@
         margin: 0 250px 0 -311px;
     }
     .we-impressed__text {
-        margin: 0 0 70px;
         font-size: 30px;
         line-height: 36px;
     }
@@ -2622,8 +2642,6 @@
     }
     .we-impressed__info-user {
         font-size: 20px;
-        margin-top: 2px;
-        margin-left: 11px;
     }
     /* --------------- /we-impressed --------------- */
 

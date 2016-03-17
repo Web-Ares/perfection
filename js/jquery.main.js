@@ -1,19 +1,17 @@
 $(function () {
 
-    $('html').niceScroll();
-
-    /*$(document).on( 'invalid.wpcf7' , function () {
+    $(document).on( 'invalid.wpcf7' , function () {
         $( '.contact-form' ).find( 'fieldset' ).removeClass( 'novalid' );
         $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {
             $( this ).parents( 'fieldset' ).addClass( 'novalid' );
         })
-    });*/
+    });
 
     $.each( $( '.preloader' ), function() {
         new Preloader( $( this ) );
     } );
 
-    /*$.each( $( '.anchor' ), function() {
+    $.each( $( '.anchor' ), function() {
         new Anchor( $( this ) );
     } );
 
@@ -35,7 +33,7 @@ $(function () {
 
     $.each( $( '#logov4' ), function() {
         new TopGif( $( window ) );
-    } );*/
+    } );
 
 });
 
@@ -246,7 +244,10 @@ var Menu = function ( obj ) {
             }
         },
         _initContentScroll = function() {
-            $('#scroll-wrap').niceScroll();
+            $('#scroll-wrap').niceScroll({
+                autohidemode: 'false',
+                background: '#fff'
+            });
             /*new IScroll( '#scroll-wrap', {
                 mouseWheel: true,
                 scrollbars: true,

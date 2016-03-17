@@ -219,6 +219,7 @@ var Menu = function ( obj ) {
                         _site.css( 'height', 'auto' );
                         _window.scrollTop( siteScrollTop );
                         _header.removeClass( 'site__header_drop-menu' );
+                        $( _menuContent ).getNiceScroll().hide();
                         return false;
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
@@ -226,6 +227,8 @@ var Menu = function ( obj ) {
                         // for css animation
                         setTimeout( function() {
                             _site.css ( 'height', '100%' );
+                            $( _menuContent ).getNiceScroll().resize();
+                            $( _menuContent ).getNiceScroll().show();
                         }, 300);
 
                         return false;
@@ -284,6 +287,7 @@ var Menu = function ( obj ) {
         _contentHeight = function() {
             _menuContent.css( 'height', _menuItem.height() )
             _initContentScroll();
+            $( _menuContent ).getNiceScroll().hide();
         },
         _marginTop = function() {
             if( _window.scrollTop() > 0 ) {
@@ -301,17 +305,12 @@ var Menu = function ( obj ) {
             }
         },
         _initContentScroll = function() {
-            $('#scroll-wrap').niceScroll({
+            $( _menuContent ).niceScroll({
                 autohidemode: 'false',
-                background: '#fff'
+                cursorborder: '',
+                cursorcolor: "#fff",
+                cursorwidth: "9px"
             });
-            /*new IScroll( '#scroll-wrap', {
-                mouseWheel: true,
-                scrollbars: true,
-                interactiveScrollbars: true,
-                shrinkScrollbars: 'scale',
-                click: true
-            });*/
         },
         init = function() {
             _colorTop();

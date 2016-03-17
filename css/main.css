@@ -354,7 +354,6 @@
     padding-top: 6px;
     font: 12px 'Proxima Nova Regular', sans-serif;
     color: #fff;
-    text-transform: uppercase;
     transition: opacity .3s ease, color .3s ease;
     -webkit-transition: opacity .3s ease, color .3s ease;
 }
@@ -551,6 +550,7 @@
 
 /* --------------- social --------------- */
 .social{
+    z-index: 2;
     position: absolute;
     right: 0;
     bottom: 30px;
@@ -681,6 +681,7 @@
 
 /* --------------- copyright --------------- */
 .copyright{
+    z-index: 2;
     position: absolute;
     right: 0;
     bottom: 10px;
@@ -1917,8 +1918,8 @@
     /* --------------- social --------------- */
     .social{
         left: auto;
-        right: 87px;
-        bottom: 35px;
+        right: 75px;
+        bottom: 24px;
     }
     .social_inner{
         display: inline-block;

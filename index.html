@@ -12,11 +12,28 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+
+    <style>
+        .preloader{
+            visibility: visible;
+            opacity: 1;
+            background-color: #242a2f;
+            transition: visibility .3s ease, opacity .3s ease;
+            -webkit-transition: visibility .3s ease, opacity .3s ease;
+        }
+        .preloader_hide{
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+
 </head>
 <body>
 
 <!-- site -->
 <div class="site">
+
+    <div class="preloader"></div>
 
     <!-- site__header -->
     <header class="site__header">

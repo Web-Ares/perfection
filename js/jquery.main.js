@@ -270,11 +270,10 @@ var Preloader = function(obj) {
 
     //private methods
     var _onEvents = function() {
-            _window.on( {
-                'load': function () {
-                    _obg.addClass( 'preloader_hide' );
-                }
-            } );
+            // for css animation
+            setTimeout( function() {
+                _obg.addClass( 'preloader_hide' );
+            }, 100)
         },
         _init = function() {
             _onEvents();

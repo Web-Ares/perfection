@@ -711,14 +711,9 @@
 .tabs__controls-wrap .active .btn{
     background-color: #242a2f;
     cursor: default;
+}
+.tabs__controls-wrap .active .btn:hover{
     opacity: 1;
-}
-.tabs__controls-wrap div.active .tabs__links{
-    color: #fff;
-    cursor: default;
-}
-.tabs__controls-wrap div:hover{
-    opacity: .8;
 }
 .tabs__controls-wrap div.active:hover{
     background: #242a2f;
@@ -1111,8 +1106,8 @@
     color: #fff;
 }
 .formats__slider-item.active>div>span{
-    -webkit-animation: changeSlides 0.7s linear 1 normal;
-    animation: changeSlides 0.7s linear 1 normal;
+    -webkit-animation: changeSlides 0.5s linear 1 normal;
+    animation: changeSlides 0.5s linear 1 normal;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1146,8 +1141,8 @@
     visibility: hidden;
     font-size: 11px;
     line-height: 13px;
-    -webkit-transition: visibility 0.5s linear, opacity 0.5s linear;
-    transition: visibility 0.5s linear, opacity 0.5s linear;
+    -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
 }
 .formats__slider-text>div>div{
     display: table-cell;
@@ -1157,10 +1152,6 @@
 .formats__slider-text>div.visible{
     opacity: 1;
     visibility: visible;
-    -webkit-animation: changeSlides 0.7s linear 1 normal;
-    animation: changeSlides 0.7s linear 1 normal;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
 }
 .formats__slider-text dl{
     margin: 0 0 10px;
@@ -1170,50 +1161,6 @@
 }
 .formats__slider-text dl dd{
     display: inline;
-}
-@-webkit-keyframes changeSlides {
-    0%   {
-        -webkit-transform: translateX(0);
-    }
-    25%  {
-        -webkit-transform: translateX(100%);
-    }
-    35%  {
-        opacity: 0;
-    }
-    50%  {
-        opacity: 0;
-    }
-    75%  {
-        -webkit-transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        opacity: 1;
-    }
-}
-@keyframes changeSlides {
-    0%   {
-        transform: translateX(0);
-    }
-    25%  {
-        transform: translateX(100%);
-    }
-    35%  {
-        opacity: 0;
-    }
-    50%  {
-        opacity: 0;
-    }
-    75%  {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 /* --------------- /formats --------------- */
 
@@ -1239,7 +1186,7 @@
     text-align: center;
 }
 .icons-promo__controls a {
-    margin: 0 22px 15px;
+    margin: 0 19px 15px;
 }
 .icons-promo__wrap {
     margin-bottom: 20px;

@@ -244,13 +244,14 @@ var Menu = function ( obj ) {
             }
         },
         _initContentScroll = function() {
-            new IScroll( '#scroll-wrap', {
+            $('#scroll-wrap').niceScroll();
+            /*new IScroll( '#scroll-wrap', {
                 mouseWheel: true,
                 scrollbars: true,
                 interactiveScrollbars: true,
                 shrinkScrollbars: 'scale',
                 click: true
-            });
+            });*/
         },
         init = function() {
             _colorTop();

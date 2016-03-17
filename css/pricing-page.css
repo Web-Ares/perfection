@@ -208,7 +208,6 @@
     vertical-align: middle;
     height: 50px;
     background: center no-repeat;
-    margin-left: 8px;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }

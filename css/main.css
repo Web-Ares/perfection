@@ -687,12 +687,10 @@
 .tabs__controls-wrap .active .btn{
     background-color: #242a2f;
     cursor: default;
+    color: #fff !important;
 }
 .tabs__controls-wrap .active .btn:hover{
     opacity: 1;
-}
-.tabs__controls-wrap div.active:hover{
-    background: #242a2f;
 }
 /* --------------- /tabs --------------- */
 

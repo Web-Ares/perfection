@@ -12,11 +12,36 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/swiper.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
+
+    <style>
+        .preloader{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            opacity: 1;
+            background-color: #242a2f;
+            transition: visibility .3s ease, opacity .3s ease;
+            -webkit-transition: visibility .3s ease, opacity .3s ease;
+            z-index: 4;
+        }
+        .preloader_hide{
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+
 </head>
 <body>
 
 <!-- site -->
 <div class="site">
+
+    <!-- preloader -->
+    <div class="preloader"></div>
+    <!-- /preloader -->
 
     <!-- site__header -->
     <header class="site__header">
@@ -1112,7 +1137,8 @@
 <!-- /site -->
 
 <script src="js/jquery-2.1.3.min.js"></script>
-<script src="js/iscroll.js"></script>
+<!--<script src="js/iscroll.js"></script>-->
+<script src="js/jquery.nicescroll.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/bodymovin.js"></script>
 <script src="js/jquery.cookie.js"></script>

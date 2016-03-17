@@ -17,19 +17,36 @@
     margin-bottom: 45px;
 }
 .promo__tick{
-    display: none;
     position: relative;
     width: 56px;
     height: 45px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
 }
 .promo__tick:before,
 .promo__tick:after{
     position: absolute;
+    width: 15px;
+    border-radius: 5px;
+    background-color: #999;
     content: '';
 }
 .promo__tick:before{
-
+    top: 15px;
+    left: 7px;
+    height: 31px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.promo__tick:after{
+    top: -3px;
+    right: 14px;
+    height: 50px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.promo__tick_green:before,
+.promo__tick_green:after{
+    background-color: #1fa012;
 }
 .promo__note{
     display: inline-block;
@@ -37,7 +54,6 @@
     font-size: 18px;
 }
 .promo__content{
-    min-height: 440px;
     margin-bottom: 0;
 }
 span.promo__great{
@@ -84,6 +100,6 @@ span.promo__great{
     background-position: -51px 0;
 }
 .social_1 .social__item_fb:before{
-    background-position: -100px 0;
+    background-position: -105px 0;
 }
 /* ---------------  /socials --------------- */

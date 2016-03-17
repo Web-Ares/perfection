@@ -334,9 +334,9 @@
    opacity: .8;
 }
 .btn_9{
-    display: block;
+    display: inline-block;
     width: 257px;
-    margin: 0 auto;
+    margin: 0 15px;
     font-size: 18px;
 }
 .btn_10{
@@ -345,6 +345,14 @@
     left: 50%;
     border-radius: 6px;
     transform: translateX(-50%);
+}
+.btn_11 {
+    display: inline-block;
+    width: 257px;
+    margin: 0 15px;
+    border: 2px solid #fff;
+    background: #242a2f;
+    color: #fff;
 }
 /* --------------- /btn --------------- */
 
@@ -355,7 +363,6 @@
     padding-top: 6px;
     font: 12px 'Proxima Nova Regular', sans-serif;
     color: #fff;
-    text-transform: uppercase;
     transition: opacity .3s ease, color .3s ease;
     -webkit-transition: opacity .3s ease, color .3s ease;
 }
@@ -473,7 +480,6 @@
     left: 50%;
     overflow: hidden;
     width: 100%;
-    padding: 0 0 20px;
     z-index: 3;
     transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -552,6 +558,7 @@
 
 /* --------------- social --------------- */
 .social{
+    z-index: 2;
     position: absolute;
     right: 0;
     bottom: 30px;
@@ -682,6 +689,7 @@
 
 /* --------------- copyright --------------- */
 .copyright{
+    z-index: 2;
     position: absolute;
     right: 0;
     bottom: 10px;
@@ -710,14 +718,9 @@
 .tabs__controls-wrap .active .btn{
     background-color: #242a2f;
     cursor: default;
+}
+.tabs__controls-wrap .active .btn:hover{
     opacity: 1;
-}
-.tabs__controls-wrap div.active .tabs__links{
-    color: #fff;
-    cursor: default;
-}
-.tabs__controls-wrap div:hover{
-    opacity: .8;
 }
 .tabs__controls-wrap div.active:hover{
     background: #242a2f;
@@ -1110,8 +1113,8 @@
     color: #fff;
 }
 .formats__slider-item.active>div>span{
-    -webkit-animation: changeSlides 0.7s linear 1 normal;
-    animation: changeSlides 0.7s linear 1 normal;
+    -webkit-animation: changeSlides 0.5s linear 1 normal;
+    animation: changeSlides 0.5s linear 1 normal;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
@@ -1145,8 +1148,8 @@
     visibility: hidden;
     font-size: 11px;
     line-height: 13px;
-    -webkit-transition: visibility 0.5s linear, opacity 0.5s linear;
-    transition: visibility 0.5s linear, opacity 0.5s linear;
+    -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
+    transition: visibility 0.2s linear, opacity 0.2s linear;
 }
 .formats__slider-text>div>div{
     display: table-cell;
@@ -1156,10 +1159,6 @@
 .formats__slider-text>div.visible{
     opacity: 1;
     visibility: visible;
-    -webkit-animation: changeSlides 0.7s linear 1 normal;
-    animation: changeSlides 0.7s linear 1 normal;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
 }
 .formats__slider-text dl{
     margin: 0 0 10px;
@@ -1169,50 +1168,6 @@
 }
 .formats__slider-text dl dd{
     display: inline;
-}
-@-webkit-keyframes changeSlides {
-    0%   {
-        -webkit-transform: translateX(0);
-    }
-    25%  {
-        -webkit-transform: translateX(100%);
-    }
-    35%  {
-        opacity: 0;
-    }
-    50%  {
-        opacity: 0;
-    }
-    75%  {
-        -webkit-transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        opacity: 1;
-    }
-}
-@keyframes changeSlides {
-    0%   {
-        transform: translateX(0);
-    }
-    25%  {
-        transform: translateX(100%);
-    }
-    35%  {
-        opacity: 0;
-    }
-    50%  {
-        opacity: 0;
-    }
-    75%  {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 /* --------------- /formats --------------- */
 
@@ -1238,7 +1193,7 @@
     text-align: center;
 }
 .icons-promo__controls a {
-    margin: 0 22px 15px;
+    margin: 0 19px 15px;
 }
 .icons-promo__wrap {
     margin-bottom: 20px;
@@ -1803,7 +1758,6 @@
         margin-top: 0;
     }
     .site__header.header-scroll{
-        overflow: hidden;
         padding-top: 14px;
     }
     .site__header.site__header_drop-menu{
@@ -1887,8 +1841,8 @@
     /* --------------- social --------------- */
     .social{
         left: auto;
-        right: 87px;
-        bottom: 35px;
+        right: 75px;
+        bottom: 24px;
     }
     .social_inner{
         display: inline-block;

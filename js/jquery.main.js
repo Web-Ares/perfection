@@ -290,14 +290,14 @@ var Menu = function ( obj ) {
             } );
         },
         _contentHeight = function() {
+            _menuContent.css( 'height', _menuItem.height() );
+
+            if ( _menuItem.height() > _menuInner.height() ) {
+                _initContentScroll();
+                $( _menuContent ).getNiceScroll().hide();
+            }
+
             _window.on( {
-                'load' : function () {
-                    _menuContent.css( 'height', _menuItem.height() );
-                    if ( _menuItem.height() > _menuInner.height() ) {
-                        _initContentScroll();
-                        $( _menuContent ).getNiceScroll().hide();
-                    }
-                },
                 'resize' : function () {
                     _menuContent.css( 'height', _menuItem.height() );
                     if ( _menuItem.height() > _menuInner.height() ) {

@@ -1,6 +1,8 @@
 $(function () {
 
-    $(document).on( 'invalid.wpcf7' , function () {
+    $('html').niceScroll();
+
+    /*$(document).on( 'invalid.wpcf7' , function () {
         $( '.contact-form' ).find( 'fieldset' ).removeClass( 'novalid' );
         $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {
             $( this ).parents( 'fieldset' ).addClass( 'novalid' );
@@ -33,7 +35,7 @@ $(function () {
 
     $.each( $( '#logov4' ), function() {
         new TopGif( $( window ) );
-    } );
+    } );*/
 
 });
 

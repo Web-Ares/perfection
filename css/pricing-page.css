@@ -99,6 +99,7 @@
     color: #999;
 }
 .pricing__text p{
+    width: 260px;
     margin-bottom: 9px;
 }
 .pricing__text:before {
@@ -115,7 +116,7 @@
 }
 .pricing__info a {
     display: inline-block;
-    width: 63px;
+    width: 87px;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
 }

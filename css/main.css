@@ -684,6 +684,10 @@
 .tabs__controls-wrap {
     margin: 0 auto 51px;
 }
+.tabs__controls-wrap .btn{
+    background: #fff;
+    color: #292929 !important;
+}
 .tabs__controls-wrap .active .btn{
     background-color: #242a2f;
     cursor: default;

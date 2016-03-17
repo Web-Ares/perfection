@@ -523,37 +523,6 @@
     position: relative;
     overflow: hidden;
 }
-#scroller{
-    height: 375px;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-text-size-adjust: none;
-    -moz-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    -o-text-size-adjust: none;
-    text-size-adjust: none;
-    /*	-webkit-touch-callout:none;*/
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-.iScrollVerticalScrollbar {
-    background: 0 0 !important;
-    width: 9px !important
-}
-.iScrollIndicator {
-    width: 5px !important;
-    border-radius: 0 !important;
-    background: #fff!important;
-    z-index: 3 !important;
-    border: none !important
-}
 /* --------------- /drop-menu --------------- */
 
 /* --------------- social --------------- */
@@ -1825,9 +1794,6 @@
     .drop-menu__legally{
         font: 20px/34px "Proxima Nova Light", sans-serif;
     }
-    #scroller{
-        height: 532px;
-    }
     /* --------------- /drop-menu --------------- */
 
     /* --------------- drop-menu-btn --------------- */
@@ -2496,8 +2462,8 @@
         background: url("../img/arrow.png") no-repeat;
         background-size: cover;
         content: '';
-        -webkit-transition: opacity 0.5s linear 0.5s;
-        transition: opacity 0.5s linear 0.5s;
+        -webkit-transition: opacity 0.3s linear;
+        transition: opacity 0.3s linear;
     }
     .formats__slider-item.active .formats__slider-arrow:after{
         opacity: 1;
@@ -2696,7 +2662,7 @@
         margin: 0;
     }
     .line-solid__layout {
-        padding: 0;
+        padding: 125px 0;
     }
     /* --------------- /line-solid --------------- */
 

@@ -7,13 +7,13 @@ $(function () {
         $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {
             $( this ).parents( 'fieldset' ).addClass( 'novalid' );
         })
-    });
+    });*/
 
     $.each( $( '.preloader' ), function() {
         new Preloader( $( this ) );
     } );
 
-    $.each( $( '.anchor' ), function() {
+    /*$.each( $( '.anchor' ), function() {
         new Anchor( $( this ) );
     } );
 

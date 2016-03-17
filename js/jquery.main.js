@@ -1,5 +1,9 @@
 $(function () {
 
+    $("#scroll-wrap").scroll(function(){
+        $("#scroll-wrap").getNiceScroll().resize();
+    });
+
     $(document).on( 'invalid.wpcf7' , function () {
         $( '.contact-form' ).find( 'fieldset' ).removeClass( 'novalid' );
         $( '.contact-form' ).find( '.wpcf7-not-valid-tip' ).each( function() {

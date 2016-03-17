@@ -1722,10 +1722,6 @@
     .header-menu__mobile-item{
         display: none;
     }
-    .site__header.white,
-    .site__header.black{
-        margin-top: 0;
-    }
     .site__header.header-scroll{
         padding-top: 14px;
     }

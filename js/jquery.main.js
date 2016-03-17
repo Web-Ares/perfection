@@ -227,8 +227,8 @@ var Menu = function ( obj ) {
                         // for css animation
                         setTimeout( function() {
                             _site.css ( 'height', '100%' );
-                            $( _menuContent ).getNiceScroll().resize();
                             $( _menuContent ).getNiceScroll().show();
+                            $( _menuContent ).getNiceScroll().resize();
                         }, 300);
 
                         return false;

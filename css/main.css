@@ -246,6 +246,7 @@
     line-height: 15px;
     border-radius: 50px;
     text-align: center;
+    text-decoration: none !important;
     font-family: "Proxima Nova Regular", sans-serif;
     -webkit-transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
     transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
@@ -327,10 +328,10 @@
     background-color: transparent;
     color: #242a2f!important;
     line-height: 30px;
+    transition: opacity .3s ease;
 }
 .btn_8:hover{
-    background-color: #242a2f;
-    color: #fff!important;
+   opacity: .8;
 }
 .btn_9{
     display: block;
@@ -700,47 +701,16 @@
 .tabs__wrapper {
     padding-bottom: 30px;
 }
-.tabs__links{
-    display: block;
-    line-height: 40px;
-    color:#242a2f;
-    text-decoration: none !important;
-    -webkit-transition: color .3s ease;
-    transition: color .3s ease;
-}
 .tabs__controls_hide{
     display: none;
 }
 .tabs__controls-wrap {
-    display: table;
-    overflow: hidden;
-    width: 290px;
-    height: 44px;
     margin: 0 auto 51px;
-    border-radius: 50px;
-    border: 4px solid #242a2f;
-    background: #242a2f;
-    opacity: .9;
-    border-collapse: collapse;
 }
-.tabs__controls-wrap div{
-    display: table-cell;
-    vertical-align: middle;
-    width: 48.5%;
-    height: 100%;
-    background: #fff;
-    box-sizing: border-box;
-    text-align: center;
-    font: 18px 'Proxima Nova Regular', 'sans-serif';
-    color:#242a2f;
-    cursor: pointer;
-    -webkit-transition: background .3s ease, color .3s ease;
-    transition: background .3s ease, color .3s ease;
-}
-.tabs__controls-wrap div.active{
-    background: #242a2f;
-    color: #fff;
+.tabs__controls-wrap .active .btn{
+    background-color: #242a2f;
     cursor: default;
+    opacity: 1;
 }
 .tabs__controls-wrap div.active .tabs__links{
     color: #fff;
@@ -1756,7 +1726,7 @@
 
     /* --------------- tabs --------------- */
     .tabs__controls-wrap {
-        width: 338px;
+        width: 390px;
     }
     /* --------------- /tabs --------------- */
 
@@ -1818,9 +1788,9 @@
         flex-wrap: wrap;
         -webkit-justify-content: space-between;
         justify-content: space-between;
-        -webkit-flex-align: flex-start;
-        -ms-flex-align: flex-start;
-        -webkit-align-items: flex-start;
+        -webkit-flex-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
     }
     .site__inner-page {
         padding: 60px 0;
@@ -1991,6 +1961,9 @@
         height: 10.5vmin;
         min-height: 1px;
     }
+    .sharpest-icons__approved {
+        margin:0;
+    }
     /* --------------- /sharpest-icons --------------- */
 
     /*-------------formats----------*/
@@ -2034,7 +2007,7 @@
         display: inline-block;
         vertical-align: middle;
         width: 43.8%;
-        padding-bottom: 45.8%;
+        padding-bottom: 43.8%;
         margin: 0 0 0 6%;
         text-align: left;
     }
@@ -2264,7 +2237,6 @@
         vertical-align: top;
         width: 50%;
         margin: 0;
-        padding-top: 73px;
         text-align: left;
         opacity: 0;
         -webkit-transition: opacity 0.3s linear 0.3s;
@@ -2540,7 +2512,7 @@
 
     /* ------------ formats ------------ */
     .formats {
-        padding: 160px 0;
+        padding: 125px 0;
     }
     .formats__slider-text>div{
         font-size: 16px;
@@ -2611,8 +2583,8 @@
 
     /* --------------- pack-includes --------------- */
     .pack-includes{
-        padding: 111px 0 79px;
-        margin-bottom: 117px;
+        padding: 125px 0 87px;
+        margin-bottom: 125px;
     }
     .pack-includes__title {
         font-size: 22px;
@@ -2648,7 +2620,7 @@
     /* --------------- customizable --------------- */
     .customizable {
         height: 100%;
-        padding: 240px 0;
+        padding: 125px 0;
     }
     .customizable__layout{
         width: 38%;
@@ -2656,9 +2628,6 @@
         min-height: 39%;
         font-size: 26px;
         line-height: 37px;
-    }
-    .customizable__image {
-        margin: -17px auto;
     }
     /* --------------- /customizable --------------- */
 
@@ -2690,19 +2659,25 @@
 
     /* --------------- easy-way --------------- */
     .easy-way {
-        padding: 0 0 160px;
+        padding: 0 0 125px;
+    }
+    .easy-way__content {
+        margin-bottom: 0;
     }
     /* --------------- /easy-way --------------- */
 
     /* --------------- line-solid --------------- */
     .line-solid {
-        padding-bottom: 160px;
+        padding-bottom: 125px;
     }
     /* --------------- /line-solid --------------- */
 
     /* --------------- we-impressed --------------- */
     .we-impressed {
         padding: 100px 0;
+    }
+    .we-impressed__layout {
+        padding: 0 20px;
     }
     /* --------------- /we-impressed --------------- */
 }
@@ -2717,7 +2692,7 @@
         margin: 0 auto;
     }
     .we-impressed__layout-wrap{
-        padding: 161px 15px 168px;
+        padding: 125px 15px;
         margin: 0 250px 0 -311px;
     }
     .we-impressed__text {
@@ -2742,9 +2717,6 @@
     .sharpest-icons__text{
         margin: 0 70px 39px 0;
     }
-    .sharpest-icons__approved{
-        margin: 0 0 44px;
-    }
     .sharpest-icons__list{
         margin: -16px 0 0 11%;
     }
@@ -2752,14 +2724,11 @@
 
     /* --------------- formats__layout --------------- */
     .formats__layout{
-        padding-top: 76px;
+        padding-top: 55px;
     }
     /* --------------- /formats__layout --------------- */
 
     /* --------------- line-solid --------------- */
-    .line-solid__layout {
-        padding: 100px 0;
-    }
     .line-solid__list{
         padding-top: 0;
     }
@@ -2772,13 +2741,10 @@
     .line-solid__list {
         margin: 0;
     }
-    /* --------------- /line-solid --------------- */
-
-    /* ------------ pixel-grid ------------ */
-    .pixel-grid__perfect {
-        top: 98px;
+    .line-solid__layout {
+        padding: 0;
     }
-    /* ------------ /pixel-grid ------------ */
+    /* --------------- /line-solid --------------- */
 
     /* ------------ easy-way ------------ */
     .easy-way .site__title {

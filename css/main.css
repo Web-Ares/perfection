@@ -334,9 +334,9 @@
    opacity: .8;
 }
 .btn_9{
-    display: block;
+    display: inline-block;
     width: 257px;
-    margin: 0 auto;
+    margin: 0 15px;
     font-size: 18px;
 }
 .btn_10{
@@ -345,6 +345,14 @@
     left: 50%;
     border-radius: 6px;
     transform: translateX(-50%);
+}
+.btn_11 {
+    display: inline-block;
+    width: 257px;
+    margin: 0 15px;
+    border: 2px solid #fff;
+    background: #242a2f;
+    color: #fff;
 }
 /* --------------- /btn --------------- */
 

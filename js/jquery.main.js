@@ -1,7 +1,7 @@
 $(function () {
 
-    $("#scroll-wrap").scroll(function(){
-        $("#scroll-wrap").getNiceScroll().resize();
+    $.each($('#mc-embedded-subscribe-form'), function () {
+        new MC($(this));
     });
 
     $(document).on( 'invalid.wpcf7' , function () {
@@ -113,6 +113,59 @@ var Anchor = function ( obj ) {
             } );
         },
         init = function() {
+            _onEvents();
+        };
+
+    init()
+};
+
+var MC = function ( obj ) {
+    var _obj = obj,
+        _thankpage = obj.data( 'thank' ),
+        _mail = '';
+    var _onEvents = function () {
+            _obj.on( 'submit' , function () {
+                _mail = $( '#mce-EMAIL' ).val();
+                if ( _mail.length < 4 ) {
+                    _setError();
+                } else {
+                    $( '#mce-EMAIL' ).removeClass( 'mce_inline_error' );
+                    _send();
+                }
+                return false;
+            });
+        },
+        _getAjaxSubmitUrl = function () {
+            var url = _obj.attr( 'action' );
+            url = url.replace( '/post?u=', '/post-json?u=' );
+            url += '&c=?';
+            return url;
+        },
+        _setError = function () {
+            $( '#mce-EMAIL' ).addClass( 'mce_inline_error' );
+        },
+        _send = function () {
+            $.ajax({
+                url: _getAjaxSubmitUrl(),
+                data: { 'EMAIL': _mail },
+                type: 'GET',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (resp) {
+                    if ( resp.result == 'success' ) {
+                        _obj[ 0 ].reset( );
+                        window.location.href = _thankpage;
+                    } else {
+                        _setError();
+                    }
+                },
+                error: function () {
+                    _setError();
+                }
+            });
+
+        },
+        init = function () {
             _onEvents();
         };
 

@@ -246,6 +246,7 @@
     line-height: 15px;
     border-radius: 50px;
     text-align: center;
+    cursor: pointer;
     text-decoration: none !important;
     font-family: "Proxima Nova Regular", sans-serif;
     -webkit-transition: opacity .3s ease, background-color .3s ease, color .3s ease!important;
@@ -682,6 +683,7 @@
     display: none;
 }
 .tabs__controls-wrap {
+    width: 262px;
     margin: 0 auto 51px;
 }
 .tabs__controls-wrap .btn{
@@ -1708,6 +1710,9 @@
         font-size: 18px;
         line-height: normal;
     }
+    .btn_7, .btn_8{
+         width: 194px;
+     }
     /* --------------- /btn --------------- */
 
     /* --------------- pixel-grid --------------- */
@@ -1801,9 +1806,6 @@
         height: 84%;
         padding-top: 14px;
         font-size: 18px;
-    }
-    .btn_7, .btn_8{
-        width: 194px;
     }
     /* --------------- /btn --------------- */
 

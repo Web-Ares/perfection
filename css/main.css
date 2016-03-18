@@ -1738,7 +1738,7 @@
     }
     .site__header_inner {
         margin-top: 0;
-        padding: 25px 0 0;
+        padding: 28px 0 0!important;
     }
     .site__header-layout{
         margin: 0 65px;
@@ -1769,8 +1769,8 @@
     .site__header.header-scroll{
         padding-top: 14px;
     }
-    .site__header.site__header_drop-menu{
-        padding-top: 28px;
+    .site__header.header_top{
+        padding-top: 14px;
     }
     /* --------------- /site --------------- */
 

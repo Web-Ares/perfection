@@ -1423,7 +1423,7 @@
 .we-impressed__swiper-pagination > span{
     display: inline-block;
     vertical-align: top;
-    width: 70px;
+    width: 55px;
     height: auto;
     margin-right: 26px!important;
     border: none;
@@ -1453,7 +1453,7 @@
 }
 .we-impressed__company{
     display: block;
-    height: 17px;
+    height: 11px;
 }
 /* --------------- /we-impressed --------------- */
 

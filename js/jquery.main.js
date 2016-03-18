@@ -573,12 +573,14 @@ var SliderSingle = function (obj) {
             _sliderSwiperPixel = new Swiper(_pixelSlider, {
                 pagination: $('.swiper-pagination'),
                 paginationClickable: true,
-                loop: true
+                loop: true,
+                autoplay: 5000,
             });
             _sliderSwiperPersona = new Swiper(_personaSlider, {
                 pagination: $('.we-impressed__swiper-pagination'),
                 paginationClickable: true,
                 loop: true,
+                autoplay: 5000,
                 effect: 'fade',
                 paginationBulletRender: function (i, className) {
                     var _slide = _itemSlide.eq(i),

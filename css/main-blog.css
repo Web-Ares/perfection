@@ -216,7 +216,6 @@
     padding-top: 6px;
     font: 12px 'Proxima Nova Regular', sans-serif;
     color: #fff;
-    text-transform: uppercase;
     transition: opacity .3s ease, color .3s ease;
     -webkit-transition: opacity .3s ease, color .3s ease;
 }

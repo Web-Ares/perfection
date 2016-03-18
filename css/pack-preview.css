@@ -1,9 +1,12 @@
+/* --------------- header-menu --------------- */
+.header-menu__item.active{
+    display: none;
+}
+/* --------------- /header-menu --------------- */
+
 /* --------------- promo_inner --------------- */
 .promo_inner{
     max-height: 500px;
-}
-.promo_inner:before{
-    display: block;
 }
 /* --------------- /promo_inner --------------- */
 
@@ -15,15 +18,20 @@
 }
 .pack-preview img{
     width: 100%;
-    margin-bottom: 25px;
 }
 .pack-preview__title{
-    margin-bottom: 36px;
+    -webkit-margin-before: 1.67em;
+    -webkit-margin-after: 1.67em;
+    padding: 48px 0 12px 0;
     color: #797979;
     font: 20px/22px 'Proxima Nova Regular', 'sans-serif';
     text-align: center;
 }
 /* --------------- /pack-preview --------------- */
+
+.tabs__controls-wrap{
+    margin: 0 auto;
+}
 
 @media (min-width: 768px){
 

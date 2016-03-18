@@ -1395,7 +1395,7 @@
     background: #242a2f;
 }
 .we-impressed__text {
-    margin: 0 0 20px;
+    margin: 0 0 24px;
     font-family: "Proxima Nova Light", sans-serif;
     color: #c4c4c4;
 }
@@ -1425,7 +1425,7 @@
 }
 .we-impressed__info-user {
     color: #fff;
-    font-size: 3.1vh;
+    font-size: 20px;
 }
 .we-impressed__info-user span {
     font-family: "Proxima Nova Regular" , sans-serif;
@@ -1436,12 +1436,16 @@
 .we-impressed__swiper-pagination{
     z-index: 2;
     position: absolute;
+    padding: 0 27px 10px;
 }
 .we-impressed__swiper-pagination > span{
     display: inline-block;
-    width: 64px;
-    height: 64px;
+    vertical-align: top;
+    width: auto;
+    height: auto;
+    margin-right: 26px!important;
     border: none;
+    text-align: left;
     border-radius: 50%;
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
@@ -1449,8 +1453,6 @@
     opacity: .4;
     transition: opacity .3s ease, filter .3s ease;
     -webkit-transition: opacity .3s ease, filter .3s ease;
-    background-position: center;
-    background-size: cover;
     background-color: transparent;
 }
 .we-impressed__swiper-pagination > .swiper-pagination-bullet-active{
@@ -1458,6 +1460,17 @@
     -webkit-filter: grayscale(0);
     -moz-filter: grayscale(0);
     opacity: 1;
+}
+.we-impressed__ava{
+    display: block;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 14px;
+    background-position: center;
+    background-size: cover;
+}
+.we-impressed__company{
+    display: block;
 }
 /* --------------- /we-impressed --------------- */
 
@@ -2304,6 +2317,12 @@
     .active .we-impressed__layout {
         opacity: 1;
     }
+    .we-impressed__swiper-pagination {
+        bottom: 120px!important;
+    }
+    .we-impressed__layout-wrap{
+        margin-bottom: 169px;
+    }
     /* -----------we-impressed --------------- */
 
     /* ------------ easy-way ------------ */
@@ -2616,6 +2635,11 @@
     .we-impressed__layout {
         padding: 0 20px;
     }
+    .we-impressed__swiper-pagination {
+        position: relative!important;
+        bottom: 200px!important;
+        width: 100%!important;
+    }
     /* --------------- /we-impressed --------------- */
 }
 @media (min-width: 1200px) {
@@ -2629,8 +2653,10 @@
         margin: 0 auto;
     }
     .we-impressed__layout-wrap{
+        height: 630px;
         padding: 125px 15px;
-        margin: 0 250px 0 -311px;
+        margin: 0 250px 169px -311px;
+        overflow: hidden;
     }
     .we-impressed__text {
         font-size: 30px;
@@ -2641,6 +2667,9 @@
     }
     .we-impressed__info-user {
         font-size: 20px;
+    }
+    .we-impressed__swiper-pagination {
+        bottom: 229px!important;
     }
     /* --------------- /we-impressed --------------- */
 

@@ -455,7 +455,6 @@
     bottom: 0;
     left: 0;
     z-index: 5;
-    height: 100vh;
     background-color: rgba(21,101,192,.99);
     color: #fff;
     text-align: center;

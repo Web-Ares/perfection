@@ -61,6 +61,7 @@
 }
 .pricing__pack-title{
     margin-bottom: 15px;
+    margin-left: -30px;
     font: 18px "Open Sans";
     font-weight: 700;
     color:#555
@@ -151,7 +152,7 @@
 }
 .pricing__user{
     position: absolute;
-    top: 38px;
+    top: 43px;
     left: -35px;
     width: 55px;
     height: 55px;
@@ -159,7 +160,7 @@
     background: center no-repeat;
 }
 .pricing__tooltips{
-    display: inline-block;
+    display: none;
     vertical-align: top;
     position: relative;
     width: 18px;
@@ -169,22 +170,41 @@
     font: 12px "Proxima Nova Regular";
     color: #999999;
     text-align: center;
-    line-height: 18px;
+    line-height: 19px;
 }
-.pricing__tooltips span {
+.pricing__tooltips div {
     visibility: hidden;
     position: absolute;
-    width:140px;
+    width:240px;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -120px;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #efefef;
     background: #f2f2f2;
-    font: 18px 'Proxima Nova Light', 'sans-serif';
-    color: #999999;
-    line-height: 25px;
+    font: 12px 'Proxima Nova Light', 'sans-serif';
+    color: #666666;
+    line-height: 16px;
     text-align: left;
+    z-index: 3;
+    transition: visibility .3s ease;
+    -webkit-transition: visibility .3s ease;
+    cursor: pointer;
 }
-.pricing__tooltips span:after {
+.pricing__tooltips .easy-way__warning{
+    display: block;
+    padding-left: 20px;
+    margin-top: 6px;
+    font-size: 12px;
+}
+.pricing__tooltips .easy-way__warning:before {
+    top: -4px;
+    left: 2px;
+    width: 15px;
+    height: 15px;
+}
+.pricing__tooltips div:after {
     content: '';
     position: absolute;
     top: 100%;
@@ -196,12 +216,14 @@
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
 }
-.pricing__tooltips:hover.pricing__tooltips span {
+.pricing__tooltips:hover.pricing__tooltips div {
     visibility: visible;
-    bottom: 30px;
-    left: 50%;
-    margin-left: -70px;
-    z-index: 3;
+}
+.pricing__tooltips-title{
+    display: block;
+    margin-bottom: 5px;
+    font: 16px "Proxima Nova Regular";
+    color: #151414;
 }
 .pricing__pay-item{
     display: inline-block;
@@ -229,6 +251,9 @@
         vertical-align: top;
         width: 50%;
         margin-left: 45px;
+    }
+    .pricing__tooltips {
+        display: inline-block;
     }
 }
 

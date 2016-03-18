@@ -1,4 +1,7 @@
 /* --------------- promo_inner --------------- */
+.promo_inner{
+    max-height: 500px;
+}
 .promo_inner:before{
     display: block;
 }

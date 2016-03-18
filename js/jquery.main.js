@@ -224,10 +224,15 @@ var Menu = function ( obj ) {
                         _site.css( 'height', 'auto' );
                         _window.scrollTop( siteScrollTop );
                         _header.removeClass( 'site__header_drop-menu' );
+                        _header.removeClass( 'header_top' );
                         $( _menuContent ).getNiceScroll().hide();
                         return false;
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
+                        if ( _header.hasClass( 'header-scroll' ) ){
+                            console.log('dd')
+                            _header.addClass( 'header_top' );
+                        }
                         siteScrollTop = _window.scrollTop();
                         // for css animation
                         setTimeout( function() {
@@ -252,7 +257,15 @@ var Menu = function ( obj ) {
                     _marginTop();
                 },
                 'resize': function () {
-                    _menuContent.css( 'height', _menuItem.height() )
+                    _menuContent.css( 'height', _menuItem.height() );
+
+
+                    if ( _menuItem.height() > _menuInner.height() && _header.hasClass( 'site__header_drop-menu' ) ) {
+                        _initContentScroll();
+                        $( _menuContent ).getNiceScroll().show();
+                    } else {
+                        $( _menuContent ).getNiceScroll().hide();
+                    }
                 },
                 'DOMMouseScroll': function ( e ) {
                     var delta = e.originalEvent.detail;
@@ -303,13 +316,7 @@ var Menu = function ( obj ) {
 
             _window.on( {
                 'resize' : function () {
-                    _menuContent.css( 'height', _menuItem.height() );
-                    if ( _menuItem.height() > _menuInner.height() ) {
-                        _initContentScroll();
-                        $( _menuContent ).getNiceScroll().show();
-                    } else {
-                        $( _menuContent ).getNiceScroll().hide();
-                    }
+
                 }
             } )
         },
@@ -329,13 +336,13 @@ var Menu = function ( obj ) {
             }
         },
         _initContentScroll = function() {
-            $( _menuContent ).niceScroll({
+            $( _menuContent ).niceScroll( {
                 autohidemode: 'false',
                 cursorborder: '',
                 cursorcolor: "#fff",
                 cursorwidth: "6px",
                 cursorborderradius: "0"
-            });
+            } );
         },
         init = function() {
             _colorTop();

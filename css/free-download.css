@@ -1,3 +1,8 @@
+/* --------------- promo --------------- */
+.promo_inner{
+    max-height: 500px;
+}
+/* --------------- /promo --------------- */
 /* --------------- download --------------- */
 .download{
     padding: 30px 10px;
@@ -54,6 +59,16 @@
         background-position: 15px 11px;
     }
     /* --------------- /download ---------------- */
+}
+@media (min-width: 800px) {
+    /* --------------- social --------------- */
+    .social{
+        right: 84px;
+    }
+    .social_inner{
+        margin-right: 0;
+    }
+    /* --------------- /social --------------- */
 }
 @media (min-width: 992px) {
     /* --------------- download --------------- */

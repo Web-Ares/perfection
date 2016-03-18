@@ -259,8 +259,7 @@ var Menu = function ( obj ) {
                 'resize': function () {
                     _menuContent.css( 'height', _menuItem.height() );
 
-
-                    if ( _menuItem.height() > _menuInner.height() && _header.hasClass( 'site__header_drop-menu' ) ) {
+                    if ( _menuItem.height() - 8 > _menuInner.height() && _header.hasClass( 'site__header_drop-menu' ) ) {
                         _initContentScroll();
                         $( _menuContent ).getNiceScroll().show();
                     } else {
@@ -309,16 +308,11 @@ var Menu = function ( obj ) {
         _contentHeight = function() {
             _menuContent.css( 'height', _menuItem.height() );
 
-            if ( _menuItem.height() > _menuInner.height() ) {
+            if ( _menuItem.height() - 8 > _menuInner.height() ) {
                 _initContentScroll();
                 $( _menuContent ).getNiceScroll().hide();
             }
 
-            _window.on( {
-                'resize' : function () {
-
-                }
-            } )
         },
         _marginTop = function() {
             if( _window.scrollTop() > 0 ) {

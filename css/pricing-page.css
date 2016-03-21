@@ -47,8 +47,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.25);
-    transform: translateX(-50%) translateY(-50%) scale(0.25);
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(0.5);
+    transform: translateX(-50%) translateY(-50%) scale(0.5);
 }
 .pricing__purchase{
     margin-bottom: 10px;

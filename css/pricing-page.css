@@ -26,10 +26,7 @@
     transition: background-color .3s ease;
     -webkit-transition: background-color .3s ease;
 }
-.pricing_pack:hover{
-    background-color: #fff;
-}
-.pricing__item:hover{
+.pricing__wrap .pricing__item:hover{
     background-color: #fafafa;
 }
 .pricing__price sup{

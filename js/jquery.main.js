@@ -91,7 +91,7 @@ var TopGif = function (obj) {
                 loop: false,
                 prerender: true,
                 autoplay: true,
-                path: 'https://res.cloudinary.com/rodetyo/raw/upload/v1458057303/logov2_e.json'
+                path: 'http://res.cloudinary.com/rodetyo/raw/upload/v1458557103/logov7_andtab.json'
             };
 
             var anim = bodymovin.loadAnimation(animData);

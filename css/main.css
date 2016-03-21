@@ -231,6 +231,13 @@
 .site__header.site__header_drop-menu .logo:after{
     opacity: 0;
 }
+.logo_center{
+    left: 50%;
+    width: 104px;
+    margin-left: 0;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
 /* --------------- /logo --------------- */
 
 /* --------------- btn --------------- */
@@ -1768,6 +1775,11 @@
         width: 104px;
         margin-top: 1px;
     }
+    .logo_center{
+        width: 104px;
+        margin-top: 60px;
+        left: 50%;
+    }
     /* --------------- /logo --------------- */
 
     /* --------------- btn --------------- */
@@ -1976,6 +1988,9 @@
         -ms-flex-align: center;
         align-items: center;
         height: 100%;
+        border-top: 2px solid #f5f5f5;
+        border-bottom: 2px solid #f5f5f5;
+        margin-bottom: 100px;
     }
     .line-solid__layout{
         display: flex;
@@ -2177,14 +2192,12 @@
         display: inline-block;
         vertical-align: top;
         width: 44.5%;
-        /*max-width: 697px;*/
         max-width: 438px;
-        margin-bottom: 35px;
         text-align: left;
     }
     .pixel-grid__slider .swiper-container{
         padding-bottom: 0;
-        margin: 37px 0 60px;
+        margin: 22px 0 60px;
         height: 760px;
     }
     .pixel-grid__img {
@@ -2418,6 +2431,9 @@
     .logo_inner img {
         max-width: 104px;
     }
+    .logo_center img{
+        max-width: 104px;
+    }
     /* --------------- /logo --------------- */
 
     /* --------------- promo --------------- */
@@ -2601,7 +2617,7 @@
 
     /* --------------- line-solid --------------- */
     .line-solid {
-        padding-bottom: 125px;
+        margin-bottom: 125px;
     }
     .line-solid__layout {
         padding: 125px 0;
@@ -2737,6 +2753,15 @@
         line-height: 18px;
     }
     /* --------------- /promo --------------- */
+
+}
+@media (max-height: 584px) {
+
+    /* --------------- logo --------------- */
+    .logo_center {
+        margin-top: 10px;
+    }
+    /* --------------- /logo --------------- */
 
 }
 @media (min-height: 644px) {

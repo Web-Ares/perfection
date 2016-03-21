@@ -181,9 +181,11 @@
     color: #999999;
     text-align: center;
     line-height: 19px;
+    cursor: pointer;
 }
 .pricing__tooltips div {
     visibility: hidden;
+    opacity: 0;
     position: absolute;
     width:240px;
     bottom: 30px;
@@ -198,9 +200,8 @@
     line-height: 16px;
     text-align: left;
     z-index: 3;
-    transition: visibility .3s ease;
-    -webkit-transition: visibility .3s ease;
-    cursor: pointer;
+    transition: visibility .3s ease, opacity .3s ease;
+    -webkit-transition: visibility .3s ease, opacity .3s ease;
 }
 .pricing__tooltips .easy-way__warning{
     display: block;
@@ -228,6 +229,7 @@
 }
 .pricing__tooltips:hover.pricing__tooltips div {
     visibility: visible;
+    opacity: 1;
 }
 .pricing__tooltips-title{
     display: block;

@@ -35,9 +35,10 @@
 
 @media (min-width: 768px){
 
-    /* --------------- pack-preview --------------- */
-    .pack-preview__title{
+    /* --------------- promo_inner --------------- */
+    .promo_inner{
+        max-height: 346px;
     }
-    /* --------------- pack-preview --------------- */
+    /* --------------- /promo_inner --------------- */
 
 }

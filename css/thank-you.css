@@ -68,6 +68,7 @@ span.promo__great{
     color: #999;
     font-size: 16px;
     text-transform: uppercase;
+    text-align: center;
 }
 /* ---------------  /copyright --------------- */
 
@@ -77,6 +78,7 @@ span.promo__great{
     color: #999;
     font-size: 20px;
     text-transform: none;
+    text-align: center;
 }
 .social_1 a{
     display: inline-block;
@@ -103,3 +105,23 @@ span.promo__great{
     background-position: -105px 0;
 }
 /* ---------------  /socials --------------- */
+
+@media (min-width: 768px){
+
+    /* --------------- promo --------------- */
+    .promo__tick{
+        margin-bottom: 80px;
+    }
+    /* --------------- /promo --------------- */
+
+}
+
+@media (min-height: 400px) {
+
+    /* --------------- promo --------------- */
+    .promo__tick{
+        margin-bottom: 10px;
+    }
+    /* --------------- /promo --------------- */
+
+}

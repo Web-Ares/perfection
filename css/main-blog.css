@@ -147,6 +147,16 @@
 .site__inner-page{
     padding: 50px 0;
 }
+.site__footer{
+    position: relative;
+    z-index: 2;
+}
+.site__footer-layout {
+    position: relative;
+    margin: 0 auto;
+    padding: 38px 21px 38px;
+    text-align: center;
+}
 /* --------------- /site --------------- */
 
 /* --------------- logo --------------- */
@@ -171,6 +181,14 @@
     padding-left: 10px;
     font-size: 16px;
     color: #999;
+}
+.logo_footer{
+    display: block;
+    width: 82px;
+    margin: 0 auto;
+}
+.logo_footer img{
+    width: 100%;
 }
 /* --------------- /logo --------------- */
 
@@ -543,6 +561,99 @@
 }
 /* --------------- /promo --------------- */
 
+/* --------------- footer --------------- */
+.footer__copyright {
+    display: block;
+    margin: 15px 0;
+    color: #cbcbcb;
+    font-size: 14px;
+}
+/* --------------- /footer --------------- */
+
+/* --------------- developer --------------- */
+.developer{
+    position: relative;
+    color: #cbcbcb;
+    font-size: 12px;
+}
+.developer__btn{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.developer__container{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    width: 333px;
+    margin-bottom: 17px;
+    padding: 25px 60px 35px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #000;
+    font: 16px 'Proxima Nova Regular', sans-serif;
+    transition: visibility .3s ease, opacity .3s ease;
+    -webkit-transition: visibility .3s ease, opacity .3s ease;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+}
+.developer__container_open{
+    opacity: 1;
+    visibility: visible;
+}
+.developer__container img{
+    margin-bottom: 10px;
+}
+.developer__container a{
+    color: #0081d1;
+    font-size: 14px;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+.developer__container a:hover{
+    opacity: .8;
+}
+.developer__container p{
+    margin-bottom: 13px;
+}
+.developer__info{
+    margin-bottom: 25px;
+    color: #a5a6a7;
+    font-size: 12px;
+}
+.developer__close{
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.developer__close:before,
+.developer__close:after{
+    content: '';
+    position: absolute;
+    top: -4px;
+    width: 2px;
+    height: 20px;
+    background-color: #c8c8c8;
+}
+.developer__close:before{
+    left: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.developer__close:after{
+    right: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+/* --------------- /developer --------------- */
+
 @media (min-width: 550px) {
 
     /* --------------- site --------------- */
@@ -608,6 +719,11 @@
         bottom: 7px;
         left: 100%;
         font-size: 22px;
+    }
+    .logo_footer{
+        position: absolute;
+        top: 41px;
+        left: 35px;
     }
     /* --------------- /logo --------------- */
 
@@ -705,6 +821,55 @@
         height: 6px;
     }
     /* --------------- /article --------------- */
+
+    /* --------------- footer --------------- */
+    .footer__copyright {
+        margin: 0;
+    }
+    /* --------------- /footer --------------- */
+
+    /* --------------- developer --------------- */
+    .developer{
+        position: absolute;
+        top: 37px;
+        right: 31px;
+        color: #cbcbcb;
+        font-size: 12px;
+    }
+    .developer__container{
+        right: 0;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    /* --------------- /developer --------------- */
+
+}
+@media (min-width: 800px) {
+
+    /* --------------- site --------------- */
+    .site{
+        min-height: 100%;
+    }
+    .site:after {
+        content: '';
+        display: block;
+        clear: both;
+        width: 100%;
+        height: 60px;
+    }
+    .site__footer {
+        z-index: 4;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 114px;
+    }
+    .site__footer-layout {
+        margin: 0 65px;
+        text-align: center;
+    }
+    /* --------------- /site --------------- */
 
 }
 @media (min-width: 992px) {

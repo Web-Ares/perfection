@@ -59,7 +59,8 @@ var Developer = function (obj) {
     var _obj = obj,
         _btn = _obj.find( '.developer__btn'),
         _container = _obj.find( '.developer__container'),
-        _btnClose = _obj.find( '.developer__close' );
+        _btnClose = _obj.find( '.developer__close'),
+        _window = $( document );
 
     //private methods
     var _ControlContainer = function () {
@@ -77,6 +78,13 @@ var Developer = function (obj) {
                     _container.removeClass( 'developer__container_open' )
                 }
             });
+            _window.on({
+                click: function (e) {
+                    if ( $( e.target ).closest( _obj ).length == 0 ){
+                        _container.removeClass( 'developer__container_open' )
+                    }
+                }
+            })
         },
         _init = function () {
             _ControlContainer();

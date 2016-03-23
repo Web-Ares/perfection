@@ -2259,7 +2259,6 @@
         height: 100%;
     }
     .we-impressed__layout {
-        opacity: 0;
         display: flex;
         display: -ms-flexbox;
         display: -webkit-flex;

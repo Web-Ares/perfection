@@ -1868,7 +1868,7 @@
         display: block;
         clear: both;
         width: 100%;
-        height: 60px;
+        height: 110px;
     }
     .site__header{
         height: 64px;
@@ -1917,7 +1917,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        height: 114px;
+        height: 164px;
     }
     .site__footer-layout{
         margin: 50px 65px 0;

@@ -1,5 +1,9 @@
 $(function () {
 
+    $.each( $( '.developer' ), function () {
+        new Developer( $( this ) );
+    } );
+
     $.each( $( '.pricing' ), function () {
         new TM( $( this ) );
     } );
@@ -48,6 +52,46 @@ $(function () {
     } );
 
 });
+
+var Developer = function (obj) {
+
+    //private properties
+    var _obj = obj,
+        _btn = _obj.find( '.developer__btn'),
+        _container = _obj.find( '.developer__container'),
+        _btnClose = _obj.find( '.developer__close'),
+        _window = $( document );
+
+    //private methods
+    var _ControlContainer = function () {
+            _btn.on({
+                click: function () {
+                    if ( _container.hasClass( 'developer__container_open' ) ){
+                        _container.removeClass( 'developer__container_open' )
+                    } else {
+                        _container.addClass( 'developer__container_open' )
+                    }
+                }
+            });
+            _btnClose.on({
+                click: function () {
+                    _container.removeClass( 'developer__container_open' )
+                }
+            });
+            _window.on({
+                click: function (e) {
+                    if ( $( e.target ).closest( _obj ).length == 0 ){
+                        _container.removeClass( 'developer__container_open' )
+                    }
+                }
+            })
+        },
+        _init = function () {
+            _ControlContainer();
+        };
+
+    _init();
+};
 
 var TopGif = function (obj) {
     var _obj = obj;

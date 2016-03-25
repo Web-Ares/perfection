@@ -1,3 +1,9 @@
+/* ---------------  site --------------- */
+.site:after{
+    display: none;
+}
+/* ---------------  /site --------------- */
+
 /* ---------------  promo_thank-you --------------- */
 .promo__wrap{
     height: auto;

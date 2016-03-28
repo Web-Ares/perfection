@@ -1393,6 +1393,9 @@
     max-width: 566px;
     height: auto;
 }
+img.easy-way__pic-big{
+    display: none;
+}
 /* ------------ /easy-way ------------ */
 
 /* --------------- we-impressed --------------- */
@@ -2513,6 +2516,12 @@
         width: 49%;
         margin-left: 3%;
         height: 100%;
+    }
+    img.easy-way__pic-small{
+        display: none;
+    }
+    img.easy-way__pic-big{
+        display: block;
     }
     .active .easy-way__content {
         opacity: 1;

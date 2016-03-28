@@ -130,12 +130,12 @@ var TopGif = function (obj) {
         },
         _logoAnimate = function () {
             var animData = {
-                wrapper: document.getElementById('logov8'),
-                animType: 'svg',
-                loop: true,
+                wrapper: document.getElementById('logov4'),
+                animType: 'html',
+                loop: false,
                 prerender: true,
                 autoplay: true,
-                path: 'http://res.cloudinary.com/rodetyo/raw/upload/v1459157671/logov8.json'
+                path: 'https://res.cloudinary.com/rodetyo/raw/upload/v1459157671/logov8.json'
             };
 
             var anim = bodymovin.loadAnimation(animData);

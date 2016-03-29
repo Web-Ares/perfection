@@ -2877,7 +2877,7 @@ img.easy-way__pic-big{
 
     /* --------------- promo --------------- */
     .promo__logo {
-        max-height: 31vh;
+        display: none;
     }
     /* --------------- /promo --------------- */
 }

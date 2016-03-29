@@ -407,6 +407,7 @@ var Preloader = function(obj) {
             // for css animation
             setTimeout( function() {
                 _obg.addClass( 'preloader_hide' );
+                $('.promo__parenthesis').addClass('visible');
             }, 100)
         },
         _init = function() {

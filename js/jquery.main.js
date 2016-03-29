@@ -47,7 +47,7 @@ $(function () {
         new MessageHigh( $( this ) );
     } );
 
-    $.each( $( '#logov4' ), function() {
+    $.each( $( '#logov8' ), function() {
         new TopGif( $( window ) );
     } );
 
@@ -130,8 +130,8 @@ var TopGif = function (obj) {
         },
         _logoAnimate = function () {
             var animData = {
-                wrapper: document.getElementById('logov4'),
-                animType: 'html',
+                wrapper: document.getElementById('logov8'),
+                animType: 'svg',
                 loop: false,
                 prerender: true,
                 autoplay: true,

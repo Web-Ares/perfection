@@ -1663,7 +1663,6 @@ img.easy-way__pic-big{
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
-        max-height: 31vh;
         margin-bottom: -40px;
     }
     .promo__logo > div{
@@ -2873,6 +2872,14 @@ img.easy-way__pic-big{
     }
     /* ------------ /easy-way ------------ */
 
+}
+@media (max-height: 340px) {
+
+    /* --------------- promo --------------- */
+    .promo__logo {
+        max-height: 31vh;
+    }
+    /* --------------- /promo --------------- */
 }
 @media (max-height: 400px) {
 

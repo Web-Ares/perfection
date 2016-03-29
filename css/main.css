@@ -2910,7 +2910,7 @@ img.easy-way__pic-big{
     /* --------------- promo --------------- */
     .promo__logo{
         width: auto;
-        max-height: 14vh;
+        max-width: 500px;
     }
     .promo__topic{
         font-size: 45px;

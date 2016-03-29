@@ -135,7 +135,7 @@ var TopGif = function (obj) {
                 loop: false,
                 prerender: true,
                 autoplay: true,
-                path: 'https://res.cloudinary.com/rodetyo/raw/upload/v1459157671/logov8.json'
+                path: 'https://res.cloudinary.com/rodetyo/raw/upload/v1459249719/logov8_b.json'
             };
 
             var anim = bodymovin.loadAnimation(animData);

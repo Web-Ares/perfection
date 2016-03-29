@@ -757,10 +757,10 @@
 .promo__logo{
     position: relative;
     width: 97%;
-    height: 199px;
-    max-width: 728px;
-    margin: 0 auto;
+    max-width: 675px;
+    margin: 0 auto -20px;
     z-index: -1;
+    overflow: hidden;
 }
 .promo__logo > div{
     top: 50%!important;
@@ -776,7 +776,7 @@
     font: normal 50px/67px "Proxima Nova Bold", sans-serif;
 }
 .promo__content{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #999;
     font: 28px/33px "Proxima Nova Light", sans-serif;
 }
@@ -1663,8 +1663,8 @@ img.easy-way__pic-big{
     /* --------------- promo --------------- */
     .promo__logo {
         width: auto;
-        max-width: 100%;
         max-height: 31vh;
+        margin-bottom: -40px;
     }
     .promo__logo > div{
         transform: translateX(-50%) translateY(-50%) matrix3d(0.3, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
@@ -1801,6 +1801,9 @@ img.easy-way__pic-big{
     /* --------------- /logo --------------- */
 
     /* --------------- promo --------------- */
+    .promo__logo {
+        margin-bottom: -60px;
+    }
     .promo__logo > div{
         transform: translateX(-50%) translateY(-50%) matrix3d(0.3, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
         -webkit-transform: translateX(-50%) translateY(-50%) matrix3d(0.3, 0, 0, 0, 0, 0.3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)!important;
@@ -2220,7 +2223,6 @@ img.easy-way__pic-big{
     }
     .promo__logo{
         width: auto;
-        max-width: 728px;;
     }
     .promo__content{
         font-size: 28px;
@@ -2934,7 +2936,7 @@ img.easy-way__pic-big{
         margin-bottom: 43px;
     }
     .promo__content {
-        margin-bottom: 56px;
+        margin-bottom: 20px;
     }
     .promo__content_inner{
         margin-bottom: 0;
@@ -2949,7 +2951,7 @@ img.easy-way__pic-big{
         margin-bottom: 96px;
     }
     .promo__content {
-        margin-bottom: 101px;
+        margin-bottom: 40px;
     }
     .promo__content_inner{
         margin-bottom: 0;

@@ -299,8 +299,9 @@ var Menu = function ( obj ) {
                 }
             } );
             _window.on( {
-                'scroll': function () {
+                'scroll': function ( e ) {
                     _action = _window.scrollTop() >= _header.innerHeight();
+                    console.log(_action)
                     _colorTop();
                     _marginTop();
                 },
@@ -336,6 +337,35 @@ var Menu = function ( obj ) {
                         _checkScroll( 1 );
                     }
                     _lastPos = currentPos;
+                },
+                'keydown': function ( e ) {
+                    switch( e.which ) {
+
+                        case 32:
+                            _checkScroll( 1 );
+                            break;
+                        case 33:
+                            _checkScroll( -1 );
+                            break;
+                        case 34 :
+                            _checkScroll( 1 );
+                            break;
+                        case 35 :
+                            _checkScroll( 1 );
+                            break;
+                        case 36 :
+                            _checkScroll( -1 );
+                            break;
+                        case 38:
+                            _checkScroll( -1 );
+                            break;
+                        case 40:
+                            _checkScroll( 1 );
+                            break;
+
+                        default:
+                            return;
+                    }
                 }
             } )
         },

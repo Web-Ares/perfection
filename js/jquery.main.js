@@ -654,8 +654,8 @@ var TM = function (obj) {
     var _onEvents = function () {
 
             $( '.paddle_button > span ').on( 'click', function () {
-                var product_id = $(this).data( 'product' );
-                var product_name = $(this).data( 'product_name' );
+                var product_id = $(this).parent().data( 'product' );
+                var product_name = $(this).parent().data( 'product_name' );
                 dataLayer.push( {'event':'track-purchase-click', 'productid':product_id, 'productname':product_name } );
             });
 

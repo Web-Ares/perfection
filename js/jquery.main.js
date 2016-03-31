@@ -299,7 +299,7 @@ var Menu = function ( obj ) {
                 }
             } );
             _window.on( {
-                'scroll': function ( e ) {
+                'scroll': function () {
                     _action = _window.scrollTop() >= _header.innerHeight();
                     _colorTop();
                     _marginTop();

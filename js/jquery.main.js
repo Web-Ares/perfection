@@ -174,6 +174,7 @@ var Anchor = function ( obj ) {
 var MC = function ( obj ) {
     var _obj = obj,
         _thankpage = obj.data( 'thank' ),
+        _data_action = $('.promo_inner').data('action'),
         _mail = '';
     var _onEvents = function () {
             _obj.on( 'submit' , function () {
@@ -187,22 +188,15 @@ var MC = function ( obj ) {
                 return false;
             });
         },
-        _getAjaxSubmitUrl = function () {
-            var url = _obj.attr( 'action' );
-            url = url.replace( '/post?u=', '/post-json?u=' );
-            url += '&c=?';
-            return url;
-        },
         _setError = function () {
             $( '#mce-EMAIL' ).addClass( 'mce_inline_error' );
         },
         _send = function () {
             $.ajax({
-                url: _getAjaxSubmitUrl(),
-                data: { 'EMAIL': _mail },
-                type: 'GET',
+                url: _data_action,
+                data: { 'EMAIL': _mail, "action" : 'mchimp'},
+                type: 'POST',
                 dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
                 success: function (resp) {
                     if ( resp.result == 'success' ) {
                         _obj[ 0 ].reset( );

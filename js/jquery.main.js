@@ -142,6 +142,7 @@ var TopGif = function (obj) {
         },
         init = function () {
             //_checkCookie();
+            _logoAnimate();
             _onEvents();
         };
 

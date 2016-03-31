@@ -141,7 +141,7 @@ var TopGif = function (obj) {
             var anim = bodymovin.loadAnimation(animData);
         },
         init = function () {
-            _checkCookie();
+            //_checkCookie();
             _onEvents();
         };
 

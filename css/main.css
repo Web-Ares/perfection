@@ -231,7 +231,7 @@ input:invalid {
     position: relative;
     max-width: 1248px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 .site__header.white .header-menu__mobile-item {
@@ -286,8 +286,9 @@ input:invalid {
 
 .site__footer-layout {
     position: relative;
+    max-width: 1248px;
     margin: 50px auto 0;
-    padding: 38px 21px;
+    padding: 38px 20px;
     text-align: center
 }
 
@@ -548,7 +549,6 @@ input:invalid {
     width: 30px;
     height: 25px;
     margin-top: 14px;
-    margin-right: 1px;
     z-index: 6;
     overflow: hidden;
     text-indent: 999px
@@ -1874,6 +1874,14 @@ img.easy-way__pic-big {
         line-height: 6vmin
     }
 
+    .site__header-layout {
+        padding: 0 40px;
+    }
+
+    .site__footer-layout{
+        padding: 38px 40px;
+    }
+
     .site__centered{
         padding: 0 40px;
     }
@@ -2017,7 +2025,7 @@ img.easy-way__pic-big {
     .logo_footer {
         position: absolute;
         top: 41px;
-        left: 35px
+        left: 41px
     }
 
     .promo__logo {
@@ -2070,7 +2078,7 @@ img.easy-way__pic-big {
     .developer {
         position: absolute;
         top: 37px;
-        right: 31px;
+        right: 41px;
         color: #cbcbcb;
         font-size: 12px
     }
@@ -2152,7 +2160,7 @@ img.easy-way__pic-big {
     }
 
     .site__footer-layout {
-        margin: 50px 65px 0;
+        margin: 50px auto 0;
         text-align: center
     }
 
@@ -3082,7 +3090,7 @@ img.easy-way__pic-big {
 
     .sharpest-icons__list {
         right: auto;
-        margin: -16px 0 0 11%
+        margin: -16px 0 0 12%
     }
 
     .formats__layout {
@@ -3111,12 +3119,25 @@ img.easy-way__pic-big {
 @media (min-width: 1360px) {
 
     .logo{
-        left: 86px;
+        left: 92px;
     }
 
     .site__header-layout{
         max-width: 100%;
-        padding: 0 86px;
+        padding: 0 90px;
+    }
+
+    .site__footer-layout{
+        max-width: 100%;
+        padding: 38px 90px;
+    }
+
+    .logo_footer{
+        left: 91px;
+    }
+
+    .developer{
+        right: 91px;
     }
 
 }

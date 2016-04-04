@@ -120,8 +120,9 @@
 }
 .site__header-layout{
     position: relative;
+    max-width: 1248px;
     margin: 0 auto;
-    padding: 0 21px;
+    padding: 0 20px;
 }
 .site__content {
     position: relative;
@@ -254,7 +255,6 @@
     width: 30px;
     height: 25px;
     margin-top: 14px;
-    margin-right: 1px;
     z-index: 6;
     overflow: hidden;
     text-indent: 999px;
@@ -661,6 +661,12 @@
         font-size: 3vmin;
         line-height: 4vmin;
     }
+    .site__header-layout {
+        padding: 0 40px;
+    }
+    .site__footer-layout{
+        padding: 38px 40px;
+    }
     /* --------------- /site --------------- */
 
     /* --------------- header-menu --------------- */
@@ -680,9 +686,6 @@
     .site__header{
         height: 64px;
         padding: 28px 0 0;
-    }
-    .site__header-layout{
-        margin: 0 65px;
     }
     .site__title{
         margin: 0 0 27px;
@@ -898,6 +901,31 @@
         font-size: 16px;
     }
     /* --------------- /promo --------------- */
+
+}
+@media (min-width: 1360px) {
+
+    .logo{
+        left: 92px;
+    }
+
+    .site__header-layout{
+        max-width: 100%;
+        padding: 0 90px;
+    }
+
+    .site__footer-layout{
+        max-width: 100%;
+        padding: 38px 90px;
+    }
+
+    .logo_footer{
+        left: 91px;
+    }
+
+    .developer{
+        right: 91px;
+    }
 
 }
 

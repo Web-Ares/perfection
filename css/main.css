@@ -1874,14 +1874,6 @@ img.easy-way__pic-big {
         line-height: 6vmin
     }
 
-    .site__header-layout {
-        padding: 0 40px;
-    }
-
-    .site__footer-layout{
-        padding: 38px 40px;
-    }
-
     .site__centered{
         padding: 0 40px;
     }
@@ -2111,6 +2103,14 @@ img.easy-way__pic-big {
     .site__header {
         height: 64px;
         padding-top: 28px
+    }
+
+    .site__header-layout {
+        padding: 0 40px;
+    }
+
+    .site__footer-layout{
+        padding: 38px 40px;
     }
 
     .site__header_inner {

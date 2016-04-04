@@ -661,12 +661,6 @@
         font-size: 3vmin;
         line-height: 4vmin;
     }
-    .site__header-layout {
-        padding: 0 40px;
-    }
-    .site__footer-layout{
-        padding: 38px 40px;
-    }
     /* --------------- /site --------------- */
 
     /* --------------- header-menu --------------- */
@@ -860,6 +854,9 @@
         width: 100%;
         height: 110px;
     }
+    .site__header-layout {
+        padding: 0 40px;
+    }
     .site__footer {
         z-index: 4;
         position: absolute;
@@ -870,6 +867,7 @@
     }
     .site__footer-layout {
         margin: 50px 65px 0;
+        padding: 38px 40px;
         text-align: center;
     }
     /* --------------- /site --------------- */

@@ -680,6 +680,7 @@ var TM = function (obj) {
             $( '.paddle_button > span ').on( 'click', function () {
                 var product_id = $(this).parent().data( 'product' );
                 var product_name = $(this).parent().data( 'product_name' );
+                adoric.trigger('InitiateCheckout');
                 dataLayer.push( {'event':'track-purchase-click', 'productid':product_id, 'productname':product_name } );
             });
 

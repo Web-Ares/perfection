@@ -432,7 +432,7 @@ var Preloader = function(obj) {
             setTimeout( function() {
                 _obg.addClass( 'preloader_hide' );
                 $('.promo__parenthesis').addClass('visible');
-            }, 100)
+            }, 1000)
         },
         _init = function() {
             _onEvents();

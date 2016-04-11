@@ -196,8 +196,7 @@ input:invalid {
     font-size: 21px;
     line-height: 25px;
     font-family: "Proxima Nova Light", sans-serif;
-    color: #666;
-    background-color: #242a2f
+    color: #666
 }
 
 .site__header {

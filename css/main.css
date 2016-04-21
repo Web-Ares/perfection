@@ -1218,6 +1218,10 @@ input:invalid {
     padding: 50px 0
 }
 
+.formats > div {
+    /*align-items: stretch;*/
+}
+
 .formats__text {
     margin: 0 0 20px
 }
@@ -2360,8 +2364,9 @@ img.easy-way__pic-big {
 
     .formats__slider {
         right: 10px;
-        width: 43.8%;
-        padding-bottom: 43.8%;
+        width: 314px;
+        height: 314px;
+        padding-bottom: 0;
         margin: 0 0 0 6%
     }
 
@@ -2870,6 +2875,11 @@ img.easy-way__pic-big {
         padding: 125px 0
     }
 
+    .formats__slider{
+        width: 400px;
+        height: 400px;
+    }
+
     .formats__slider-text > div {
         font-size: 16px;
         line-height: 24px
@@ -3044,6 +3054,10 @@ img.easy-way__pic-big {
     .pixel-grid__perfect {
         top: 18px;
     }
+    .formats__slider{
+        width: 426px;
+        height: 426px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -3089,8 +3103,8 @@ img.easy-way__pic-big {
     }
 
     .sharpest-icons__list {
-        right: auto;
-        margin: -16px 0 0 12%
+        right: 0;
+        margin: -16px -57px 0 12%
     }
 
     .formats__layout {
@@ -3113,6 +3127,11 @@ img.easy-way__pic-big {
         font-size: 66px;
         line-height: .95;
         margin-bottom: 25px
+    }
+
+    .formats__slider{
+        width: 483px;
+        height: 483px;
     }
 }
 

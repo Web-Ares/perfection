@@ -208,7 +208,7 @@ input:invalid {
     border-bottom: 1px solid transparent;
     font-size: 12px;
     text-align: right;
-    background-color: #242a2f;
+    background-color: #0e0e0e;
     transition: border-bottom .2s ease, padding-top .2s ease, background-color .3s ease, transform .3s ease, height .3s ease;
     -webkit-transition: border-bottom .2s ease, padding-top .2s ease, background-color .3s ease, transform .3s ease, height .3s ease
 }
@@ -463,19 +463,19 @@ input:invalid {
 
 .btn_7 {
     float: left;
-    border: 2px solid #242a2f !important;
+    border: 2px solid #0e0e0e !important;
     border-right: none !important;
-    background-color: #242a2f;
+    background-color: #0e0e0e;
     border-radius: 50px 0 0 50px;
     color: #fff !important
 }
 
 .btn_8 {
-    border: 2px solid #242a2f !important;
+    border: 2px solid #0e0e0e !important;
     border-left: none !important;
     border-radius: 0 50px 50px 0;
     background-color: transparent;
-    color: #242a2f !important;
+    color: #0e0e0e !important;
     transition: opacity .3s ease
 }
 
@@ -503,7 +503,7 @@ input:invalid {
 .btn_11 {
     margin: 0 15px;
     border: 2px solid #fff;
-    background: #242a2f;
+    background: #0e0e0e;
     color: #fff
 }
 
@@ -863,13 +863,13 @@ input:invalid {
 }
 
 .tabs__controls-wrap .active .btn {
-    background-color: #242a2f;
+    background-color: #0e0e0e;
     cursor: default;
     color: #fff !important
 }
 
 .promo {
-    background-color: #242a2f
+    background-color: #0e0e0e
 }
 
 .promo p {
@@ -1015,7 +1015,7 @@ input:invalid {
     align-items: center;
     padding-top: 50px;
     margin-bottom: 50px;
-    background: #242a2f;
+    background: #0e0e0e;
     color: #fff;
     text-align: justify
 }
@@ -1614,14 +1614,14 @@ img.easy-way__pic-big {
 
 .we-impressed {
     padding-top: 35px;
-    background-color: black
+    background-color: #0e0e0e
 }
 
 .we-impressed__layout {
     z-index: 2;
     position: relative;
     padding: 17px 20px 50px;
-    background: black
+    background: #0e0e0e
     /*background: #242a2f*/
 }
 
@@ -1671,7 +1671,7 @@ img.easy-way__pic-big {
 }
 
 .we-impressed__swiper .swiper-slide {
-    background-color: black
+    background-color: #0e0e0e
 }
 
 .we-impressed__swiper-pagination {

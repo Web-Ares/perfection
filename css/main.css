@@ -1614,14 +1614,14 @@ img.easy-way__pic-big {
 
 .we-impressed {
     padding-top: 35px;
-    background-color: #0e0e0e
+    background-color: #111
 }
 
 .we-impressed__layout {
     z-index: 2;
     position: relative;
     padding: 17px 20px 50px;
-    background: #0e0e0e
+    background: #111
     /*background: #242a2f*/
 }
 
@@ -1671,7 +1671,7 @@ img.easy-way__pic-big {
 }
 
 .we-impressed__swiper .swiper-slide {
-    background-color: #0e0e0e
+    background-color: #111
 }
 
 .we-impressed__swiper-pagination {

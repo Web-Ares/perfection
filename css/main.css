@@ -577,7 +577,7 @@ input:invalid {
     top: 17px;
     left: 18px;
     z-index: 7;
-    color: #fff;
+    color: #000001;
     font: 18px 'Proxima Nova Regular', sans-serif;
     text-transform: uppercase;
     transition: color .3s ease, opacity .3s ease;
@@ -949,7 +949,7 @@ input:invalid {
 .promo__logo {
     width: 97%;
     max-width: 675px;
-    margin: 0 auto -20px;
+    margin: 0 auto;
     z-index: -1;
     overflow: hidden
 }
@@ -1014,9 +1014,15 @@ input:invalid {
     -webkit-animation-direction: normal;
     animation-direction: normal;
     -webkit-animation-timing-function: linear;
-    animation-timing-function: linear
+    animation-timing-function: linear;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease 5s !important;
+    transition: opacity .3s ease 5s !important;
 }
-
+.promo__arrow-bottom.visible,
+.promo.visible:before{
+    opacity: 1
+}
 .promo_inner {
     height: 100vh;
     max-height: 346px;
@@ -1986,7 +1992,6 @@ img.easy-way__pic-big {
 
     .promo__logo {
         width: auto;
-        margin-bottom: -40px
     }
 
     .promo__logo > div {
@@ -2114,9 +2119,6 @@ img.easy-way__pic-big {
         left: 41px
     }
 
-    .promo__logo {
-        margin-bottom: -60px
-    }
 
     .promo__logo > div {
         transform: translateX(-50%) translateY(-50%) matrix3d(.3, 0, 0, 0, 0, .3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
@@ -2300,12 +2302,17 @@ img.easy-way__pic-big {
     }
 
     .header-menu__item {
+        opacity: 0;
         display: inline-block;
         margin-right: 35px;
         padding-top: 8px;
-        font-size: 18px
+        font-size: 18px;
+        -webkit-transition: opacity .3s ease 5s , color .3s ease;
+        transition: opacity .3s ease 5s , color .3s ease;
     }
-
+    .header-menu__item.visible{
+        opacity: 1
+    }
     .formats, .sharpest-icons {
         flex-direction: row;
         padding: 100px 0

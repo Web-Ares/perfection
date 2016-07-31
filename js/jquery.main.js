@@ -432,6 +432,7 @@ var Preloader = function(obj) {
             setTimeout( function() {
                 _obg.addClass( 'preloader_hide' );
                 $('.promo__parenthesis').addClass('visible');
+                $('.promo__arrow-bottom, .promo, .header-menu__item').addClass('visible');
                 $('.site').css('background-color','#fff');
             }, 100)
         },

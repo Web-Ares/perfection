@@ -51,6 +51,15 @@ $(function () {
         new TopGif( $( window ) );
     } );
 
+    $('.promo .btn_1').on({
+        'mouseenter': function() {
+            $('.promo__arrow-bottom').addClass('visible');
+        },
+        'mouseleave': function() {
+            $('.promo__arrow-bottom').removeClass('visible');
+        }
+    })
+
 });
 
 var Developer = function (obj) {
@@ -432,7 +441,7 @@ var Preloader = function(obj) {
             setTimeout( function() {
                 _obg.addClass( 'preloader_hide' );
                 $('.promo__parenthesis').addClass('visible');
-                $('.promo__arrow-bottom, .promo, .header-menu__item').addClass('visible');
+                $('.header-menu__item').addClass('visible');
                 $('.site').css('background-color','#fff');
             }, 100)
         },

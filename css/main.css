@@ -992,8 +992,7 @@ input:invalid {
     opacity: 1
 }
 
-.promo__arrow-bottom,
-.promo:before {
+.promo__arrow-bottom {
     position: absolute;
     left: 50%;
     bottom: 11%;
@@ -1016,11 +1015,10 @@ input:invalid {
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     opacity: 0;
-    -webkit-transition: opacity .3s ease 5s !important;
-    transition: opacity .3s ease 5s !important;
+    -webkit-transition: opacity .3s ease !important;
+    transition: opacity .3s ease !important;
 }
-.promo__arrow-bottom.visible,
-.promo.visible:before{
+.promo__arrow-bottom.visible{
     opacity: 1
 }
 .promo_inner {

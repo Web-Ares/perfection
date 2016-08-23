@@ -238,6 +238,12 @@ input:invalid {
 .site__header.header-scroll .logo img:nth-child(2) {
     opacity: 1;
 }
+.site__header.white .logo img:nth-child(1) {
+    opacity: 1;
+}
+.site__header.white .logo img:nth-child(2) {
+    opacity: 0;
+}
 .btn, .drop-menu, .promo {
     text-align: center
 }
@@ -2200,7 +2206,7 @@ img.easy-way__pic-big {
     }
 
     .site__header-layout {
-        padding: 0 40px;
+        padding: 0 50px;
     }
 
     .site__footer-layout{
@@ -2260,7 +2266,7 @@ img.easy-way__pic-big {
 
     .logo {
         top: 3px;
-        left: 40px;
+        left: 67px;
         margin-left: 0;
         width: 67px
     }
@@ -3302,12 +3308,12 @@ img.easy-way__pic-big {
 @media (min-width: 1360px) {
 
     .logo{
-        left: 92px;
+        left: 67px;
     }
 
     .site__header-layout{
         max-width: 100%;
-        padding: 0 90px;
+        padding: 0 50px;
     }
 
     .site__footer-layout{

@@ -3410,6 +3410,11 @@ img.easy-way__pic-big {
         max-width: 500px
     }
 
+    .logo__main img{
+        width: 415px;
+        margin-top: 4px;
+    }
+
     .promo__topic {
         font-size: 45px;
         line-height: 45px

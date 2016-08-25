@@ -345,6 +345,42 @@ input:invalid {
     z-index: 6
 }
 
+.logo__main{
+    position: relative;
+
+    /*position: absolute;
+    top: 186px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 555px;
+    margin-left: 5px;*/
+
+    /*width: 100%;
+    max-width: 555px;
+    margin: 0 auto -265px;*/
+}
+
+.logo__main img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 82%;
+    max-width: 555px;
+    margin-top: 3px;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+}
+
+.logo__main .visible{
+    opacity: 1;
+}
+
+.logo__main .hide{
+    opacity: 0;
+}
+
 .logo img, .logo:after {
     width: 100%;
     height: auto;
@@ -957,7 +993,9 @@ input:invalid {
     max-width: 675px;
     margin: 0 auto;
     z-index: -1;
-    overflow: hidden
+    overflow: hidden;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
 }
 
 .promo__logo > div {
@@ -2123,6 +2161,10 @@ img.easy-way__pic-big {
         left: 41px
     }
 
+    .logo__main img {
+        margin-top: 7px;
+        margin-left: 5px;
+    }
 
     .promo__logo > div {
         transform: translateX(-50%) translateY(-50%) matrix3d(.3, 0, 0, 0, 0, .3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;

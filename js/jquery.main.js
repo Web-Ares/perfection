@@ -443,7 +443,12 @@ var Preloader = function(obj) {
                 $('.promo__parenthesis').addClass('visible');
                 $('.header-menu__item').addClass('visible');
                 $('.site').css('background-color','#fff');
-            }, 100)
+            }, 100);
+
+            setTimeout( function() {
+                $('.logo__main img').addClass('visible');
+                $('.promo__logo').addClass('hide');
+            }, 5500)
         },
         _init = function() {
             _onEvents();

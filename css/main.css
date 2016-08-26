@@ -471,8 +471,6 @@ input:invalid {
     font-family: "Proxima Nova Bold", sans-serif
 }
 
-
-
 .btn > div, .btn > span {
     display: flex;
     display: -ms-flexbox;
@@ -1007,7 +1005,22 @@ input:invalid {
     -webkit-transform-origin: center center 0 !important
 }
 
+.logo__version{
+    position: absolute;
+    top: -13px;
+    height: 24px;
+    margin-left: -17px;
+    padding: 7px 10px 0;
+    border-radius: 50px;
+    font-size: 16.5px;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #fff;
+    white-space: nowrap;
+}
+
 .promo__topic {
+    position: relative;
     margin-bottom: 10px;
     color: #000001;
     font: 400 50px/67px "Proxima Nova Bold", sans-serif
@@ -2324,6 +2337,11 @@ img.easy-way__pic-big {
         left: 50%
     }
 
+    .logo__version{
+        top: 23px;
+        margin-left: 13px;
+    }
+
     .btn_3 {
         height: 84px;
         border-radius: 0;
@@ -3022,6 +3040,10 @@ img.easy-way__pic-big {
         max-width: 104px
     }
 
+    .logo__version{
+        padding-top: 5px;
+    }
+
     .promo__content span {
         font-size: 16px
     }
@@ -3374,7 +3396,7 @@ img.easy-way__pic-big {
 }
 
 @media (max-height: 340px) {
-    .promo__logo {
+    .logo__main {
         display: none
     }
 }
@@ -3413,6 +3435,13 @@ img.easy-way__pic-big {
     .logo__main img{
         width: 415px;
         margin-top: 4px;
+    }
+
+    .logo__version{
+        top: 11px;
+        padding-top: 5px;
+        font-size: 13px!important;
+        height: 21px;
     }
 
     .promo__topic {

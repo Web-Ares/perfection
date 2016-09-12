@@ -282,7 +282,6 @@ var Menu = function ( obj ) {
                     } else {
                         _header.addClass( 'site__header_drop-menu' );
                         if ( _header.hasClass( 'header-scroll' ) ){
-                            console.log('dd')
                             _header.addClass( 'header_top' );
                         }
                         siteScrollTop = _window.scrollTop();
@@ -304,7 +303,14 @@ var Menu = function ( obj ) {
             } );
             _window.on( {
                 'scroll': function () {
-                    _action = _window.scrollTop() >= _header.innerHeight();
+
+                    if( $('.promo').length ) {
+                        _action = _window.scrollTop() >= $('.promo').innerHeight();
+                    } else {
+                        _action = _window.scrollTop() >= _header.innerHeight();
+                    }
+
+
                     _colorTop();
                     _marginTop();
                 },
@@ -378,13 +384,13 @@ var Menu = function ( obj ) {
                     siteSectionsHeight = $( this ).height(),
                     spaceBeforeBloc = 160;
                 if( siteSectionsTop <= _window.scrollTop() ) {
-                    _header.removeClass( 'white' );
-                    _header.removeClass( 'dark' );
-                    _header.addClass( $( this ).data( 'header-color' ) );
+                    //_header.removeClass( 'white' );
+                    //_header.removeClass( 'dark' );
+                    //_header.addClass( $( this ).data( 'header-color' ) );
                 }
                 if( _action == false ) {
-                    _header.removeClass( 'white' );
-                    _header.removeClass( 'dark' );
+                    //_header.removeClass( 'white' );
+                    //_header.removeClass( 'dark' );
                 }
                 if( ( siteSectionsTop <= _window.scrollTop() + siteSectionsHeight - spaceBeforeBloc ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                     $( this ).addClass( 'active' );
@@ -401,7 +407,7 @@ var Menu = function ( obj ) {
 
         },
         _marginTop = function() {
-            if( _window.scrollTop() > 0 ) {
+            if( _window.scrollTop() > $('.promo').innerHeight() ) {
                 _header.addClass( 'header-scroll' );
             } else {
                 _header.removeClass( 'header-scroll' );

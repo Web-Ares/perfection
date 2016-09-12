@@ -379,7 +379,12 @@ var Menu = function ( obj ) {
                     spaceBeforeBloc = 160;
                 if( siteSectionsTop <= _window.scrollTop() ) {
                     _header.removeClass( 'white' );
+                    _header.removeClass( 'dark' );
                     _header.addClass( $( this ).data( 'header-color' ) );
+                }
+                if( _action == false ) {
+                    _header.removeClass( 'white' );
+                    _header.removeClass( 'dark' );
                 }
                 if( ( siteSectionsTop <= _window.scrollTop() + siteSectionsHeight - spaceBeforeBloc ) && ( siteSectionsTop + siteSectionsHeight + spaceBeforeBloc >= _window.scrollTop() ) ) {
                     $( this ).addClass( 'active' );

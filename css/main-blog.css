@@ -118,8 +118,43 @@
     transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease, height .3s ease, padding-top .3s ease;
     -webkit-transition: border-bottom .2s ease, background-color .2s ease, transform .2s ease, height .3s ease, padding-top .3s ease;
 }
+.site__header.header-scroll{
+    border-bottom-color: #e8e8e8;
+    background-color: #fff;
+    position: fixed;
+}
+.site__header_hidden {
+    -webkit-transform: translateY(-73px);
+    transform: translateY(-73px)
+}
 .site__header_inner .header-menu__item {
     color: #000;
+}
+.site__header.site__header_blog-inner.header-scroll .header-menu__item {
+    color: #000;
+}
+.site__header .logo img:nth-child(1) {
+    opacity: 1;
+}
+.site__header .logo img:nth-child(2) {
+    opacity: 0;
+}
+.site__header.site__header_blog-inner .logo img:nth-child(1) {
+    opacity: 0;
+}
+.site__header.site__header_blog-inner .logo img:nth-child(2) {
+    opacity: 1;
+}
+.site__header.site__header_blog-inner.header-scroll .logo img:nth-child(1) {
+    opacity: 1;
+}
+.site__header.site__header_blog-inner.header-scroll .logo img:nth-child(2) {
+    opacity: 0;
+}
+.site__header.site__header_blog-inner.header-scroll .drop-menu-btn span,
+.site__header.site__header_blog-inner.header-scroll .drop-menu-btn span:after,
+.site__header.site__header_blog-inner.header-scroll .drop-menu-btn span:before {
+    background: #000;
 }
 .site__header-layout{
     position: relative;
@@ -166,17 +201,16 @@
 .site__header_inner .drop-menu-btn span:before {
      background-color: #000;
 }
-.site__header .logo img:nth-child(1) {
-    opacity: 1;
-}
-.site__header .logo img:nth-child(2) {
-    opacity: 0;
-}
 .site__header.site__header_drop-menu .logo img, .site__header.white .logo:after {
     opacity: 1;
 }
 .site__header.site__header_drop-menu .logo img, .site__header.white .logo:after {
     opacity: 1;
+}
+.site__header.site__header_drop-menu .drop-menu-btn span,
+.site__header.site__header_drop-menu .drop-menu-btn span:after,
+.site__header.site__header_drop-menu .drop-menu-btn span:before {
+    background: #fff;
 }
 /* --------------- /site --------------- */
 
@@ -542,15 +576,13 @@
     max-height: 346px;
     padding-top: 0;
     text-align: center;
-    background-position: center;
+    background: url('../img/header-bg.jpg') no-repeat top center #111;
     background-size: cover;
-    background-color: #111;
 }
 .promo_inner {
     height: 100vh;
     max-height: 346px;
     padding-top: 0;
-    background: #fff;
 }
 .promo_inner .promo__topic{
     color: #000;
@@ -717,7 +749,7 @@
     }
     .site__header{
         height: 64px;
-        padding: 28px 0 0;
+        /*padding: 28px 0 0;*/
     }
     .site__title{
         margin: 0 0 27px;
@@ -896,7 +928,7 @@
         padding: 0 40px;
     }
     .site__footer {
-        z-index: 4;
+        /*z-index: 4;*/
         position: absolute;
         left: 0;
         right: 0;

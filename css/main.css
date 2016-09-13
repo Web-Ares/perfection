@@ -2464,9 +2464,9 @@ img.easy-way__pic-big {
     }
 
     .social {
-        left: auto;
-        right: 75px;
-        bottom: 24px
+        /*left: auto;*/
+        /*right: 75px;*/
+        /*bottom: 24px*/
     }
 
     .social_inner {

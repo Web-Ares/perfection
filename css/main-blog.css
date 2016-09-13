@@ -576,7 +576,7 @@
     max-height: 346px;
     padding-top: 0;
     text-align: center;
-    background: url('../img/header-bg.jpg') no-repeat top center #111;
+    background: url('../img/header-bg.jpg') no-repeat top center #fff;
     background-size: cover;
 }
 .promo_inner {

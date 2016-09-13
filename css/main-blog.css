@@ -576,7 +576,7 @@
     max-height: 346px;
     padding-top: 0;
     text-align: center;
-    background: url('../img/header-bg.jpg') no-repeat top center #fff;
+    background: url('../img/header-bg.jpg') no-repeat center #fff;
     background-size: cover;
 }
 .promo_inner {
@@ -749,7 +749,11 @@
     }
     .site__header{
         height: 64px;
-        /*padding: 28px 0 0;*/
+        padding: 28px 0 0;
+    }
+    .site__header.header-scroll,
+    .site__header.header_top {
+        padding-top: 14px;
     }
     .site__title{
         margin: 0 0 27px;

@@ -1002,7 +1002,7 @@ input:invalid {
 }
 
 .promo {
-    background: url('../img/header-bg.jpg') no-repeat top center #fff;
+    background: url('../img/header-bg.jpg') no-repeat center #fff;
     background-size: cover;
 }
 

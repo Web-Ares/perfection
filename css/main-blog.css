@@ -218,7 +218,7 @@
 .logo {
     position: absolute;
     top: 11px;
-    left: 27px;
+    left: 20px;
     width: 104px;
     margin-top: 1px;
     margin-left: 0;
@@ -780,7 +780,7 @@
     /* --------------- logo --------------- */
     .logo {
         top: 3px;
-        left: 22px;
+        left: 40px;
         margin-top: 1px;
         margin-left: 0;
         width: 104px;
@@ -978,7 +978,7 @@
 @media (min-width: 1360px) {
 
     .logo{
-        left: 92px;
+        left: 90px;
     }
 
     .site__header-layout{

@@ -2468,10 +2468,10 @@ img.easy-way__pic-big {
         margin-top: 0
     }
 
-    .social {
-        /*left: auto;*/
-        /*right: 75px;*/
-        /*bottom: 24px*/
+    .social_1 {
+        left: auto;
+        right: 75px;
+        bottom: 24px
     }
 
     .social_inner {

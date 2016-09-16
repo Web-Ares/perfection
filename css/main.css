@@ -2483,7 +2483,7 @@ img.easy-way__pic-big {
         vertical-align: middle;
         margin-right: 33px;
         left: auto;
-        right: auto;
+        right: auto !important;
     }
 
     .social__item_inner {

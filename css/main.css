@@ -1012,6 +1012,7 @@ input:invalid {
 .promo {
     background: url('../img/header-bg.jpg') no-repeat center #fff;
     background-size: cover;
+    min-height: 320px;
 }
 
 .promo p {
@@ -2471,7 +2472,7 @@ img.easy-way__pic-big {
         margin-top: 0
     }
 
-    .social_1 {
+    .social {
         left: auto;
         right: 75px;
         bottom: 24px
@@ -2480,7 +2481,9 @@ img.easy-way__pic-big {
     .social_inner {
         display: inline-block;
         vertical-align: middle;
-        margin-right: 33px
+        margin-right: 33px;
+        left: auto;
+        right: auto;
     }
 
     .social__item_inner {

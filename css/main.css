@@ -232,14 +232,14 @@ input:invalid {
     -webkit-transition: opacity .3s ease 0s, color .3s ease;
     transition: opacity .3s ease 0s, color .3s ease;
 }
-.site__header.header-scroll .drop-menu-btn span,
+/*.site__header.header-scroll .drop-menu-btn span,
 .site__header.site__header_drop-menu .drop-menu-btn span,
 .site__header.header-scroll .drop-menu-btn span:after,
 .site__header.site__header_drop-menu .drop-menu-btn span:after,
 .site__header.header-scroll .drop-menu-btn span:before ,
 .site__header.site__header_drop-menu .drop-menu-btn span:before {
-    background-color: #555;
-}
+    background-color: #fff;
+}*/
 
 .site__header.site__header_drop-menu .drop-menu-btn span,
 .site__header.site__header_drop-menu .drop-menu-btn span:after,
@@ -407,6 +407,7 @@ input:invalid {
     max-width: 555px;
     margin-top: 3px;
     transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
     opacity: 0;
     transition: opacity .3s ease;
     -webkit-transition: opacity .3s ease;
@@ -423,14 +424,14 @@ input:invalid {
 .logo img, .logo:after {
     width: 100%;
     height: auto;
-    transition: opacity .3s ease
+    /*transition: opacity .3s ease*/
 }
 
 .logo img {
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-transition: opacity .3s ease
+    /*-webkit-transition: opacity .3s ease*/
 }
 .logo img:nth-child(2) {
     opacity: 0;
@@ -459,11 +460,13 @@ input:invalid {
     opacity: 0
 }
 
-.site__header.site__header_drop-menu .logo img, .site__header.white .logo:after {
+.site__header.site__header_drop-menu .logo img,
+.site__header.white .logo:after {
     opacity: 1
 }
 
-.site__header.site__header_drop-menu .logo:after {
+.site__header.site__header_drop-menu .logo:after,
+.site__header.site__header_drop-menu .logo img:first-child{
     opacity: 0
 }
 
@@ -3456,13 +3459,11 @@ img.easy-way__pic-big {
 
 }
 
-@media (max-height: 340px) {
+@media (max-height: 420px) {
     .logo__main {
         display: none
     }
-}
 
-@media (max-height: 400px) {
     .drop-menu__menu {
         margin-bottom: 20px;
         font-size: 24px;
@@ -3470,7 +3471,7 @@ img.easy-way__pic-big {
     }
 
     .drop-menu__inner {
-        padding: 55px 15px 65px
+        padding: 70px 15px 80px
     }
 
     .drop-menu__navigation {
@@ -3515,6 +3516,11 @@ img.easy-way__pic-big {
         font-size: 16px;
         line-height: 18px
     }
+
+    .promo__content span{
+        margin-left: 5px;
+    }
+
 }
 
 @media (max-height: 584px) {

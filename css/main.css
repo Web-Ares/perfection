@@ -611,6 +611,7 @@ input:invalid {
     margin: 0 15px 15px;
     font-size: 18px;
     background: #1565c0;
+    border: 2px solid #1565c0;
     color: #fff;
 }
 
@@ -630,9 +631,13 @@ input:invalid {
 
 .btn_11 {
     margin: 0 15px;
-    border: 2px solid #fff;
-    background: #111;
-    color: #fff
+    border: 2px solid #333333;
+    color: #333333
+}
+.btn_11:hover {
+    background: #333333;
+    color: #fff;
+    border: 2px solid #333333;
 }
 .btn_12 {
     background: #1565c0;
